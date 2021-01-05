@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace com.luvit.model
+namespace com.luvit.model.compose
 {
     public enum enumDocType : UInt16
     {
