@@ -1,4 +1,5 @@
 ﻿using com.luvit.model;
+using LuvitRepository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -23,8 +24,9 @@ namespace com.luvIt.catalog
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.Configure<LuvItDatabaseSettings>(Configuration.GetSection(nameof(LuvItDatabaseSettings)));
 
-            services.AddSingleton<ILuvItDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<LuvItDatabaseSettings>>().Value);
+            services.AddSingleton<ILuvItDatabaseSettings>(sp =>sp.GetRequiredService<IOptions<LuvItDatabaseSettings>>().Value);
+
+            services.AddSingleton<ProductService>();
 
             services.AddControllers();
         }
@@ -43,7 +45,14 @@ namespace com.luvIt.catalog
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+            });
         }
     }
 }

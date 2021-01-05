@@ -1,19 +1,25 @@
 ﻿using System.Collections.Generic;
+using System.Security.Authentication;
 using System.Threading.Tasks;
 using com.luvit.model;
 using MongoDB.Driver;
 namespace LuvitRepository
 {
-    public class ProductService
+    public interface IProductService : IService<Product, int>
+    {
+    }
+
+    public class ProductService : IProductService
     {
         private readonly IMongoCollection<Product> _Products;
 
-        public ProductService(LuvItDatabaseSettings settings)
+        public ProductService(ILuvItDatabaseSettings settings)
         {
             settings.CollectionName = "Product";
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 
+            //client.Settings.SslSettings = new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
             _Products = database.GetCollection<Product>(settings.CollectionName);
         }
         public async Task<List<Product>> Get()
@@ -31,7 +37,7 @@ namespace LuvitRepository
             await _Products.InsertOneAsync(Product);
             return Product;
         }
-        public async Task Update(int barcode, Product ProductIn) => 
+        public async Task Update(int barcode, Product ProductIn) =>
             await _Products.ReplaceOneAsync(Product => Product.BarCode == barcode, ProductIn);
         public async Task Remove(Product ProductIn) =>
             await _Products.DeleteOneAsync(Product => Product.BarCode == ProductIn.BarCode);

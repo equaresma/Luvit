@@ -1,53 +1,53 @@
 {
-  "ReRoutes": [
-    {
-      "DownstreamPathTemplate": "/",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
+    "Routes": [
         {
-          "Host": "pedido",
-          "Port": 80
-        }
-      ],
-      "UpstreamPathTemplate": "/pedido/",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
-    },
-    {
-      "DownstreamPathTemplate": "/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
+            "DownstreamPathTemplate": "/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "pedido",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/pedido/",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        },
         {
-          "Host": "pedido",
-          "Port": 80
-        }
-      ],
-      "UpstreamPathTemplate": "/pedido/{everything}",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
-    },
-    {
-      "DownstreamPathTemplate": "/",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
+            "DownstreamPathTemplate": "/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "pedido",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/pedido/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        },
         {
-          "Host": "catalogo",
-          "Port": 80
-        }
-      ],
-      "UpstreamPathTemplate": "/catalogo/",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
-    },
-    {
-      "DownstreamPathTemplate": "/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
+            "DownstreamPathTemplate": "/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5000
+                }
+            ],
+            "UpstreamPathTemplate": "/catalogo/",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
+        },
         {
-          "Host": "catalogo",
-          "Port": 80
+            "DownstreamPathTemplate": "/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5000
+                }
+            ],
+            "UpstreamPathTemplate": "/catalogo/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
         }
-      ],
-      "UpstreamPathTemplate": "/catalogo/{everything}",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ]
-    }
-  ],
-  "GlobalConfiguration": { }
+    ],
+    "GlobalConfiguration": {}
 }
