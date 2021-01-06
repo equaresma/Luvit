@@ -1,4 +1,4 @@
-﻿using com.luvit.model;
+﻿using com.luvit.model.compose;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

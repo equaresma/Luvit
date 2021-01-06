@@ -10,38 +10,37 @@ namespace com.luvIt.catalog.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class CustomerController : ControllerBase
     {
-        private readonly ProductService _service;
+        private readonly CustomerService _service;
 
-        public ProductController(ProductService service)
+        public CustomerController(CustomerService service)
         {
             _service = service;
         }
 
-        // GET: api/<ProductController>
+        // GET: api/<CustomerController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> Get()
-        {
+        public async Task<ActionResult<IEnumerable<Customer>>> Get() {
             try
             {
                 return Ok(await _service.Get());
             }
-            catch (System.Exception ex)
+            catch (System.Exception ex) 
             {
-                return BadRequest(ex);
-            }
+                return BadRequest(ex);   
+            }        
         }
 
-        // GET api/<ProductController>/5
+        // GET api/<CustomerController>/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> Get(int id)
-        {
+        public async Task<ActionResult<Customer>> Get(string id)
+        {            
             try
             {
-                var product = await _service.Get(id);
+                var customer = await _service.Get(id);
 
-                if (product == null)
+                if (customer == null)
                 {
                     return NotFound();
                 }
@@ -54,18 +53,18 @@ namespace com.luvIt.catalog.Controllers
             }
         }
 
-        // POST api/<ProductController>
+        // POST api/<CustomerController>
         [HttpPost]
-        public async Task<ActionResult<Product>> Post(Product product)
+        public async Task<ActionResult<Customer>> Post(Customer customer)
         {
             try
             {
-                if (product.Id == 0)
-                    await _service.Create(product);
+                if (string.IsNullOrWhiteSpace(customer.Id))
+                    await _service.Create(customer);
                 else
-                    await _service.Update(product.Id, product);
+                    await _service.Update(customer.Id, customer);
 
-                return Ok(product);
+                return Ok(customer);
             }
             catch (System.Exception ex)
             {
@@ -73,9 +72,9 @@ namespace com.luvIt.catalog.Controllers
             }
         }
 
-        // DELETE api/<ProductController>/5
+        // DELETE api/<CustomerController>/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
             try
             {
@@ -86,6 +85,6 @@ namespace com.luvIt.catalog.Controllers
             {
                 return BadRequest(ex);
             }
-        }
+        }    
     }
 }

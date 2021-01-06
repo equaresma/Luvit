@@ -1,5 +1,5 @@
-﻿using com.luvit.model;
-using LuvitRepository;
+﻿using com.luvit.model.compose;
+using com.luvit.repository.impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +26,9 @@ namespace com.luvIt.catalog
 
             services.AddSingleton<ILuvItDatabaseSettings>(sp =>sp.GetRequiredService<IOptions<LuvItDatabaseSettings>>().Value);
 
+            services.AddSingleton<CustomerService>();
             services.AddSingleton<ProductService>();
+            services.AddSingleton<VendorService>();
 
             services.AddControllers();
         }

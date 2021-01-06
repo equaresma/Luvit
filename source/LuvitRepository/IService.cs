@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using com.luvit.model;
 
-namespace LuvitRepository
+namespace com.luvit.repository
 {
-    public interface IService<T, K> where T : class where K : struct
+    public interface IService<T, K>
+        where T : IEntity<K>
     {
         Task<T> Create(T instance);
         Task<List<T>> Get();

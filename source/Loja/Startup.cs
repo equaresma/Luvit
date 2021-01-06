@@ -1,7 +1,8 @@
+using com.luvit.model;
+using com.luvit.service;
+using com.luvit.service.impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +22,10 @@ namespace Loja
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IService<Customer, string>>(new CustomerService("https://localhost:6001/catalago"));
+            services.AddSingleton<IService<Product, int>>(new ProductService("https://localhost:6001/catalago"));
+            services.AddSingleton<IService<Vendor, string>>(new VendorService("https://localhost:6001/catalago"));
+
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory

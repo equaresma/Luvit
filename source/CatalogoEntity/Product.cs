@@ -1,15 +1,17 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using com.luvit.model.compose;
 using com.luvit.model.enums;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace com.luvit.model
 {
-    public class Product
+    public class Product : IEntity<Int32>
     {
+        /// <summary>
+        /// BarCode
+        /// </summary>
         [BsonId]
-        public Int32 BarCode { get; set; }
+        public Int32 Id { get; set; }
         public string VendorId { get; set; }
         public String Name { get; set; }
         public String Description { get; set; }        

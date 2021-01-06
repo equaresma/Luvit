@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace com.luvit.model
 {
-    public class Customer
+    public class Customer : IEntity<string>
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -15,13 +15,14 @@ namespace com.luvit.model
         public DateTime? Birth { get; set; }
         public string Email { get; set; }
         public Document Doc { get; set; }
-        public List<Address> Address { get; set; }
-        public List<Phone> Phones { get; set; }
+        public Address Address { get; set; }
+        public Address AlternativeAddress { get; set; }
+        public Phone Phone { get; set; }
+        public Phone Mobile { get; set; }
 
         public Customer()
         {
-            Address = new List<Address>(2);
-            Phones = new List<Phone>(2);
+            
         }
     }
 }

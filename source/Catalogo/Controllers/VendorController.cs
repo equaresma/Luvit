@@ -10,38 +10,37 @@ namespace com.luvIt.catalog.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class VendorController : ControllerBase
     {
-        private readonly ProductService _service;
+        private readonly VendorService _service;
 
-        public ProductController(ProductService service)
+        public VendorController(VendorService service)
         {
             _service = service;
         }
 
-        // GET: api/<ProductController>
+        // GET: api/<VendorController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> Get()
-        {
+        public async Task<ActionResult<IEnumerable<Vendor>>> Get() {
             try
             {
                 return Ok(await _service.Get());
             }
-            catch (System.Exception ex)
+            catch (System.Exception ex) 
             {
-                return BadRequest(ex);
-            }
+                return BadRequest(ex);   
+            }        
         }
 
-        // GET api/<ProductController>/5
+        // GET api/<VendorController>/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> Get(int id)
-        {
+        public async Task<ActionResult<Vendor>> Get(string id)
+        {            
             try
             {
-                var product = await _service.Get(id);
+                var vendor = await _service.Get(id);
 
-                if (product == null)
+                if (vendor == null)
                 {
                     return NotFound();
                 }
@@ -54,18 +53,18 @@ namespace com.luvIt.catalog.Controllers
             }
         }
 
-        // POST api/<ProductController>
+        // POST api/<VendorController>
         [HttpPost]
-        public async Task<ActionResult<Product>> Post(Product product)
+        public async Task<ActionResult<Vendor>> Post(Vendor vendor)
         {
             try
             {
-                if (product.Id == 0)
-                    await _service.Create(product);
+                if (string.IsNullOrWhiteSpace(vendor.Id))
+                    await _service.Create(vendor);
                 else
-                    await _service.Update(product.Id, product);
+                    await _service.Update(vendor.Id, vendor);
 
-                return Ok(product);
+                return Ok(vendor);
             }
             catch (System.Exception ex)
             {
@@ -73,9 +72,9 @@ namespace com.luvIt.catalog.Controllers
             }
         }
 
-        // DELETE api/<ProductController>/5
+        // DELETE api/<VendorController>/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
             try
             {
@@ -86,6 +85,6 @@ namespace com.luvIt.catalog.Controllers
             {
                 return BadRequest(ex);
             }
-        }
+        }    
     }
 }
