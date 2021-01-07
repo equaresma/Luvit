@@ -8,9 +8,14 @@
 export const actionCreators = {
     requestVendors: () => async (dispatch, getState) => {
         const url = 'api/Vendor/';
-        const response = await fetch(url);
-        const vendors = await response.json();
+        let mdata = [];
+        const response = await fetch(url).then(function (response) {
+            mdata = response.json();
+        }).catch(function (error) {
+            alert("Erro " + error);
+        });        
 
+        const vendors = await mdata;
         dispatch({ type: 'FETCH_VENDORS', vendors });
     },
     saveVendor: vendor => async (dispatch, getState) => {
@@ -24,8 +29,11 @@ export const actionCreators = {
             body: JSON.stringify(vendor)
         };
         const request = new Request(url, requestOptions);
-        await fetch(request);
-        dispatch({ type: 'SAVE_VENDOR', vendor });
+        await fetch(request).then(function (response) {
+            dispatch({ type: 'SAVE_VENDOR', vendor });
+        }).catch(function (error) {
+            alert("Erro " + error);
+        });            
     },
     deleteVendor: id => async (dispatch, getState) => {
         const url = 'api/Vendor/' + id;
@@ -33,8 +41,11 @@ export const actionCreators = {
             method: 'DELETE',
         };
         const request = new Request(url, requestOptions);
-        await fetch(request);
-        dispatch({ type: 'DELETE_VENDOR', id });
+        await fetch(request).then(function (response) {
+            dispatch({ type: 'DELETE_VENDOR', id });
+        }).catch(function (error) {
+            alert("Error" + error);
+        });         
     }
 };
 

@@ -13,7 +13,7 @@ namespace com.luvit.repository
 
         public ServiceAbs(ILuvItDatabaseSettings settings)
         {
-            settings.CollectionName = "T";
+            settings.CollectionName = typeof(T).Name;
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
 

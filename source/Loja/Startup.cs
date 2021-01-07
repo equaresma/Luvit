@@ -22,9 +22,9 @@ namespace Loja
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IService<Customer, string>>(new CustomerService("https://localhost:6001/catalago"));
-            services.AddSingleton<IService<Product, int>>(new ProductService("https://localhost:6001/catalago"));
-            services.AddSingleton<IService<Vendor, string>>(new VendorService("https://localhost:6001/catalago"));
+            services.AddSingleton<IService<Customer, string>>(new CustomerService("https://localhost:6001/catalogo"));
+            services.AddSingleton<IService<Product, int>>(new ProductService("https://localhost:6001/catalogo"));
+            services.AddSingleton<IService<Vendor, string>>(new VendorService("https://localhost:6001/catalogo"));
 
             services.AddControllersWithViews();
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using com.luvit.model;
 
@@ -24,6 +25,7 @@ namespace com.luvit.service
             _client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
+
         public async Task<bool> Delete(K id)
         {
             string sId = id.ToString();
@@ -69,13 +71,14 @@ namespace com.luvit.service
             return true;
         }
 
-        private async Task<Uri> CreateAsync(T instance)
+        private async Task<T> CreateAsync(T instance)
         {
-            HttpResponseMessage response = await _client.PostAsJsonAsync($"{mUri}", instance);
+            HttpResponseMessage response = await _client.PostAsJsonAsync($"{mUri}/{instance.Id}", instance);
             response.EnsureSuccessStatusCode();
 
-            // return URI of the created resource.
-            return response.Headers.Location;
+            // Deserialize the updated product from the response body.
+            instance = await response.Content.ReadAsAsync<T>();
+            return instance;
         }
         private async Task<T> UpdateAsync(T instance)
         {

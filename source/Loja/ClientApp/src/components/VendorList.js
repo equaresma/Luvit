@@ -105,8 +105,8 @@ class VendorList extends Component {
                         ({ selectedVendor: e.value })} onRowSelect={this.onVendorSelect}>
                     <Column field="id" header="Id" />
                     <Column field="name" header="Name" />
-                    <Column field="logoUrl" header="Logo URL" />
-                    <Column field="website" header="Site" />
+                    <Column field="logoURL" header="LogoURL" />
+                    <Column field="webSite" header="WebSite" />
                     <Column field="email" header="E-mail" />
                 </DataTable>
                 <Dialog visible={this.state.displayDialog} style={{ 'width': '500px' }}
