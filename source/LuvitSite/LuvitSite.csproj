@@ -25,16 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\data\products.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CatalogoEntity\LuvitModel.csproj" />
     <ProjectReference Include="..\LuvItService\LuvItService.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\data\products.json" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

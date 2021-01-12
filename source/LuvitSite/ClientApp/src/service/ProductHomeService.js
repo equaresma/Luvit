@@ -5,13 +5,13 @@ var ProductHomeService = /** @class */ (function () {
     function ProductHomeService() {
     }
     ProductHomeService.prototype.getProductsSmall = function () {
-        return axios_1.default.get('data/products.json').then(function (res) { return res.data.data; });
+        return axios_1.default.get('api/product');
     };
     ProductHomeService.prototype.getProducts = function () {
-        return axios_1.default.get('data/products.json').then(function (res) { return res.data.data; });
+        return axios_1.default.get('api/product');
     };
     ProductHomeService.prototype.getProductsWithOrdersSmall = function () {
-        return axios_1.default.get('data/products.json').then(function (res) { return res.data.data; });
+        return axios_1.default.get('api/product');
     };
     return ProductHomeService;
 }());
