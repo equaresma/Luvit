@@ -1,0 +1,16 @@
+Logo
+	Vermelho 205
+	Verde 	 0
+	Azul	 69
+
+HTML
+	cd0045
+
+PALETTE
+	#060606
+	#AE194C
+	#CA9CAD
+	#CC0146
+	#D47093
+	#FFFEFE
+	
