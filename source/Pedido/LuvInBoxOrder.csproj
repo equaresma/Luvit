@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <RootNamespace>com.luvIt.order</RootNamespace>
-    <StartupObject>com.luvIt.catalog.Program</StartupObject>
+    <RootNamespace>com.luvinbox.order</RootNamespace>
+    <StartupObject>com.luvinbox.catalog.Program</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CatalogoEntity\LuvitModel.csproj" />
-    <ProjectReference Include="..\LuvitRepository\LuvitRepository.csproj" />
+    <ProjectReference Include="..\CatalogoEntity\LuvInBoxModel.csproj" />
+    <ProjectReference Include="..\LuvitRepository\LuvInBoxRepository.csproj" />
   </ItemGroup>
 
   <ItemGroup>

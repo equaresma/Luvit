@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace com.luvit.model
+namespace com.luvinbox.model
 {
     public class Phone
     {

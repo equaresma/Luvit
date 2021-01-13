@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using com.luvit.model;
-using com.luvit.model.compose;
+using com.luvinbox.model;
+using com.luvinbox.model.compose;
 using MongoDB.Driver;
 
-namespace com.luvit.repository
+namespace com.luvinbox.repository
 {
     public abstract class ServiceAbs<T, K> : IService<T,K>
         where T : IEntity<K>

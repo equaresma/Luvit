@@ -1,9 +1,9 @@
 ﻿using System;
-using com.luvit.model.compose;
-using com.luvit.model.enums;
+using com.luvinbox.model.compose;
+using com.luvinbox.model.enums;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace com.luvit.model
+namespace com.luvinbox.model
 {
     public class Product : IEntity<Int32>
     {

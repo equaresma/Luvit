@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <StartupObject>com.luvIt.catalog.Program</StartupObject>
-    <RootNamespace>com.luvIt.catalog</RootNamespace>
+    <RootNamespace>com.luvinbox.servicegateway</RootNamespace>
+    <StartupObject>com.luvinbox.servicegateway.Program</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -12,13 +12,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.10" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="MongoDB.Driver.Core" Version="2.11.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CatalogoEntity\LuvitModel.csproj" />
-    <ProjectReference Include="..\LuvitRepository\LuvitRepository.csproj" />
+    <PackageReference Include="ocelot" Version="16.0.1" />
   </ItemGroup>
 
 </Project>

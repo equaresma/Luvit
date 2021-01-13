@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace com.luvit.model
+namespace com.luvinbox.model
 {
     public interface IEntity<K>
     {

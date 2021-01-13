@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using com.luvit.model;
+using com.luvinbox.model;
 
-namespace com.luvit.service.impl
+namespace com.luvinbox.service.impl
 {
     public class ProductService : ServiceAbs<Product, Int32>
     {

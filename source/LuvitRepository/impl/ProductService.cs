@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using com.luvit.model;
-using com.luvit.model.compose;
+using com.luvinbox.model;
+using com.luvinbox.model.compose;
 using MongoDB.Driver;
-namespace com.luvit.repository.impl
+namespace com.luvinbox.repository.impl
 {
    public class ProductService : ServiceAbs<Product, int>
     {

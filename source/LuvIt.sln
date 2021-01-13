@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvItCatalog", "Catalogo\LuvItCatalog.csproj", "{C2C4AE19-C95A-4CC5-A291-43E13E829ABC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvInBoxCatalog", "Catalogo\LuvInBoxCatalog.csproj", "{C2C4AE19-C95A-4CC5-A291-43E13E829ABC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvItServiceGateway", "Gateway\LuvItServiceGateway.csproj", "{300FB415-39EA-4E47-AE5E-9D556357FA61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvInBoxServiceGateway", "Gateway\LuvInBoxServiceGateway.csproj", "{300FB415-39EA-4E47-AE5E-9D556357FA61}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvItOrder", "Pedido\LuvItOrder.csproj", "{A391EC61-DEDB-4E37-B964-FCD7F281FF2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvInBoxOrder", "Pedido\LuvInBoxOrder.csproj", "{A391EC61-DEDB-4E37-B964-FCD7F281FF2E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{10096C2F-3274-4DE2-8BB4-387D67A7C0BE}"
 EndProject
@@ -15,13 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{6C34476E-178
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{79F5A117-6927-4681-820D-935F3DB4FA4B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvitModel", "CatalogoEntity\LuvitModel.csproj", "{9F3F9F76-4B8F-4FEB-B86D-A8AB14658B87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvInBoxModel", "CatalogoEntity\LuvInBoxModel.csproj", "{9F3F9F76-4B8F-4FEB-B86D-A8AB14658B87}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvitRepository", "LuvitRepository\LuvitRepository.csproj", "{83C36004-5D21-494D-BB25-10D2CB642FEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvInBoxRepository", "LuvitRepository\LuvInBoxRepository.csproj", "{83C36004-5D21-494D-BB25-10D2CB642FEE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvItService", "LuvItService\LuvItService.csproj", "{E05DB407-7B5C-4576-B065-33D55CD350CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvInBoxService", "LuvItService\LuvInBoxService.csproj", "{E05DB407-7B5C-4576-B065-33D55CD350CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuvitSite", "LuvitSite\LuvitSite.csproj", "{1EA99C16-AE9C-4CD1-B5B0-A21FED93629B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuvInBoxSite", "LuvitSite\LuvInBoxSite.csproj", "{1EA99C16-AE9C-4CD1-B5B0-A21FED93629B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

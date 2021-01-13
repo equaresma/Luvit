@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 require("bootstrap/dist/css/bootstrap.css");
+require("./index.css");
 var React = require("react");
 var ReactDOM = require("react-dom");
 require("./i18n");

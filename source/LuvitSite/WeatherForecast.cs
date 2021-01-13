@@ -1,6 +1,6 @@
 using System;
 
-namespace LuvitSite
+namespace com.luvinbox.site
 {
     public class WeatherForecast
     {

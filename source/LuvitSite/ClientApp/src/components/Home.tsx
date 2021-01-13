@@ -27,10 +27,12 @@ const Home = () => {
     const productService = new ProductHomeService();
 
     useEffect(() => {
-        productService.getProducts().then(data => setProducts(data));
+        productService.getProducts().then(data => {
+            return setProducts(data);
+        });
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const onSortChange = (event) => {
+    const onSortChange = (event: { value: any; }) => {
         const value = event.value;
 
         if (value.indexOf('!') === 0) {

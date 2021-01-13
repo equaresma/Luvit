@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>com.luvit.model</RootNamespace>
+    <RootNamespace>com.luvinbox.model</RootNamespace>
+    <AssemblyName>LuvInBoxModel</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

@@ -25,7 +25,9 @@ var Home = function () {
     ];
     var productService = new ProductHomeService_1.default();
     react_1.useEffect(function () {
-        productService.getProducts().then(function (data) { return setProducts(data); });
+        productService.getProducts().then(function (data) {
+            return setProducts(data);
+        });
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
     var onSortChange = function (event) {
         var value = event.value;

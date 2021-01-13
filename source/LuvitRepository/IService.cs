@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using com.luvit.model;
+using com.luvinbox.model;
 
-namespace com.luvit.repository
+namespace com.luvinbox.repository
 {
     public interface IService<T, K>
         where T : IEntity<K>

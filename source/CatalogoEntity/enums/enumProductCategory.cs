@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace com.luvit.model.enums
+namespace com.luvinbox.model.enums
 {
     public enum enumProductCategory : Int16
     {

@@ -1,5 +1,5 @@
-﻿using com.luvit.model.compose;
-using com.luvit.repository.impl;
+﻿using com.luvinbox.model.compose;
+using com.luvinbox.repository.impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
-namespace com.luvIt.catalog
+namespace com.luvinbox.catalog
 {
     public class Startup
     {

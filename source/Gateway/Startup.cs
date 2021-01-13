@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
-namespace com.luvIt.servicegateway
+namespace com.luvinbox.servicegateway
 {
     public class Startup
     {

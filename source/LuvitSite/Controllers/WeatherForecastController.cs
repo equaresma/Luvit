@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace LuvitSite.Controllers
+namespace com.luvinbox.site.Controllers
 {
     [ApiController]
     [Route("[controller]")]

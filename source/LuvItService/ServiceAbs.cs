@@ -5,9 +5,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using com.luvit.model;
+using com.luvinbox.model;
 
-namespace com.luvit.service
+namespace com.luvinbox.service
 {
     public abstract class ServiceAbs<T, K> : IService<T, K> where T : IEntity<K>
     {

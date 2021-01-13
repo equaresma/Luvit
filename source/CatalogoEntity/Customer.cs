@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using com.luvit.model.compose;
+using com.luvinbox.model.compose;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace com.luvit.model
+namespace com.luvinbox.model
 {
     public class Customer : IEntity<string>
     {

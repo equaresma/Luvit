@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace com.luvIt.catalog
+namespace com.luvinbox.catalog
 {
     public class Program
     {

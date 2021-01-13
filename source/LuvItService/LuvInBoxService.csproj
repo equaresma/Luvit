@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>com.luvit.service</RootNamespace>
+    <RootNamespace>com.luvinbox.service</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CatalogoEntity\LuvitModel.csproj" />
+    <ProjectReference Include="..\CatalogoEntity\LuvInBoxModel.csproj" />
   </ItemGroup>
 
 </Project>

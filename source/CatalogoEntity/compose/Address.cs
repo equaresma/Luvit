@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace com.luvit.model.compose
+namespace com.luvinbox.model.compose
 {
     public class Address
     {

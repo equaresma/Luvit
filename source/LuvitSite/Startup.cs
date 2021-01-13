@@ -1,6 +1,6 @@
-using com.luvit.model;
-using com.luvit.service;
-using com.luvit.service.impl;
+using com.luvinbox.model;
+using com.luvinbox.service;
+using com.luvinbox.service.impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace LuvitSite
+namespace com.luvinbox.site
 {
     public class Startup
     {

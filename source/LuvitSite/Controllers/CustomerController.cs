@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using com.luvit.model;
-using com.luvit.service;
+using com.luvinbox.model;
+using com.luvinbox.service;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace com.luvit.Controllers
+namespace com.luvinbox.site.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
