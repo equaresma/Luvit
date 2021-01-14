@@ -10,4 +10,19 @@
     <PackageReference Include="MongoDB.Bson" Version="2.11.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="AppRes.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppRes.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AppRes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

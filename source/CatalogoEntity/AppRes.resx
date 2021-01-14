@@ -1,0 +1,1446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="sysLang" xml:space="preserve">
+    <value>en-UK</value>
+  </data>
+  <data name="cvRodolfo" xml:space="preserve">
+    <value>He holds a post-graduate degree in finance from EPGE-FGV (2001) and an undergraduate degree in Business Administration from Fundação Getulio Vargas - SP (1997). Currently he is the coordinator of the undergraduate course at FFIA - Faculdade FIA ​​de Administração e Negócios, maintained Fundação Instituto de Administração, as well as professor of the Graduate and of the Professional Masters in Business Management of this same institution. Research the following areas: franchising, entrepreneurship, corporate and market finance, complexity theory, risk and related border issues. He has twice been awarded the prize for best academic work of the year on franchises by the Brazilian Franchising Association (ABF) for his doctoral thesis (2015) and his master's dissertation (2012). He was a business consultant at McKinsey &amp; company, an executive in mobile phone, electric power and education companies. He also works as an academic director of MacPoli Professional Courses and collaborates in topics such as entrepreneurship and finance with the magazines PEGN - Small Business &amp; Big Business, Superinteressante and Você SA.</value>
+  </data>
+  <data name="cvParada" xml:space="preserve">
+    <value>For more than 30 years, he has been an IT, Project Specialist, Consultant, Entrepreneur and Systems Development Consultant for 14 years as a lecturer at USP, FIA, FAAP and FAM for 6 years in initiatives to foster entrepreneurship and innovation as a teacher , Mentor and entrepreneur. Created and developed the methodology for the guidance of companies and professionals "Descomplicando Carreiras", created and manages the group Amigos Indicam Amigos on facebook that encourages professional relocation. Master's degree in business management, with an MBA in project management and a degree in business administration and systems analysis.</value>
+  </data>
+  <data name="cvQuaresma" xml:space="preserve">
+    <value>Systems Architect and Scrum Master, a professional with more than 20 years of experience in project development for the financial and retail market. Graduated in Business Administration and Postgraduate in Architecture of Solutions.</value>
+  </data>
+  <data name="msgInvalidCnpjLenght" xml:space="preserve">
+    <value>The CNPJ number must consist of 14 numeric characters.</value>
+  </data>
+  <data name="msgInvalidCpfLenght" xml:space="preserve">
+    <value>The CPF number must consist of 11 numeric characters.</value>
+  </data>
+  <data name="msgEventCannotBeDeletedOrUpdatedEnrollments" xml:space="preserve">
+    <value>Event cannot be Deleted because there are enrollments.</value>
+  </data>
+  <data name="msgEventCannotBeDeletedOrUpdatedPast" xml:space="preserve">
+    <value>Event cannot be Deleted because it is in the past.</value>
+  </data>
+  <data name="msgSelectOneStartupAtLeast" xml:space="preserve">
+    <value>Select One Startup At Least</value>
+  </data>
+  <data name="msgStartupEnrollment" xml:space="preserve">
+    <value>Startup enrollment:</value>
+  </data>
+  <data name="msgEventInThePast" xml:space="preserve">
+    <value>Event in the past cannot be updated.</value>
+  </data>
+  <data name="msgOurMissionTit" xml:space="preserve">
+    <value>Mission</value>
+  </data>
+  <data name="msgOurMission" xml:space="preserve">
+    <value>Identify the timing of startups and provide investors with the best investment options.</value>
+  </data>
+  <data name="msgOurVisionTit" xml:space="preserve">
+    <value>Vision</value>
+  </data>
+  <data name="msgOurVision" xml:space="preserve">
+    <value>To be a reference in orientation for investors and in raising financial resources to leverage startups.</value>
+  </data>
+  <data name="msgOurValuesTit" xml:space="preserve">
+    <value>Values</value>
+  </data>
+  <data name="msgOurValues" xml:space="preserve">
+    <value>We believe in the power of technology to turn dreams into reality, to unite ideas and investment opportunities.</value>
+  </data>
+  <data name="msgMainTit_1" xml:space="preserve">
+    <value>Our team</value>
+  </data>
+  <data name="msgMainMsg_1" xml:space="preserve">
+    <value>Our team is composed by highly qualified professionals with academic and marketing experience ready to assist you as an entrepreneur or investor.</value>
+  </data>
+  <data name="msgMainTit_2" xml:space="preserve">
+    <value>Risks</value>
+  </data>
+  <data name="msgMainMsg_2" xml:space="preserve">
+    <value>In 100 startups only 1 can continue to operate, our job is to analyze data from entrepreneurs and startups so then classify them in order to give the best option for investors.</value>
+  </data>
+  <data name="msgMainTit_3" xml:space="preserve">
+    <value>Bigdata</value>
+  </data>
+  <data name="msgMainMsg_3" xml:space="preserve">
+    <value>We get data information from startups and entrepreneurs who want to raise funds for their companies. Data is processed, sorted and cross-referenced with digital media information.</value>
+  </data>
+  <data name="msgAccessDenied" xml:space="preserve">
+    <value>Access Denied.</value>
+  </data>
+  <data name="msgUserAlreadyExists" xml:space="preserve">
+    <value>User already exists.</value>
+  </data>
+  <data name="msgPersonAlreadyExists" xml:space="preserve">
+    <value>Person already exists</value>
+  </data>
+  <data name="msgThisDocumentAlreadyExists" xml:space="preserve">
+    <value>This document number already exists.</value>
+  </data>
+  <data name="msgStartupAlreadyExists" xml:space="preserve">
+    <value>Startup already exists.</value>
+  </data>
+  <data name="msgUnderConstruction" xml:space="preserve">
+    <value>Under Construction</value>
+  </data>
+  <data name="msgMaxPoint" xml:space="preserve">
+    <value>The Max Points for Question Number {0} is {1}. You typed {2}.</value>
+  </data>
+  <data name="msgTypeEntrepreunerName" xml:space="preserve">
+    <value>Type the entrepreuner name to search</value>
+  </data>
+  <data name="msgSureAddNewEntrepreuner" xml:space="preserve">
+    <value>Are you sure to add new entrepreuner {0}?</value>
+  </data>
+  <data name="msgIsAlreadyBought" xml:space="preserve">
+    <value>You already bought this Event</value>
+  </data>
+  <data name="msgMissingStartupRegistry" xml:space="preserve">
+    <value>There is no registered startup.</value>
+  </data>
+  <data name="msgNoEvents" xml:space="preserve">
+    <value>No events available.</value>
+  </data>
+  <data name="msgInvalidDocumentType" xml:space="preserve">
+    <value>Invalid Document Type.</value>
+  </data>
+  <data name="cmdNewEntrepreuner" xml:space="preserve">
+    <value>New entrepreuner</value>
+  </data>
+  <data name="cmdNewEnterprise" xml:space="preserve">
+    <value>New startup</value>
+  </data>
+  <data name="cmdNewEvent" xml:space="preserve">
+    <value>New event</value>
+  </data>
+  <data name="cmdBuy" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="frmDate" xml:space="preserve">
+    <value>MM/dd/yyyy</value>
+  </data>
+  <data name="frmDateDataN" xml:space="preserve">
+    <value>{0:MM-dd-yyyy}</value>
+  </data>
+  <data name="enumEntrepreneur" xml:space="preserve">
+    <value>Entrepreneur</value>
+  </data>
+  <data name="enumEmployee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="enumInvestor" xml:space="preserve">
+    <value>Investor</value>
+  </data>
+  <data name="enumDocRG" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="enumDocCPF" xml:space="preserve">
+    <value>CPF</value>
+  </data>
+  <data name="enumDocRNE" xml:space="preserve">
+    <value>RNE</value>
+  </data>
+  <data name="enumDocPassport" xml:space="preserve">
+    <value>Passport</value>
+  </data>
+  <data name="enumDocCNPJ" xml:space="preserve">
+    <value>CNPJ</value>
+  </data>
+  <data name="enumGenderFemale" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="enumGenderMale" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="enumMaritalStsSingle" xml:space="preserve">
+    <value>Single</value>
+  </data>
+  <data name="enumMaritalStsMarried" xml:space="preserve">
+    <value>Married</value>
+  </data>
+  <data name="enumMaritalStsSeparated" xml:space="preserve">
+    <value>Separated</value>
+  </data>
+  <data name="enumMaritalStsDivorced" xml:space="preserve">
+    <value>Divorced</value>
+  </data>
+  <data name="enumMaritalStsWidowed" xml:space="preserve">
+    <value>Widowed</value>
+  </data>
+  <data name="enumBmSubscriptions" xml:space="preserve">
+    <value>Subscriptions</value>
+  </data>
+  <data name="enumBmB2B" xml:space="preserve">
+    <value>B2B</value>
+  </data>
+  <data name="enumBmB2C" xml:space="preserve">
+    <value>B2C</value>
+  </data>
+  <data name="enumBmC2C" xml:space="preserve">
+    <value>C2C</value>
+  </data>
+  <data name="enumBmMarketplace" xml:space="preserve">
+    <value>Marketplace</value>
+  </data>
+  <data name="enumBmOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="enumBmPublicity" xml:space="preserve">
+    <value>Publicity</value>
+  </data>
+  <data name="enumBmSocial" xml:space="preserve">
+    <value>Social</value>
+  </data>
+  <data name="enumEmCuriosity" xml:space="preserve">
+    <value>Curiosity</value>
+  </data>
+  <data name="enumEmIdeation" xml:space="preserve">
+    <value>Ideation</value>
+  </data>
+  <data name="enumEmOperation" xml:space="preserve">
+    <value>Operation</value>
+  </data>
+  <data name="enumEmTraction" xml:space="preserve">
+    <value>Traction</value>
+  </data>
+  <data name="enumLbAgrobusiness" xml:space="preserve">
+    <value>Agrobusiness</value>
+  </data>
+  <data name="enumLbBiotechnology" xml:space="preserve">
+    <value>Biotechnology</value>
+  </data>
+  <data name="enumLbCommunicationAndMedia" xml:space="preserve">
+    <value>Communication and Media</value>
+  </data>
+  <data name="enumLbCommunication" xml:space="preserve">
+    <value>Communication</value>
+  </data>
+  <data name="enumLbEcommerce" xml:space="preserve">
+    <value>E-commerce</value>
+  </data>
+  <data name="enumLbEducation" xml:space="preserve">
+    <value>Education</value>
+  </data>
+  <data name="enumLbEntertainment" xml:space="preserve">
+    <value>Entertainment</value>
+  </data>
+  <data name="enumLbEventsAndTourism" xml:space="preserve">
+    <value>Events and Tourism</value>
+  </data>
+  <data name="enumLbBusiness" xml:space="preserve">
+    <value>Business</value>
+  </data>
+  <data name="enumLbFinance" xml:space="preserve">
+    <value>Finance</value>
+  </data>
+  <data name="enumLbGames" xml:space="preserve">
+    <value>Games</value>
+  </data>
+  <data name="enumLbHardware" xml:space="preserve">
+    <value>Hardware</value>
+  </data>
+  <data name="enumLbInternet" xml:space="preserve">
+    <value>Internet</value>
+  </data>
+  <data name="enumLbLogistics" xml:space="preserve">
+    <value>Logistics</value>
+  </data>
+  <data name="enumLbEnvironment" xml:space="preserve">
+    <value>Environment</value>
+  </data>
+  <data name="enumLbMobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="enumLbFashionAndBeauty" xml:space="preserve">
+    <value>Fashion and Beauty</value>
+  </data>
+  <data name="enumLbNanotechnology" xml:space="preserve">
+    <value>Nanotechnology</value>
+  </data>
+  <data name="enumLbOthers" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="enumLbSaaS" xml:space="preserve">
+    <value>SaaS</value>
+  </data>
+  <data name="enumLbHealth" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="enumLbTelecom" xml:space="preserve">
+    <value>TIC and Telecom</value>
+  </data>
+  <data name="enumLbRetailAndEcommerce" xml:space="preserve">
+    <value>Retail and E-commerce</value>
+  </data>
+  <data name="enumQuizCategoryInitialCategory" xml:space="preserve">
+    <value>Initial Category</value>
+  </data>
+  <data name="enumQuizCategoryEntrepreneur" xml:space="preserve">
+    <value>Entrepreneur</value>
+  </data>
+  <data name="enumQuizCategoryTeam" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="enumQuizCategoryMkt_Oportunities" xml:space="preserve">
+    <value>Marketing and Oportunities</value>
+  </data>
+  <data name="enumQuizCategoryResources" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="enumQuizCategoryFinances" xml:space="preserve">
+    <value>Finances</value>
+  </data>
+  <data name="enumAreasSales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="enumAreasMkt" xml:space="preserve">
+    <value>Market</value>
+  </data>
+  <data name="enumAreasAdm" xml:space="preserve">
+    <value>Administration</value>
+  </data>
+  <data name="enumAreasFinance" xml:space="preserve">
+    <value>Finance</value>
+  </data>
+  <data name="enumAreasOperations" xml:space="preserve">
+    <value>Operations</value>
+  </data>
+  <data name="enumAreasIT" xml:space="preserve">
+    <value>IT</value>
+  </data>
+  <data name="enumDegreeHighSchool" xml:space="preserve">
+    <value>HighSchool</value>
+  </data>
+  <data name="enumDegreeCollege" xml:space="preserve">
+    <value>College</value>
+  </data>
+  <data name="enumDegreeMBA" xml:space="preserve">
+    <value>MBA</value>
+  </data>
+  <data name="enumPostgraduate" xml:space="preserve">
+    <value>Postgraduate</value>
+  </data>
+  <data name="enumMaster" xml:space="preserve">
+    <value>Master</value>
+  </data>
+  <data name="enumPhD" xml:space="preserve">
+    <value>PhD</value>
+  </data>
+  <data name="enumGb0_100000" xml:space="preserve">
+    <value>$0 - $100,000.00</value>
+  </data>
+  <data name="enumGb100001_900000" xml:space="preserve">
+    <value>$100,001.00 - $900,000.00</value>
+  </data>
+  <data name="enumGb900001_" xml:space="preserve">
+    <value>Greater than $900,001.00 </value>
+  </data>
+  <data name="enumIv0_100000" xml:space="preserve">
+    <value>$0 - $100,000.00</value>
+  </data>
+  <data name="enumIv100001_200000" xml:space="preserve">
+    <value>$100,001.00 - $200,000.00</value>
+  </data>
+  <data name="enumIv200001_300000" xml:space="preserve">
+    <value>$200,001.00 - $300,000.00</value>
+  </data>
+  <data name="enumIv300001_500000" xml:space="preserve">
+    <value>$300,001.00 - $500,000.00</value>
+  </data>
+  <data name="enumIv500001_" xml:space="preserve">
+    <value>Greater than $500,001.00 </value>
+  </data>
+  <data name="enumNp0_50000" xml:space="preserve">
+    <value>$0 - $50,000.00</value>
+  </data>
+  <data name="enumNp50001_200000" xml:space="preserve">
+    <value>$50,001.00 - $200,000.00</value>
+  </data>
+  <data name="enumNp200001_" xml:space="preserve">
+    <value>Greater than $200,001.00 </value>
+  </data>
+  <data name="enumCoursesNA" xml:space="preserve">
+    <value>N.A.</value>
+  </data>
+  <data name="enumCoursesBusinessManagement" xml:space="preserve">
+    <value>Business Management</value>
+  </data>
+  <data name="enumCoursesEconomy" xml:space="preserve">
+    <value>Economy</value>
+  </data>
+  <data name="enumCoursesAccounting" xml:space="preserve">
+    <value>Accounting</value>
+  </data>
+  <data name="enumCoursesEngineering" xml:space="preserve">
+    <value>Engineering</value>
+  </data>
+  <data name="enumCoursesSystemAnalysis" xml:space="preserve">
+    <value>System Analysis</value>
+  </data>
+  <data name="enumCoursesComputerScience" xml:space="preserve">
+    <value>Computer Science</value>
+  </data>
+  <data name="enumCoursesPsychology" xml:space="preserve">
+    <value>Psychology</value>
+  </data>
+  <data name="enumCoursesMarketing" xml:space="preserve">
+    <value>Marketing</value>
+  </data>
+  <data name="enumCoursesInternationalRelations" xml:space="preserve">
+    <value>International Relations</value>
+  </data>
+  <data name="enumCoursesBiology" xml:space="preserve">
+    <value>Biology</value>
+  </data>
+  <data name="enumCoursesChemistry" xml:space="preserve">
+    <value>Chemistry</value>
+  </data>
+  <data name="enumCoursesPhysical" xml:space="preserve">
+    <value>Physical</value>
+  </data>
+  <data name="enumCoursesMathematics" xml:space="preserve">
+    <value>Mathematics</value>
+  </data>
+  <data name="enumCoursesStatistic" xml:space="preserve">
+    <value>Statistic</value>
+  </data>
+  <data name="enumCoursesDesign" xml:space="preserve">
+    <value>Design</value>
+  </data>
+  <data name="enumCoursesFashion" xml:space="preserve">
+    <value>Fashion</value>
+  </data>
+  <data name="enumCoursesMedicine" xml:space="preserve">
+    <value>Medicine</value>
+  </data>
+  <data name="enumCoursesLaw" xml:space="preserve">
+    <value>Law</value>
+  </data>
+  <data name="enumCoursesDentistry" xml:space="preserve">
+    <value>Dentistry</value>
+  </data>
+  <data name="enumCoursesPedagogy" xml:space="preserve">
+    <value>Pedagogy</value>
+  </data>
+  <data name="enumCoursesOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="titUserType" xml:space="preserve">
+    <value>Entrepreneur: Register your startup to get investors. Investor: Access the best investment opportunities.</value>
+  </data>
+  <data name="titUser" xml:space="preserve">
+    <value>User must be a valid email account!</value>
+  </data>
+  <data name="titPwd" xml:space="preserve">
+    <value>The password is free typing, but the system will inform if your password is weak, medium or strong. Please consider using numbers, letters and special characters combined with uppercase and lowercase letters for your own security.</value>
+  </data>
+  <data name="lblViewDetails" xml:space="preserve">
+    <value>View Details</value>
+  </data>
+  <data name="lblBeginning" xml:space="preserve">
+    <value>Beginning</value>
+  </data>
+  <data name="lblTeam" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="lblMarket" xml:space="preserve">
+    <value>Market</value>
+  </data>
+  <data name="lblFinance" xml:space="preserve">
+    <value>Finance</value>
+  </data>
+  <data name="lblFullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="lblBirthplace" xml:space="preserve">
+    <value>Birthplace</value>
+  </data>
+  <data name="lblDevelopIn" xml:space="preserve">
+    <value>Develop In</value>
+  </data>
+  <data name="lblContacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="lblPhones" xml:space="preserve">
+    <value>Phones</value>
+  </data>
+  <data name="lblDoc" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="lblUserType" xml:space="preserve">
+    <value>User Type</value>
+  </data>
+  <data name="lblRegistry" xml:space="preserve">
+    <value>Registry</value>
+  </data>
+  <data name="RequiredName" xml:space="preserve">
+    <value>Name is required</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Name is invalid</value>
+  </data>
+  <data name="lblFirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="lblMiddleName" xml:space="preserve">
+    <value>Middle Name</value>
+  </data>
+  <data name="lblFamilyName" xml:space="preserve">
+    <value>Family Name</value>
+  </data>
+  <data name="RequiredDate" xml:space="preserve">
+    <value>Date is required</value>
+  </data>
+  <data name="RequiredLineOfBusiness" xml:space="preserve">
+    <value>Line Of Business is required</value>
+  </data>
+  <data name="InvalidDate" xml:space="preserve">
+    <value>Date is invalid</value>
+  </data>
+  <data name="lblBirth" xml:space="preserve">
+    <value>Birth</value>
+  </data>
+  <data name="lblBirthday" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="lblGender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="lblMaritalStatus" xml:space="preserve">
+    <value>Marital Status</value>
+  </data>
+  <data name="lblHomeTown" xml:space="preserve">
+    <value>Home Town</value>
+  </data>
+  <data name="lblHomeState" xml:space="preserve">
+    <value>Home State</value>
+  </data>
+  <data name="lblHomeCountry" xml:space="preserve">
+    <value>Home Country</value>
+  </data>
+  <data name="RequiredDocument" xml:space="preserve">
+    <value>Name is required</value>
+  </data>
+  <data name="InvalidDocument" xml:space="preserve">
+    <value>Document is invalid</value>
+  </data>
+  <data name="lblDocumentType" xml:space="preserve">
+    <value>Document Type</value>
+  </data>
+  <data name="lblDocumentNumber" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="lblLegalEntityRegistry" xml:space="preserve">
+    <value>Legal Entity Registry</value>
+  </data>
+  <data name="RequiredEmail" xml:space="preserve">
+    <value>Email is required</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Email is invalid</value>
+  </data>
+  <data name="lblEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="lblAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="lblPhone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="lblMobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="lblRegistryConfirmation" xml:space="preserve">
+    <value>Registry Confirmation</value>
+  </data>
+  <data name="lblRegistryConfirmationMsg" xml:space="preserve">
+    <value>An e-mail will be send in order to confirm your registry. This email will contain a initial password that need will chang in the first login.</value>
+  </data>
+  <data name="lblSocial" xml:space="preserve">
+    <value>Socia</value>
+  </data>
+  <data name="lblDegree" xml:space="preserve">
+    <value>Degree</value>
+  </data>
+  <data name="lblCourse" xml:space="preserve">
+    <value>Course</value>
+  </data>
+  <data name="lblOtherCourse" xml:space="preserve">
+    <value>Other Course</value>
+  </data>
+  <data name="lblFantasyName" xml:space="preserve">
+    <value>Fantasy Name</value>
+  </data>
+  <data name="RequiredFantasyName" xml:space="preserve">
+    <value>Fantasy Name is Required</value>
+  </data>
+  <data name="lblFoundedIn" xml:space="preserve">
+    <value>Founded In</value>
+  </data>
+  <data name="lblFoundation" xml:space="preserve">
+    <value>Foundation</value>
+  </data>
+  <data name="lblCityOfFoundation" xml:space="preserve">
+    <value>City Of Foundation</value>
+  </data>
+  <data name="lblStateOfFoundation" xml:space="preserve">
+    <value>State Of Foundation</value>
+  </data>
+  <data name="lblCountryOfFoundation" xml:space="preserve">
+    <value>Country Of Foundation</value>
+  </data>
+  <data name="lblWebsite" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="lblLineOfBusiness" xml:space="preserve">
+    <value>Line Of Business</value>
+  </data>
+  <data name="lblEnterpriseMoment" xml:space="preserve">
+    <value>Enterprise Moment</value>
+  </data>
+  <data name="lblAccelerated" xml:space="preserve">
+    <value>Accelerated</value>
+  </data>
+  <data name="lblIncubated" xml:space="preserve">
+    <value>Incubated</value>
+  </data>
+  <data name="lblInvested" xml:space="preserve">
+    <value>Invested</value>
+  </data>
+  <data name="lblEvent" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="lblStartTime" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="lblEndTime" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="lblPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="RequiredDescription" xml:space="preserve">
+    <value>Description is required</value>
+  </data>
+  <data name="lblPosition" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="lblCustomer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="lblProduct" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="lblQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="lblCaptchMsg" xml:space="preserve">
+    <value>Answer in order to continue. What is {0} + {1}?</value>
+  </data>
+  <data name="lblInvalidCaptcha" xml:space="preserve">
+    <value>Invalid Captcha</value>
+  </data>
+  <data name="lblBuy" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="lblPaymentId" xml:space="preserve">
+    <value>Payment ID</value>
+  </data>
+  <data name="lblPaymentToken" xml:space="preserve">
+    <value>Payment Token</value>
+  </data>
+  <data name="lblPaymentSuccess" xml:space="preserve">
+    <value>Payment Success</value>
+  </data>
+  <data name="lblPaymentStatus" xml:space="preserve">
+    <value>Payment Status</value>
+  </data>
+  <data name="lblPaymentPreviousStatus" xml:space="preserve">
+    <value>Payment Previous Status</value>
+  </data>
+  <data name="lblPaymentForm" xml:space="preserve">
+    <value>Payment Form</value>
+  </data>
+  <data name="lblPaymentType" xml:space="preserve">
+    <value>Payment Type</value>
+  </data>
+  <data name="lblOrderDetail" xml:space="preserve">
+    <value>Order detail</value>
+  </data>
+  <data name="lblSelect" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="lblPaid" xml:space="preserve">
+    <value>IsPaid</value>
+  </data>
+  <data name="RequiredLocal" xml:space="preserve">
+    <value>Local is required</value>
+  </data>
+  <data name="InvalidLocal" xml:space="preserve">
+    <value>Local is invalid</value>
+  </data>
+  <data name="lblAddLocal" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="RequiredNumber" xml:space="preserve">
+    <value>Local is required</value>
+  </data>
+  <data name="InvalidNumber" xml:space="preserve">
+    <value>Number is invalid</value>
+  </data>
+  <data name="lblAddNumber" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="lblAddComplement" xml:space="preserve">
+    <value>Complement</value>
+  </data>
+  <data name="RequiredCity" xml:space="preserve">
+    <value>City is required</value>
+  </data>
+  <data name="InvalidCity" xml:space="preserve">
+    <value>City is invalid</value>
+  </data>
+  <data name="lblAddCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="RequiredState" xml:space="preserve">
+    <value>State is required</value>
+  </data>
+  <data name="InvalidState" xml:space="preserve">
+    <value>State is invalid</value>
+  </data>
+  <data name="lblAddState" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="RequiredCountry" xml:space="preserve">
+    <value>State is required</value>
+  </data>
+  <data name="InvalidCountry" xml:space="preserve">
+    <value>Country is invalid</value>
+  </data>
+  <data name="lblAddCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="RequiredZipCode" xml:space="preserve">
+    <value>ZipCode is required</value>
+  </data>
+  <data name="InvalidZipCode" xml:space="preserve">
+    <value>ZipCode is invalid</value>
+  </data>
+  <data name="lblAddZipCode" xml:space="preserve">
+    <value>ZipCode</value>
+  </data>
+  <data name="lblEnrollment" xml:space="preserve">
+    <value>Enrollment</value>
+  </data>
+  <data name="lblEnrolled" xml:space="preserve">
+    <value>Enrolled</value>
+  </data>
+  <data name="lblViewMap" xml:space="preserve">
+    <value>View Map</value>
+  </data>
+  <data name="lblLogin" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="RequiredLogin" xml:space="preserve">
+    <value>Login is required</value>
+  </data>
+  <data name="InvalidLogin" xml:space="preserve">
+    <value>Invalid Login</value>
+  </data>
+  <data name="lblPwd" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="RequiredPwd" xml:space="preserve">
+    <value>Password is required</value>
+  </data>
+  <data name="lblRememberMe" xml:space="preserve">
+    <value>Remember Me?</value>
+  </data>
+  <data name="lblChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="titGreeting" xml:space="preserve">
+    <value>Hi, Wellcome</value>
+  </data>
+  <data name="titLogOn" xml:space="preserve">
+    <value>Log-On</value>
+  </data>
+  <data name="msgLogOn" xml:space="preserve">
+    <value>Enter with your credentials.</value>
+  </data>
+  <data name="titAccountInfo" xml:space="preserve">
+    <value>Account Information</value>
+  </data>
+  <data name="titNewAccount" xml:space="preserve">
+    <value>New Account</value>
+  </data>
+  <data name="titEnterprise" xml:space="preserve">
+    <value>Enterprise</value>
+  </data>
+  <data name="titEnterprises" xml:space="preserve">
+    <value>Enterprises</value>
+  </data>
+  <data name="msgEnterprise" xml:space="preserve">
+    <value>Let investors arrond the world know about your start-up.</value>
+  </data>
+  <data name="titEntrepreneur" xml:space="preserve">
+    <value>Entrepreneur</value>
+  </data>
+  <data name="titEntrepreneurs" xml:space="preserve">
+    <value>Entrepreneurs</value>
+  </data>
+  <data name="msgEntrepreneur" xml:space="preserve">
+    <value>Sign up and let investors find you</value>
+  </data>
+  <data name="titInvestor" xml:space="preserve">
+    <value>Investor</value>
+  </data>
+  <data name="titInvestors" xml:space="preserve">
+    <value>Investors</value>
+  </data>
+  <data name="msgInvestor" xml:space="preserve">
+    <value>Sign up and find the startups according to your investment profile</value>
+  </data>
+  <data name="mnuMyInfo" xml:space="preserve">
+    <value>MY INFO</value>
+  </data>
+  <data name="mnuMyStartups" xml:space="preserve">
+    <value>MY STARTUPS</value>
+  </data>
+  <data name="mnuMyOrders" xml:space="preserve">
+    <value>MY ORDERS</value>
+  </data>
+  <data name="mnuEvents" xml:space="preserve">
+    <value>EVENTS</value>
+  </data>
+  <data name="mnuRatings" xml:space="preserve">
+    <value>RATINGS</value>
+  </data>
+  <data name="mnuStartups" xml:space="preserve">
+    <value>STARTUPS</value>
+  </data>
+  <data name="mnuOrders" xml:space="preserve">
+    <value>ORDERS</value>
+  </data>
+  <data name="mnuEntrepreneurs" xml:space="preserve">
+    <value>ENTREPRENEURS</value>
+  </data>
+  <data name="mnuInvestors" xml:space="preserve">
+    <value>INVESTORS</value>
+  </data>
+  <data name="cmdSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="cmdCreate" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="cmdBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="cmdAddToCart" xml:space="preserve">
+    <value>Add to cart</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Rating Startup | Make business every where</value>
+  </data>
+  <data name="mnuCompany" xml:space="preserve">
+    <value>COMPANY</value>
+  </data>
+  <data name="mnuServices" xml:space="preserve">
+    <value>SERVICES</value>
+  </data>
+  <data name="mnuNews" xml:space="preserve">
+    <value>NOTICES</value>
+  </data>
+  <data name="mnuBusiness" xml:space="preserve">
+    <value>BUSINESS</value>
+  </data>
+  <data name="mnuContact" xml:space="preserve">
+    <value>CONTACT</value>
+  </data>
+  <data name="mnuRegistry" xml:space="preserve">
+    <value>REGISTRY</value>
+  </data>
+  <data name="mnuLogin" xml:space="preserve">
+    <value>LOGIN</value>
+  </data>
+  <data name="mnuHome" xml:space="preserve">
+    <value>HOME</value>
+  </data>
+  <data name="mnuLogOff" xml:space="preserve">
+    <value>LOGOFF</value>
+  </data>
+  <data name="lblConfPwd" xml:space="preserve">
+    <value>Password Confirmation</value>
+  </data>
+  <data name="lblUnhandledException" xml:space="preserve">
+    <value>Oops, sorry an unexpected error occurred.</value>
+  </data>
+  <data name="lblUnhandledExceptionTechInfo" xml:space="preserve">
+    <value>Trace:</value>
+  </data>
+  <data name="lblError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="errUserDoesNotExist" xml:space="preserve">
+    <value>User does not exist Or invalid password</value>
+  </data>
+  <data name="grdCmdEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="grdCmdDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="grdCmdView" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="hId" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="hFantasyName" xml:space="preserve">
+    <value>Fantasy Name</value>
+  </data>
+  <data name="hFoundedIn" xml:space="preserve">
+    <value>Founded In</value>
+  </data>
+  <data name="hFirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="hMiddleName" xml:space="preserve">
+    <value>Middle Name</value>
+  </data>
+  <data name="hFamilyName" xml:space="preserve">
+    <value>Family Name</value>
+  </data>
+  <data name="hState" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="hCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="hCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="hDoesQuizAnswered" xml:space="preserve">
+    <value>Does quiz answered?</value>
+  </data>
+  <data name="hPosition" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="hName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="hCustomer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="hIsPaid" xml:space="preserve">
+    <value>Is it Paid?</value>
+  </data>
+  <data name="hStartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="hPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="hQuizCategory" xml:space="preserve">
+    <value>Categoria de análise</value>
+  </data>
+  <data name="hQuizFactor" xml:space="preserve">
+    <value>Fator</value>
+  </data>
+  <data name="hQuizDesc" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="hQuizPossiblePoints" xml:space="preserve">
+    <value>Pontos possíveis</value>
+  </data>
+  <data name="hQuizAnswer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="hQuizEntrep" xml:space="preserve">
+    <value>Sócios</value>
+  </data>
+  <data name="hQuizPoints" xml:space="preserve">
+    <value>Pontos</value>
+  </data>
+  <data name="hQuizSum" xml:space="preserve">
+    <value>Somatória</value>
+  </data>
+  <data name="Factor_1" xml:space="preserve">
+    <value>Sócio em tempo integral</value>
+  </data>
+  <data name="Factor_2" xml:space="preserve">
+    <value>"Sócio advir de uma família com empreendedores"</value>
+  </data>
+  <data name="Factor_3" xml:space="preserve">
+    <value>Nível  de escolaridade</value>
+  </data>
+  <data name="Factor_4" xml:space="preserve">
+    <value>Capacitação / experiência em gestão</value>
+  </data>
+  <data name="Factor_5" xml:space="preserve">
+    <value>Experiência anterior no negócio</value>
+  </data>
+  <data name="Factor_6" xml:space="preserve">
+    <value>Sintonia entre sócios</value>
+  </data>
+  <data name="Factor_7" xml:space="preserve">
+    <value>Capital social (networking)</value>
+  </data>
+  <data name="Factor_8" xml:space="preserve">
+    <value>Experiência anterior no negócio da equipe, sem considerar o empreendedor</value>
+  </data>
+  <data name="Factor_9" xml:space="preserve">
+    <value>Experiência anterior em marketing e vendas, sem considerar o empreendedor</value>
+  </data>
+  <data name="Factor_10" xml:space="preserve">
+    <value>Diversidade da equipe</value>
+  </data>
+  <data name="Factor_11" xml:space="preserve">
+    <value>Estado brasileiro - sede</value>
+  </data>
+  <data name="Factor_12" xml:space="preserve">
+    <value>Número de competidores diretos</value>
+  </data>
+  <data name="Factor_13" xml:space="preserve">
+    <value>"Escopo de marketing(Variedade de consumidores, mercados e produtos)"</value>
+  </data>
+  <data name="Factor_14" xml:space="preserve">
+    <value>Ramo de atuação</value>
+  </data>
+  <data name="Factor_15" xml:space="preserve">
+    <value>Modelo de negócios</value>
+  </data>
+  <data name="Factor_16" xml:space="preserve">
+    <value>"Número de MVPs Em qual versão do MVP está agora - ""pivotagem""."</value>
+  </data>
+  <data name="Factor_17" xml:space="preserve">
+    <value>"Integração com a cadeia de suprimentos"</value>
+  </data>
+  <data name="Factor_18" xml:space="preserve">
+    <value>Tempo de existência da empresa</value>
+  </data>
+  <data name="Factor_19" xml:space="preserve">
+    <value>Patentes</value>
+  </data>
+  <data name="Factor_20" xml:space="preserve">
+    <value>Negativação</value>
+  </data>
+  <data name="Factor_21" xml:space="preserve">
+    <value>Linhas de créditos bancária</value>
+  </data>
+  <data name="Factor_22" xml:space="preserve">
+    <value>Investimento com capital próprio dos sócios empreendedores</value>
+  </data>
+  <data name="Factor_23" xml:space="preserve">
+    <value>Investimento com capital próprio dos sócios investidores - anjos e você</value>
+  </data>
+  <data name="Question_1" xml:space="preserve">
+    <value>Cadastro Preenchido</value>
+  </data>
+  <data name="Question_2" xml:space="preserve">
+    <value>Dedicação Integral</value>
+  </data>
+  <data name="Question_3" xml:space="preserve">
+    <value>Dos sócios quantos tiveram empreendedores na família? Considere apenas pai, mãe, avós e irmãos.</value>
+  </data>
+  <data name="Question_4" xml:space="preserve">
+    <value>Qual o grau de escolaridade de cada sócio? Fazer menu de escolha para ensino médio / graduação / MBA / Mestrado / Doutorado</value>
+  </data>
+  <data name="Question_5" xml:space="preserve">
+    <value>Idade de cada sócio? Quantos anos de experiência profissional de cada sócio? Considerar áreas: vendas, mkt, administrativa, finanças, operações ou TI</value>
+  </data>
+  <data name="Question_6" xml:space="preserve">
+    <value>Quantas startups cada sócios já teve? Qual o ramo de atividade de cada startup? Utilize a classificação da pergunta 8 Quantos anos duraram cada startup?</value>
+  </data>
+  <data name="Question_7" xml:space="preserve">
+    <value>Os sócios já trabalharam juntos? Durante quantos anos?
+    </value>
+  </data>
+  <data name="Question_8" xml:space="preserve">
+    <value>Quantas pessoas compõe a startup sem considerar os sócios? Assinalea função de cada colaborador. Opções: - Vendas; Marketing; Finanças; RH; Operações; TI: Outros (especificar). Quantos anos de experiência tem cada pessoa na função (questão anterior)?</value>
+  </data>
+  <data name="Question_9" xml:space="preserve">
+    <value>Quantas pessoas, sem considerar os sócios, estão dedicadas às vendas? Quantos anos de expeirência em vendas tem cada uma?</value>
+  </data>
+  <data name="Question_10" xml:space="preserve">
+    <value>Qual a graduação de cada pessoa da equipe? Opções: - Administração, economia, contabilidade, engenharia, análise de sistema, ciência da computação, psicologia, marketing, relações internacionais, biologia, química,física, matemática, estatística, design, moda, medicina, direito, odontologia, pedagogia, outra (especificar).</value>
+  </data>
+  <data name="Question_11" xml:space="preserve">
+    <value>Utilizar o resultado da pergunta 3</value>
+  </data>
+  <data name="Question_12" xml:space="preserve">
+    <value>Quantos competidores diretos a empresa possui? Cite-os nominalmente. Incluir o site</value>
+  </data>
+  <data name="Question_13" xml:space="preserve">
+    <value>25) Quantos produtos a empresa oferece? 26) Cite-os nominalmente. 27) Em quantos mercados a empresa atua diretamente? 28) Cite-os nominalmente.</value>
+  </data>
+  <data name="Question_14" xml:space="preserve">
+    <value>29) Qual o seu modelo de negócios? Opções:</value>
+  </data>
+  <data name="Question_15" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Question_16" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Question_17" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Question_18" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Question_19" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Question_20" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Question_21" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Question_22" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Question_23" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Desc_1" xml:space="preserve">
+    <value>Atribuir 1 ponto para cada sócio com dedicação em tempo integral , limitado a 2 pontos no total.</value>
+  </data>
+  <data name="Desc_2" xml:space="preserve">
+    <value>Atribuir 1 ponto para cada sócio com parentes próximos (pai, mãe, avós, irmaõs) empreendedores  , limitado a 2 pontos no total.</value>
+  </data>
+  <data name="Desc_3" xml:space="preserve">
+    <value>Atribuir 1 ponto para cada sócio com ensino superior e 2 pontos para MBA ou mestrado , limitado a 3 pontos no total.</value>
+  </data>
+  <data name="Desc_4" xml:space="preserve">
+    <value>Atribuir 1 ponto para cada 5 anos de experiência profissional  de cada sócio  em qualquer área, limitado a 4 pontos.</value>
+  </data>
+  <data name="Desc_5" xml:space="preserve">
+    <value>Atribuir 1 ponto para cada 3 anos de experiência profissional  de cada sócio  na área da startup, limitado a 4 pontos.</value>
+  </data>
+  <data name="Desc_6" xml:space="preserve">
+    <value>Atribuir 1 ponto para cada 5 anos de amizade entre os sócios , limitado a 2 pontos.</value>
+  </data>
+  <data name="Desc_7" xml:space="preserve">
+    <value>Atribuir 1 ponto para cada 2.000 contatos no LinkedIn de cada sócio , limitado a 3 pontos.</value>
+  </data>
+  <data name="Desc_8" xml:space="preserve">
+    <value>Atribuir 1 ponto para cada 3 anos de experiência profissional  de cada colaboorador  na área da startup, limitado a 4 pontos.</value>
+  </data>
+  <data name="Desc_9" xml:space="preserve">
+    <value>Atribuir 1 ponto para cada 5 anos de experiência profissional  de cada colaboorador  na área da marketing ou vendas, limitado a 4 pontos.</value>
+  </data>
+  <data name="Desc_10" xml:space="preserve">
+    <value>Atribuir 1 ponto para cada 3 diferentes formações profissionais, limitado a 2 pontos.</value>
+  </data>
+  <data name="Desc_11" xml:space="preserve">
+    <value>
+			SP = 3 pontos;
+			MG, RJ, RS, PR e SC = 2 pontos;
+			Outros = 1 ponto.</value>
+  </data>
+  <data name="Desc_12" xml:space="preserve">
+    <value>
+			0 a 5 competidores = 1 ponto;
+			6 a 10 competidores = 2 pontos;
+			11 ou mais competidores = 0 pontos.</value>
+  </data>
+  <data name="Desc_13" xml:space="preserve">
+    <value>
+			1 produto em 1 mercado = 1 ponto
+			2 produtos em 1 mercado = 2 pontos
+			2 produtos em 2 mercados = 3 pontos
+			3 produtos em 3 mercados = 4 pontos
+			4 ou mais prods / mercados  = 5 pontos.</value>
+  </data>
+  <data name="Desc_14" xml:space="preserve">
+    <value>
+			B2B= 3 pontos;
+			B2C e Market Place = 0 pontos;
+			Outros = 1 ponto</value>
+  </data>
+  <data name="Desc_15" xml:space="preserve">
+    <value>
+			Assinatura mensal= 3 pontos;
+			Propaganda  = 0 pontos; 
+			Outros = 1 ponto.</value>
+  </data>
+  <data name="Desc_16" xml:space="preserve">
+    <value>
+			1 MVP= 1 ponto;
+			2 MVPs  = 4 pontos;
+			3 MVPs = 7 ponto.;
+			4 ou mais MVPs = 10 pontos.</value>
+  </data>
+  <data name="Desc_17" xml:space="preserve">
+    <value>
+			0 - 1 parceiros estratégicos = 1 ponto;
+			2 parceiros estr.</value>
+  </data>
+  <data name="Desc_18" xml:space="preserve">
+    <value>
+			Menos de 1 ano = 2 pontos;
+			1 a 2 anos = 5 pontos; 
+			3 anos = 7 pontos.;
+			4 ou mais = 10 pontos.</value>
+  </data>
+  <data name="Desc_19" xml:space="preserve">
+    <value>
+			0 patentes = 0 pontos;
+			1 patente = 3 pontos; 
+			2 ou mais patentes = 4 pontos.</value>
+  </data>
+  <data name="Desc_20" xml:space="preserve">
+    <value>
+			Sem negativação = 5 pontos;
+			Com negativação =  - 30 pontos (negativos).</value>
+  </data>
+  <data name="Desc_21" xml:space="preserve">
+    <value>
+			R$ 0 em linhas bancárias = 0 pontos;
+			Até R$ 50.000,00 em linhas = 3 pontos; 
+			Mais de R$ 50 mil em linhas = 5 pontos.</value>
+  </data>
+  <data name="Desc_22" xml:space="preserve">
+    <value>
+			Até R$ 100.000,00 = 3 pontos; 
+			De R$ 100 mil a R$ 300 mil = 5 pontos
+			Mais de R$ 300 mil = 8 pontos.</value>
+  </data>
+  <data name="Desc_23" xml:space="preserve">
+    <value>
+			Até R$ 100.000,00 = 3 pontos; 
+			De R$ 100 mil a R$ 300 mil = 5 pontos
+			Mais de R$ 300 mil = 8 pontos.</value>
+  </data>
+  <data name="lblQuiz" xml:space="preserve">
+    <value>Quiz</value>
+  </data>
+  <data name="lblEnterprise" xml:space="preserve">
+    <value>Enterprise</value>
+  </data>
+  <data name="lblPartner" xml:space="preserve">
+    <value>Partner</value>
+  </data>
+  <data name="lblEntrepreneur" xml:space="preserve">
+    <value>Entrepreneur</value>
+  </data>
+  <data name="lblPartners" xml:space="preserve">
+    <value>Partners</value>
+  </data>
+  <data name="lblEntrepreneurs" xml:space="preserve">
+    <value>Entrepreneurs</value>
+  </data>
+  <data name="lblAnswers" xml:space="preserve">
+    <value>Answers</value>
+  </data>
+  <data name="lblIsPendingApproval" xml:space="preserve">
+    <value>Is Pending Approval?</value>
+  </data>
+  <data name="lblTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="lblNumber" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="lblPoints" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="lblQuestions" xml:space="preserve">
+    <value>Questions</value>
+  </data>
+  <data name="lblName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="lblCreated" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="lblCreator" xml:space="preserve">
+    <value>Creator</value>
+  </data>
+  <data name="lblLastUpdate" xml:space="preserve">
+    <value>Last Update</value>
+  </data>
+  <data name="lblUserLastUpdate" xml:space="preserve">
+    <value>Last Update By</value>
+  </data>
+  <data name="lblCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="lblFactor" xml:space="preserve">
+    <value>Factor</value>
+  </data>
+  <data name="lblQuestion" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="lblDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblMaxPoints" xml:space="preserve">
+    <value>Max Points</value>
+  </data>
+  <data name="RequiredMaxPoints" xml:space="preserve">
+    <value>Max Points are required.</value>
+  </data>
+  <data name="lblIsExclusiveDedication" xml:space="preserve">
+    <value>Is Exclusive Dedication to Startup?</value>
+  </data>
+  <data name="lblHasRelativesEntrepreneurs" xml:space="preserve">
+    <value>Has Relatives Entrepreneurs?(Consider only grandparents, parents and siblings)</value>
+  </data>
+  <data name="lblExperience" xml:space="preserve">
+    <value>Experience.</value>
+  </data>
+  <data name="lblRating" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="lblValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="strengthButtonText" xml:space="preserve">
+    <value>Show password</value>
+  </data>
+  <data name="strengthButtonTextToggle" xml:space="preserve">
+    <value>Hide Password</value>
+  </data>
+  <data name="strengthVeryWeak" xml:space="preserve">
+    <value>Strength: very weak</value>
+  </data>
+  <data name="strengthWeak" xml:space="preserve">
+    <value>Strength: weak</value>
+  </data>
+  <data name="strengthMedium" xml:space="preserve">
+    <value>Strength: medium</value>
+  </data>
+  <data name="strengthStrong" xml:space="preserve">
+    <value>Strength: strong</value>
+  </data>
+  <data name="enumDriverLicense" xml:space="preserve">
+    <value>Driver License</value>
+  </data>
+</root>
