@@ -5,10 +5,10 @@ import NavFooter from './NavFooter';
 
 export default (props: { children?: React.ReactNode }) => (
     <React.Fragment>
-        <NavMenu/>
+        <NavMenu />
         <Container>
             {props.children}
-        </Container> 
-        <NavFooter/>
+        </Container>
+        <NavFooter />
     </React.Fragment>
 );

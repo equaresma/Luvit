@@ -5,7 +5,7 @@ import 'primeflex/primeflex.css';
 import { Steps } from 'primereact/steps';
 import { Trans } from 'react-i18next';
 
-export class Details extends Component {
+export class SetupStore extends Component {
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
@@ -31,20 +31,6 @@ export class Details extends Component {
                                 <small id="username2-help" className="p-invalid p-d-block">Username is obligatory.</small>
                             </span>
                         </div>
-                        <div className="p-fluid">
-                            <span className="p-float-label">
-                                <InputText id="fantasyName" onChange={handleChange('fantasyName')} defaultValue={values.fantasyName} type="text" aria-describedby="userfantasyName2-help" className="p-invalid p-d-block" />
-                                <label htmlFor="fantasyName">Name</label>
-                                <small id="userfantasyName2-help" className="p-invalid p-d-block">UserfantasyName is obligatory.</small>
-                            </span>
-                        </div>
-                        <div className="p-fluid">
-                            <span className="p-float-label">
-                                <InputText id="documentNumber" onChange={handleChange('documentNumber')} defaultValue={values.documentNumber} type="text" aria-describedby="userdocumentNumber2-help" className="p-invalid p-d-block" />
-                                <label htmlFor="documentNumber">Name</label>
-                                <small id="userdocumentNumber2-help" className="p-invalid p-d-block">DocumentNumber is obligatory.</small>
-                            </span>
-                        </div>
                         <br />
                         <Button
                             label="Continue"
@@ -58,4 +44,4 @@ export class Details extends Component {
     }
 }
 
-export default Details
+export default SetupStore

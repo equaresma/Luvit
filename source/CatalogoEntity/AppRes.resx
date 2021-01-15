@@ -120,15 +120,6 @@
   <data name="sysLang" xml:space="preserve">
     <value>en-UK</value>
   </data>
-  <data name="cvRodolfo" xml:space="preserve">
-    <value>He holds a post-graduate degree in finance from EPGE-FGV (2001) and an undergraduate degree in Business Administration from Fundação Getulio Vargas - SP (1997). Currently he is the coordinator of the undergraduate course at FFIA - Faculdade FIA ​​de Administração e Negócios, maintained Fundação Instituto de Administração, as well as professor of the Graduate and of the Professional Masters in Business Management of this same institution. Research the following areas: franchising, entrepreneurship, corporate and market finance, complexity theory, risk and related border issues. He has twice been awarded the prize for best academic work of the year on franchises by the Brazilian Franchising Association (ABF) for his doctoral thesis (2015) and his master's dissertation (2012). He was a business consultant at McKinsey &amp; company, an executive in mobile phone, electric power and education companies. He also works as an academic director of MacPoli Professional Courses and collaborates in topics such as entrepreneurship and finance with the magazines PEGN - Small Business &amp; Big Business, Superinteressante and Você SA.</value>
-  </data>
-  <data name="cvParada" xml:space="preserve">
-    <value>For more than 30 years, he has been an IT, Project Specialist, Consultant, Entrepreneur and Systems Development Consultant for 14 years as a lecturer at USP, FIA, FAAP and FAM for 6 years in initiatives to foster entrepreneurship and innovation as a teacher , Mentor and entrepreneur. Created and developed the methodology for the guidance of companies and professionals "Descomplicando Carreiras", created and manages the group Amigos Indicam Amigos on facebook that encourages professional relocation. Master's degree in business management, with an MBA in project management and a degree in business administration and systems analysis.</value>
-  </data>
-  <data name="cvQuaresma" xml:space="preserve">
-    <value>Systems Architect and Scrum Master, a professional with more than 20 years of experience in project development for the financial and retail market. Graduated in Business Administration and Postgraduate in Architecture of Solutions.</value>
-  </data>
   <data name="msgInvalidCnpjLenght" xml:space="preserve">
     <value>The CNPJ number must consist of 14 numeric characters.</value>
   </data>
@@ -168,24 +159,6 @@
   <data name="msgOurValues" xml:space="preserve">
     <value>We believe in the power of technology to turn dreams into reality, to unite ideas and investment opportunities.</value>
   </data>
-  <data name="msgMainTit_1" xml:space="preserve">
-    <value>Our team</value>
-  </data>
-  <data name="msgMainMsg_1" xml:space="preserve">
-    <value>Our team is composed by highly qualified professionals with academic and marketing experience ready to assist you as an entrepreneur or investor.</value>
-  </data>
-  <data name="msgMainTit_2" xml:space="preserve">
-    <value>Risks</value>
-  </data>
-  <data name="msgMainMsg_2" xml:space="preserve">
-    <value>In 100 startups only 1 can continue to operate, our job is to analyze data from entrepreneurs and startups so then classify them in order to give the best option for investors.</value>
-  </data>
-  <data name="msgMainTit_3" xml:space="preserve">
-    <value>Bigdata</value>
-  </data>
-  <data name="msgMainMsg_3" xml:space="preserve">
-    <value>We get data information from startups and entrepreneurs who want to raise funds for their companies. Data is processed, sorted and cross-referenced with digital media information.</value>
-  </data>
   <data name="msgAccessDenied" xml:space="preserve">
     <value>Access Denied.</value>
   </data>
@@ -204,9 +177,6 @@
   <data name="msgUnderConstruction" xml:space="preserve">
     <value>Under Construction</value>
   </data>
-  <data name="msgMaxPoint" xml:space="preserve">
-    <value>The Max Points for Question Number {0} is {1}. You typed {2}.</value>
-  </data>
   <data name="msgTypeEntrepreunerName" xml:space="preserve">
     <value>Type the entrepreuner name to search</value>
   </data>
@@ -216,26 +186,11 @@
   <data name="msgIsAlreadyBought" xml:space="preserve">
     <value>You already bought this Event</value>
   </data>
-  <data name="msgMissingStartupRegistry" xml:space="preserve">
-    <value>There is no registered startup.</value>
-  </data>
   <data name="msgNoEvents" xml:space="preserve">
     <value>No events available.</value>
   </data>
   <data name="msgInvalidDocumentType" xml:space="preserve">
     <value>Invalid Document Type.</value>
-  </data>
-  <data name="cmdNewEntrepreuner" xml:space="preserve">
-    <value>New entrepreuner</value>
-  </data>
-  <data name="cmdNewEnterprise" xml:space="preserve">
-    <value>New startup</value>
-  </data>
-  <data name="cmdNewEvent" xml:space="preserve">
-    <value>New event</value>
-  </data>
-  <data name="cmdBuy" xml:space="preserve">
-    <value>Buy</value>
   </data>
   <data name="frmDate" xml:space="preserve">
     <value>MM/dd/yyyy</value>
@@ -252,7 +207,7 @@
   <data name="enumInvestor" xml:space="preserve">
     <value>Investor</value>
   </data>
-  <data name="enumDocRG" xml:space="preserve">
+  <data name="enumDocID" xml:space="preserve">
     <value>ID</value>
   </data>
   <data name="enumDocCPF" xml:space="preserve">
@@ -264,8 +219,8 @@
   <data name="enumDocPassport" xml:space="preserve">
     <value>Passport</value>
   </data>
-  <data name="enumDocCNPJ" xml:space="preserve">
-    <value>CNPJ</value>
+  <data name="enumDocIF" xml:space="preserve">
+    <value>EIN</value>
   </data>
   <data name="enumGenderFemale" xml:space="preserve">
     <value>Female</value>
@@ -287,30 +242,6 @@
   </data>
   <data name="enumMaritalStsWidowed" xml:space="preserve">
     <value>Widowed</value>
-  </data>
-  <data name="enumBmSubscriptions" xml:space="preserve">
-    <value>Subscriptions</value>
-  </data>
-  <data name="enumBmB2B" xml:space="preserve">
-    <value>B2B</value>
-  </data>
-  <data name="enumBmB2C" xml:space="preserve">
-    <value>B2C</value>
-  </data>
-  <data name="enumBmC2C" xml:space="preserve">
-    <value>C2C</value>
-  </data>
-  <data name="enumBmMarketplace" xml:space="preserve">
-    <value>Marketplace</value>
-  </data>
-  <data name="enumBmOther" xml:space="preserve">
-    <value>Other</value>
-  </data>
-  <data name="enumBmPublicity" xml:space="preserve">
-    <value>Publicity</value>
-  </data>
-  <data name="enumBmSocial" xml:space="preserve">
-    <value>Social</value>
   </data>
   <data name="enumEmCuriosity" xml:space="preserve">
     <value>Curiosity</value>
@@ -411,24 +342,6 @@
   <data name="enumQuizCategoryFinances" xml:space="preserve">
     <value>Finances</value>
   </data>
-  <data name="enumAreasSales" xml:space="preserve">
-    <value>Sales</value>
-  </data>
-  <data name="enumAreasMkt" xml:space="preserve">
-    <value>Market</value>
-  </data>
-  <data name="enumAreasAdm" xml:space="preserve">
-    <value>Administration</value>
-  </data>
-  <data name="enumAreasFinance" xml:space="preserve">
-    <value>Finance</value>
-  </data>
-  <data name="enumAreasOperations" xml:space="preserve">
-    <value>Operations</value>
-  </data>
-  <data name="enumAreasIT" xml:space="preserve">
-    <value>IT</value>
-  </data>
   <data name="enumDegreeHighSchool" xml:space="preserve">
     <value>HighSchool</value>
   </data>
@@ -446,39 +359,6 @@
   </data>
   <data name="enumPhD" xml:space="preserve">
     <value>PhD</value>
-  </data>
-  <data name="enumGb0_100000" xml:space="preserve">
-    <value>$0 - $100,000.00</value>
-  </data>
-  <data name="enumGb100001_900000" xml:space="preserve">
-    <value>$100,001.00 - $900,000.00</value>
-  </data>
-  <data name="enumGb900001_" xml:space="preserve">
-    <value>Greater than $900,001.00 </value>
-  </data>
-  <data name="enumIv0_100000" xml:space="preserve">
-    <value>$0 - $100,000.00</value>
-  </data>
-  <data name="enumIv100001_200000" xml:space="preserve">
-    <value>$100,001.00 - $200,000.00</value>
-  </data>
-  <data name="enumIv200001_300000" xml:space="preserve">
-    <value>$200,001.00 - $300,000.00</value>
-  </data>
-  <data name="enumIv300001_500000" xml:space="preserve">
-    <value>$300,001.00 - $500,000.00</value>
-  </data>
-  <data name="enumIv500001_" xml:space="preserve">
-    <value>Greater than $500,001.00 </value>
-  </data>
-  <data name="enumNp0_50000" xml:space="preserve">
-    <value>$0 - $50,000.00</value>
-  </data>
-  <data name="enumNp50001_200000" xml:space="preserve">
-    <value>$50,001.00 - $200,000.00</value>
-  </data>
-  <data name="enumNp200001_" xml:space="preserve">
-    <value>Greater than $200,001.00 </value>
   </data>
   <data name="enumCoursesNA" xml:space="preserve">
     <value>N.A.</value>
@@ -805,7 +685,7 @@
     <value>Local</value>
   </data>
   <data name="RequiredNumber" xml:space="preserve">
-    <value>Local is required</value>
+    <value>Number is required</value>
   </data>
   <data name="InvalidNumber" xml:space="preserve">
     <value>Number is invalid</value>
@@ -924,74 +804,8 @@
   <data name="msgInvestor" xml:space="preserve">
     <value>Sign up and find the startups according to your investment profile</value>
   </data>
-  <data name="mnuMyInfo" xml:space="preserve">
-    <value>MY INFO</value>
-  </data>
-  <data name="mnuMyStartups" xml:space="preserve">
-    <value>MY STARTUPS</value>
-  </data>
-  <data name="mnuMyOrders" xml:space="preserve">
-    <value>MY ORDERS</value>
-  </data>
-  <data name="mnuEvents" xml:space="preserve">
-    <value>EVENTS</value>
-  </data>
-  <data name="mnuRatings" xml:space="preserve">
-    <value>RATINGS</value>
-  </data>
-  <data name="mnuStartups" xml:space="preserve">
-    <value>STARTUPS</value>
-  </data>
-  <data name="mnuOrders" xml:space="preserve">
-    <value>ORDERS</value>
-  </data>
-  <data name="mnuEntrepreneurs" xml:space="preserve">
-    <value>ENTREPRENEURS</value>
-  </data>
-  <data name="mnuInvestors" xml:space="preserve">
-    <value>INVESTORS</value>
-  </data>
-  <data name="cmdSave" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="cmdCreate" xml:space="preserve">
-    <value>Create</value>
-  </data>
-  <data name="cmdBack" xml:space="preserve">
-    <value>Back</value>
-  </data>
-  <data name="cmdAddToCart" xml:space="preserve">
-    <value>Add to cart</value>
-  </data>
   <data name="Title" xml:space="preserve">
     <value>Rating Startup | Make business every where</value>
-  </data>
-  <data name="mnuCompany" xml:space="preserve">
-    <value>COMPANY</value>
-  </data>
-  <data name="mnuServices" xml:space="preserve">
-    <value>SERVICES</value>
-  </data>
-  <data name="mnuNews" xml:space="preserve">
-    <value>NOTICES</value>
-  </data>
-  <data name="mnuBusiness" xml:space="preserve">
-    <value>BUSINESS</value>
-  </data>
-  <data name="mnuContact" xml:space="preserve">
-    <value>CONTACT</value>
-  </data>
-  <data name="mnuRegistry" xml:space="preserve">
-    <value>REGISTRY</value>
-  </data>
-  <data name="mnuLogin" xml:space="preserve">
-    <value>LOGIN</value>
-  </data>
-  <data name="mnuHome" xml:space="preserve">
-    <value>HOME</value>
-  </data>
-  <data name="mnuLogOff" xml:space="preserve">
-    <value>LOGOFF</value>
   </data>
   <data name="lblConfPwd" xml:space="preserve">
     <value>Password Confirmation</value>
@@ -1088,255 +902,6 @@
   </data>
   <data name="hQuizSum" xml:space="preserve">
     <value>Somatória</value>
-  </data>
-  <data name="Factor_1" xml:space="preserve">
-    <value>Sócio em tempo integral</value>
-  </data>
-  <data name="Factor_2" xml:space="preserve">
-    <value>"Sócio advir de uma família com empreendedores"</value>
-  </data>
-  <data name="Factor_3" xml:space="preserve">
-    <value>Nível  de escolaridade</value>
-  </data>
-  <data name="Factor_4" xml:space="preserve">
-    <value>Capacitação / experiência em gestão</value>
-  </data>
-  <data name="Factor_5" xml:space="preserve">
-    <value>Experiência anterior no negócio</value>
-  </data>
-  <data name="Factor_6" xml:space="preserve">
-    <value>Sintonia entre sócios</value>
-  </data>
-  <data name="Factor_7" xml:space="preserve">
-    <value>Capital social (networking)</value>
-  </data>
-  <data name="Factor_8" xml:space="preserve">
-    <value>Experiência anterior no negócio da equipe, sem considerar o empreendedor</value>
-  </data>
-  <data name="Factor_9" xml:space="preserve">
-    <value>Experiência anterior em marketing e vendas, sem considerar o empreendedor</value>
-  </data>
-  <data name="Factor_10" xml:space="preserve">
-    <value>Diversidade da equipe</value>
-  </data>
-  <data name="Factor_11" xml:space="preserve">
-    <value>Estado brasileiro - sede</value>
-  </data>
-  <data name="Factor_12" xml:space="preserve">
-    <value>Número de competidores diretos</value>
-  </data>
-  <data name="Factor_13" xml:space="preserve">
-    <value>"Escopo de marketing(Variedade de consumidores, mercados e produtos)"</value>
-  </data>
-  <data name="Factor_14" xml:space="preserve">
-    <value>Ramo de atuação</value>
-  </data>
-  <data name="Factor_15" xml:space="preserve">
-    <value>Modelo de negócios</value>
-  </data>
-  <data name="Factor_16" xml:space="preserve">
-    <value>"Número de MVPs Em qual versão do MVP está agora - ""pivotagem""."</value>
-  </data>
-  <data name="Factor_17" xml:space="preserve">
-    <value>"Integração com a cadeia de suprimentos"</value>
-  </data>
-  <data name="Factor_18" xml:space="preserve">
-    <value>Tempo de existência da empresa</value>
-  </data>
-  <data name="Factor_19" xml:space="preserve">
-    <value>Patentes</value>
-  </data>
-  <data name="Factor_20" xml:space="preserve">
-    <value>Negativação</value>
-  </data>
-  <data name="Factor_21" xml:space="preserve">
-    <value>Linhas de créditos bancária</value>
-  </data>
-  <data name="Factor_22" xml:space="preserve">
-    <value>Investimento com capital próprio dos sócios empreendedores</value>
-  </data>
-  <data name="Factor_23" xml:space="preserve">
-    <value>Investimento com capital próprio dos sócios investidores - anjos e você</value>
-  </data>
-  <data name="Question_1" xml:space="preserve">
-    <value>Cadastro Preenchido</value>
-  </data>
-  <data name="Question_2" xml:space="preserve">
-    <value>Dedicação Integral</value>
-  </data>
-  <data name="Question_3" xml:space="preserve">
-    <value>Dos sócios quantos tiveram empreendedores na família? Considere apenas pai, mãe, avós e irmãos.</value>
-  </data>
-  <data name="Question_4" xml:space="preserve">
-    <value>Qual o grau de escolaridade de cada sócio? Fazer menu de escolha para ensino médio / graduação / MBA / Mestrado / Doutorado</value>
-  </data>
-  <data name="Question_5" xml:space="preserve">
-    <value>Idade de cada sócio? Quantos anos de experiência profissional de cada sócio? Considerar áreas: vendas, mkt, administrativa, finanças, operações ou TI</value>
-  </data>
-  <data name="Question_6" xml:space="preserve">
-    <value>Quantas startups cada sócios já teve? Qual o ramo de atividade de cada startup? Utilize a classificação da pergunta 8 Quantos anos duraram cada startup?</value>
-  </data>
-  <data name="Question_7" xml:space="preserve">
-    <value>Os sócios já trabalharam juntos? Durante quantos anos?
-    </value>
-  </data>
-  <data name="Question_8" xml:space="preserve">
-    <value>Quantas pessoas compõe a startup sem considerar os sócios? Assinalea função de cada colaborador. Opções: - Vendas; Marketing; Finanças; RH; Operações; TI: Outros (especificar). Quantos anos de experiência tem cada pessoa na função (questão anterior)?</value>
-  </data>
-  <data name="Question_9" xml:space="preserve">
-    <value>Quantas pessoas, sem considerar os sócios, estão dedicadas às vendas? Quantos anos de expeirência em vendas tem cada uma?</value>
-  </data>
-  <data name="Question_10" xml:space="preserve">
-    <value>Qual a graduação de cada pessoa da equipe? Opções: - Administração, economia, contabilidade, engenharia, análise de sistema, ciência da computação, psicologia, marketing, relações internacionais, biologia, química,física, matemática, estatística, design, moda, medicina, direito, odontologia, pedagogia, outra (especificar).</value>
-  </data>
-  <data name="Question_11" xml:space="preserve">
-    <value>Utilizar o resultado da pergunta 3</value>
-  </data>
-  <data name="Question_12" xml:space="preserve">
-    <value>Quantos competidores diretos a empresa possui? Cite-os nominalmente. Incluir o site</value>
-  </data>
-  <data name="Question_13" xml:space="preserve">
-    <value>25) Quantos produtos a empresa oferece? 26) Cite-os nominalmente. 27) Em quantos mercados a empresa atua diretamente? 28) Cite-os nominalmente.</value>
-  </data>
-  <data name="Question_14" xml:space="preserve">
-    <value>29) Qual o seu modelo de negócios? Opções:</value>
-  </data>
-  <data name="Question_15" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Question_16" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Question_17" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Question_18" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Question_19" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Question_20" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Question_21" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Question_22" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Question_23" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Desc_1" xml:space="preserve">
-    <value>Atribuir 1 ponto para cada sócio com dedicação em tempo integral , limitado a 2 pontos no total.</value>
-  </data>
-  <data name="Desc_2" xml:space="preserve">
-    <value>Atribuir 1 ponto para cada sócio com parentes próximos (pai, mãe, avós, irmaõs) empreendedores  , limitado a 2 pontos no total.</value>
-  </data>
-  <data name="Desc_3" xml:space="preserve">
-    <value>Atribuir 1 ponto para cada sócio com ensino superior e 2 pontos para MBA ou mestrado , limitado a 3 pontos no total.</value>
-  </data>
-  <data name="Desc_4" xml:space="preserve">
-    <value>Atribuir 1 ponto para cada 5 anos de experiência profissional  de cada sócio  em qualquer área, limitado a 4 pontos.</value>
-  </data>
-  <data name="Desc_5" xml:space="preserve">
-    <value>Atribuir 1 ponto para cada 3 anos de experiência profissional  de cada sócio  na área da startup, limitado a 4 pontos.</value>
-  </data>
-  <data name="Desc_6" xml:space="preserve">
-    <value>Atribuir 1 ponto para cada 5 anos de amizade entre os sócios , limitado a 2 pontos.</value>
-  </data>
-  <data name="Desc_7" xml:space="preserve">
-    <value>Atribuir 1 ponto para cada 2.000 contatos no LinkedIn de cada sócio , limitado a 3 pontos.</value>
-  </data>
-  <data name="Desc_8" xml:space="preserve">
-    <value>Atribuir 1 ponto para cada 3 anos de experiência profissional  de cada colaboorador  na área da startup, limitado a 4 pontos.</value>
-  </data>
-  <data name="Desc_9" xml:space="preserve">
-    <value>Atribuir 1 ponto para cada 5 anos de experiência profissional  de cada colaboorador  na área da marketing ou vendas, limitado a 4 pontos.</value>
-  </data>
-  <data name="Desc_10" xml:space="preserve">
-    <value>Atribuir 1 ponto para cada 3 diferentes formações profissionais, limitado a 2 pontos.</value>
-  </data>
-  <data name="Desc_11" xml:space="preserve">
-    <value>
-			SP = 3 pontos;
-			MG, RJ, RS, PR e SC = 2 pontos;
-			Outros = 1 ponto.</value>
-  </data>
-  <data name="Desc_12" xml:space="preserve">
-    <value>
-			0 a 5 competidores = 1 ponto;
-			6 a 10 competidores = 2 pontos;
-			11 ou mais competidores = 0 pontos.</value>
-  </data>
-  <data name="Desc_13" xml:space="preserve">
-    <value>
-			1 produto em 1 mercado = 1 ponto
-			2 produtos em 1 mercado = 2 pontos
-			2 produtos em 2 mercados = 3 pontos
-			3 produtos em 3 mercados = 4 pontos
-			4 ou mais prods / mercados  = 5 pontos.</value>
-  </data>
-  <data name="Desc_14" xml:space="preserve">
-    <value>
-			B2B= 3 pontos;
-			B2C e Market Place = 0 pontos;
-			Outros = 1 ponto</value>
-  </data>
-  <data name="Desc_15" xml:space="preserve">
-    <value>
-			Assinatura mensal= 3 pontos;
-			Propaganda  = 0 pontos; 
-			Outros = 1 ponto.</value>
-  </data>
-  <data name="Desc_16" xml:space="preserve">
-    <value>
-			1 MVP= 1 ponto;
-			2 MVPs  = 4 pontos;
-			3 MVPs = 7 ponto.;
-			4 ou mais MVPs = 10 pontos.</value>
-  </data>
-  <data name="Desc_17" xml:space="preserve">
-    <value>
-			0 - 1 parceiros estratégicos = 1 ponto;
-			2 parceiros estr.</value>
-  </data>
-  <data name="Desc_18" xml:space="preserve">
-    <value>
-			Menos de 1 ano = 2 pontos;
-			1 a 2 anos = 5 pontos; 
-			3 anos = 7 pontos.;
-			4 ou mais = 10 pontos.</value>
-  </data>
-  <data name="Desc_19" xml:space="preserve">
-    <value>
-			0 patentes = 0 pontos;
-			1 patente = 3 pontos; 
-			2 ou mais patentes = 4 pontos.</value>
-  </data>
-  <data name="Desc_20" xml:space="preserve">
-    <value>
-			Sem negativação = 5 pontos;
-			Com negativação =  - 30 pontos (negativos).</value>
-  </data>
-  <data name="Desc_21" xml:space="preserve">
-    <value>
-			R$ 0 em linhas bancárias = 0 pontos;
-			Até R$ 50.000,00 em linhas = 3 pontos; 
-			Mais de R$ 50 mil em linhas = 5 pontos.</value>
-  </data>
-  <data name="Desc_22" xml:space="preserve">
-    <value>
-			Até R$ 100.000,00 = 3 pontos; 
-			De R$ 100 mil a R$ 300 mil = 5 pontos
-			Mais de R$ 300 mil = 8 pontos.</value>
-  </data>
-  <data name="Desc_23" xml:space="preserve">
-    <value>
-			Até R$ 100.000,00 = 3 pontos; 
-			De R$ 100 mil a R$ 300 mil = 5 pontos
-			Mais de R$ 300 mil = 8 pontos.</value>
   </data>
   <data name="lblQuiz" xml:space="preserve">
     <value>Quiz</value>
@@ -1442,5 +1007,8 @@
   </data>
   <data name="enumDriverLicense" xml:space="preserve">
     <value>Driver License</value>
+  </data>
+  <data name="txtOthers" xml:space="preserve">
+    <value>Others</value>
   </data>
 </root>

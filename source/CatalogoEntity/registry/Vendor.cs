@@ -24,6 +24,10 @@ namespace com.luvinbox.model.registry
         [DataType(DataType.Date)]
         [Display(Name = "lblFoundedIn", ResourceType = typeof(AppRes))]
         public DateTime FoundedIn { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
+        [DataType(DataType.Text)]
+        [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
+        public Document DocumentNumber { get; set; } 
         public string LogoURL { get; set; }
         public string WebSite { get; set; }
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredEmail", ErrorMessageResourceType = typeof(AppRes))]

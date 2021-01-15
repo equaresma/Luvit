@@ -7,8 +7,10 @@ namespace com.luvinbox.model.enums
 {
 	public enum enumDocumentType : int
 	{
-		[Display(Name = "enumDocRG", ResourceType = typeof(AppRes))]
-		enumDocTypeRG = 0,
+		[Display(Name = "txtOthers", ResourceType = typeof(AppRes))]
+		enumDocOthers = -1,
+		[Display(Name = "enumDocID", ResourceType = typeof(AppRes))]
+		enumDocTypeID = 0,
 		[Display(Name = "enumDocCPF", ResourceType = typeof(AppRes))]
 		enumDocTypeCPF = 1,
 		[Display(Name = "enumDocRNE", ResourceType = typeof(AppRes))]
@@ -17,7 +19,10 @@ namespace com.luvinbox.model.enums
 		enumDocTypePassport = 3,
 		[Display(Name = "enumDriverLicense", ResourceType = typeof(AppRes))]
 		enumDocTypeDriverLicense = 4,
-		[Display(Name = "enumDocCNPJ", ResourceType = typeof(AppRes))]
+		//IF: Instituição Financeira
+		//CNPJ: Cadastro Nacional de Pessoa Jurídica
+		//EIN: Employer Identification Number que é o registro da sua empresa junto a receita federal Americana.
+		[Display(Name = "enumDocIF", ResourceType = typeof(AppRes))]
 		enumDocCNPJ = 5,
 	}
 }

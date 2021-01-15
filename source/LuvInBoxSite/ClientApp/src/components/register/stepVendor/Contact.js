@@ -2,6 +2,7 @@
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import 'primeflex/primeflex.css';
+import { Steps } from 'primereact/steps';
 
 export class Contact extends Component {
     continue = e => {
@@ -15,26 +16,34 @@ export class Contact extends Component {
     }
 
     render() {
-        const { values, handleChange } = this.props;
+        const { values, handleChange, stepItems, currentStep } = this.props;
 
         return (
             <React.Fragment>
-                <div className="p-grid p-fluid">
+                <div>
+                    <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
+                    <br />
+                </div>
+                <div className="p-fluid">
                     <div className="p-field">
-                        <label htmlFor="contact">Name</label></div>
-                    <InputText id="contact" onChange={handleChange('contact')} defaultValue={values.contact} />
+                        <label htmlFor="contact">Contact Name</label>
+                        <InputText id="contact" onChange={handleChange('contact')} defaultValue={values.contact} />
+                    </div>
                 </div>
                 <br />
-                <Button
-                    label="Continue"
-                    type="button"
-                    onClick={this.continue}
-                />
-                <Button
-                    label="Back"
-                    type="button"
-                    onClick={this.back}
-                />
+                <div className="p-formgroup-inline">
+                    <Button
+                        label="Continue"
+                        type="button"
+                        onClick={this.continue}
+                    />
+                    <Button
+                        style={{ marginLeft: "10px" }}
+                        label="Back"
+                        type="button"
+                        onClick={this.back}
+                    />
+                </div>
             </React.Fragment >
         )
     }

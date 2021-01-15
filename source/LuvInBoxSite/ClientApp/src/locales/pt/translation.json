@@ -6,5 +6,10 @@
   "footer_be_vendor": "Seja um Fornecedor",
   "footer_vendors_area": "Área dos Fornecedores",
   "who_wew_are_titile": "Olá.",
-  "vendors_title": "Cadastro de Fornecedores"
+  "vendors_title": "Cadastro de Fornecedores",
+  "general_info": "Informações Gerais",
+  "address": "Endereço",
+  "setup_store": "Configuração da Loja",
+  "comercial_contact": "Contato Comercial",
+  "confirmation": "Confirmação"
 }

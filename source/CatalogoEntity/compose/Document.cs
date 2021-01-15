@@ -1,12 +1,17 @@
 ﻿using com.luvinbox.model.enums;
+using ExpressiveAnnotations.Attributes;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.model.compose
 {
     public class Document { 
         public enumDocumentType Type { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
+        [DataType(DataType.Text)]
         public String Number { get; set; }
-
+        [RequiredIf("Type == enumDocumentType.enumDocOthers")]
+        public String Name { get; set; }
         public override int GetHashCode()
         {
             return Number.GetHashCode();
