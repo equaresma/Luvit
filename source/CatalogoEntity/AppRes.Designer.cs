@@ -700,60 +700,6 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Entrepreneur.
-        /// </summary>
-        internal static string enumQuizCategoryEntrepreneur {
-            get {
-                return ResourceManager.GetString("enumQuizCategoryEntrepreneur", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Finances.
-        /// </summary>
-        internal static string enumQuizCategoryFinances {
-            get {
-                return ResourceManager.GetString("enumQuizCategoryFinances", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Initial Category.
-        /// </summary>
-        internal static string enumQuizCategoryInitialCategory {
-            get {
-                return ResourceManager.GetString("enumQuizCategoryInitialCategory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Marketing and Oportunities.
-        /// </summary>
-        internal static string enumQuizCategoryMkt_Oportunities {
-            get {
-                return ResourceManager.GetString("enumQuizCategoryMkt_Oportunities", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Resources.
-        /// </summary>
-        internal static string enumQuizCategoryResources {
-            get {
-                return ResourceManager.GetString("enumQuizCategoryResources", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Team.
-        /// </summary>
-        internal static string enumQuizCategoryTeam {
-            get {
-                return ResourceManager.GetString("enumQuizCategoryTeam", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to User does not exist Or invalid password.
         /// </summary>
         internal static string errUserDoesNotExist {
@@ -1132,6 +1078,15 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Number.
+        /// </summary>
+        internal static string lblAccountNumber {
+            get {
+                return ResourceManager.GetString("lblAccountNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to City.
         /// </summary>
         internal static string lblAddCity {
@@ -1209,6 +1164,24 @@ namespace com.luvinbox.model {
         internal static string lblAnswers {
             get {
                 return ResourceManager.GetString("lblAnswers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank Branch.
+        /// </summary>
+        internal static string lblBankBranch {
+            get {
+                return ResourceManager.GetString("lblBankBranch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank Code.
+        /// </summary>
+        internal static string lblBankCode {
+            get {
+                return ResourceManager.GetString("lblBankCode", resourceCulture);
             }
         }
         
@@ -2397,6 +2370,33 @@ namespace com.luvinbox.model {
         internal static string msgUserAlreadyExists {
             get {
                 return ResourceManager.GetString("msgUserAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account number is Required.
+        /// </summary>
+        internal static string RequiredAccountNumber {
+            get {
+                return ResourceManager.GetString("RequiredAccountNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank branch is Required.
+        /// </summary>
+        internal static string RequiredBankBranch {
+            get {
+                return ResourceManager.GetString("RequiredBankBranch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank code is Required.
+        /// </summary>
+        internal static string RequiredBankCode {
+            get {
+                return ResourceManager.GetString("RequiredBankCode", resourceCulture);
             }
         }
         

@@ -6,7 +6,6 @@ import Counter from './components/Counter';
 import FetchData from './components/FetchData';
 import WhoWeAre from './components/institutional/whoweare';
 import VendorForm from './components/register/stepVendor/VendorForm';
-
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'

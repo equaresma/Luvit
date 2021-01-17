@@ -4,16 +4,14 @@ import Contact from './Contact';
 import Address from './Address';
 import SetupStore from './SetupStore';
 import Confirmation from './Confirmation';
-import { useTranslation } from 'react-i18next';
-
-const { t } = useTranslation();
+import { withTranslation } from 'react-i18next';
 
 const items = [
-    { label: t('general_info') },
-    { label: t('address') },
-    { label: t('setup_store') },
-    { label: t('comercial_contact') },
-    { label: t('confirmation') }
+    { label: 'general_info' },
+    { label: 'address' },
+    { label: 'setup_store' },
+    { label: 'comercial_contact' },
+    { label: 'confirmation' }
 ];
 
 export class VendorForm extends Component {
@@ -25,10 +23,15 @@ export class VendorForm extends Component {
         foundedIn: null,
         logoURL: '',
         webSite: '',
-        contact: '',
-        documentNumber: { type: 5, number: '', name: '' },
+        documentNumber: { "type": 5, number: '', name: '' },
         mainAddress: { local: '', number: 0, complement: '', city: '', state: '', zipCode: '' },
-        alternativeAddress: { local: '', number: 0, complement: '', city: '', state: '', zipCode: '' }
+        mainPhone: { countryCode: 0, localeCode: 0, number: 0 },
+        mobile: { countryCode: 0, localeCode: 0, number: 0 },
+        hasPhysicalStore: false,
+        contact: {
+            lastName: '', middleName: '', firstName: '', birthday: null, email: '', phone: { countryCode: 0, localeCode: 0, number: 0 }, mobile: { countryCode: 0, localeCode: 0, number: 0 }
+        },
+        bankInfo: { bankCode: '', bankBranch: '', accoundNumber: '', }
     }
 
     nextStep = () => {
@@ -75,8 +78,13 @@ export class VendorForm extends Component {
 
     render() {
         const { step } = this.state;
-        const { name, contact, mainAddress } = this.state;
-        const values = { name, contact, mainAddress };
+        const { name, fantasyName, foundedIn, logoURL, webSite, documentNumber, mainAddress, mainPhone, mobile, hasPhysicalStore, contact, bankInfo } = this.state;
+        const values = { name, fantasyName, foundedIn, logoURL, webSite, documentNumber, mainAddress, mainPhone, mobile, hasPhysicalStore, contact, bankInfo };
+        const { t } = this.props;
+        //translate values
+        for (var i in items) {
+            i = t(i);
+        }
 
         switch (step) {
             case 1:
@@ -130,5 +138,4 @@ export class VendorForm extends Component {
         }
     }
 }
-
-export default VendorForm
+export default withTranslation()(VendorForm)

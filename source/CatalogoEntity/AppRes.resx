@@ -324,24 +324,6 @@
   <data name="enumLbRetailAndEcommerce" xml:space="preserve">
     <value>Retail and E-commerce</value>
   </data>
-  <data name="enumQuizCategoryInitialCategory" xml:space="preserve">
-    <value>Initial Category</value>
-  </data>
-  <data name="enumQuizCategoryEntrepreneur" xml:space="preserve">
-    <value>Entrepreneur</value>
-  </data>
-  <data name="enumQuizCategoryTeam" xml:space="preserve">
-    <value>Team</value>
-  </data>
-  <data name="enumQuizCategoryMkt_Oportunities" xml:space="preserve">
-    <value>Marketing and Oportunities</value>
-  </data>
-  <data name="enumQuizCategoryResources" xml:space="preserve">
-    <value>Resources</value>
-  </data>
-  <data name="enumQuizCategoryFinances" xml:space="preserve">
-    <value>Finances</value>
-  </data>
   <data name="enumDegreeHighSchool" xml:space="preserve">
     <value>HighSchool</value>
   </data>
@@ -1010,5 +992,23 @@
   </data>
   <data name="txtOthers" xml:space="preserve">
     <value>Others</value>
+  </data>
+  <data name="lblAccountNumber" xml:space="preserve">
+    <value>Account Number</value>
+  </data>
+  <data name="lblBankBranch" xml:space="preserve">
+    <value>Bank Branch</value>
+  </data>
+  <data name="lblBankCode" xml:space="preserve">
+    <value>Bank Code</value>
+  </data>
+  <data name="RequiredAccountNumber" xml:space="preserve">
+    <value>Account number is Required</value>
+  </data>
+  <data name="RequiredBankBranch" xml:space="preserve">
+    <value>Bank branch is Required</value>
+  </data>
+  <data name="RequiredBankCode" xml:space="preserve">
+    <value>Bank code is Required</value>
   </data>
 </root>

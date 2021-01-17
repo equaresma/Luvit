@@ -39,6 +39,10 @@ namespace com.luvinbox.model.registry
         public Address AlternativeAddress { get; set; }
         public PhoneNumber MainPhone { get; set; }
         public PhoneNumber Mobile { get; set; }
+        public Boolean HasPhysicalStore { get; set; }
+        public VendorContact Contact { get; set; }
+        public BankInformation BankInfo { get; set; }
+
         public DateTime Created { get; set; }
         public string Creator { get; set; }
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
