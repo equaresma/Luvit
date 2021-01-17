@@ -57,13 +57,6 @@ export class VendorForm extends Component {
                     [target.name]: target.value
                 }
             }));
-        } else if (input === "alternativeAddress") {
-            this.setState(prev => ({
-                alternativeAddress: {
-                    ...prev.alternativeAddress,
-                    [target.name]: target.value
-                }
-            }));
         } else if (input === "documentNumber") {
             this.setState(prev => ({
                 documentNumber: {
@@ -72,7 +65,7 @@ export class VendorForm extends Component {
                 }
             }));
         } else {
-            this.setState({ [input]: target.value });
+            this.setState({ [input]: target.type === "checkbox" ? target.checked : target.value });
         }
     }
 
@@ -82,8 +75,8 @@ export class VendorForm extends Component {
         const values = { name, fantasyName, foundedIn, logoURL, webSite, documentNumber, mainAddress, mainPhone, mobile, hasPhysicalStore, contact, bankInfo };
         const { t } = this.props;
         //translate values
-        for (var i in items) {
-            i = t(i);
+        for (var i = 0; i < items.length; i++) {
+            items[i].label = t(items[i].label);
         }
 
         switch (step) {

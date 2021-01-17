@@ -5,7 +5,7 @@ import { Button } from 'primereact/button';
 import { Checkbox } from 'primereact/checkbox';
 import 'primeflex/primeflex.css';
 import { Steps } from 'primereact/steps';
-import { Trans, useTranslation } from 'react-i18next';
+import { Trans, withTranslation } from 'react-i18next';
 import { Form } from 'reactstrap';
 
 export class Address extends Component {
@@ -19,15 +19,8 @@ export class Address extends Component {
         this.props.prevStep();
     }
 
-    validateFields(formData, errors) {
-        if (formData.zipCode == null || formData.zipCode == "")
-            errors.name.addError(useTranslation('lbl_name_obligatory'));
-
-        return errors;
-    }
-
     getAddress(event) {
-        event.preventDefault();
+        //event.preventDefault();
 
     }
 
@@ -38,6 +31,7 @@ export class Address extends Component {
 
     render() {
         const { values, handleChange, stepItems, currentStep } = this.props;
+        const { t } = this.props;
 
         return (
             <React.Fragment>
@@ -49,40 +43,39 @@ export class Address extends Component {
                         </div>
                         <h1><Trans>address</Trans></h1>
                         <br />
-                        <Form validate={this.validateFields} liveValidate={true} showErrorList={false}>
+                        <Form onSubmit={this.continue}>
                             <div className="p-fluid p-formgrid p-grid">
                                 <div className="p-field p-col-12">
-                                    <InputText id="zipcode" name="zipCode" onChange={handleChange('mainAddress')} value={values.address.zipcode} required maxLength="20" onBlur={this.getAddress()} />
-                                    <label htmlFor="zipcode"><Trans>lbl_zipcode</Trans></label>
-                                    <small id="username2-help" className="p-invalid p-d-block"><Trans>lbl_zipcode_obligatory</Trans></small>
+                                    <InputText id="zipCode" name="zipCode" onChange={handleChange('mainAddress')} value={values.mainAddress.zipCode} required maxLength="20" onBlur={this.getAddress()} placeholder={t('lbl_zipcode')} className="p-d-block" type="text" aria-describedby="zipCode-help"/>
+                                    <small id="zipCode-help" className="p-invalid p-d-block text-right"><Trans>lbl_zipcode_required</Trans></small>
                                 </div>
-                                <div className="p-field p-col-12 p-md-6">
-                                    <label htmlFor="local">Local</label>
-                                    <InputText id="local" name="local" onChange={handleChange('mainAddress')} value={values.address.local} required />
+                                <div className="p-field p-col-12 p-md-8">
+                                    <InputText id="local" name="local" onChange={handleChange('mainAddress')} value={values.mainAddress.local} required placeholder="Local" className="p-d-block" type="text" aria-describedby="local-help"/>
+                                    <small id="local-help" className="p-invalid p-d-block text-right"><Trans>lbl_local_required</Trans></small>
                                 </div>
-                                <div className="p-field p-col-12 p-md-6">
-                                    <label htmlFor="number"><Trans>number</Trans></label>
-                                    <InputNumber id="number" name="number" onChange={handleChange('mainAddress')} value={values.address.number} required />
+                                <div className="p-field p-col-12 p-md-4">
+                                    <InputNumber id="number" name="number" onValueChange={handleChange('mainAddress')} value={values.mainAddress.number} required placeholder={t('number')} className="p-d-block" type="text" aria-describedby="number-help"/>
+                                    <small id="number-help" className="p-invalid p-d-block text-right"><Trans>lbl_number_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12">
-                                    <label htmlFor="complement"><Trans>lbl_complement</Trans></label>
-                                    <InputText id="complement" name="complement" onChange={handleChange('mainAddress')} value={values.address.complement} maxLength="255" />
+                                    <InputText id="complement" name="complement" onChange={handleChange('mainAddress')} value={values.mainAddress.complement} maxLength="255" placeholder={t('lbl_complement')} className="p-d-block" type="text" aria-describedby="complement-help"/>
+                                    <small id="complement-help" className="p-invalid p-d-block text-right"><Trans>lbl_complement_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12 p-md-5">
-                                    <label htmlFor="country"><Trans>lbl_country</Trans></label>
-                                    <InputText id="country" name="country" onChange={handleChange('mainAddress')} value={values.address.country} maxLength="140" required />
+                                    <InputText id="country" name="country" onChange={handleChange('mainAddress')} value={values.mainAddress.country} maxLength="140" required placeholder={t('lbl_country')} className="p-d-block" type="text" aria-describedby="country-help"/>
+                                    <small id="country-help" className="p-invalid p-d-block text-right"><Trans>lbl_country_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12 p-md-2">
-                                    <label htmlFor="state"><Trans>lbl_state</Trans></label>
-                                    <InputText id="state" name="state" onChange={handleChange('mainAddress')} value={values.address.state} maxLength="20" required />
+                                    <InputText id="state" name="state" onChange={handleChange('mainAddress')} value={values.mainAddress.state} maxLength="20" required placeholder={t('lbl_state')} className="p-d-block" type="text" aria-describedby="state-help"/>
+                                    <small id="state-help" className="p-invalid p-d-block text-right"><Trans>lbl_state_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12 p-md-5">
-                                    <label htmlFor="city"><Trans>lbl_city</Trans></label>
-                                    <InputText id="city" name="city" onChange={handleChange('mainAddress')} value={values.address.city} maxLength="140" required />
+                                    <InputText id="city" name="city" onChange={handleChange('mainAddress')} value={values.mainAddress.city} maxLength="140" required placeholder={t('lbl_city')} className="p-d-block" type="text" aria-describedby="city-help"/>
+                                    <small id="city-help" className="p-invalid p-d-block text-right"><Trans>lbl_city_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12">
                                     <div className="p-field-checkbox">
-                                        <Checkbox inputId="hasPhysicalStore" onChange={handleChange('hasPhysicalStore')} />
+                                        <Checkbox inputId="hasPhysicalStore" onChange={handleChange('hasPhysicalStore')} checked={values.hasPhysicalStore} />
                                         <label htmlFor="hasPhysicalStore"><Trans>lbl_has_physical_store</Trans></label>
                                     </div>
                                 </div>
@@ -90,12 +83,12 @@ export class Address extends Component {
                             <br />
                             <div className="p-formgroup-inline">
                                 <Button
-                                    label={useTranslation("btn_next")}
+                                    label={t("btn_next")}
                                     type="submit"
                                 />
                                 <Button
                                     style={{ marginLeft: "10px" }}
-                                    label={useTranslation("btn_prev")}
+                                    label={t("btn_prev")}
                                     type="button"
                                     onClick={this.back}
                                 />
@@ -108,4 +101,4 @@ export class Address extends Component {
     }
 }
 
-export default Address
+export default withTranslation()(Address)
