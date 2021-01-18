@@ -29,9 +29,11 @@ export class VendorForm extends Component {
         mobile: { countryCode: 0, localeCode: 0, number: 0 },
         hasPhysicalStore: false,
         contact: {
-            lastName: '', middleName: '', firstName: '', birthday: null, email: '', phone: { countryCode: 0, localeCode: 0, number: 0 }, mobile: { countryCode: 0, localeCode: 0, number: 0 }
+            lastName: '', middleName: '', firstName: '', birthday: null, email: '',
+            phone: { countryCode: 0, localeCode: 0, number: 0 }, mobile: { countryCode: 0, localeCode: 0, number: 0 },
+            login: { userName:'', password: ''}
         },
-        bankInfo: { bankCode: '', bankBranch: '', accoundNumber: '', }
+        bankInfo: { bankCode: '', bankBranch: '', accoundNumber: '' }
     }
 
     nextStep = () => {
@@ -64,7 +66,40 @@ export class VendorForm extends Component {
                     [target.name]: target.value
                 }
             }));
-        } else {
+        } else if (input === "contact") {
+            this.setState(prev => ({
+                contact: {
+                    ...prev.contact,
+                    [target.name]: target.value
+                }
+            }));
+        } else if (input === "login") {
+            const { contact } = this.state;
+            const login = {
+                    ...contact.login,
+                    [target.name]: target.value
+            }
+
+            this.setState(prev => ({
+                contact: {
+                    ...prev.contact,
+                    ["login"]: login
+                }
+            }));
+        } else if (input === "phone") {
+            const { contact } = this.state;
+            const phone = {
+                ...contact.phone,
+                [target.name]: target.value
+            }
+
+            this.setState(prev => ({
+                contact: {
+                    ...prev.contact,
+                    ["phone"]: phone
+                }
+            }));
+        }else {
             this.setState({ [input]: target.type === "checkbox" ? target.checked : target.value });
         }
     }
@@ -80,7 +115,7 @@ export class VendorForm extends Component {
         }
 
         switch (step) {
-            case 1:
+            case 4:
                 return (
                     <Details
                         currentStep={step - 1}
@@ -109,7 +144,7 @@ export class VendorForm extends Component {
                         values={values}
                         stepItems={items}
                     />)
-            case 4:
+            case 1:
                 return (
                     <Contact
                         currentStep={step - 1}

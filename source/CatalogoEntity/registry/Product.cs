@@ -41,5 +41,24 @@ namespace com.luvinbox.model.registry
         {
             Created = DateTime.UtcNow;
         }
+
+        public override int GetHashCode()
+        {
+            return this.Id.GetHashCode();
+        }
+        public override bool Equals(object obj)
+        {
+            Product p = obj as Product;
+            
+            if (p == null)
+                return false;
+
+            return this.Id == p.Id;
+        }
+        public override String ToString()
+        {
+            return String.Format($"{Id} - {Name} - {Description}");
+        }
+
     }
 }

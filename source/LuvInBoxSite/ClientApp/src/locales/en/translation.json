@@ -26,12 +26,16 @@
   "lbl_founded_in_required": "Founded In is Required",
   "lbl_zipcode": "Zipcode",
   "lbl_zipcode_required": "Zipcode is Required",
+  "lbl_local_required": "Local is Required",
+  "lbl_number_required": "Number is Required",
   "lbl_complement": "Complement",
+  "lbl_complement_required": "Complement is Required",
   "lbl_state": "State",
   "lbl_state_required": "State is Required",
   "lbl_city": "City",
   "lbl_city_required": "City is Required",
   "lbl_country": "Country",
   "lbl_country_required": "Country is Required",
-  "lbl_has_physical_store": "Has a physical store?"
+  "lbl_has_physical_store": "Has a physical store?",
+  "tit_bank": "Bank Info"
 }

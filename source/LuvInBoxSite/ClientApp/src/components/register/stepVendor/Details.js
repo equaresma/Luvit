@@ -25,8 +25,10 @@ export class Details extends Component {
                         <div>
                             <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
                             <br />
+                            <br />
                         </div>
                         <h2><Trans>general_info</Trans></h2>
+                        <br />
                         <br />
                         <Form onSubmit={this.continue}>
                             <div className="p-fluid">

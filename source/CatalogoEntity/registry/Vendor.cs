@@ -42,7 +42,6 @@ namespace com.luvinbox.model.registry
         public Boolean HasPhysicalStore { get; set; }
         public VendorContact Contact { get; set; }
         public BankInformation BankInfo { get; set; }
-
         public DateTime Created { get; set; }
         public string Creator { get; set; }
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
@@ -56,6 +55,23 @@ namespace com.luvinbox.model.registry
             AlternativeAddress = new Address();
             MainPhone = new PhoneNumber();
             Mobile = new PhoneNumber();
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Id.GetHashCode();
+        }
+        public override bool Equals(object obj)
+        {
+            Vendor p = obj as Vendor;
+            if (p == null)
+                return false;
+
+            return this.Id == p.Id;
+        }
+        public override String ToString()
+        {
+            return String.Format($"{DocumentNumber.Number} - {Name}");
         }
     }
 }
