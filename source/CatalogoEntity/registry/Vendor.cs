@@ -27,18 +27,24 @@ namespace com.luvinbox.model.registry
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
         [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
-        public Document DocumentNumber { get; set; } 
+        public Document DocumentNumber { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredLogoSite", ErrorMessageResourceType = typeof(AppRes))]
+        [DataType(DataType.ImageUrl)]
+        [Display(Name = "LogoURL", ResourceType = typeof(AppRes))]        
         public string LogoURL { get; set; }
+        [DataType(DataType.Url)]
         public string WebSite { get; set; }
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredEmail", ErrorMessageResourceType = typeof(AppRes))]
-        [DataType(DataType.Text)]
+        [DataType(DataType.EmailAddress)]
         [RegularExpression(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$", ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(AppRes))]
         [Display(Name = "lblEmail", ResourceType = typeof(AppRes))]
         public string Email { get; set; }
         public Address MainAddress { get; set; }
         public Address AlternativeAddress { get; set; }
-        public PhoneNumber MainPhone { get; set; }
-        public PhoneNumber Mobile { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public String MainPhone { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public String Mobile { get; set; }
         public Boolean HasPhysicalStore { get; set; }
         public VendorContact Contact { get; set; }
         public BankInformation BankInfo { get; set; }
@@ -53,8 +59,6 @@ namespace com.luvinbox.model.registry
             Created = DateTime.UtcNow;
             MainAddress = new Address();
             AlternativeAddress = new Address();
-            MainPhone = new PhoneNumber();
-            Mobile = new PhoneNumber();
         }
 
         public override int GetHashCode()

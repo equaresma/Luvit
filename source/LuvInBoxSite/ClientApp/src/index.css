@@ -73,6 +73,11 @@ a.footLnk:active {
 }
 
 input[type=text] {
-    border:none; 
-    border-bottom:1px solid;
+    border: none;
+    border-bottom: 1px solid;
+}
+
+input[type=password] {
+    border: none;
+    border-bottom: 1px solid;
 }

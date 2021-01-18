@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Net.Http.Headers;
 
 namespace com.luvinbox.site
 {
@@ -33,6 +34,16 @@ namespace com.luvinbox.site
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Police_Cors", builder =>
+                {
+                    builder.WithOrigins("https://localhost:44397")
+                        .WithMethods("POST", "GET", "PUT", "DELETE")
+                        .WithHeaders(HeaderNames.ContentType);
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +61,7 @@ namespace com.luvinbox.site
                 app.UseHsts();
             }
 
+            app.UseCors("Police_Cors");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();

@@ -45,8 +45,10 @@ namespace com.luvinbox.model.registry
 		[Display(Name = "lblAddress", ResourceType = typeof(AppRes))]
 		public Address Address { get; set; }
 		public SocialMedia SocialNetwork { get; set; }
-		public PhoneNumber Phone { get; set; }
-		public PhoneNumber Mobile { get; set; }
+		[DataType(DataType.PhoneNumber)]
+		public String Phone { get; set; }
+		[DataType(DataType.PhoneNumber)]
+		public String Mobile { get; set; }
 		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredEmail", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
 		[RegularExpression(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$", ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(AppRes))]
@@ -74,8 +76,6 @@ namespace com.luvinbox.model.registry
 			Created = DateTime.UtcNow;
 			Document = new Document() { Type = enumDocumentType.enumDocTypeCPF };
 			Address = new Address();
-			Phone = new PhoneNumber();
-			Mobile = new PhoneNumber();
 			SocialNetwork = new SocialMedia();
 		}
 

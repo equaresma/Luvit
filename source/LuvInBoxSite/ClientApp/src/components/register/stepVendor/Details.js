@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react'
 import { InputText } from 'primereact/inputtext';
+import { InputMask } from 'primereact/inputmask';
 import { Button } from 'primereact/button';
 import { Steps } from 'primereact/steps';
 import { Trans, withTranslation } from 'react-i18next';
@@ -46,6 +47,10 @@ export class Details extends Component {
                             <div className="p-fluid">
                                 <Calendar id="foundedIn" name="foundedIn" value={values.foundedIn} onChange={handleChange('foundedIn')} aria-describedby="foundedIn2-help" required placeholder={t('lbl_founded_in')}></Calendar>
                                 <small id="foundedIn2-help" className="p-d-block text-right"><Trans>lbl_founded_in_required</Trans></small>
+                            </div>
+                            <div className="p-fluid">
+                                <InputMask id="mainPhone" name="mainPhone" type="text" mask="+99(99) 9999-9999" onChange={handleChange('mainPhone')} value={values.mainPhone} aria-describedby="mainPhone-help" className="p-d-block" required maxLength="30" placeholder={t('phone')} />
+                                <small id="mainPhone-help" className="p-d-block text-right"><Trans>phone_fmt</Trans></small>
                             </div>
                             <br />
                             <Button

@@ -40,7 +40,7 @@ export class Address extends Component {
                 }
             })
             .catch((err) => {
-                alert('Error ao consultar CEP: ' + err.message);
+                alert('Erro ao consultar CEP: ' + err.message);
             });
 
     }
@@ -64,7 +64,7 @@ export class Address extends Component {
                         <Form onSubmit={this.continue}>
                             <div className="p-fluid p-formgrid p-grid">
                                 <div className="p-field p-col-6">
-                                    <InputText id="zipCode" name="zipCode" onChange={handleChange('mainAddress')} value={values.mainAddress.zipCode} required maxLength="20" onBlur={(event) => this.getAddress(event)} placeholder={t('lbl_zipcode')} className="p-d-block" type="text" aria-describedby="zipCode-help" />
+                                    <InputText id="zipCode" name="zipCode" type="text" onChange={handleChange('mainAddress')} value={values.mainAddress.zipCode} required maxLength="20" onBlur={(event) => this.getAddress(event)} placeholder={t('lbl_zipcode')} className="p-d-block" type="text" aria-describedby="zipCode-help" />
                                     <small id="zipCode-help" className="p-invalid p-d-block text-right"><Trans>lbl_zipcode_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12 p-md-6">
@@ -72,23 +72,23 @@ export class Address extends Component {
                                     <small id="number-help" className="p-invalid p-d-block text-right"><Trans>lbl_number_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12 p-md-12">
-                                    <InputText id="local" name="local" onChange={handleChange('mainAddress')} value={values.mainAddress.local} required placeholder="Local" className="p-d-block" type="text" aria-describedby="local-help" />
+                                    <InputText id="local" name="local" type="text" onChange={handleChange('mainAddress')} value={values.mainAddress.local} required placeholder="Local" className="p-d-block" type="text" aria-describedby="local-help" />
                                     <small id="local-help" className="p-invalid p-d-block text-right"><Trans>lbl_local_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-6">
-                                    <InputText id="complement" name="complement" onChange={handleChange('mainAddress')} value={values.mainAddress.complement} maxLength="255" placeholder={t('lbl_complement')} className="p-d-block" type="text" aria-describedby="complement-help" />
+                                    <InputText id="complement" name="complement" type="text" onChange={handleChange('mainAddress')} value={values.mainAddress.complement} maxLength="255" placeholder={t('lbl_complement')} className="p-d-block" type="text" aria-describedby="complement-help" />
                                     <small id="complement-help" className="p-invalid p-d-block text-right"><Trans>lbl_complement_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12 p-md-6">
-                                    <InputText id="country" name="country" onChange={handleChange('mainAddress')} value={values.mainAddress.country} maxLength="140" required placeholder={t('lbl_country')} className="p-d-block" type="text" aria-describedby="country-help" />
+                                    <InputText id="country" name="country" type="text" onChange={handleChange('mainAddress')} value={values.mainAddress.country} maxLength="140" required placeholder={t('lbl_country')} className="p-d-block" type="text" aria-describedby="country-help" />
                                     <small id="country-help" className="p-invalid p-d-block text-right"><Trans>lbl_country_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12 p-md-6">
-                                    <InputText id="state" name="state" onChange={handleChange('mainAddress')} value={values.mainAddress.state} maxLength="20" required placeholder={t('lbl_state')} className="p-d-block" type="text" aria-describedby="state-help" />
+                                    <InputText id="state" name="state" type="text" onChange={handleChange('mainAddress')} value={values.mainAddress.state} maxLength="20" required placeholder={t('lbl_state')} className="p-d-block" type="text" aria-describedby="state-help" />
                                     <small id="state-help" className="p-invalid p-d-block text-right"><Trans>lbl_state_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12 p-md-6">
-                                    <InputText id="city" name="city" onChange={handleChange('mainAddress')} value={values.mainAddress.city} maxLength="140" required placeholder={t('lbl_city')} className="p-d-block" type="text" aria-describedby="city-help" />
+                                    <InputText id="city" name="city" type="text" onChange={handleChange('mainAddress')} value={values.mainAddress.city} maxLength="140" required placeholder={t('lbl_city')} className="p-d-block" type="text" aria-describedby="city-help" />
                                     <small id="city-help" className="p-invalid p-d-block text-right"><Trans>lbl_city_required</Trans></small>
                                 </div>
                                 <div className="p-field p-col-12">

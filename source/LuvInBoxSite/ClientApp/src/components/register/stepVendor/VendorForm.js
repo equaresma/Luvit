@@ -3,7 +3,6 @@ import Details from './Details';
 import Contact from './Contact';
 import Address from './Address';
 import SetupStore from './SetupStore';
-import Confirmation from './Confirmation';
 import { withTranslation } from 'react-i18next';
 
 const items = [
@@ -25,12 +24,11 @@ export class VendorForm extends Component {
         webSite: '',
         documentNumber: { "type": 5, number: '', name: '' },
         mainAddress: { local: '', number: 0, complement: '', city: '', state: '', zipCode: '' },
-        mainPhone: { countryCode: 0, localeCode: 0, number: 0 },
-        mobile: { countryCode: 0, localeCode: 0, number: 0 },
+        mainPhone: '',
+        mobile: '',
         hasPhysicalStore: false,
         contact: {
-            lastName: '', middleName: '', firstName: '', birthday: null, email: '',
-            phone: { countryCode: 0, localeCode: 0, number: 0 }, mobile: { countryCode: 0, localeCode: 0, number: 0 },
+            lastName: '', middleName: '', firstName: '', birthday: null, email: '', phone: '', mobile: '',
             login: { userName:'', password: ''}
         },
         bankInfo: { bankCode: '', bankBranch: '', accoundNumber: '' }
@@ -86,19 +84,6 @@ export class VendorForm extends Component {
                     ["login"]: login
                 }
             }));
-        } else if (input === "phone") {
-            const { contact } = this.state;
-            const phone = {
-                ...contact.phone,
-                [target.name]: target.value
-            }
-
-            this.setState(prev => ({
-                contact: {
-                    ...prev.contact,
-                    ["phone"]: phone
-                }
-            }));
         }else {
             this.setState({ [input]: target.type === "checkbox" ? target.checked : target.value });
         }
@@ -115,7 +100,7 @@ export class VendorForm extends Component {
         }
 
         switch (step) {
-            case 4:
+            case 1:
                 return (
                     <Details
                         currentStep={step - 1}
@@ -144,20 +129,11 @@ export class VendorForm extends Component {
                         values={values}
                         stepItems={items}
                     />)
-            case 1:
+            case 4:
                 return (
                     <Contact
                         currentStep={step - 1}
                         nextStep={this.nextStep}
-                        prevStep={this.prevStep}
-                        handleChange={this.handleChange}
-                        values={values}
-                        stepItems={items}
-                    />)
-            case 5:
-                return (
-                    <Confirmation
-                        currentStep={step - 1}
                         prevStep={this.prevStep}
                         handleChange={this.handleChange}
                         values={values}

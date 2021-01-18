@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace com.luvinbox.site.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/vendor")]
     [ApiController]
     public class VendorController : ControllerBase
     {
@@ -18,7 +18,7 @@ namespace com.luvinbox.site.Controllers
             _contactService = contactService;
         }
 
-        // GET: api/<VendorController>
+        // GET: api/vendor
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -32,7 +32,7 @@ namespace com.luvinbox.site.Controllers
             }
         }
 
-        // GET api/<VendorController>/5
+        // GET api/vendor/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
         {
@@ -46,7 +46,7 @@ namespace com.luvinbox.site.Controllers
             }
         }
 
-        // POST api/<VendorController>
+        // POST api/vendor
         [HttpPost]
         public async Task<IActionResult> Post(Vendor instance)
         {
@@ -68,7 +68,7 @@ namespace com.luvinbox.site.Controllers
             }
         }
 
-        // DELETE api/<VendorController>/5
+        // DELETE api/vendor/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
