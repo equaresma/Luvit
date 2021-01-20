@@ -22,7 +22,7 @@ namespace com.luvinbox.model {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppRes {
+    public class AppRes {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace com.luvinbox.model {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("com.luvinbox.model.AppRes", typeof(AppRes).Assembly);
@@ -51,7 +51,7 @@ namespace com.luvinbox.model {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Accounting.
         /// </summary>
-        internal static string enumCoursesAccounting {
+        public static string enumCoursesAccounting {
             get {
                 return ResourceManager.GetString("enumCoursesAccounting", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Biology.
         /// </summary>
-        internal static string enumCoursesBiology {
+        public static string enumCoursesBiology {
             get {
                 return ResourceManager.GetString("enumCoursesBiology", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Business Management.
         /// </summary>
-        internal static string enumCoursesBusinessManagement {
+        public static string enumCoursesBusinessManagement {
             get {
                 return ResourceManager.GetString("enumCoursesBusinessManagement", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Chemistry.
         /// </summary>
-        internal static string enumCoursesChemistry {
+        public static string enumCoursesChemistry {
             get {
                 return ResourceManager.GetString("enumCoursesChemistry", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Computer Science.
         /// </summary>
-        internal static string enumCoursesComputerScience {
+        public static string enumCoursesComputerScience {
             get {
                 return ResourceManager.GetString("enumCoursesComputerScience", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Dentistry.
         /// </summary>
-        internal static string enumCoursesDentistry {
+        public static string enumCoursesDentistry {
             get {
                 return ResourceManager.GetString("enumCoursesDentistry", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Design.
         /// </summary>
-        internal static string enumCoursesDesign {
+        public static string enumCoursesDesign {
             get {
                 return ResourceManager.GetString("enumCoursesDesign", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Economy.
         /// </summary>
-        internal static string enumCoursesEconomy {
+        public static string enumCoursesEconomy {
             get {
                 return ResourceManager.GetString("enumCoursesEconomy", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Engineering.
         /// </summary>
-        internal static string enumCoursesEngineering {
+        public static string enumCoursesEngineering {
             get {
                 return ResourceManager.GetString("enumCoursesEngineering", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Fashion.
         /// </summary>
-        internal static string enumCoursesFashion {
+        public static string enumCoursesFashion {
             get {
                 return ResourceManager.GetString("enumCoursesFashion", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to International Relations.
         /// </summary>
-        internal static string enumCoursesInternationalRelations {
+        public static string enumCoursesInternationalRelations {
             get {
                 return ResourceManager.GetString("enumCoursesInternationalRelations", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Law.
         /// </summary>
-        internal static string enumCoursesLaw {
+        public static string enumCoursesLaw {
             get {
                 return ResourceManager.GetString("enumCoursesLaw", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Marketing.
         /// </summary>
-        internal static string enumCoursesMarketing {
+        public static string enumCoursesMarketing {
             get {
                 return ResourceManager.GetString("enumCoursesMarketing", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Mathematics.
         /// </summary>
-        internal static string enumCoursesMathematics {
+        public static string enumCoursesMathematics {
             get {
                 return ResourceManager.GetString("enumCoursesMathematics", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Medicine.
         /// </summary>
-        internal static string enumCoursesMedicine {
+        public static string enumCoursesMedicine {
             get {
                 return ResourceManager.GetString("enumCoursesMedicine", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to N.A..
         /// </summary>
-        internal static string enumCoursesNA {
+        public static string enumCoursesNA {
             get {
                 return ResourceManager.GetString("enumCoursesNA", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Other.
         /// </summary>
-        internal static string enumCoursesOther {
+        public static string enumCoursesOther {
             get {
                 return ResourceManager.GetString("enumCoursesOther", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Pedagogy.
         /// </summary>
-        internal static string enumCoursesPedagogy {
+        public static string enumCoursesPedagogy {
             get {
                 return ResourceManager.GetString("enumCoursesPedagogy", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Physical.
         /// </summary>
-        internal static string enumCoursesPhysical {
+        public static string enumCoursesPhysical {
             get {
                 return ResourceManager.GetString("enumCoursesPhysical", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Psychology.
         /// </summary>
-        internal static string enumCoursesPsychology {
+        public static string enumCoursesPsychology {
             get {
                 return ResourceManager.GetString("enumCoursesPsychology", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Statistic.
         /// </summary>
-        internal static string enumCoursesStatistic {
+        public static string enumCoursesStatistic {
             get {
                 return ResourceManager.GetString("enumCoursesStatistic", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to System Analysis.
         /// </summary>
-        internal static string enumCoursesSystemAnalysis {
+        public static string enumCoursesSystemAnalysis {
             get {
                 return ResourceManager.GetString("enumCoursesSystemAnalysis", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to College.
         /// </summary>
-        internal static string enumDegreeCollege {
+        public static string enumDegreeCollege {
             get {
                 return ResourceManager.GetString("enumDegreeCollege", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to HighSchool.
         /// </summary>
-        internal static string enumDegreeHighSchool {
+        public static string enumDegreeHighSchool {
             get {
                 return ResourceManager.GetString("enumDegreeHighSchool", resourceCulture);
             }
@@ -279,7 +279,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to MBA.
         /// </summary>
-        internal static string enumDegreeMBA {
+        public static string enumDegreeMBA {
             get {
                 return ResourceManager.GetString("enumDegreeMBA", resourceCulture);
             }
@@ -288,7 +288,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to CPF.
         /// </summary>
-        internal static string enumDocCPF {
+        public static string enumDocCPF {
             get {
                 return ResourceManager.GetString("enumDocCPF", resourceCulture);
             }
@@ -297,7 +297,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to ID.
         /// </summary>
-        internal static string enumDocID {
+        public static string enumDocID {
             get {
                 return ResourceManager.GetString("enumDocID", resourceCulture);
             }
@@ -306,7 +306,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to EIN.
         /// </summary>
-        internal static string enumDocIF {
+        public static string enumDocIF {
             get {
                 return ResourceManager.GetString("enumDocIF", resourceCulture);
             }
@@ -315,7 +315,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Passport.
         /// </summary>
-        internal static string enumDocPassport {
+        public static string enumDocPassport {
             get {
                 return ResourceManager.GetString("enumDocPassport", resourceCulture);
             }
@@ -324,7 +324,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to RNE.
         /// </summary>
-        internal static string enumDocRNE {
+        public static string enumDocRNE {
             get {
                 return ResourceManager.GetString("enumDocRNE", resourceCulture);
             }
@@ -333,7 +333,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Driver License.
         /// </summary>
-        internal static string enumDriverLicense {
+        public static string enumDriverLicense {
             get {
                 return ResourceManager.GetString("enumDriverLicense", resourceCulture);
             }
@@ -342,7 +342,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Curiosity.
         /// </summary>
-        internal static string enumEmCuriosity {
+        public static string enumEmCuriosity {
             get {
                 return ResourceManager.GetString("enumEmCuriosity", resourceCulture);
             }
@@ -351,7 +351,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Ideation.
         /// </summary>
-        internal static string enumEmIdeation {
+        public static string enumEmIdeation {
             get {
                 return ResourceManager.GetString("enumEmIdeation", resourceCulture);
             }
@@ -360,7 +360,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Operation.
         /// </summary>
-        internal static string enumEmOperation {
+        public static string enumEmOperation {
             get {
                 return ResourceManager.GetString("enumEmOperation", resourceCulture);
             }
@@ -369,7 +369,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Employee.
         /// </summary>
-        internal static string enumEmployee {
+        public static string enumEmployee {
             get {
                 return ResourceManager.GetString("enumEmployee", resourceCulture);
             }
@@ -378,7 +378,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Traction.
         /// </summary>
-        internal static string enumEmTraction {
+        public static string enumEmTraction {
             get {
                 return ResourceManager.GetString("enumEmTraction", resourceCulture);
             }
@@ -387,7 +387,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Entrepreneur.
         /// </summary>
-        internal static string enumEntrepreneur {
+        public static string enumEntrepreneur {
             get {
                 return ResourceManager.GetString("enumEntrepreneur", resourceCulture);
             }
@@ -396,7 +396,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Female.
         /// </summary>
-        internal static string enumGenderFemale {
+        public static string enumGenderFemale {
             get {
                 return ResourceManager.GetString("enumGenderFemale", resourceCulture);
             }
@@ -405,7 +405,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Male.
         /// </summary>
-        internal static string enumGenderMale {
+        public static string enumGenderMale {
             get {
                 return ResourceManager.GetString("enumGenderMale", resourceCulture);
             }
@@ -414,7 +414,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Investor.
         /// </summary>
-        internal static string enumInvestor {
+        public static string enumInvestor {
             get {
                 return ResourceManager.GetString("enumInvestor", resourceCulture);
             }
@@ -423,7 +423,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Agrobusiness.
         /// </summary>
-        internal static string enumLbAgrobusiness {
+        public static string enumLbAgrobusiness {
             get {
                 return ResourceManager.GetString("enumLbAgrobusiness", resourceCulture);
             }
@@ -432,7 +432,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Biotechnology.
         /// </summary>
-        internal static string enumLbBiotechnology {
+        public static string enumLbBiotechnology {
             get {
                 return ResourceManager.GetString("enumLbBiotechnology", resourceCulture);
             }
@@ -441,7 +441,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Business.
         /// </summary>
-        internal static string enumLbBusiness {
+        public static string enumLbBusiness {
             get {
                 return ResourceManager.GetString("enumLbBusiness", resourceCulture);
             }
@@ -450,7 +450,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Communication.
         /// </summary>
-        internal static string enumLbCommunication {
+        public static string enumLbCommunication {
             get {
                 return ResourceManager.GetString("enumLbCommunication", resourceCulture);
             }
@@ -459,7 +459,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Communication and Media.
         /// </summary>
-        internal static string enumLbCommunicationAndMedia {
+        public static string enumLbCommunicationAndMedia {
             get {
                 return ResourceManager.GetString("enumLbCommunicationAndMedia", resourceCulture);
             }
@@ -468,7 +468,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to E-commerce.
         /// </summary>
-        internal static string enumLbEcommerce {
+        public static string enumLbEcommerce {
             get {
                 return ResourceManager.GetString("enumLbEcommerce", resourceCulture);
             }
@@ -477,7 +477,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Education.
         /// </summary>
-        internal static string enumLbEducation {
+        public static string enumLbEducation {
             get {
                 return ResourceManager.GetString("enumLbEducation", resourceCulture);
             }
@@ -486,7 +486,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Entertainment.
         /// </summary>
-        internal static string enumLbEntertainment {
+        public static string enumLbEntertainment {
             get {
                 return ResourceManager.GetString("enumLbEntertainment", resourceCulture);
             }
@@ -495,7 +495,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Environment.
         /// </summary>
-        internal static string enumLbEnvironment {
+        public static string enumLbEnvironment {
             get {
                 return ResourceManager.GetString("enumLbEnvironment", resourceCulture);
             }
@@ -504,7 +504,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Events and Tourism.
         /// </summary>
-        internal static string enumLbEventsAndTourism {
+        public static string enumLbEventsAndTourism {
             get {
                 return ResourceManager.GetString("enumLbEventsAndTourism", resourceCulture);
             }
@@ -513,7 +513,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Fashion and Beauty.
         /// </summary>
-        internal static string enumLbFashionAndBeauty {
+        public static string enumLbFashionAndBeauty {
             get {
                 return ResourceManager.GetString("enumLbFashionAndBeauty", resourceCulture);
             }
@@ -522,7 +522,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Finance.
         /// </summary>
-        internal static string enumLbFinance {
+        public static string enumLbFinance {
             get {
                 return ResourceManager.GetString("enumLbFinance", resourceCulture);
             }
@@ -531,7 +531,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Games.
         /// </summary>
-        internal static string enumLbGames {
+        public static string enumLbGames {
             get {
                 return ResourceManager.GetString("enumLbGames", resourceCulture);
             }
@@ -540,7 +540,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Hardware.
         /// </summary>
-        internal static string enumLbHardware {
+        public static string enumLbHardware {
             get {
                 return ResourceManager.GetString("enumLbHardware", resourceCulture);
             }
@@ -549,7 +549,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Health.
         /// </summary>
-        internal static string enumLbHealth {
+        public static string enumLbHealth {
             get {
                 return ResourceManager.GetString("enumLbHealth", resourceCulture);
             }
@@ -558,7 +558,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Internet.
         /// </summary>
-        internal static string enumLbInternet {
+        public static string enumLbInternet {
             get {
                 return ResourceManager.GetString("enumLbInternet", resourceCulture);
             }
@@ -567,7 +567,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Logistics.
         /// </summary>
-        internal static string enumLbLogistics {
+        public static string enumLbLogistics {
             get {
                 return ResourceManager.GetString("enumLbLogistics", resourceCulture);
             }
@@ -576,7 +576,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Mobile.
         /// </summary>
-        internal static string enumLbMobile {
+        public static string enumLbMobile {
             get {
                 return ResourceManager.GetString("enumLbMobile", resourceCulture);
             }
@@ -585,7 +585,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Nanotechnology.
         /// </summary>
-        internal static string enumLbNanotechnology {
+        public static string enumLbNanotechnology {
             get {
                 return ResourceManager.GetString("enumLbNanotechnology", resourceCulture);
             }
@@ -594,7 +594,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Others.
         /// </summary>
-        internal static string enumLbOthers {
+        public static string enumLbOthers {
             get {
                 return ResourceManager.GetString("enumLbOthers", resourceCulture);
             }
@@ -603,7 +603,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Retail and E-commerce.
         /// </summary>
-        internal static string enumLbRetailAndEcommerce {
+        public static string enumLbRetailAndEcommerce {
             get {
                 return ResourceManager.GetString("enumLbRetailAndEcommerce", resourceCulture);
             }
@@ -612,7 +612,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to SaaS.
         /// </summary>
-        internal static string enumLbSaaS {
+        public static string enumLbSaaS {
             get {
                 return ResourceManager.GetString("enumLbSaaS", resourceCulture);
             }
@@ -621,7 +621,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to TIC and Telecom.
         /// </summary>
-        internal static string enumLbTelecom {
+        public static string enumLbTelecom {
             get {
                 return ResourceManager.GetString("enumLbTelecom", resourceCulture);
             }
@@ -630,7 +630,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Divorced.
         /// </summary>
-        internal static string enumMaritalStsDivorced {
+        public static string enumMaritalStsDivorced {
             get {
                 return ResourceManager.GetString("enumMaritalStsDivorced", resourceCulture);
             }
@@ -639,7 +639,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Married.
         /// </summary>
-        internal static string enumMaritalStsMarried {
+        public static string enumMaritalStsMarried {
             get {
                 return ResourceManager.GetString("enumMaritalStsMarried", resourceCulture);
             }
@@ -648,7 +648,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Separated.
         /// </summary>
-        internal static string enumMaritalStsSeparated {
+        public static string enumMaritalStsSeparated {
             get {
                 return ResourceManager.GetString("enumMaritalStsSeparated", resourceCulture);
             }
@@ -657,7 +657,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Single.
         /// </summary>
-        internal static string enumMaritalStsSingle {
+        public static string enumMaritalStsSingle {
             get {
                 return ResourceManager.GetString("enumMaritalStsSingle", resourceCulture);
             }
@@ -666,7 +666,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Widowed.
         /// </summary>
-        internal static string enumMaritalStsWidowed {
+        public static string enumMaritalStsWidowed {
             get {
                 return ResourceManager.GetString("enumMaritalStsWidowed", resourceCulture);
             }
@@ -675,7 +675,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Master.
         /// </summary>
-        internal static string enumMaster {
+        public static string enumMaster {
             get {
                 return ResourceManager.GetString("enumMaster", resourceCulture);
             }
@@ -684,7 +684,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to PhD.
         /// </summary>
-        internal static string enumPhD {
+        public static string enumPhD {
             get {
                 return ResourceManager.GetString("enumPhD", resourceCulture);
             }
@@ -693,7 +693,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Postgraduate.
         /// </summary>
-        internal static string enumPostgraduate {
+        public static string enumPostgraduate {
             get {
                 return ResourceManager.GetString("enumPostgraduate", resourceCulture);
             }
@@ -702,7 +702,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to User does not exist Or invalid password.
         /// </summary>
-        internal static string errUserDoesNotExist {
+        public static string errUserDoesNotExist {
             get {
                 return ResourceManager.GetString("errUserDoesNotExist", resourceCulture);
             }
@@ -711,7 +711,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to MM/dd/yyyy.
         /// </summary>
-        internal static string frmDate {
+        public static string frmDate {
             get {
                 return ResourceManager.GetString("frmDate", resourceCulture);
             }
@@ -720,7 +720,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to {0:MM-dd-yyyy}.
         /// </summary>
-        internal static string frmDateDataN {
+        public static string frmDateDataN {
             get {
                 return ResourceManager.GetString("frmDateDataN", resourceCulture);
             }
@@ -729,7 +729,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
-        internal static string grdCmdDelete {
+        public static string grdCmdDelete {
             get {
                 return ResourceManager.GetString("grdCmdDelete", resourceCulture);
             }
@@ -738,7 +738,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
-        internal static string grdCmdEdit {
+        public static string grdCmdEdit {
             get {
                 return ResourceManager.GetString("grdCmdEdit", resourceCulture);
             }
@@ -747,7 +747,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to View.
         /// </summary>
-        internal static string grdCmdView {
+        public static string grdCmdView {
             get {
                 return ResourceManager.GetString("grdCmdView", resourceCulture);
             }
@@ -756,7 +756,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to City.
         /// </summary>
-        internal static string hCity {
+        public static string hCity {
             get {
                 return ResourceManager.GetString("hCity", resourceCulture);
             }
@@ -765,7 +765,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
-        internal static string hCountry {
+        public static string hCountry {
             get {
                 return ResourceManager.GetString("hCountry", resourceCulture);
             }
@@ -774,7 +774,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Customer.
         /// </summary>
-        internal static string hCustomer {
+        public static string hCustomer {
             get {
                 return ResourceManager.GetString("hCustomer", resourceCulture);
             }
@@ -783,7 +783,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Does quiz answered?.
         /// </summary>
-        internal static string hDoesQuizAnswered {
+        public static string hDoesQuizAnswered {
             get {
                 return ResourceManager.GetString("hDoesQuizAnswered", resourceCulture);
             }
@@ -792,7 +792,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Family Name.
         /// </summary>
-        internal static string hFamilyName {
+        public static string hFamilyName {
             get {
                 return ResourceManager.GetString("hFamilyName", resourceCulture);
             }
@@ -801,7 +801,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Fantasy Name.
         /// </summary>
-        internal static string hFantasyName {
+        public static string hFantasyName {
             get {
                 return ResourceManager.GetString("hFantasyName", resourceCulture);
             }
@@ -810,7 +810,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to First Name.
         /// </summary>
-        internal static string hFirstName {
+        public static string hFirstName {
             get {
                 return ResourceManager.GetString("hFirstName", resourceCulture);
             }
@@ -819,7 +819,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Founded In.
         /// </summary>
-        internal static string hFoundedIn {
+        public static string hFoundedIn {
             get {
                 return ResourceManager.GetString("hFoundedIn", resourceCulture);
             }
@@ -828,7 +828,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Id.
         /// </summary>
-        internal static string hId {
+        public static string hId {
             get {
                 return ResourceManager.GetString("hId", resourceCulture);
             }
@@ -837,7 +837,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Is it Paid?.
         /// </summary>
-        internal static string hIsPaid {
+        public static string hIsPaid {
             get {
                 return ResourceManager.GetString("hIsPaid", resourceCulture);
             }
@@ -846,7 +846,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Middle Name.
         /// </summary>
-        internal static string hMiddleName {
+        public static string hMiddleName {
             get {
                 return ResourceManager.GetString("hMiddleName", resourceCulture);
             }
@@ -855,7 +855,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
-        internal static string hName {
+        public static string hName {
             get {
                 return ResourceManager.GetString("hName", resourceCulture);
             }
@@ -864,7 +864,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Position.
         /// </summary>
-        internal static string hPosition {
+        public static string hPosition {
             get {
                 return ResourceManager.GetString("hPosition", resourceCulture);
             }
@@ -873,7 +873,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Price.
         /// </summary>
-        internal static string hPrice {
+        public static string hPrice {
             get {
                 return ResourceManager.GetString("hPrice", resourceCulture);
             }
@@ -882,7 +882,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Answer.
         /// </summary>
-        internal static string hQuizAnswer {
+        public static string hQuizAnswer {
             get {
                 return ResourceManager.GetString("hQuizAnswer", resourceCulture);
             }
@@ -891,7 +891,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Categoria de análise.
         /// </summary>
-        internal static string hQuizCategory {
+        public static string hQuizCategory {
             get {
                 return ResourceManager.GetString("hQuizCategory", resourceCulture);
             }
@@ -900,7 +900,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Descrição.
         /// </summary>
-        internal static string hQuizDesc {
+        public static string hQuizDesc {
             get {
                 return ResourceManager.GetString("hQuizDesc", resourceCulture);
             }
@@ -909,7 +909,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Sócios.
         /// </summary>
-        internal static string hQuizEntrep {
+        public static string hQuizEntrep {
             get {
                 return ResourceManager.GetString("hQuizEntrep", resourceCulture);
             }
@@ -918,7 +918,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Fator.
         /// </summary>
-        internal static string hQuizFactor {
+        public static string hQuizFactor {
             get {
                 return ResourceManager.GetString("hQuizFactor", resourceCulture);
             }
@@ -927,7 +927,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Pontos.
         /// </summary>
-        internal static string hQuizPoints {
+        public static string hQuizPoints {
             get {
                 return ResourceManager.GetString("hQuizPoints", resourceCulture);
             }
@@ -936,7 +936,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Pontos possíveis.
         /// </summary>
-        internal static string hQuizPossiblePoints {
+        public static string hQuizPossiblePoints {
             get {
                 return ResourceManager.GetString("hQuizPossiblePoints", resourceCulture);
             }
@@ -945,7 +945,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Somatória.
         /// </summary>
-        internal static string hQuizSum {
+        public static string hQuizSum {
             get {
                 return ResourceManager.GetString("hQuizSum", resourceCulture);
             }
@@ -954,7 +954,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Start Date.
         /// </summary>
-        internal static string hStartDate {
+        public static string hStartDate {
             get {
                 return ResourceManager.GetString("hStartDate", resourceCulture);
             }
@@ -963,7 +963,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to State.
         /// </summary>
-        internal static string hState {
+        public static string hState {
             get {
                 return ResourceManager.GetString("hState", resourceCulture);
             }
@@ -972,7 +972,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to City is invalid.
         /// </summary>
-        internal static string InvalidCity {
+        public static string InvalidCity {
             get {
                 return ResourceManager.GetString("InvalidCity", resourceCulture);
             }
@@ -981,7 +981,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Country is invalid.
         /// </summary>
-        internal static string InvalidCountry {
+        public static string InvalidCountry {
             get {
                 return ResourceManager.GetString("InvalidCountry", resourceCulture);
             }
@@ -990,7 +990,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Date is invalid.
         /// </summary>
-        internal static string InvalidDate {
+        public static string InvalidDate {
             get {
                 return ResourceManager.GetString("InvalidDate", resourceCulture);
             }
@@ -999,7 +999,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Document is invalid.
         /// </summary>
-        internal static string InvalidDocument {
+        public static string InvalidDocument {
             get {
                 return ResourceManager.GetString("InvalidDocument", resourceCulture);
             }
@@ -1008,7 +1008,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Email is invalid.
         /// </summary>
-        internal static string InvalidEmail {
+        public static string InvalidEmail {
             get {
                 return ResourceManager.GetString("InvalidEmail", resourceCulture);
             }
@@ -1017,7 +1017,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Local is invalid.
         /// </summary>
-        internal static string InvalidLocal {
+        public static string InvalidLocal {
             get {
                 return ResourceManager.GetString("InvalidLocal", resourceCulture);
             }
@@ -1026,7 +1026,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Invalid Login.
         /// </summary>
-        internal static string InvalidLogin {
+        public static string InvalidLogin {
             get {
                 return ResourceManager.GetString("InvalidLogin", resourceCulture);
             }
@@ -1035,7 +1035,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Name is invalid.
         /// </summary>
-        internal static string InvalidName {
+        public static string InvalidName {
             get {
                 return ResourceManager.GetString("InvalidName", resourceCulture);
             }
@@ -1044,7 +1044,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Number is invalid.
         /// </summary>
-        internal static string InvalidNumber {
+        public static string InvalidNumber {
             get {
                 return ResourceManager.GetString("InvalidNumber", resourceCulture);
             }
@@ -1053,7 +1053,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to State is invalid.
         /// </summary>
-        internal static string InvalidState {
+        public static string InvalidState {
             get {
                 return ResourceManager.GetString("InvalidState", resourceCulture);
             }
@@ -1062,7 +1062,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to ZipCode is invalid.
         /// </summary>
-        internal static string InvalidZipCode {
+        public static string InvalidZipCode {
             get {
                 return ResourceManager.GetString("InvalidZipCode", resourceCulture);
             }
@@ -1071,7 +1071,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Accelerated.
         /// </summary>
-        internal static string lblAccelerated {
+        public static string lblAccelerated {
             get {
                 return ResourceManager.GetString("lblAccelerated", resourceCulture);
             }
@@ -1080,7 +1080,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Account Number.
         /// </summary>
-        internal static string lblAccountNumber {
+        public static string lblAccountNumber {
             get {
                 return ResourceManager.GetString("lblAccountNumber", resourceCulture);
             }
@@ -1089,7 +1089,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to City.
         /// </summary>
-        internal static string lblAddCity {
+        public static string lblAddCity {
             get {
                 return ResourceManager.GetString("lblAddCity", resourceCulture);
             }
@@ -1098,7 +1098,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Complement.
         /// </summary>
-        internal static string lblAddComplement {
+        public static string lblAddComplement {
             get {
                 return ResourceManager.GetString("lblAddComplement", resourceCulture);
             }
@@ -1107,7 +1107,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Country.
         /// </summary>
-        internal static string lblAddCountry {
+        public static string lblAddCountry {
             get {
                 return ResourceManager.GetString("lblAddCountry", resourceCulture);
             }
@@ -1116,7 +1116,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Local.
         /// </summary>
-        internal static string lblAddLocal {
+        public static string lblAddLocal {
             get {
                 return ResourceManager.GetString("lblAddLocal", resourceCulture);
             }
@@ -1125,7 +1125,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Number.
         /// </summary>
-        internal static string lblAddNumber {
+        public static string lblAddNumber {
             get {
                 return ResourceManager.GetString("lblAddNumber", resourceCulture);
             }
@@ -1134,7 +1134,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Address.
         /// </summary>
-        internal static string lblAddress {
+        public static string lblAddress {
             get {
                 return ResourceManager.GetString("lblAddress", resourceCulture);
             }
@@ -1143,7 +1143,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to State.
         /// </summary>
-        internal static string lblAddState {
+        public static string lblAddState {
             get {
                 return ResourceManager.GetString("lblAddState", resourceCulture);
             }
@@ -1152,7 +1152,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to ZipCode.
         /// </summary>
-        internal static string lblAddZipCode {
+        public static string lblAddZipCode {
             get {
                 return ResourceManager.GetString("lblAddZipCode", resourceCulture);
             }
@@ -1161,7 +1161,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Answers.
         /// </summary>
-        internal static string lblAnswers {
+        public static string lblAnswers {
             get {
                 return ResourceManager.GetString("lblAnswers", resourceCulture);
             }
@@ -1170,7 +1170,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Bank Branch.
         /// </summary>
-        internal static string lblBankBranch {
+        public static string lblBankBranch {
             get {
                 return ResourceManager.GetString("lblBankBranch", resourceCulture);
             }
@@ -1179,7 +1179,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Bank Code.
         /// </summary>
-        internal static string lblBankCode {
+        public static string lblBankCode {
             get {
                 return ResourceManager.GetString("lblBankCode", resourceCulture);
             }
@@ -1188,7 +1188,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Beginning.
         /// </summary>
-        internal static string lblBeginning {
+        public static string lblBeginning {
             get {
                 return ResourceManager.GetString("lblBeginning", resourceCulture);
             }
@@ -1197,7 +1197,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Birth.
         /// </summary>
-        internal static string lblBirth {
+        public static string lblBirth {
             get {
                 return ResourceManager.GetString("lblBirth", resourceCulture);
             }
@@ -1206,7 +1206,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Birthday.
         /// </summary>
-        internal static string lblBirthday {
+        public static string lblBirthday {
             get {
                 return ResourceManager.GetString("lblBirthday", resourceCulture);
             }
@@ -1215,7 +1215,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Birthplace.
         /// </summary>
-        internal static string lblBirthplace {
+        public static string lblBirthplace {
             get {
                 return ResourceManager.GetString("lblBirthplace", resourceCulture);
             }
@@ -1224,7 +1224,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Buy.
         /// </summary>
-        internal static string lblBuy {
+        public static string lblBuy {
             get {
                 return ResourceManager.GetString("lblBuy", resourceCulture);
             }
@@ -1233,7 +1233,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Answer in order to continue. What is {0} + {1}?.
         /// </summary>
-        internal static string lblCaptchMsg {
+        public static string lblCaptchMsg {
             get {
                 return ResourceManager.GetString("lblCaptchMsg", resourceCulture);
             }
@@ -1242,7 +1242,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Category.
         /// </summary>
-        internal static string lblCategory {
+        public static string lblCategory {
             get {
                 return ResourceManager.GetString("lblCategory", resourceCulture);
             }
@@ -1251,7 +1251,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Change Password.
         /// </summary>
-        internal static string lblChangePassword {
+        public static string lblChangePassword {
             get {
                 return ResourceManager.GetString("lblChangePassword", resourceCulture);
             }
@@ -1260,7 +1260,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to City Of Foundation.
         /// </summary>
-        internal static string lblCityOfFoundation {
+        public static string lblCityOfFoundation {
             get {
                 return ResourceManager.GetString("lblCityOfFoundation", resourceCulture);
             }
@@ -1269,7 +1269,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Password Confirmation.
         /// </summary>
-        internal static string lblConfPwd {
+        public static string lblConfPwd {
             get {
                 return ResourceManager.GetString("lblConfPwd", resourceCulture);
             }
@@ -1278,7 +1278,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Contacts.
         /// </summary>
-        internal static string lblContacts {
+        public static string lblContacts {
             get {
                 return ResourceManager.GetString("lblContacts", resourceCulture);
             }
@@ -1287,7 +1287,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Country Of Foundation.
         /// </summary>
-        internal static string lblCountryOfFoundation {
+        public static string lblCountryOfFoundation {
             get {
                 return ResourceManager.GetString("lblCountryOfFoundation", resourceCulture);
             }
@@ -1296,7 +1296,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Course.
         /// </summary>
-        internal static string lblCourse {
+        public static string lblCourse {
             get {
                 return ResourceManager.GetString("lblCourse", resourceCulture);
             }
@@ -1305,7 +1305,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Created.
         /// </summary>
-        internal static string lblCreated {
+        public static string lblCreated {
             get {
                 return ResourceManager.GetString("lblCreated", resourceCulture);
             }
@@ -1314,7 +1314,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Creator.
         /// </summary>
-        internal static string lblCreator {
+        public static string lblCreator {
             get {
                 return ResourceManager.GetString("lblCreator", resourceCulture);
             }
@@ -1323,7 +1323,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Customer.
         /// </summary>
-        internal static string lblCustomer {
+        public static string lblCustomer {
             get {
                 return ResourceManager.GetString("lblCustomer", resourceCulture);
             }
@@ -1332,7 +1332,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Degree.
         /// </summary>
-        internal static string lblDegree {
+        public static string lblDegree {
             get {
                 return ResourceManager.GetString("lblDegree", resourceCulture);
             }
@@ -1341,7 +1341,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
-        internal static string lblDescription {
+        public static string lblDescription {
             get {
                 return ResourceManager.GetString("lblDescription", resourceCulture);
             }
@@ -1350,7 +1350,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Develop In.
         /// </summary>
-        internal static string lblDevelopIn {
+        public static string lblDevelopIn {
             get {
                 return ResourceManager.GetString("lblDevelopIn", resourceCulture);
             }
@@ -1359,7 +1359,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Document.
         /// </summary>
-        internal static string lblDoc {
+        public static string lblDoc {
             get {
                 return ResourceManager.GetString("lblDoc", resourceCulture);
             }
@@ -1368,7 +1368,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to ID.
         /// </summary>
-        internal static string lblDocumentNumber {
+        public static string lblDocumentNumber {
             get {
                 return ResourceManager.GetString("lblDocumentNumber", resourceCulture);
             }
@@ -1377,7 +1377,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Document Type.
         /// </summary>
-        internal static string lblDocumentType {
+        public static string lblDocumentType {
             get {
                 return ResourceManager.GetString("lblDocumentType", resourceCulture);
             }
@@ -1386,7 +1386,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
-        internal static string lblEmail {
+        public static string lblEmail {
             get {
                 return ResourceManager.GetString("lblEmail", resourceCulture);
             }
@@ -1395,7 +1395,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to End Time.
         /// </summary>
-        internal static string lblEndTime {
+        public static string lblEndTime {
             get {
                 return ResourceManager.GetString("lblEndTime", resourceCulture);
             }
@@ -1404,7 +1404,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Enrolled.
         /// </summary>
-        internal static string lblEnrolled {
+        public static string lblEnrolled {
             get {
                 return ResourceManager.GetString("lblEnrolled", resourceCulture);
             }
@@ -1413,7 +1413,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Enrollment.
         /// </summary>
-        internal static string lblEnrollment {
+        public static string lblEnrollment {
             get {
                 return ResourceManager.GetString("lblEnrollment", resourceCulture);
             }
@@ -1422,7 +1422,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Enterprise.
         /// </summary>
-        internal static string lblEnterprise {
+        public static string lblEnterprise {
             get {
                 return ResourceManager.GetString("lblEnterprise", resourceCulture);
             }
@@ -1431,7 +1431,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Enterprise Moment.
         /// </summary>
-        internal static string lblEnterpriseMoment {
+        public static string lblEnterpriseMoment {
             get {
                 return ResourceManager.GetString("lblEnterpriseMoment", resourceCulture);
             }
@@ -1440,7 +1440,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Entrepreneur.
         /// </summary>
-        internal static string lblEntrepreneur {
+        public static string lblEntrepreneur {
             get {
                 return ResourceManager.GetString("lblEntrepreneur", resourceCulture);
             }
@@ -1449,7 +1449,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Entrepreneurs.
         /// </summary>
-        internal static string lblEntrepreneurs {
+        public static string lblEntrepreneurs {
             get {
                 return ResourceManager.GetString("lblEntrepreneurs", resourceCulture);
             }
@@ -1458,7 +1458,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
-        internal static string lblError {
+        public static string lblError {
             get {
                 return ResourceManager.GetString("lblError", resourceCulture);
             }
@@ -1467,7 +1467,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Event.
         /// </summary>
-        internal static string lblEvent {
+        public static string lblEvent {
             get {
                 return ResourceManager.GetString("lblEvent", resourceCulture);
             }
@@ -1476,7 +1476,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Experience..
         /// </summary>
-        internal static string lblExperience {
+        public static string lblExperience {
             get {
                 return ResourceManager.GetString("lblExperience", resourceCulture);
             }
@@ -1485,7 +1485,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Factor.
         /// </summary>
-        internal static string lblFactor {
+        public static string lblFactor {
             get {
                 return ResourceManager.GetString("lblFactor", resourceCulture);
             }
@@ -1494,7 +1494,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Family Name.
         /// </summary>
-        internal static string lblFamilyName {
+        public static string lblFamilyName {
             get {
                 return ResourceManager.GetString("lblFamilyName", resourceCulture);
             }
@@ -1503,7 +1503,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Fantasy Name.
         /// </summary>
-        internal static string lblFantasyName {
+        public static string lblFantasyName {
             get {
                 return ResourceManager.GetString("lblFantasyName", resourceCulture);
             }
@@ -1512,7 +1512,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Finance.
         /// </summary>
-        internal static string lblFinance {
+        public static string lblFinance {
             get {
                 return ResourceManager.GetString("lblFinance", resourceCulture);
             }
@@ -1521,7 +1521,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to First Name.
         /// </summary>
-        internal static string lblFirstName {
+        public static string lblFirstName {
             get {
                 return ResourceManager.GetString("lblFirstName", resourceCulture);
             }
@@ -1530,7 +1530,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Foundation.
         /// </summary>
-        internal static string lblFoundation {
+        public static string lblFoundation {
             get {
                 return ResourceManager.GetString("lblFoundation", resourceCulture);
             }
@@ -1539,7 +1539,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Founded In.
         /// </summary>
-        internal static string lblFoundedIn {
+        public static string lblFoundedIn {
             get {
                 return ResourceManager.GetString("lblFoundedIn", resourceCulture);
             }
@@ -1548,7 +1548,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Full Name.
         /// </summary>
-        internal static string lblFullName {
+        public static string lblFullName {
             get {
                 return ResourceManager.GetString("lblFullName", resourceCulture);
             }
@@ -1557,7 +1557,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Gender.
         /// </summary>
-        internal static string lblGender {
+        public static string lblGender {
             get {
                 return ResourceManager.GetString("lblGender", resourceCulture);
             }
@@ -1566,7 +1566,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Has Relatives Entrepreneurs?(Consider only grandparents, parents and siblings).
         /// </summary>
-        internal static string lblHasRelativesEntrepreneurs {
+        public static string lblHasRelativesEntrepreneurs {
             get {
                 return ResourceManager.GetString("lblHasRelativesEntrepreneurs", resourceCulture);
             }
@@ -1575,7 +1575,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Home Country.
         /// </summary>
-        internal static string lblHomeCountry {
+        public static string lblHomeCountry {
             get {
                 return ResourceManager.GetString("lblHomeCountry", resourceCulture);
             }
@@ -1584,7 +1584,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Home State.
         /// </summary>
-        internal static string lblHomeState {
+        public static string lblHomeState {
             get {
                 return ResourceManager.GetString("lblHomeState", resourceCulture);
             }
@@ -1593,7 +1593,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Home Town.
         /// </summary>
-        internal static string lblHomeTown {
+        public static string lblHomeTown {
             get {
                 return ResourceManager.GetString("lblHomeTown", resourceCulture);
             }
@@ -1602,7 +1602,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Incubated.
         /// </summary>
-        internal static string lblIncubated {
+        public static string lblIncubated {
             get {
                 return ResourceManager.GetString("lblIncubated", resourceCulture);
             }
@@ -1611,7 +1611,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Invalid Captcha.
         /// </summary>
-        internal static string lblInvalidCaptcha {
+        public static string lblInvalidCaptcha {
             get {
                 return ResourceManager.GetString("lblInvalidCaptcha", resourceCulture);
             }
@@ -1620,7 +1620,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Invested.
         /// </summary>
-        internal static string lblInvested {
+        public static string lblInvested {
             get {
                 return ResourceManager.GetString("lblInvested", resourceCulture);
             }
@@ -1629,7 +1629,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Is Exclusive Dedication to Startup?.
         /// </summary>
-        internal static string lblIsExclusiveDedication {
+        public static string lblIsExclusiveDedication {
             get {
                 return ResourceManager.GetString("lblIsExclusiveDedication", resourceCulture);
             }
@@ -1638,7 +1638,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Is Pending Approval?.
         /// </summary>
-        internal static string lblIsPendingApproval {
+        public static string lblIsPendingApproval {
             get {
                 return ResourceManager.GetString("lblIsPendingApproval", resourceCulture);
             }
@@ -1647,7 +1647,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Last Update.
         /// </summary>
-        internal static string lblLastUpdate {
+        public static string lblLastUpdate {
             get {
                 return ResourceManager.GetString("lblLastUpdate", resourceCulture);
             }
@@ -1656,7 +1656,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Legal Entity Registry.
         /// </summary>
-        internal static string lblLegalEntityRegistry {
+        public static string lblLegalEntityRegistry {
             get {
                 return ResourceManager.GetString("lblLegalEntityRegistry", resourceCulture);
             }
@@ -1665,7 +1665,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Line Of Business.
         /// </summary>
-        internal static string lblLineOfBusiness {
+        public static string lblLineOfBusiness {
             get {
                 return ResourceManager.GetString("lblLineOfBusiness", resourceCulture);
             }
@@ -1674,7 +1674,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to User Name.
         /// </summary>
-        internal static string lblLogin {
+        public static string lblLogin {
             get {
                 return ResourceManager.GetString("lblLogin", resourceCulture);
             }
@@ -1683,7 +1683,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Marital Status.
         /// </summary>
-        internal static string lblMaritalStatus {
+        public static string lblMaritalStatus {
             get {
                 return ResourceManager.GetString("lblMaritalStatus", resourceCulture);
             }
@@ -1692,7 +1692,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Market.
         /// </summary>
-        internal static string lblMarket {
+        public static string lblMarket {
             get {
                 return ResourceManager.GetString("lblMarket", resourceCulture);
             }
@@ -1701,7 +1701,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Max Points.
         /// </summary>
-        internal static string lblMaxPoints {
+        public static string lblMaxPoints {
             get {
                 return ResourceManager.GetString("lblMaxPoints", resourceCulture);
             }
@@ -1710,7 +1710,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Middle Name.
         /// </summary>
-        internal static string lblMiddleName {
+        public static string lblMiddleName {
             get {
                 return ResourceManager.GetString("lblMiddleName", resourceCulture);
             }
@@ -1719,7 +1719,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Mobile.
         /// </summary>
-        internal static string lblMobile {
+        public static string lblMobile {
             get {
                 return ResourceManager.GetString("lblMobile", resourceCulture);
             }
@@ -1728,7 +1728,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
-        internal static string lblName {
+        public static string lblName {
             get {
                 return ResourceManager.GetString("lblName", resourceCulture);
             }
@@ -1737,7 +1737,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Number.
         /// </summary>
-        internal static string lblNumber {
+        public static string lblNumber {
             get {
                 return ResourceManager.GetString("lblNumber", resourceCulture);
             }
@@ -1746,7 +1746,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Order detail.
         /// </summary>
-        internal static string lblOrderDetail {
+        public static string lblOrderDetail {
             get {
                 return ResourceManager.GetString("lblOrderDetail", resourceCulture);
             }
@@ -1755,7 +1755,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Other Course.
         /// </summary>
-        internal static string lblOtherCourse {
+        public static string lblOtherCourse {
             get {
                 return ResourceManager.GetString("lblOtherCourse", resourceCulture);
             }
@@ -1764,7 +1764,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to IsPaid.
         /// </summary>
-        internal static string lblPaid {
+        public static string lblPaid {
             get {
                 return ResourceManager.GetString("lblPaid", resourceCulture);
             }
@@ -1773,7 +1773,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Partner.
         /// </summary>
-        internal static string lblPartner {
+        public static string lblPartner {
             get {
                 return ResourceManager.GetString("lblPartner", resourceCulture);
             }
@@ -1782,7 +1782,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Partners.
         /// </summary>
-        internal static string lblPartners {
+        public static string lblPartners {
             get {
                 return ResourceManager.GetString("lblPartners", resourceCulture);
             }
@@ -1791,7 +1791,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Payment Form.
         /// </summary>
-        internal static string lblPaymentForm {
+        public static string lblPaymentForm {
             get {
                 return ResourceManager.GetString("lblPaymentForm", resourceCulture);
             }
@@ -1800,7 +1800,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Payment ID.
         /// </summary>
-        internal static string lblPaymentId {
+        public static string lblPaymentId {
             get {
                 return ResourceManager.GetString("lblPaymentId", resourceCulture);
             }
@@ -1809,7 +1809,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Payment Previous Status.
         /// </summary>
-        internal static string lblPaymentPreviousStatus {
+        public static string lblPaymentPreviousStatus {
             get {
                 return ResourceManager.GetString("lblPaymentPreviousStatus", resourceCulture);
             }
@@ -1818,7 +1818,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Payment Status.
         /// </summary>
-        internal static string lblPaymentStatus {
+        public static string lblPaymentStatus {
             get {
                 return ResourceManager.GetString("lblPaymentStatus", resourceCulture);
             }
@@ -1827,7 +1827,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Payment Success.
         /// </summary>
-        internal static string lblPaymentSuccess {
+        public static string lblPaymentSuccess {
             get {
                 return ResourceManager.GetString("lblPaymentSuccess", resourceCulture);
             }
@@ -1836,7 +1836,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Payment Token.
         /// </summary>
-        internal static string lblPaymentToken {
+        public static string lblPaymentToken {
             get {
                 return ResourceManager.GetString("lblPaymentToken", resourceCulture);
             }
@@ -1845,7 +1845,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Payment Type.
         /// </summary>
-        internal static string lblPaymentType {
+        public static string lblPaymentType {
             get {
                 return ResourceManager.GetString("lblPaymentType", resourceCulture);
             }
@@ -1854,7 +1854,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Phone.
         /// </summary>
-        internal static string lblPhone {
+        public static string lblPhone {
             get {
                 return ResourceManager.GetString("lblPhone", resourceCulture);
             }
@@ -1863,7 +1863,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Phones.
         /// </summary>
-        internal static string lblPhones {
+        public static string lblPhones {
             get {
                 return ResourceManager.GetString("lblPhones", resourceCulture);
             }
@@ -1872,7 +1872,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Points.
         /// </summary>
-        internal static string lblPoints {
+        public static string lblPoints {
             get {
                 return ResourceManager.GetString("lblPoints", resourceCulture);
             }
@@ -1881,7 +1881,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Position.
         /// </summary>
-        internal static string lblPosition {
+        public static string lblPosition {
             get {
                 return ResourceManager.GetString("lblPosition", resourceCulture);
             }
@@ -1890,7 +1890,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Price.
         /// </summary>
-        internal static string lblPrice {
+        public static string lblPrice {
             get {
                 return ResourceManager.GetString("lblPrice", resourceCulture);
             }
@@ -1899,7 +1899,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Product.
         /// </summary>
-        internal static string lblProduct {
+        public static string lblProduct {
             get {
                 return ResourceManager.GetString("lblProduct", resourceCulture);
             }
@@ -1908,7 +1908,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
-        internal static string lblPwd {
+        public static string lblPwd {
             get {
                 return ResourceManager.GetString("lblPwd", resourceCulture);
             }
@@ -1917,7 +1917,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Quantity.
         /// </summary>
-        internal static string lblQuantity {
+        public static string lblQuantity {
             get {
                 return ResourceManager.GetString("lblQuantity", resourceCulture);
             }
@@ -1926,7 +1926,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Question.
         /// </summary>
-        internal static string lblQuestion {
+        public static string lblQuestion {
             get {
                 return ResourceManager.GetString("lblQuestion", resourceCulture);
             }
@@ -1935,7 +1935,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Questions.
         /// </summary>
-        internal static string lblQuestions {
+        public static string lblQuestions {
             get {
                 return ResourceManager.GetString("lblQuestions", resourceCulture);
             }
@@ -1944,7 +1944,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Quiz.
         /// </summary>
-        internal static string lblQuiz {
+        public static string lblQuiz {
             get {
                 return ResourceManager.GetString("lblQuiz", resourceCulture);
             }
@@ -1953,7 +1953,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Rating.
         /// </summary>
-        internal static string lblRating {
+        public static string lblRating {
             get {
                 return ResourceManager.GetString("lblRating", resourceCulture);
             }
@@ -1962,7 +1962,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Registry.
         /// </summary>
-        internal static string lblRegistry {
+        public static string lblRegistry {
             get {
                 return ResourceManager.GetString("lblRegistry", resourceCulture);
             }
@@ -1971,7 +1971,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Registry Confirmation.
         /// </summary>
-        internal static string lblRegistryConfirmation {
+        public static string lblRegistryConfirmation {
             get {
                 return ResourceManager.GetString("lblRegistryConfirmation", resourceCulture);
             }
@@ -1980,7 +1980,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to An e-mail will be send in order to confirm your registry. This email will contain a initial password that need will chang in the first login..
         /// </summary>
-        internal static string lblRegistryConfirmationMsg {
+        public static string lblRegistryConfirmationMsg {
             get {
                 return ResourceManager.GetString("lblRegistryConfirmationMsg", resourceCulture);
             }
@@ -1989,7 +1989,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Remember Me?.
         /// </summary>
-        internal static string lblRememberMe {
+        public static string lblRememberMe {
             get {
                 return ResourceManager.GetString("lblRememberMe", resourceCulture);
             }
@@ -1998,7 +1998,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Select.
         /// </summary>
-        internal static string lblSelect {
+        public static string lblSelect {
             get {
                 return ResourceManager.GetString("lblSelect", resourceCulture);
             }
@@ -2007,7 +2007,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Socia.
         /// </summary>
-        internal static string lblSocial {
+        public static string lblSocial {
             get {
                 return ResourceManager.GetString("lblSocial", resourceCulture);
             }
@@ -2016,7 +2016,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Start Time.
         /// </summary>
-        internal static string lblStartTime {
+        public static string lblStartTime {
             get {
                 return ResourceManager.GetString("lblStartTime", resourceCulture);
             }
@@ -2025,7 +2025,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to State Of Foundation.
         /// </summary>
-        internal static string lblStateOfFoundation {
+        public static string lblStateOfFoundation {
             get {
                 return ResourceManager.GetString("lblStateOfFoundation", resourceCulture);
             }
@@ -2034,7 +2034,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Team.
         /// </summary>
-        internal static string lblTeam {
+        public static string lblTeam {
             get {
                 return ResourceManager.GetString("lblTeam", resourceCulture);
             }
@@ -2043,7 +2043,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Total.
         /// </summary>
-        internal static string lblTotal {
+        public static string lblTotal {
             get {
                 return ResourceManager.GetString("lblTotal", resourceCulture);
             }
@@ -2052,7 +2052,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Oops, sorry an unexpected error occurred..
         /// </summary>
-        internal static string lblUnhandledException {
+        public static string lblUnhandledException {
             get {
                 return ResourceManager.GetString("lblUnhandledException", resourceCulture);
             }
@@ -2061,7 +2061,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Trace:.
         /// </summary>
-        internal static string lblUnhandledExceptionTechInfo {
+        public static string lblUnhandledExceptionTechInfo {
             get {
                 return ResourceManager.GetString("lblUnhandledExceptionTechInfo", resourceCulture);
             }
@@ -2070,7 +2070,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Last Update By.
         /// </summary>
-        internal static string lblUserLastUpdate {
+        public static string lblUserLastUpdate {
             get {
                 return ResourceManager.GetString("lblUserLastUpdate", resourceCulture);
             }
@@ -2079,7 +2079,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to User Type.
         /// </summary>
-        internal static string lblUserType {
+        public static string lblUserType {
             get {
                 return ResourceManager.GetString("lblUserType", resourceCulture);
             }
@@ -2088,7 +2088,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Value.
         /// </summary>
-        internal static string lblValue {
+        public static string lblValue {
             get {
                 return ResourceManager.GetString("lblValue", resourceCulture);
             }
@@ -2097,7 +2097,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to View Details.
         /// </summary>
-        internal static string lblViewDetails {
+        public static string lblViewDetails {
             get {
                 return ResourceManager.GetString("lblViewDetails", resourceCulture);
             }
@@ -2106,7 +2106,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to View Map.
         /// </summary>
-        internal static string lblViewMap {
+        public static string lblViewMap {
             get {
                 return ResourceManager.GetString("lblViewMap", resourceCulture);
             }
@@ -2115,7 +2115,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Website.
         /// </summary>
-        internal static string lblWebsite {
+        public static string lblWebsite {
             get {
                 return ResourceManager.GetString("lblWebsite", resourceCulture);
             }
@@ -2124,7 +2124,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Access Denied..
         /// </summary>
-        internal static string msgAccessDenied {
+        public static string msgAccessDenied {
             get {
                 return ResourceManager.GetString("msgAccessDenied", resourceCulture);
             }
@@ -2133,7 +2133,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Let investors arrond the world know about your start-up..
         /// </summary>
-        internal static string msgEnterprise {
+        public static string msgEnterprise {
             get {
                 return ResourceManager.GetString("msgEnterprise", resourceCulture);
             }
@@ -2142,7 +2142,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Sign up and let investors find you.
         /// </summary>
-        internal static string msgEntrepreneur {
+        public static string msgEntrepreneur {
             get {
                 return ResourceManager.GetString("msgEntrepreneur", resourceCulture);
             }
@@ -2151,7 +2151,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Event cannot be Deleted because there are enrollments..
         /// </summary>
-        internal static string msgEventCannotBeDeletedOrUpdatedEnrollments {
+        public static string msgEventCannotBeDeletedOrUpdatedEnrollments {
             get {
                 return ResourceManager.GetString("msgEventCannotBeDeletedOrUpdatedEnrollments", resourceCulture);
             }
@@ -2160,7 +2160,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Event cannot be Deleted because it is in the past..
         /// </summary>
-        internal static string msgEventCannotBeDeletedOrUpdatedPast {
+        public static string msgEventCannotBeDeletedOrUpdatedPast {
             get {
                 return ResourceManager.GetString("msgEventCannotBeDeletedOrUpdatedPast", resourceCulture);
             }
@@ -2169,7 +2169,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Event in the past cannot be updated..
         /// </summary>
-        internal static string msgEventInThePast {
+        public static string msgEventInThePast {
             get {
                 return ResourceManager.GetString("msgEventInThePast", resourceCulture);
             }
@@ -2178,7 +2178,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to The CNPJ number must consist of 14 numeric characters..
         /// </summary>
-        internal static string msgInvalidCnpjLenght {
+        public static string msgInvalidCnpjLenght {
             get {
                 return ResourceManager.GetString("msgInvalidCnpjLenght", resourceCulture);
             }
@@ -2187,7 +2187,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to The CPF number must consist of 11 numeric characters..
         /// </summary>
-        internal static string msgInvalidCpfLenght {
+        public static string msgInvalidCpfLenght {
             get {
                 return ResourceManager.GetString("msgInvalidCpfLenght", resourceCulture);
             }
@@ -2196,7 +2196,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Invalid Document Type..
         /// </summary>
-        internal static string msgInvalidDocumentType {
+        public static string msgInvalidDocumentType {
             get {
                 return ResourceManager.GetString("msgInvalidDocumentType", resourceCulture);
             }
@@ -2205,7 +2205,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Sign up and find the startups according to your investment profile.
         /// </summary>
-        internal static string msgInvestor {
+        public static string msgInvestor {
             get {
                 return ResourceManager.GetString("msgInvestor", resourceCulture);
             }
@@ -2214,7 +2214,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to You already bought this Event.
         /// </summary>
-        internal static string msgIsAlreadyBought {
+        public static string msgIsAlreadyBought {
             get {
                 return ResourceManager.GetString("msgIsAlreadyBought", resourceCulture);
             }
@@ -2223,7 +2223,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Enter with your credentials..
         /// </summary>
-        internal static string msgLogOn {
+        public static string msgLogOn {
             get {
                 return ResourceManager.GetString("msgLogOn", resourceCulture);
             }
@@ -2232,7 +2232,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to No events available..
         /// </summary>
-        internal static string msgNoEvents {
+        public static string msgNoEvents {
             get {
                 return ResourceManager.GetString("msgNoEvents", resourceCulture);
             }
@@ -2241,7 +2241,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Identify the timing of startups and provide investors with the best investment options..
         /// </summary>
-        internal static string msgOurMission {
+        public static string msgOurMission {
             get {
                 return ResourceManager.GetString("msgOurMission", resourceCulture);
             }
@@ -2250,7 +2250,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Mission.
         /// </summary>
-        internal static string msgOurMissionTit {
+        public static string msgOurMissionTit {
             get {
                 return ResourceManager.GetString("msgOurMissionTit", resourceCulture);
             }
@@ -2259,7 +2259,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to We believe in the power of technology to turn dreams into reality, to unite ideas and investment opportunities..
         /// </summary>
-        internal static string msgOurValues {
+        public static string msgOurValues {
             get {
                 return ResourceManager.GetString("msgOurValues", resourceCulture);
             }
@@ -2268,7 +2268,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Values.
         /// </summary>
-        internal static string msgOurValuesTit {
+        public static string msgOurValuesTit {
             get {
                 return ResourceManager.GetString("msgOurValuesTit", resourceCulture);
             }
@@ -2277,7 +2277,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to To be a reference in orientation for investors and in raising financial resources to leverage startups..
         /// </summary>
-        internal static string msgOurVision {
+        public static string msgOurVision {
             get {
                 return ResourceManager.GetString("msgOurVision", resourceCulture);
             }
@@ -2286,7 +2286,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Vision.
         /// </summary>
-        internal static string msgOurVisionTit {
+        public static string msgOurVisionTit {
             get {
                 return ResourceManager.GetString("msgOurVisionTit", resourceCulture);
             }
@@ -2295,7 +2295,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Person already exists.
         /// </summary>
-        internal static string msgPersonAlreadyExists {
+        public static string msgPersonAlreadyExists {
             get {
                 return ResourceManager.GetString("msgPersonAlreadyExists", resourceCulture);
             }
@@ -2304,7 +2304,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Select One Startup At Least.
         /// </summary>
-        internal static string msgSelectOneStartupAtLeast {
+        public static string msgSelectOneStartupAtLeast {
             get {
                 return ResourceManager.GetString("msgSelectOneStartupAtLeast", resourceCulture);
             }
@@ -2313,7 +2313,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Startup already exists..
         /// </summary>
-        internal static string msgStartupAlreadyExists {
+        public static string msgStartupAlreadyExists {
             get {
                 return ResourceManager.GetString("msgStartupAlreadyExists", resourceCulture);
             }
@@ -2322,7 +2322,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Startup enrollment:.
         /// </summary>
-        internal static string msgStartupEnrollment {
+        public static string msgStartupEnrollment {
             get {
                 return ResourceManager.GetString("msgStartupEnrollment", resourceCulture);
             }
@@ -2331,7 +2331,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Are you sure to add new entrepreuner {0}?.
         /// </summary>
-        internal static string msgSureAddNewEntrepreuner {
+        public static string msgSureAddNewEntrepreuner {
             get {
                 return ResourceManager.GetString("msgSureAddNewEntrepreuner", resourceCulture);
             }
@@ -2340,7 +2340,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to This document number already exists..
         /// </summary>
-        internal static string msgThisDocumentAlreadyExists {
+        public static string msgThisDocumentAlreadyExists {
             get {
                 return ResourceManager.GetString("msgThisDocumentAlreadyExists", resourceCulture);
             }
@@ -2349,7 +2349,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Type the entrepreuner name to search.
         /// </summary>
-        internal static string msgTypeEntrepreunerName {
+        public static string msgTypeEntrepreunerName {
             get {
                 return ResourceManager.GetString("msgTypeEntrepreunerName", resourceCulture);
             }
@@ -2358,7 +2358,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Under Construction.
         /// </summary>
-        internal static string msgUnderConstruction {
+        public static string msgUnderConstruction {
             get {
                 return ResourceManager.GetString("msgUnderConstruction", resourceCulture);
             }
@@ -2367,7 +2367,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to User already exists..
         /// </summary>
-        internal static string msgUserAlreadyExists {
+        public static string msgUserAlreadyExists {
             get {
                 return ResourceManager.GetString("msgUserAlreadyExists", resourceCulture);
             }
@@ -2376,7 +2376,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Account number is Required.
         /// </summary>
-        internal static string RequiredAccountNumber {
+        public static string RequiredAccountNumber {
             get {
                 return ResourceManager.GetString("RequiredAccountNumber", resourceCulture);
             }
@@ -2385,7 +2385,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Bank branch is Required.
         /// </summary>
-        internal static string RequiredBankBranch {
+        public static string RequiredBankBranch {
             get {
                 return ResourceManager.GetString("RequiredBankBranch", resourceCulture);
             }
@@ -2394,7 +2394,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Bank code is Required.
         /// </summary>
-        internal static string RequiredBankCode {
+        public static string RequiredBankCode {
             get {
                 return ResourceManager.GetString("RequiredBankCode", resourceCulture);
             }
@@ -2403,7 +2403,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to City is required.
         /// </summary>
-        internal static string RequiredCity {
+        public static string RequiredCity {
             get {
                 return ResourceManager.GetString("RequiredCity", resourceCulture);
             }
@@ -2412,7 +2412,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to State is required.
         /// </summary>
-        internal static string RequiredCountry {
+        public static string RequiredCountry {
             get {
                 return ResourceManager.GetString("RequiredCountry", resourceCulture);
             }
@@ -2421,7 +2421,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Date is required.
         /// </summary>
-        internal static string RequiredDate {
+        public static string RequiredDate {
             get {
                 return ResourceManager.GetString("RequiredDate", resourceCulture);
             }
@@ -2430,7 +2430,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Description is required.
         /// </summary>
-        internal static string RequiredDescription {
+        public static string RequiredDescription {
             get {
                 return ResourceManager.GetString("RequiredDescription", resourceCulture);
             }
@@ -2439,7 +2439,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Name is required.
         /// </summary>
-        internal static string RequiredDocument {
+        public static string RequiredDocument {
             get {
                 return ResourceManager.GetString("RequiredDocument", resourceCulture);
             }
@@ -2448,7 +2448,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Email is required.
         /// </summary>
-        internal static string RequiredEmail {
+        public static string RequiredEmail {
             get {
                 return ResourceManager.GetString("RequiredEmail", resourceCulture);
             }
@@ -2457,7 +2457,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Fantasy Name is Required.
         /// </summary>
-        internal static string RequiredFantasyName {
+        public static string RequiredFantasyName {
             get {
                 return ResourceManager.GetString("RequiredFantasyName", resourceCulture);
             }
@@ -2466,7 +2466,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Line Of Business is required.
         /// </summary>
-        internal static string RequiredLineOfBusiness {
+        public static string RequiredLineOfBusiness {
             get {
                 return ResourceManager.GetString("RequiredLineOfBusiness", resourceCulture);
             }
@@ -2475,7 +2475,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Local is required.
         /// </summary>
-        internal static string RequiredLocal {
+        public static string RequiredLocal {
             get {
                 return ResourceManager.GetString("RequiredLocal", resourceCulture);
             }
@@ -2484,7 +2484,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Login is required.
         /// </summary>
-        internal static string RequiredLogin {
+        public static string RequiredLogin {
             get {
                 return ResourceManager.GetString("RequiredLogin", resourceCulture);
             }
@@ -2493,7 +2493,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Max Points are required..
         /// </summary>
-        internal static string RequiredMaxPoints {
+        public static string RequiredMaxPoints {
             get {
                 return ResourceManager.GetString("RequiredMaxPoints", resourceCulture);
             }
@@ -2502,7 +2502,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Name is required.
         /// </summary>
-        internal static string RequiredName {
+        public static string RequiredName {
             get {
                 return ResourceManager.GetString("RequiredName", resourceCulture);
             }
@@ -2511,7 +2511,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Number is required.
         /// </summary>
-        internal static string RequiredNumber {
+        public static string RequiredNumber {
             get {
                 return ResourceManager.GetString("RequiredNumber", resourceCulture);
             }
@@ -2520,7 +2520,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Password is required.
         /// </summary>
-        internal static string RequiredPwd {
+        public static string RequiredPwd {
             get {
                 return ResourceManager.GetString("RequiredPwd", resourceCulture);
             }
@@ -2529,7 +2529,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to State is required.
         /// </summary>
-        internal static string RequiredState {
+        public static string RequiredState {
             get {
                 return ResourceManager.GetString("RequiredState", resourceCulture);
             }
@@ -2538,7 +2538,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to ZipCode is required.
         /// </summary>
-        internal static string RequiredZipCode {
+        public static string RequiredZipCode {
             get {
                 return ResourceManager.GetString("RequiredZipCode", resourceCulture);
             }
@@ -2547,7 +2547,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Show password.
         /// </summary>
-        internal static string strengthButtonText {
+        public static string strengthButtonText {
             get {
                 return ResourceManager.GetString("strengthButtonText", resourceCulture);
             }
@@ -2556,7 +2556,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Hide Password.
         /// </summary>
-        internal static string strengthButtonTextToggle {
+        public static string strengthButtonTextToggle {
             get {
                 return ResourceManager.GetString("strengthButtonTextToggle", resourceCulture);
             }
@@ -2565,7 +2565,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Strength: medium.
         /// </summary>
-        internal static string strengthMedium {
+        public static string strengthMedium {
             get {
                 return ResourceManager.GetString("strengthMedium", resourceCulture);
             }
@@ -2574,7 +2574,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Strength: strong.
         /// </summary>
-        internal static string strengthStrong {
+        public static string strengthStrong {
             get {
                 return ResourceManager.GetString("strengthStrong", resourceCulture);
             }
@@ -2583,7 +2583,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Strength: very weak.
         /// </summary>
-        internal static string strengthVeryWeak {
+        public static string strengthVeryWeak {
             get {
                 return ResourceManager.GetString("strengthVeryWeak", resourceCulture);
             }
@@ -2592,7 +2592,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Strength: weak.
         /// </summary>
-        internal static string strengthWeak {
+        public static string strengthWeak {
             get {
                 return ResourceManager.GetString("strengthWeak", resourceCulture);
             }
@@ -2601,7 +2601,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to en-UK.
         /// </summary>
-        internal static string sysLang {
+        public static string sysLang {
             get {
                 return ResourceManager.GetString("sysLang", resourceCulture);
             }
@@ -2610,7 +2610,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Account Information.
         /// </summary>
-        internal static string titAccountInfo {
+        public static string titAccountInfo {
             get {
                 return ResourceManager.GetString("titAccountInfo", resourceCulture);
             }
@@ -2619,7 +2619,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Enterprise.
         /// </summary>
-        internal static string titEnterprise {
+        public static string titEnterprise {
             get {
                 return ResourceManager.GetString("titEnterprise", resourceCulture);
             }
@@ -2628,7 +2628,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Enterprises.
         /// </summary>
-        internal static string titEnterprises {
+        public static string titEnterprises {
             get {
                 return ResourceManager.GetString("titEnterprises", resourceCulture);
             }
@@ -2637,7 +2637,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Entrepreneur.
         /// </summary>
-        internal static string titEntrepreneur {
+        public static string titEntrepreneur {
             get {
                 return ResourceManager.GetString("titEntrepreneur", resourceCulture);
             }
@@ -2646,7 +2646,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Entrepreneurs.
         /// </summary>
-        internal static string titEntrepreneurs {
+        public static string titEntrepreneurs {
             get {
                 return ResourceManager.GetString("titEntrepreneurs", resourceCulture);
             }
@@ -2655,7 +2655,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Hi, Wellcome.
         /// </summary>
-        internal static string titGreeting {
+        public static string titGreeting {
             get {
                 return ResourceManager.GetString("titGreeting", resourceCulture);
             }
@@ -2664,7 +2664,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Investor.
         /// </summary>
-        internal static string titInvestor {
+        public static string titInvestor {
             get {
                 return ResourceManager.GetString("titInvestor", resourceCulture);
             }
@@ -2673,7 +2673,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Investors.
         /// </summary>
-        internal static string titInvestors {
+        public static string titInvestors {
             get {
                 return ResourceManager.GetString("titInvestors", resourceCulture);
             }
@@ -2682,7 +2682,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Rating Startup | Make business every where.
         /// </summary>
-        internal static string Title {
+        public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
             }
@@ -2691,7 +2691,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Log-On.
         /// </summary>
-        internal static string titLogOn {
+        public static string titLogOn {
             get {
                 return ResourceManager.GetString("titLogOn", resourceCulture);
             }
@@ -2700,7 +2700,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to New Account.
         /// </summary>
-        internal static string titNewAccount {
+        public static string titNewAccount {
             get {
                 return ResourceManager.GetString("titNewAccount", resourceCulture);
             }
@@ -2709,7 +2709,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to The password is free typing, but the system will inform if your password is weak, medium or strong. Please consider using numbers, letters and special characters combined with uppercase and lowercase letters for your own security..
         /// </summary>
-        internal static string titPwd {
+        public static string titPwd {
             get {
                 return ResourceManager.GetString("titPwd", resourceCulture);
             }
@@ -2718,7 +2718,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to User must be a valid email account!.
         /// </summary>
-        internal static string titUser {
+        public static string titUser {
             get {
                 return ResourceManager.GetString("titUser", resourceCulture);
             }
@@ -2727,7 +2727,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Entrepreneur: Register your startup to get investors. Investor: Access the best investment opportunities..
         /// </summary>
-        internal static string titUserType {
+        public static string titUserType {
             get {
                 return ResourceManager.GetString("titUserType", resourceCulture);
             }
@@ -2736,7 +2736,7 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Others.
         /// </summary>
-        internal static string txtOthers {
+        public static string txtOthers {
             get {
                 return ResourceManager.GetString("txtOthers", resourceCulture);
             }

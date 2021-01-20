@@ -25,11 +25,9 @@ namespace com.luvinbox.model.registry
 		[Display(Name = "lblFirstName", ResourceType = typeof(AppRes))]
 		public string FirstName { get; set; }
 		[BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredDate", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Date)]
-		[DynamicDisplayFormat(ApplyFormatInEditMode = true)]
 		[Display(Name = "lblBirthday", ResourceType = typeof(AppRes))]
-		public DateTime Birthday { get; set; }
+		public DateTime? Birthday { get; set; }
 		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
 		[Display(Name = "lblHomeTown", ResourceType = typeof(AppRes))]

@@ -8,6 +8,7 @@ var Counter_1 = require("./components/Counter");
 var FetchData_1 = require("./components/FetchData");
 var whoweare_1 = require("./components/institutional/whoweare");
 var VendorForm_1 = require("./components/register/stepVendor/VendorForm");
+var VendorUI_1 = require("./components/register/VendorUI");
 var fontawesome_svg_core_1 = require("@fortawesome/fontawesome-svg-core");
 var free_brands_svg_icons_1 = require("@fortawesome/free-brands-svg-icons");
 var free_solid_svg_icons_1 = require("@fortawesome/free-solid-svg-icons");
@@ -17,6 +18,7 @@ exports.default = (function () { return (React.createElement(Layout_1.default, n
     React.createElement(react_router_1.Route, { exact: true, path: '/', component: Home_1.default }),
     React.createElement(react_router_1.Route, { path: '/counter', component: Counter_1.default }),
     React.createElement(react_router_1.Route, { path: '/fetch-data/:startDateIndex?', component: FetchData_1.default }),
-    React.createElement(react_router_1.Route, { path: '/institutional/whoweare', component: whoweare_1.default }),
-    React.createElement(react_router_1.Route, { path: '/register/vendor', component: VendorForm_1.default }))); });
+    React.createElement(react_router_1.Route, { path: '/institutional/whoweare', component: whoweare_1.WhoWeAre }),
+    React.createElement(react_router_1.Route, { path: '/register/vendor', component: VendorForm_1.VendorForm }),
+    React.createElement(react_router_1.Route, { path: '/register/vendorUI', component: VendorUI_1.default }))); });
 //# sourceMappingURL=App.js.map

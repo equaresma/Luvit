@@ -7,6 +7,7 @@ using System.Text;
 
 namespace com.luvinbox.model.registry
 {
+    [Serializable]
     public class Order : IEntity<String>
     {
         private String _paymentStatus;

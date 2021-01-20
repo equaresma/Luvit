@@ -1,4 +1,4 @@
-﻿const def_url = 'api/Vendor/';
+﻿const def_url = 'api/vendor/';
 
 const initialState = {
     Vendors: [],
@@ -22,11 +22,17 @@ export const actionCreators = {
         headers.append('Content-Type', 'application/json');
         const requestOptions = {
             method: 'POST',
-            headers,
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
             body: JSON.stringify(Vendor)
         };
         const request = new Request(url, requestOptions);
-        await fetch(request);
+        await fetch(request)
+            .then(data => data.text())
+            .then(text => alert(text))
+            .catch(err => { alert("Error Reading data " + err); });
         dispatch({ type: 'SAVE_VENDOR', Vendor });
     },
     deleteVendor: VendorId => async (dispatch, getState) => {

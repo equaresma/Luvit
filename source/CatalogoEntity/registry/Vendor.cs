@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.model.registry
 {
+    [Serializable]
     public class Vendor : IEntity<string>
     {
         [BsonId]

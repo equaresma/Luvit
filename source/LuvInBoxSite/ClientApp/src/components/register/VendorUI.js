@@ -6,15 +6,15 @@ import { Column } from 'primereact/column';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import { Growl } from 'primereact/growl';
-import { actionCreators } from '../store/Vendor';
+//import { Growl } from 'primereact/growl';
+import { actionCreators } from '../../store/Vendor';
 
 class VendorUI extends Component {
 
     constructor() {
         super();
         this.state = {};
-        this.onContactSelect = this.onContactSelect.bind(this);
+        this.onVendorSelect = this.onVendorSelect.bind(this);
         this.dialogHide = this.dialogHide.bind(this);
         this.addNew = this.addNew.bind(this);
         this.save = this.save.bind(this);
@@ -33,20 +33,20 @@ class VendorUI extends Component {
     }
 
     fetchData() {
-        this.props.requestContacts();
+        this.props.requestVendors();
     }
 
     updateProperty(property, value) {
-        let contact = this.state.contact;
-        contact[property] = value;
-        this.setState({ contact: contact });
+        let vendor = this.state.vendor;
+        vendor[property] = value;
+        this.setState({ vendor: vendor });
     }
 
-    onContactSelect(e) {
-        this.newContact = false;
+    onVendorSelect(e) {
+        this.newVendor = false;
         this.setState({
             displayDialog: true,
-            contact: Object.assign({}, e.data)
+            vendor: Object.assign({}, e.data)
         });
     }
 
@@ -55,33 +55,51 @@ class VendorUI extends Component {
     }
 
     addNew() {
-        this.newContact = true;
+        this.newVendor = true;
         this.setState({
-            contact: {
-                name: '', logoURL: '', webSite: '', email: '', mainAddress: {}, alternativeAddress: {}, mainPhone: {}, mobile: {} },
+            vendor: {
+                Id: null,
+                Name: '',
+                FantasyName: '',
+                FoundedIn: null,
+                DocumentNumber: { "Type": 5, Number: '', Name: '' },
+                LogoURL: '',
+                WebSite: '',
+                Email: '',
+                MainAddress: { Local: '', Number: 0, Complement: '', City: '', State: '', ZipCode: '' },
+                AlternativeAdress: null,
+                MainPhone: '',
+                Mobile: '',
+                HasPhysicalStore: false,
+                Contact: {
+                    LastName: '', MiddleName: '', FirstName: '', Birthday: null, Email: '', Phone: '', Mobile: '',
+                    login: { UserName: '', Password: '' }
+                },
+                BankInfo: { BankCode: '', BankBranch: '', AccoundNumber: '' }
+            },
             displayDialog: true
         });
     }
 
     save() {
-        this.props.saveContact(this.state.contact);
+        this.props.saveVendor(this.state.vendor);
         this.dialogHide();
-        this.growl.show({
-            severity: 'success', detail: this.newContact ?
-                "Data Saved Successfully" : "Data Updated Successfully"
-        });
+        //this.growl.show({
+        //    severity: 'success', detail: this.newVendor ?
+        //        "Data Saved Successfully" : "Data Updated Successfully"
+        //});
     }
 
     delete() {
-        this.props.deleteContact(this.state.contact.contactId);
+        this.props.deleteVendor(this.state.vendor.vendorId);
         this.dialogHide();
-        this.growl.show({ severity: 'error', detail: "Data Deleted Successfully" });
+        //this.growl.show({ severity: 'error', detail: "Data Deleted Successfully" });
     }
 
     render() {
 
         let header = <div className="p-clearfix"
-            style={{ lineHeight: '1.87em' }}>CRUD for Contacts </div>;
+            style={{ lineHeight: '1.87em' }}>CRUD for Vendors </div>;
 
         let footer = <div className="p-clearfix" style={{ width: '100%' }}>
             <Button style={{ float: 'left' }} label="Add"
@@ -90,59 +108,51 @@ class VendorUI extends Component {
 
         let dialogFooter = <div className="ui-dialog-buttonpane p-clearfix">
             <Button label="Close" icon="pi pi-times" onClick={this.dialogHide} />
-            <Button label="Delete" disabled={this.newContact ? true : false}
+            <Button label="Delete" disabled={this.newVendor ? true : false}
                 icon="pi pi-times" onClick={this.delete} />
-            <Button label={this.newContact ? "Save" : "Update"} icon="pi pi-check"
+            <Button label={this.newVendor ? "Save" : "Update"} icon="pi pi-check"
                 onClick={this.save} />
         </div>;
 
         return (
-            <div>
-                <Growl ref={(el) => this.growl = el} />
-                <DataTable value={this.props.contacts} selectionMode="single"
+            <div>                
+                <DataTable value={this.props.vendors} selectionMode="single"
                     header={header} footer={footer}
-                    selection={this.state.selectedContact}
+                    selection={this.state.selectedVendor}
                     onSelectionChange={e => this.setState
-                        ({ selectedContact: e.value })} onRowSelect={this.onContactSelect}>
-                    <Column field="contactId" header="ID" />
-                    <Column field="firstName" header="FirstName" />
-                    <Column field="lastName" header="LastName" />
-                    <Column field="email" header="Email" />
-                    <Column field="phone" header="Phone" />
+                        ({ selectedVendor: e.value })} onRowSelect={this.onVendorSelect}>
+                    <Column field="vendorId" header="ID" />
+                    <Column field="Name" header="Name" />
+                    <Column field="FantasyName" header="FantasyName" />
+                    <Column field="Email" header="Email" />
+                    <Column field="MainPhone" header="Phone" />
                 </DataTable>
                 <Dialog visible={this.state.displayDialog} style={{ 'width': '380px' }}
-                    header="Contact Details" modal={true} footer={dialogFooter}
+                    header="Vendor Details" modal={true} footer={dialogFooter}
                     onHide={() => this.setState({ displayDialog: false })}>
                     {
-                        this.state.contact &&
+                        this.state.vendor &&
 
                         <div className="p-grid p-fluid">
 
-                            <div><label htmlFor="firstName">First Name</label></div>
+                            <div><label htmlFor="name">Nome</label></div>
                             <div>
-                                <InputText id="firstName" onChange={(e) => { this.updateProperty('firstName', e.target.value) }}
-                                    value={this.state.contact.firstName} />
+                                <InputText id="name" onChange={(e) => { this.updateProperty('Name', e.target.value) }}
+                                    value={this.state.vendor.Name} />
                             </div>
 
                             <div style={{ paddingTop: '10px' }}>
-                                <label htmlFor="lastName">Last Name</label></div>
+                                <label htmlFor="lastName">Fantasy name</label></div>
                             <div>
-                                <InputText id="lastName" onChange={(e) => { this.updateProperty('lastName', e.target.value) }}
-                                    value={this.state.contact.lastName} />
+                                <InputText id="lastName" onChange={(e) => { this.updateProperty('FantasyName', e.target.value) }}
+                                    value={this.state.vendor.FantasyName} />
                             </div>
 
                             <div style={{ paddingTop: '10px' }}>
                                 <label htmlFor="lastName">Email</label></div>
                             <div>
-                                <InputText id="email" onChange={(e) => { this.updateProperty('email', e.target.value) }}
-                                    value={this.state.contact.email} />
-                            </div>
-
-                            <div style={{ paddingTop: '10px' }}>
-                                <label htmlFor="lastName">Phone</label></div>
-                            <div>
-                                <InputText id="phone" onChange={(e) => { this.updateProperty('phone', e.target.value) }}
-                                    value={this.state.contact.phone} />
+                                <InputText id="email" onChange={(e) => { this.updateProperty('Email', e.target.value) }}
+                                    value={this.state.vendor.Email} />
                             </div>
                         </div>
                     }
@@ -152,13 +162,13 @@ class VendorUI extends Component {
     }
 }
 
-// Make contacts array available in  props
+// Make vendors array available in  props
 function mapStateToProps(state) {
     return {
-        contacts: state.contacts.contacts,
-        loading: state.contacts.loading,
-        errors: state.contacts.errors,
-        forceReload: state.contacts.forceReload
+        vendors: state.vendors.vendors,
+        loading: state.vendors.loading,
+        errors: state.vendors.errors,
+        forceReload: state.vendors.forceReload
     }
 }
 

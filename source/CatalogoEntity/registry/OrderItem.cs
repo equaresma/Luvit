@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace com.luvinbox.model.registry
 {
+	[Serializable]
 	public class OrderItem
 	{
 		[BsonRepresentation(BsonType.ObjectId)]

@@ -48,7 +48,7 @@ namespace com.luvinbox.site.Controllers
 
         // POST api/vendor
         [HttpPost]
-        public async Task<IActionResult> Post(Vendor instance)
+        public async Task<ActionResult<Vendor>> Post(Vendor instance)
         {
             if (this.ModelState.IsValid)
             {
