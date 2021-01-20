@@ -13,7 +13,7 @@ namespace com.luvinbox.model.registry
 	{
 		[BsonRepresentation(BsonType.ObjectId)]
 		public String Id { get; set; }
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
+		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredFamilyName", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
 		[Display(Name = "lblFamilyName", ResourceType = typeof(AppRes))]
 		public string FamilyName { get; set; }
@@ -28,24 +28,14 @@ namespace com.luvinbox.model.registry
 		[DataType(DataType.Date)]
 		[Display(Name = "lblBirthday", ResourceType = typeof(AppRes))]
 		public DateTime? Birthday { get; set; }
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
-		[DataType(DataType.Text)]
-		[Display(Name = "lblHomeTown", ResourceType = typeof(AppRes))]
-		public String HomeTown { get; set; }
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
-		[DataType(DataType.Text)]
-		[Display(Name = "lblHomeState", ResourceType = typeof(AppRes))]
-		public String HomeState { get; set; }
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
-		[DataType(DataType.Text)]
-		[Display(Name = "lblHomeCountry", ResourceType = typeof(AppRes))]
-		public String HomeCountry { get; set; }
 		[Display(Name = "lblAddress", ResourceType = typeof(AppRes))]
 		public Address Address { get; set; }
 		public SocialMedia SocialNetwork { get; set; }
+		[Display(Name = "lblPhoneNumber", ResourceType = typeof(AppRes))]
 		[DataType(DataType.PhoneNumber)]
 		public String Phone { get; set; }
 		[DataType(DataType.PhoneNumber)]
+		[Display(Name = "lblMobileNumber", ResourceType = typeof(AppRes))]
 		public String Mobile { get; set; }
 		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredEmail", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]

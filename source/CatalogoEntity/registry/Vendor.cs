@@ -21,7 +21,7 @@ namespace com.luvinbox.model.registry
         [Display(Name = "lblFantasyName", ResourceType = typeof(AppRes))]
         public string FantasyName { get; set; }
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredDate", ErrorMessageResourceType = typeof(AppRes))]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Date)]
         [Display(Name = "lblFoundedIn", ResourceType = typeof(AppRes))]
         public DateTime FoundedIn { get; set; }
@@ -31,7 +31,7 @@ namespace com.luvinbox.model.registry
         public Document DocumentNumber { get; set; }
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredLogoSite", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.ImageUrl)]
-        [Display(Name = "LogoURL", ResourceType = typeof(AppRes))]        
+        [Display(Name = "lblLogoURL", ResourceType = typeof(AppRes))]        
         public string LogoURL { get; set; }
         [DataType(DataType.Url)]
         public string WebSite { get; set; }
@@ -40,14 +40,21 @@ namespace com.luvinbox.model.registry
         [RegularExpression(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$", ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(AppRes))]
         [Display(Name = "lblEmail", ResourceType = typeof(AppRes))]
         public string Email { get; set; }
+        [Display(Name = "lblMainAddress", ResourceType = typeof(AppRes))]
         public Address MainAddress { get; set; }
+        [Display(Name = "lblAlternativeAddress", ResourceType = typeof(AppRes))]
         public Address AlternativeAddress { get; set; }
+        [Display(Name = "lblPhoneNumber", ResourceType = typeof(AppRes))]
         [DataType(DataType.PhoneNumber)]
         public String MainPhone { get; set; }
+        [Display(Name = "lblMobileNumber", ResourceType = typeof(AppRes))]
         [DataType(DataType.PhoneNumber)]
         public String Mobile { get; set; }
+        [Display(Name = "lblHasPhysicalStore", ResourceType = typeof(AppRes))]
         public Boolean HasPhysicalStore { get; set; }
+        [Display(Name = "lblCommercialContact", ResourceType = typeof(AppRes))]
         public VendorContact Contact { get; set; }
+        [Display(Name = "lblBankInfo", ResourceType = typeof(AppRes))]
         public BankInformation BankInfo { get; set; }
         public DateTime Created { get; set; }
         public string Creator { get; set; }

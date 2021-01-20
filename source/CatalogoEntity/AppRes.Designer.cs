@@ -61,204 +61,6 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Accounting.
-        /// </summary>
-        public static string enumCoursesAccounting {
-            get {
-                return ResourceManager.GetString("enumCoursesAccounting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Biology.
-        /// </summary>
-        public static string enumCoursesBiology {
-            get {
-                return ResourceManager.GetString("enumCoursesBiology", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Business Management.
-        /// </summary>
-        public static string enumCoursesBusinessManagement {
-            get {
-                return ResourceManager.GetString("enumCoursesBusinessManagement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Chemistry.
-        /// </summary>
-        public static string enumCoursesChemistry {
-            get {
-                return ResourceManager.GetString("enumCoursesChemistry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Computer Science.
-        /// </summary>
-        public static string enumCoursesComputerScience {
-            get {
-                return ResourceManager.GetString("enumCoursesComputerScience", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dentistry.
-        /// </summary>
-        public static string enumCoursesDentistry {
-            get {
-                return ResourceManager.GetString("enumCoursesDentistry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Design.
-        /// </summary>
-        public static string enumCoursesDesign {
-            get {
-                return ResourceManager.GetString("enumCoursesDesign", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Economy.
-        /// </summary>
-        public static string enumCoursesEconomy {
-            get {
-                return ResourceManager.GetString("enumCoursesEconomy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Engineering.
-        /// </summary>
-        public static string enumCoursesEngineering {
-            get {
-                return ResourceManager.GetString("enumCoursesEngineering", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fashion.
-        /// </summary>
-        public static string enumCoursesFashion {
-            get {
-                return ResourceManager.GetString("enumCoursesFashion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to International Relations.
-        /// </summary>
-        public static string enumCoursesInternationalRelations {
-            get {
-                return ResourceManager.GetString("enumCoursesInternationalRelations", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Law.
-        /// </summary>
-        public static string enumCoursesLaw {
-            get {
-                return ResourceManager.GetString("enumCoursesLaw", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Marketing.
-        /// </summary>
-        public static string enumCoursesMarketing {
-            get {
-                return ResourceManager.GetString("enumCoursesMarketing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mathematics.
-        /// </summary>
-        public static string enumCoursesMathematics {
-            get {
-                return ResourceManager.GetString("enumCoursesMathematics", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Medicine.
-        /// </summary>
-        public static string enumCoursesMedicine {
-            get {
-                return ResourceManager.GetString("enumCoursesMedicine", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to N.A..
-        /// </summary>
-        public static string enumCoursesNA {
-            get {
-                return ResourceManager.GetString("enumCoursesNA", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Other.
-        /// </summary>
-        public static string enumCoursesOther {
-            get {
-                return ResourceManager.GetString("enumCoursesOther", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pedagogy.
-        /// </summary>
-        public static string enumCoursesPedagogy {
-            get {
-                return ResourceManager.GetString("enumCoursesPedagogy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Physical.
-        /// </summary>
-        public static string enumCoursesPhysical {
-            get {
-                return ResourceManager.GetString("enumCoursesPhysical", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Psychology.
-        /// </summary>
-        public static string enumCoursesPsychology {
-            get {
-                return ResourceManager.GetString("enumCoursesPsychology", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Statistic.
-        /// </summary>
-        public static string enumCoursesStatistic {
-            get {
-                return ResourceManager.GetString("enumCoursesStatistic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to System Analysis.
-        /// </summary>
-        public static string enumCoursesSystemAnalysis {
-            get {
-                return ResourceManager.GetString("enumCoursesSystemAnalysis", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to College.
         /// </summary>
         public static string enumDegreeCollege {
@@ -268,7 +70,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to HighSchool.
+        ///   Looks up a localized string similar to High school.
         /// </summary>
         public static string enumDegreeHighSchool {
             get {
@@ -313,6 +115,15 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Other Documents.
+        /// </summary>
+        public static string enumDocOthers {
+            get {
+                return ResourceManager.GetString("enumDocOthers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Passport.
         /// </summary>
         public static string enumDocPassport {
@@ -340,60 +151,6 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Curiosity.
-        /// </summary>
-        public static string enumEmCuriosity {
-            get {
-                return ResourceManager.GetString("enumEmCuriosity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ideation.
-        /// </summary>
-        public static string enumEmIdeation {
-            get {
-                return ResourceManager.GetString("enumEmIdeation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Operation.
-        /// </summary>
-        public static string enumEmOperation {
-            get {
-                return ResourceManager.GetString("enumEmOperation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Employee.
-        /// </summary>
-        public static string enumEmployee {
-            get {
-                return ResourceManager.GetString("enumEmployee", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Traction.
-        /// </summary>
-        public static string enumEmTraction {
-            get {
-                return ResourceManager.GetString("enumEmTraction", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Entrepreneur.
-        /// </summary>
-        public static string enumEntrepreneur {
-            get {
-                return ResourceManager.GetString("enumEntrepreneur", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Female.
         /// </summary>
         public static string enumGenderFemale {
@@ -408,222 +165,6 @@ namespace com.luvinbox.model {
         public static string enumGenderMale {
             get {
                 return ResourceManager.GetString("enumGenderMale", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Investor.
-        /// </summary>
-        public static string enumInvestor {
-            get {
-                return ResourceManager.GetString("enumInvestor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Agrobusiness.
-        /// </summary>
-        public static string enumLbAgrobusiness {
-            get {
-                return ResourceManager.GetString("enumLbAgrobusiness", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Biotechnology.
-        /// </summary>
-        public static string enumLbBiotechnology {
-            get {
-                return ResourceManager.GetString("enumLbBiotechnology", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Business.
-        /// </summary>
-        public static string enumLbBusiness {
-            get {
-                return ResourceManager.GetString("enumLbBusiness", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Communication.
-        /// </summary>
-        public static string enumLbCommunication {
-            get {
-                return ResourceManager.GetString("enumLbCommunication", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Communication and Media.
-        /// </summary>
-        public static string enumLbCommunicationAndMedia {
-            get {
-                return ResourceManager.GetString("enumLbCommunicationAndMedia", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to E-commerce.
-        /// </summary>
-        public static string enumLbEcommerce {
-            get {
-                return ResourceManager.GetString("enumLbEcommerce", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Education.
-        /// </summary>
-        public static string enumLbEducation {
-            get {
-                return ResourceManager.GetString("enumLbEducation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Entertainment.
-        /// </summary>
-        public static string enumLbEntertainment {
-            get {
-                return ResourceManager.GetString("enumLbEntertainment", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Environment.
-        /// </summary>
-        public static string enumLbEnvironment {
-            get {
-                return ResourceManager.GetString("enumLbEnvironment", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Events and Tourism.
-        /// </summary>
-        public static string enumLbEventsAndTourism {
-            get {
-                return ResourceManager.GetString("enumLbEventsAndTourism", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fashion and Beauty.
-        /// </summary>
-        public static string enumLbFashionAndBeauty {
-            get {
-                return ResourceManager.GetString("enumLbFashionAndBeauty", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Finance.
-        /// </summary>
-        public static string enumLbFinance {
-            get {
-                return ResourceManager.GetString("enumLbFinance", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Games.
-        /// </summary>
-        public static string enumLbGames {
-            get {
-                return ResourceManager.GetString("enumLbGames", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hardware.
-        /// </summary>
-        public static string enumLbHardware {
-            get {
-                return ResourceManager.GetString("enumLbHardware", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Health.
-        /// </summary>
-        public static string enumLbHealth {
-            get {
-                return ResourceManager.GetString("enumLbHealth", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Internet.
-        /// </summary>
-        public static string enumLbInternet {
-            get {
-                return ResourceManager.GetString("enumLbInternet", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Logistics.
-        /// </summary>
-        public static string enumLbLogistics {
-            get {
-                return ResourceManager.GetString("enumLbLogistics", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mobile.
-        /// </summary>
-        public static string enumLbMobile {
-            get {
-                return ResourceManager.GetString("enumLbMobile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Nanotechnology.
-        /// </summary>
-        public static string enumLbNanotechnology {
-            get {
-                return ResourceManager.GetString("enumLbNanotechnology", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Others.
-        /// </summary>
-        public static string enumLbOthers {
-            get {
-                return ResourceManager.GetString("enumLbOthers", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Retail and E-commerce.
-        /// </summary>
-        public static string enumLbRetailAndEcommerce {
-            get {
-                return ResourceManager.GetString("enumLbRetailAndEcommerce", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SaaS.
-        /// </summary>
-        public static string enumLbSaaS {
-            get {
-                return ResourceManager.GetString("enumLbSaaS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to TIC and Telecom.
-        /// </summary>
-        public static string enumLbTelecom {
-            get {
-                return ResourceManager.GetString("enumLbTelecom", resourceCulture);
             }
         }
         
@@ -646,7 +187,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Separated.
+        ///   Looks up a localized string similar to Separeted.
         /// </summary>
         public static string enumMaritalStsSeparated {
             get {
@@ -664,7 +205,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Widowed.
+        ///   Looks up a localized string similar to Wildowed.
         /// </summary>
         public static string enumMaritalStsWidowed {
             get {
@@ -691,7 +232,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Postgraduate.
+        ///   Looks up a localized string similar to Pos Graduate.
         /// </summary>
         public static string enumPostgraduate {
             get {
@@ -700,385 +241,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to User does not exist Or invalid password.
-        /// </summary>
-        public static string errUserDoesNotExist {
-            get {
-                return ResourceManager.GetString("errUserDoesNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MM/dd/yyyy.
-        /// </summary>
-        public static string frmDate {
-            get {
-                return ResourceManager.GetString("frmDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0:MM-dd-yyyy}.
-        /// </summary>
-        public static string frmDateDataN {
-            get {
-                return ResourceManager.GetString("frmDateDataN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Delete.
-        /// </summary>
-        public static string grdCmdDelete {
-            get {
-                return ResourceManager.GetString("grdCmdDelete", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit.
-        /// </summary>
-        public static string grdCmdEdit {
-            get {
-                return ResourceManager.GetString("grdCmdEdit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to View.
-        /// </summary>
-        public static string grdCmdView {
-            get {
-                return ResourceManager.GetString("grdCmdView", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to City.
-        /// </summary>
-        public static string hCity {
-            get {
-                return ResourceManager.GetString("hCity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Country.
-        /// </summary>
-        public static string hCountry {
-            get {
-                return ResourceManager.GetString("hCountry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Customer.
-        /// </summary>
-        public static string hCustomer {
-            get {
-                return ResourceManager.GetString("hCustomer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Does quiz answered?.
-        /// </summary>
-        public static string hDoesQuizAnswered {
-            get {
-                return ResourceManager.GetString("hDoesQuizAnswered", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Family Name.
-        /// </summary>
-        public static string hFamilyName {
-            get {
-                return ResourceManager.GetString("hFamilyName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fantasy Name.
-        /// </summary>
-        public static string hFantasyName {
-            get {
-                return ResourceManager.GetString("hFantasyName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to First Name.
-        /// </summary>
-        public static string hFirstName {
-            get {
-                return ResourceManager.GetString("hFirstName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Founded In.
-        /// </summary>
-        public static string hFoundedIn {
-            get {
-                return ResourceManager.GetString("hFoundedIn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Id.
-        /// </summary>
-        public static string hId {
-            get {
-                return ResourceManager.GetString("hId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Is it Paid?.
-        /// </summary>
-        public static string hIsPaid {
-            get {
-                return ResourceManager.GetString("hIsPaid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Middle Name.
-        /// </summary>
-        public static string hMiddleName {
-            get {
-                return ResourceManager.GetString("hMiddleName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name.
-        /// </summary>
-        public static string hName {
-            get {
-                return ResourceManager.GetString("hName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Position.
-        /// </summary>
-        public static string hPosition {
-            get {
-                return ResourceManager.GetString("hPosition", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Price.
-        /// </summary>
-        public static string hPrice {
-            get {
-                return ResourceManager.GetString("hPrice", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Answer.
-        /// </summary>
-        public static string hQuizAnswer {
-            get {
-                return ResourceManager.GetString("hQuizAnswer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Categoria de análise.
-        /// </summary>
-        public static string hQuizCategory {
-            get {
-                return ResourceManager.GetString("hQuizCategory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Descrição.
-        /// </summary>
-        public static string hQuizDesc {
-            get {
-                return ResourceManager.GetString("hQuizDesc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sócios.
-        /// </summary>
-        public static string hQuizEntrep {
-            get {
-                return ResourceManager.GetString("hQuizEntrep", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fator.
-        /// </summary>
-        public static string hQuizFactor {
-            get {
-                return ResourceManager.GetString("hQuizFactor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pontos.
-        /// </summary>
-        public static string hQuizPoints {
-            get {
-                return ResourceManager.GetString("hQuizPoints", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pontos possíveis.
-        /// </summary>
-        public static string hQuizPossiblePoints {
-            get {
-                return ResourceManager.GetString("hQuizPossiblePoints", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Somatória.
-        /// </summary>
-        public static string hQuizSum {
-            get {
-                return ResourceManager.GetString("hQuizSum", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start Date.
-        /// </summary>
-        public static string hStartDate {
-            get {
-                return ResourceManager.GetString("hStartDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to State.
-        /// </summary>
-        public static string hState {
-            get {
-                return ResourceManager.GetString("hState", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to City is invalid.
-        /// </summary>
-        public static string InvalidCity {
-            get {
-                return ResourceManager.GetString("InvalidCity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Country is invalid.
-        /// </summary>
-        public static string InvalidCountry {
-            get {
-                return ResourceManager.GetString("InvalidCountry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Date is invalid.
-        /// </summary>
-        public static string InvalidDate {
-            get {
-                return ResourceManager.GetString("InvalidDate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Document is invalid.
-        /// </summary>
-        public static string InvalidDocument {
-            get {
-                return ResourceManager.GetString("InvalidDocument", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Email is invalid.
-        /// </summary>
-        public static string InvalidEmail {
-            get {
-                return ResourceManager.GetString("InvalidEmail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Local is invalid.
-        /// </summary>
-        public static string InvalidLocal {
-            get {
-                return ResourceManager.GetString("InvalidLocal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Invalid Login.
-        /// </summary>
-        public static string InvalidLogin {
-            get {
-                return ResourceManager.GetString("InvalidLogin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name is invalid.
-        /// </summary>
-        public static string InvalidName {
-            get {
-                return ResourceManager.GetString("InvalidName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Number is invalid.
-        /// </summary>
-        public static string InvalidNumber {
-            get {
-                return ResourceManager.GetString("InvalidNumber", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to State is invalid.
-        /// </summary>
-        public static string InvalidState {
-            get {
-                return ResourceManager.GetString("InvalidState", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ZipCode is invalid.
-        /// </summary>
-        public static string InvalidZipCode {
-            get {
-                return ResourceManager.GetString("InvalidZipCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Accelerated.
-        /// </summary>
-        public static string lblAccelerated {
-            get {
-                return ResourceManager.GetString("lblAccelerated", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Account Number.
+        ///   Looks up a localized string similar to Account number.
         /// </summary>
         public static string lblAccountNumber {
             get {
@@ -1114,7 +277,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Local.
+        ///   Looks up a localized string similar to Localidade.
         /// </summary>
         public static string lblAddLocal {
             get {
@@ -1132,15 +295,6 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Address.
-        /// </summary>
-        public static string lblAddress {
-            get {
-                return ResourceManager.GetString("lblAddress", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to State.
         /// </summary>
         public static string lblAddState {
@@ -1150,7 +304,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ZipCode.
+        ///   Looks up a localized string similar to Zipcode.
         /// </summary>
         public static string lblAddZipCode {
             get {
@@ -1159,16 +313,25 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Answers.
+        ///   Looks up a localized string similar to Adrress.
         /// </summary>
-        public static string lblAnswers {
+        public static string lblAdrress {
             get {
-                return ResourceManager.GetString("lblAnswers", resourceCulture);
+                return ResourceManager.GetString("lblAdrress", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bank Branch.
+        ///   Looks up a localized string similar to Alternative Address.
+        /// </summary>
+        public static string lblAlternativeAddress {
+            get {
+                return ResourceManager.GetString("lblAlternativeAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bank branch.
         /// </summary>
         public static string lblBankBranch {
             get {
@@ -1177,7 +340,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bank Code.
+        ///   Looks up a localized string similar to Bank code.
         /// </summary>
         public static string lblBankCode {
             get {
@@ -1186,20 +349,11 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Beginning.
+        ///   Looks up a localized string similar to Bank Info.
         /// </summary>
-        public static string lblBeginning {
+        public static string lblBankInfo {
             get {
-                return ResourceManager.GetString("lblBeginning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Birth.
-        /// </summary>
-        public static string lblBirth {
-            get {
-                return ResourceManager.GetString("lblBirth", resourceCulture);
+                return ResourceManager.GetString("lblBankInfo", resourceCulture);
             }
         }
         
@@ -1213,33 +367,6 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Birthplace.
-        /// </summary>
-        public static string lblBirthplace {
-            get {
-                return ResourceManager.GetString("lblBirthplace", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Buy.
-        /// </summary>
-        public static string lblBuy {
-            get {
-                return ResourceManager.GetString("lblBuy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Answer in order to continue. What is {0} + {1}?.
-        /// </summary>
-        public static string lblCaptchMsg {
-            get {
-                return ResourceManager.GetString("lblCaptchMsg", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Category.
         /// </summary>
         public static string lblCategory {
@@ -1249,83 +376,11 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change Password.
+        ///   Looks up a localized string similar to Commercial Contact.
         /// </summary>
-        public static string lblChangePassword {
+        public static string lblCommercialContact {
             get {
-                return ResourceManager.GetString("lblChangePassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to City Of Foundation.
-        /// </summary>
-        public static string lblCityOfFoundation {
-            get {
-                return ResourceManager.GetString("lblCityOfFoundation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Password Confirmation.
-        /// </summary>
-        public static string lblConfPwd {
-            get {
-                return ResourceManager.GetString("lblConfPwd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Contacts.
-        /// </summary>
-        public static string lblContacts {
-            get {
-                return ResourceManager.GetString("lblContacts", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Country Of Foundation.
-        /// </summary>
-        public static string lblCountryOfFoundation {
-            get {
-                return ResourceManager.GetString("lblCountryOfFoundation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Course.
-        /// </summary>
-        public static string lblCourse {
-            get {
-                return ResourceManager.GetString("lblCourse", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Created.
-        /// </summary>
-        public static string lblCreated {
-            get {
-                return ResourceManager.GetString("lblCreated", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Creator.
-        /// </summary>
-        public static string lblCreator {
-            get {
-                return ResourceManager.GetString("lblCreator", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Customer.
-        /// </summary>
-        public static string lblCustomer {
-            get {
-                return ResourceManager.GetString("lblCustomer", resourceCulture);
+                return ResourceManager.GetString("lblCommercialContact", resourceCulture);
             }
         }
         
@@ -1348,25 +403,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Develop In.
-        /// </summary>
-        public static string lblDevelopIn {
-            get {
-                return ResourceManager.GetString("lblDevelopIn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Document.
-        /// </summary>
-        public static string lblDoc {
-            get {
-                return ResourceManager.GetString("lblDoc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ID.
         /// </summary>
         public static string lblDocumentNumber {
             get {
@@ -1375,16 +412,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Document Type.
-        /// </summary>
-        public static string lblDocumentType {
-            get {
-                return ResourceManager.GetString("lblDocumentType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Email.
+        ///   Looks up a localized string similar to E-mail.
         /// </summary>
         public static string lblEmail {
             get {
@@ -1393,106 +421,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to End Time.
-        /// </summary>
-        public static string lblEndTime {
-            get {
-                return ResourceManager.GetString("lblEndTime", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enrolled.
-        /// </summary>
-        public static string lblEnrolled {
-            get {
-                return ResourceManager.GetString("lblEnrolled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enrollment.
-        /// </summary>
-        public static string lblEnrollment {
-            get {
-                return ResourceManager.GetString("lblEnrollment", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enterprise.
-        /// </summary>
-        public static string lblEnterprise {
-            get {
-                return ResourceManager.GetString("lblEnterprise", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enterprise Moment.
-        /// </summary>
-        public static string lblEnterpriseMoment {
-            get {
-                return ResourceManager.GetString("lblEnterpriseMoment", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Entrepreneur.
-        /// </summary>
-        public static string lblEntrepreneur {
-            get {
-                return ResourceManager.GetString("lblEntrepreneur", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Entrepreneurs.
-        /// </summary>
-        public static string lblEntrepreneurs {
-            get {
-                return ResourceManager.GetString("lblEntrepreneurs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error.
-        /// </summary>
-        public static string lblError {
-            get {
-                return ResourceManager.GetString("lblError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Event.
-        /// </summary>
-        public static string lblEvent {
-            get {
-                return ResourceManager.GetString("lblEvent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Experience..
-        /// </summary>
-        public static string lblExperience {
-            get {
-                return ResourceManager.GetString("lblExperience", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Factor.
-        /// </summary>
-        public static string lblFactor {
-            get {
-                return ResourceManager.GetString("lblFactor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Family Name.
+        ///   Looks up a localized string similar to Family name.
         /// </summary>
         public static string lblFamilyName {
             get {
@@ -1501,25 +430,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fantasy Name.
-        /// </summary>
-        public static string lblFantasyName {
-            get {
-                return ResourceManager.GetString("lblFantasyName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Finance.
-        /// </summary>
-        public static string lblFinance {
-            get {
-                return ResourceManager.GetString("lblFinance", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to First Name.
+        ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string lblFirstName {
             get {
@@ -1528,29 +439,11 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Foundation.
-        /// </summary>
-        public static string lblFoundation {
-            get {
-                return ResourceManager.GetString("lblFoundation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Founded In.
+        ///   Looks up a localized string similar to Founded in.
         /// </summary>
         public static string lblFoundedIn {
             get {
                 return ResourceManager.GetString("lblFoundedIn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Full Name.
-        /// </summary>
-        public static string lblFullName {
-            get {
-                return ResourceManager.GetString("lblFullName", resourceCulture);
             }
         }
         
@@ -1564,124 +457,43 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Has Relatives Entrepreneurs?(Consider only grandparents, parents and siblings).
+        ///   Looks up a localized string similar to Has Physical Store.
         /// </summary>
-        public static string lblHasRelativesEntrepreneurs {
+        public static string lblHasPhysicalStore {
             get {
-                return ResourceManager.GetString("lblHasRelativesEntrepreneurs", resourceCulture);
+                return ResourceManager.GetString("lblHasPhysicalStore", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home Country.
+        ///   Looks up a localized string similar to Image URL.
         /// </summary>
-        public static string lblHomeCountry {
+        public static string lblImageURL {
             get {
-                return ResourceManager.GetString("lblHomeCountry", resourceCulture);
+                return ResourceManager.GetString("lblImageURL", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home State.
+        ///   Looks up a localized string similar to Logo URL.
         /// </summary>
-        public static string lblHomeState {
+        public static string lblLogoURL {
             get {
-                return ResourceManager.GetString("lblHomeState", resourceCulture);
+                return ResourceManager.GetString("lblLogoURL", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home Town.
+        ///   Looks up a localized string similar to Main Address.
         /// </summary>
-        public static string lblHomeTown {
+        public static string lblMainAddress {
             get {
-                return ResourceManager.GetString("lblHomeTown", resourceCulture);
+                return ResourceManager.GetString("lblMainAddress", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Incubated.
-        /// </summary>
-        public static string lblIncubated {
-            get {
-                return ResourceManager.GetString("lblIncubated", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Invalid Captcha.
-        /// </summary>
-        public static string lblInvalidCaptcha {
-            get {
-                return ResourceManager.GetString("lblInvalidCaptcha", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Invested.
-        /// </summary>
-        public static string lblInvested {
-            get {
-                return ResourceManager.GetString("lblInvested", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Is Exclusive Dedication to Startup?.
-        /// </summary>
-        public static string lblIsExclusiveDedication {
-            get {
-                return ResourceManager.GetString("lblIsExclusiveDedication", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Is Pending Approval?.
-        /// </summary>
-        public static string lblIsPendingApproval {
-            get {
-                return ResourceManager.GetString("lblIsPendingApproval", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Last Update.
-        /// </summary>
-        public static string lblLastUpdate {
-            get {
-                return ResourceManager.GetString("lblLastUpdate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Legal Entity Registry.
-        /// </summary>
-        public static string lblLegalEntityRegistry {
-            get {
-                return ResourceManager.GetString("lblLegalEntityRegistry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Line Of Business.
-        /// </summary>
-        public static string lblLineOfBusiness {
-            get {
-                return ResourceManager.GetString("lblLineOfBusiness", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User Name.
-        /// </summary>
-        public static string lblLogin {
-            get {
-                return ResourceManager.GetString("lblLogin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Marital Status.
+        ///   Looks up a localized string similar to Marital status.
         /// </summary>
         public static string lblMaritalStatus {
             get {
@@ -1690,25 +502,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Market.
-        /// </summary>
-        public static string lblMarket {
-            get {
-                return ResourceManager.GetString("lblMarket", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Max Points.
-        /// </summary>
-        public static string lblMaxPoints {
-            get {
-                return ResourceManager.GetString("lblMaxPoints", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Middle Name.
+        ///   Looks up a localized string similar to Middle name.
         /// </summary>
         public static string lblMiddleName {
             get {
@@ -1719,72 +513,27 @@ namespace com.luvinbox.model {
         /// <summary>
         ///   Looks up a localized string similar to Mobile.
         /// </summary>
-        public static string lblMobile {
+        public static string lblMobileNumber {
             get {
-                return ResourceManager.GetString("lblMobile", resourceCulture);
+                return ResourceManager.GetString("lblMobileNumber", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Name.
+        ///   Looks up a localized string similar to Discount.
         /// </summary>
-        public static string lblName {
+        public static string lblOff {
             get {
-                return ResourceManager.GetString("lblName", resourceCulture);
+                return ResourceManager.GetString("lblOff", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Number.
+        ///   Looks up a localized string similar to Off Price.
         /// </summary>
-        public static string lblNumber {
+        public static string lblOffPrice {
             get {
-                return ResourceManager.GetString("lblNumber", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Order detail.
-        /// </summary>
-        public static string lblOrderDetail {
-            get {
-                return ResourceManager.GetString("lblOrderDetail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Other Course.
-        /// </summary>
-        public static string lblOtherCourse {
-            get {
-                return ResourceManager.GetString("lblOtherCourse", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to IsPaid.
-        /// </summary>
-        public static string lblPaid {
-            get {
-                return ResourceManager.GetString("lblPaid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Partner.
-        /// </summary>
-        public static string lblPartner {
-            get {
-                return ResourceManager.GetString("lblPartner", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Partners.
-        /// </summary>
-        public static string lblPartners {
-            get {
-                return ResourceManager.GetString("lblPartners", resourceCulture);
+                return ResourceManager.GetString("lblOffPrice", resourceCulture);
             }
         }
         
@@ -1798,7 +547,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Payment ID.
+        ///   Looks up a localized string similar to Payment Id.
         /// </summary>
         public static string lblPaymentId {
             get {
@@ -1852,33 +601,6 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phone.
-        /// </summary>
-        public static string lblPhone {
-            get {
-                return ResourceManager.GetString("lblPhone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Phones.
-        /// </summary>
-        public static string lblPhones {
-            get {
-                return ResourceManager.GetString("lblPhones", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Points.
-        /// </summary>
-        public static string lblPoints {
-            get {
-                return ResourceManager.GetString("lblPoints", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Position.
         /// </summary>
         public static string lblPosition {
@@ -1906,475 +628,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Password.
-        /// </summary>
-        public static string lblPwd {
-            get {
-                return ResourceManager.GetString("lblPwd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Quantity.
-        /// </summary>
-        public static string lblQuantity {
-            get {
-                return ResourceManager.GetString("lblQuantity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Question.
-        /// </summary>
-        public static string lblQuestion {
-            get {
-                return ResourceManager.GetString("lblQuestion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Questions.
-        /// </summary>
-        public static string lblQuestions {
-            get {
-                return ResourceManager.GetString("lblQuestions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Quiz.
-        /// </summary>
-        public static string lblQuiz {
-            get {
-                return ResourceManager.GetString("lblQuiz", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Rating.
-        /// </summary>
-        public static string lblRating {
-            get {
-                return ResourceManager.GetString("lblRating", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Registry.
-        /// </summary>
-        public static string lblRegistry {
-            get {
-                return ResourceManager.GetString("lblRegistry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Registry Confirmation.
-        /// </summary>
-        public static string lblRegistryConfirmation {
-            get {
-                return ResourceManager.GetString("lblRegistryConfirmation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to An e-mail will be send in order to confirm your registry. This email will contain a initial password that need will chang in the first login..
-        /// </summary>
-        public static string lblRegistryConfirmationMsg {
-            get {
-                return ResourceManager.GetString("lblRegistryConfirmationMsg", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Remember Me?.
-        /// </summary>
-        public static string lblRememberMe {
-            get {
-                return ResourceManager.GetString("lblRememberMe", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select.
-        /// </summary>
-        public static string lblSelect {
-            get {
-                return ResourceManager.GetString("lblSelect", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Socia.
-        /// </summary>
-        public static string lblSocial {
-            get {
-                return ResourceManager.GetString("lblSocial", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start Time.
-        /// </summary>
-        public static string lblStartTime {
-            get {
-                return ResourceManager.GetString("lblStartTime", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to State Of Foundation.
-        /// </summary>
-        public static string lblStateOfFoundation {
-            get {
-                return ResourceManager.GetString("lblStateOfFoundation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Team.
-        /// </summary>
-        public static string lblTeam {
-            get {
-                return ResourceManager.GetString("lblTeam", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total.
-        /// </summary>
-        public static string lblTotal {
-            get {
-                return ResourceManager.GetString("lblTotal", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Oops, sorry an unexpected error occurred..
-        /// </summary>
-        public static string lblUnhandledException {
-            get {
-                return ResourceManager.GetString("lblUnhandledException", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Trace:.
-        /// </summary>
-        public static string lblUnhandledExceptionTechInfo {
-            get {
-                return ResourceManager.GetString("lblUnhandledExceptionTechInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Last Update By.
-        /// </summary>
-        public static string lblUserLastUpdate {
-            get {
-                return ResourceManager.GetString("lblUserLastUpdate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User Type.
-        /// </summary>
-        public static string lblUserType {
-            get {
-                return ResourceManager.GetString("lblUserType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Value.
-        /// </summary>
-        public static string lblValue {
-            get {
-                return ResourceManager.GetString("lblValue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to View Details.
-        /// </summary>
-        public static string lblViewDetails {
-            get {
-                return ResourceManager.GetString("lblViewDetails", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to View Map.
-        /// </summary>
-        public static string lblViewMap {
-            get {
-                return ResourceManager.GetString("lblViewMap", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Website.
-        /// </summary>
-        public static string lblWebsite {
-            get {
-                return ResourceManager.GetString("lblWebsite", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Access Denied..
-        /// </summary>
-        public static string msgAccessDenied {
-            get {
-                return ResourceManager.GetString("msgAccessDenied", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Let investors arrond the world know about your start-up..
-        /// </summary>
-        public static string msgEnterprise {
-            get {
-                return ResourceManager.GetString("msgEnterprise", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sign up and let investors find you.
-        /// </summary>
-        public static string msgEntrepreneur {
-            get {
-                return ResourceManager.GetString("msgEntrepreneur", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Event cannot be Deleted because there are enrollments..
-        /// </summary>
-        public static string msgEventCannotBeDeletedOrUpdatedEnrollments {
-            get {
-                return ResourceManager.GetString("msgEventCannotBeDeletedOrUpdatedEnrollments", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Event cannot be Deleted because it is in the past..
-        /// </summary>
-        public static string msgEventCannotBeDeletedOrUpdatedPast {
-            get {
-                return ResourceManager.GetString("msgEventCannotBeDeletedOrUpdatedPast", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Event in the past cannot be updated..
-        /// </summary>
-        public static string msgEventInThePast {
-            get {
-                return ResourceManager.GetString("msgEventInThePast", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The CNPJ number must consist of 14 numeric characters..
-        /// </summary>
-        public static string msgInvalidCnpjLenght {
-            get {
-                return ResourceManager.GetString("msgInvalidCnpjLenght", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The CPF number must consist of 11 numeric characters..
-        /// </summary>
-        public static string msgInvalidCpfLenght {
-            get {
-                return ResourceManager.GetString("msgInvalidCpfLenght", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Invalid Document Type..
-        /// </summary>
-        public static string msgInvalidDocumentType {
-            get {
-                return ResourceManager.GetString("msgInvalidDocumentType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sign up and find the startups according to your investment profile.
-        /// </summary>
-        public static string msgInvestor {
-            get {
-                return ResourceManager.GetString("msgInvestor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to You already bought this Event.
-        /// </summary>
-        public static string msgIsAlreadyBought {
-            get {
-                return ResourceManager.GetString("msgIsAlreadyBought", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enter with your credentials..
-        /// </summary>
-        public static string msgLogOn {
-            get {
-                return ResourceManager.GetString("msgLogOn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No events available..
-        /// </summary>
-        public static string msgNoEvents {
-            get {
-                return ResourceManager.GetString("msgNoEvents", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Identify the timing of startups and provide investors with the best investment options..
-        /// </summary>
-        public static string msgOurMission {
-            get {
-                return ResourceManager.GetString("msgOurMission", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mission.
-        /// </summary>
-        public static string msgOurMissionTit {
-            get {
-                return ResourceManager.GetString("msgOurMissionTit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to We believe in the power of technology to turn dreams into reality, to unite ideas and investment opportunities..
-        /// </summary>
-        public static string msgOurValues {
-            get {
-                return ResourceManager.GetString("msgOurValues", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Values.
-        /// </summary>
-        public static string msgOurValuesTit {
-            get {
-                return ResourceManager.GetString("msgOurValuesTit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to To be a reference in orientation for investors and in raising financial resources to leverage startups..
-        /// </summary>
-        public static string msgOurVision {
-            get {
-                return ResourceManager.GetString("msgOurVision", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Vision.
-        /// </summary>
-        public static string msgOurVisionTit {
-            get {
-                return ResourceManager.GetString("msgOurVisionTit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Person already exists.
-        /// </summary>
-        public static string msgPersonAlreadyExists {
-            get {
-                return ResourceManager.GetString("msgPersonAlreadyExists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select One Startup At Least.
-        /// </summary>
-        public static string msgSelectOneStartupAtLeast {
-            get {
-                return ResourceManager.GetString("msgSelectOneStartupAtLeast", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Startup already exists..
-        /// </summary>
-        public static string msgStartupAlreadyExists {
-            get {
-                return ResourceManager.GetString("msgStartupAlreadyExists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Startup enrollment:.
-        /// </summary>
-        public static string msgStartupEnrollment {
-            get {
-                return ResourceManager.GetString("msgStartupEnrollment", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure to add new entrepreuner {0}?.
-        /// </summary>
-        public static string msgSureAddNewEntrepreuner {
-            get {
-                return ResourceManager.GetString("msgSureAddNewEntrepreuner", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This document number already exists..
-        /// </summary>
-        public static string msgThisDocumentAlreadyExists {
-            get {
-                return ResourceManager.GetString("msgThisDocumentAlreadyExists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Type the entrepreuner name to search.
-        /// </summary>
-        public static string msgTypeEntrepreunerName {
-            get {
-                return ResourceManager.GetString("msgTypeEntrepreunerName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Under Construction.
-        /// </summary>
-        public static string msgUnderConstruction {
-            get {
-                return ResourceManager.GetString("msgUnderConstruction", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User already exists..
-        /// </summary>
-        public static string msgUserAlreadyExists {
-            get {
-                return ResourceManager.GetString("msgUserAlreadyExists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Account number is Required.
+        ///   Looks up a localized string similar to Account number is required.
         /// </summary>
         public static string RequiredAccountNumber {
             get {
@@ -2383,7 +637,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bank branch is Required.
+        ///   Looks up a localized string similar to Bank branch is required.
         /// </summary>
         public static string RequiredBankBranch {
             get {
@@ -2392,7 +646,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bank code is Required.
+        ///   Looks up a localized string similar to Bank code is required.
         /// </summary>
         public static string RequiredBankCode {
             get {
@@ -2401,20 +655,11 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to City is required.
+        ///   Looks up a localized string similar to Customer name is Required.
         /// </summary>
-        public static string RequiredCity {
+        public static string RequiredCustomerName {
             get {
-                return ResourceManager.GetString("RequiredCity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to State is required.
-        /// </summary>
-        public static string RequiredCountry {
-            get {
-                return ResourceManager.GetString("RequiredCountry", resourceCulture);
+                return ResourceManager.GetString("RequiredCustomerName", resourceCulture);
             }
         }
         
@@ -2428,16 +673,7 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Description is required.
-        /// </summary>
-        public static string RequiredDescription {
-            get {
-                return ResourceManager.GetString("RequiredDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name is required.
+        ///   Looks up a localized string similar to Document is required.
         /// </summary>
         public static string RequiredDocument {
             get {
@@ -2455,7 +691,16 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fantasy Name is Required.
+        ///   Looks up a localized string similar to Familly name is requied.
+        /// </summary>
+        public static string RequiredFamilyName {
+            get {
+                return ResourceManager.GetString("RequiredFamilyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fantasy name is required.
         /// </summary>
         public static string RequiredFantasyName {
             get {
@@ -2464,11 +709,11 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Line Of Business is required.
+        ///   Looks up a localized string similar to Founded in is required.
         /// </summary>
-        public static string RequiredLineOfBusiness {
+        public static string RequiredFoundedIn {
             get {
-                return ResourceManager.GetString("RequiredLineOfBusiness", resourceCulture);
+                return ResourceManager.GetString("RequiredFoundedIn", resourceCulture);
             }
         }
         
@@ -2482,25 +727,16 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Login is required.
+        ///   Looks up a localized string similar to Logo site is required.
         /// </summary>
-        public static string RequiredLogin {
+        public static string RequiredLogoSite {
             get {
-                return ResourceManager.GetString("RequiredLogin", resourceCulture);
+                return ResourceManager.GetString("RequiredLogoSite", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Max Points are required..
-        /// </summary>
-        public static string RequiredMaxPoints {
-            get {
-                return ResourceManager.GetString("RequiredMaxPoints", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Name is required.
+        ///   Looks up a localized string similar to Name is requied.
         /// </summary>
         public static string RequiredName {
             get {
@@ -2514,231 +750,6 @@ namespace com.luvinbox.model {
         public static string RequiredNumber {
             get {
                 return ResourceManager.GetString("RequiredNumber", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Password is required.
-        /// </summary>
-        public static string RequiredPwd {
-            get {
-                return ResourceManager.GetString("RequiredPwd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to State is required.
-        /// </summary>
-        public static string RequiredState {
-            get {
-                return ResourceManager.GetString("RequiredState", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ZipCode is required.
-        /// </summary>
-        public static string RequiredZipCode {
-            get {
-                return ResourceManager.GetString("RequiredZipCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show password.
-        /// </summary>
-        public static string strengthButtonText {
-            get {
-                return ResourceManager.GetString("strengthButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hide Password.
-        /// </summary>
-        public static string strengthButtonTextToggle {
-            get {
-                return ResourceManager.GetString("strengthButtonTextToggle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Strength: medium.
-        /// </summary>
-        public static string strengthMedium {
-            get {
-                return ResourceManager.GetString("strengthMedium", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Strength: strong.
-        /// </summary>
-        public static string strengthStrong {
-            get {
-                return ResourceManager.GetString("strengthStrong", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Strength: very weak.
-        /// </summary>
-        public static string strengthVeryWeak {
-            get {
-                return ResourceManager.GetString("strengthVeryWeak", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Strength: weak.
-        /// </summary>
-        public static string strengthWeak {
-            get {
-                return ResourceManager.GetString("strengthWeak", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to en-UK.
-        /// </summary>
-        public static string sysLang {
-            get {
-                return ResourceManager.GetString("sysLang", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Account Information.
-        /// </summary>
-        public static string titAccountInfo {
-            get {
-                return ResourceManager.GetString("titAccountInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enterprise.
-        /// </summary>
-        public static string titEnterprise {
-            get {
-                return ResourceManager.GetString("titEnterprise", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enterprises.
-        /// </summary>
-        public static string titEnterprises {
-            get {
-                return ResourceManager.GetString("titEnterprises", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Entrepreneur.
-        /// </summary>
-        public static string titEntrepreneur {
-            get {
-                return ResourceManager.GetString("titEntrepreneur", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Entrepreneurs.
-        /// </summary>
-        public static string titEntrepreneurs {
-            get {
-                return ResourceManager.GetString("titEntrepreneurs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hi, Wellcome.
-        /// </summary>
-        public static string titGreeting {
-            get {
-                return ResourceManager.GetString("titGreeting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Investor.
-        /// </summary>
-        public static string titInvestor {
-            get {
-                return ResourceManager.GetString("titInvestor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Investors.
-        /// </summary>
-        public static string titInvestors {
-            get {
-                return ResourceManager.GetString("titInvestors", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Rating Startup | Make business every where.
-        /// </summary>
-        public static string Title {
-            get {
-                return ResourceManager.GetString("Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Log-On.
-        /// </summary>
-        public static string titLogOn {
-            get {
-                return ResourceManager.GetString("titLogOn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to New Account.
-        /// </summary>
-        public static string titNewAccount {
-            get {
-                return ResourceManager.GetString("titNewAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The password is free typing, but the system will inform if your password is weak, medium or strong. Please consider using numbers, letters and special characters combined with uppercase and lowercase letters for your own security..
-        /// </summary>
-        public static string titPwd {
-            get {
-                return ResourceManager.GetString("titPwd", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User must be a valid email account!.
-        /// </summary>
-        public static string titUser {
-            get {
-                return ResourceManager.GetString("titUser", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Entrepreneur: Register your startup to get investors. Investor: Access the best investment opportunities..
-        /// </summary>
-        public static string titUserType {
-            get {
-                return ResourceManager.GetString("titUserType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Others.
-        /// </summary>
-        public static string txtOthers {
-            get {
-                return ResourceManager.GetString("txtOthers", resourceCulture);
             }
         }
     }

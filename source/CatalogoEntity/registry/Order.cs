@@ -23,7 +23,7 @@ namespace com.luvinbox.model.registry
         [BsonRepresentation(BsonType.ObjectId)]
         public String CustomerId { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredCustomerName", ErrorMessageResourceType = typeof(AppRes))]
         [Display(Name = "lblCustomer", ResourceType = typeof(AppRes))]
         public String CustomerName { get; set; }
 

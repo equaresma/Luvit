@@ -32,7 +32,9 @@ export const actionCreators = {
         await fetch(request)
             .then(data => data.text())
             .then(text => alert(text))
-            .catch(err => { alert("Error Reading data " + err); });
+            .catch(err => {
+                console.log("Error Reading data " + err);
+            });
         dispatch({ type: 'SAVE_VENDOR', Vendor });
     },
     deleteVendor: VendorId => async (dispatch, getState) => {

@@ -18,13 +18,20 @@ namespace com.luvinbox.model.registry
         [DataType(DataType.Text)]
         [Display(Name = "lblName", ResourceType = typeof(AppRes))]
         public String Name { get; set; }
-        public String Description { get; set; }        
+        [DataType(DataType.Text)]
+        [Display(Name = "lblDescription", ResourceType = typeof(AppRes))]
+        public String Description { get; set; }
+        [Display(Name = "lblImageURL", ResourceType = typeof(AppRes))]
         public String ImageURL { get; set; }
+        [Display(Name = "lblCategory", ResourceType = typeof(AppRes))]
         public enumProductCategory? Category { get; set; }
         public Dimensions Dimension { get; set; }
+        [Display(Name = "lblPrice", ResourceType = typeof(AppRes))]
         public Decimal Price { get; set; }
+        [Display(Name = "lblOff", ResourceType = typeof(AppRes))]
         public float? Off { get; set; }
         [BsonIgnore]
+        [Display(Name = "lblOffPrice", ResourceType = typeof(AppRes))]
         public Decimal OffPrice { 
             get {
                 decimal discount = Convert.ToDecimal(Off ?? 0);

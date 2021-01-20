@@ -7,7 +7,7 @@ namespace com.luvinbox.model.enums
 {
 	public enum enumDocumentType : int
 	{
-		[Display(Name = "txtOthers", ResourceType = typeof(AppRes))]
+		[Display(Name = "enumDocOthers", ResourceType = typeof(AppRes))]
 		enumDocOthers = -1,
 		[Display(Name = "enumDocID", ResourceType = typeof(AppRes))]
 		enumDocTypeID = 0,

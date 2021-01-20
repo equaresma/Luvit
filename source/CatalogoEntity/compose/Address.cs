@@ -12,7 +12,6 @@ namespace com.luvinbox.model.compose
 		[Display(Name = "lblAddLocal", ResourceType = typeof(AppRes))]
 		public virtual String Local { get; set; }
 		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
-		[RegularExpression(@"^([0-9]{1,5})+$", ErrorMessageResourceName = "InvalidNumber", ErrorMessageResourceType = typeof(AppRes))]
 		[Display(Name = "lblAddNumber", ResourceType = typeof(AppRes))]
 		public virtual Int32 Number { get; set; }
 		[DataType(DataType.Text)]
