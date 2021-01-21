@@ -62,7 +62,7 @@ class VendorUI extends Component {
                 Name: '',
                 FantasyName: '',
                 FoundedIn: null,
-                DocumentNumber: { "Type": 5, Number: '', Name: '' },
+                Document: { "Type": 5, Number: '', Name: '' },
                 LogoURL: '',
                 WebSite: '',
                 Email: '',
@@ -72,7 +72,7 @@ class VendorUI extends Component {
                 Mobile: '',
                 HasPhysicalStore: false,
                 Contact: {
-                    LastName: '', MiddleName: '', FirstName: '', Birthday: null, Email: '', Phone: '', Mobile: '',
+                    FamilyName: '', MiddleName: '', FirstName: '', Birthday: null, Email: '', Phone: '', Mobile: '',
                     login: { UserName: '', Password: '' }
                 },
                 BankInfo: { BankCode: '', BankBranch: '', AccountNumber: '' }

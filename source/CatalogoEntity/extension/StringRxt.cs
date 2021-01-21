@@ -9,6 +9,9 @@ namespace com.luvinbox.model.extension
     {
 		public static String CleanCharacters(this String value)
 		{
+			if (String.IsNullOrWhiteSpace(value))
+				return "";
+
 			//Exclui os caracteres: /, -, .
 			Regex reg = new Regex(@"\/|\-|\.");
 			return reg.Replace(value, "");

@@ -1,5 +1,4 @@
 ﻿using com.luvinbox.model.compose;
-using com.luvinbox.model.enums;
 using com.luvinbox.model.Properties;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
@@ -18,23 +17,29 @@ namespace com.luvinbox.model.registry
 		[DataType(DataType.Text)]
 		[Display(Name = "lblFamilyName", ResourceType = typeof(AppRes))]
 		public string FamilyName { get; set; }
+
 		[DataType(DataType.Text)]
 		[Display(Name = "lblMiddleName", ResourceType = typeof(AppRes))]
 		public string MiddleName { get; set; }
+
 		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
 		[Display(Name = "lblFirstName", ResourceType = typeof(AppRes))]
 		public string FirstName { get; set; }
+
 		[BsonDateTimeOptions(Kind = DateTimeKind.Local)]
 		[DataType(DataType.Date)]
 		[Display(Name = "lblBirthday", ResourceType = typeof(AppRes))]
 		public DateTime? Birthday { get; set; }
+
 		[Display(Name = "lblAddress", ResourceType = typeof(AppRes))]
-		public Address Address { get; set; }
-		public SocialMedia SocialNetwork { get; set; }
+		public virtual Address Address { get; set; }
+
+		public virtual SocialMedia SocialNetwork { get; set; }
 		[Display(Name = "lblPhoneNumber", ResourceType = typeof(AppRes))]
 		[DataType(DataType.PhoneNumber)]
 		public String Phone { get; set; }
+
 		[DataType(DataType.PhoneNumber)]
 		[Display(Name = "lblMobileNumber", ResourceType = typeof(AppRes))]
 		public String Mobile { get; set; }
@@ -43,27 +48,22 @@ namespace com.luvinbox.model.registry
 		[RegularExpression(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$", ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(AppRes))]
 		[Display(Name = "lblEmail", ResourceType = typeof(AppRes))]
 		public string Email { get; set; }
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredDocument", ErrorMessageResourceType = typeof(AppRes))]
-		[DataType(DataType.Text)]
-		[Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
-		public Document Document { get; set; }
-		[Display(Name = "lblGender", ResourceType = typeof(AppRes))]
-		public enumGender Gender { get; set; }
-		[Display(Name = "lblMaritalStatus", ResourceType = typeof(AppRes))]
-		public enumMaritalStatus MaritalStatus { get; set; }
-		[Display(Name = "lblDegree", ResourceType = typeof(AppRes))]
-		public enumDegree Degree { get; set; }
+		
+		public abstract IDocument Document { get; set; }
+
 		[BsonDateTimeOptions(Kind = DateTimeKind.Local)]
 		public DateTime Created { get; set; }
+
 		public string Creator { get; set; }
+
 		[BsonDateTimeOptions(Kind = DateTimeKind.Local)]
 		public DateTime LastUpdate { get; set; }
+
 		public string UserLastUpdate { get; set; }
 		
 		public Person()
 		{
 			Created = DateTime.UtcNow;
-			Document = new Document() { Type = enumDocumentType.enumDocTypeCPF };
 			Address = new Address();
 			SocialNetwork = new SocialMedia();
 		}

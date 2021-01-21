@@ -18,13 +18,13 @@ export const VendorForm = () => {
         LogoURL: '',
         WebSite: '',
         Email: '',
-        DocumentNumber: { "Type": 5, Number: '', Name: '' },
+        Document: { "Type": 5, Number: '', Name: '' },
         MainAddress: { Local: '', Number: 0, Complement: '', City: '', State: '', ZipCode: '' },
         MainPhone: '',
         Mobile: '',
         HasPhysicalStore: false,
         Contact: {
-            LastName: '', MiddleName: '', FirstName: '', Birthday: null, Email: '', Phone: '', Mobile: '',
+            FamilyName: '', MiddleName: '', FirstName: '', Birthday: null, Email: '', Phone: '', Mobile: '',
             Login: { UserName: '', Password: '' }
         },
         BankInfo: { BankCode: '', BankBranch: '', AccountNumber: '' }
@@ -49,6 +49,11 @@ export const VendorForm = () => {
         setSetp(step - 1);
     }
 
+    const upDateAddress = newAddress => {
+        vendor.MainAddress = newAddress;
+        setVendor(vendor);
+    }
+
     const handleChange = input => e => {
         const { target } = e;
         if (input === "MainAddress") {
@@ -62,15 +67,15 @@ export const VendorForm = () => {
                 MainAddress: add
             });
 
-        } else if (input === "DocumentNumber") {
+        } else if (input === "Document") {
             const doc = {
-                ...vendor.DocumentNumber,
+                ...vendor.Document,
                 [target.name]: target.value
             }
 
             setVendor({
                 ...vendor,
-                DocumentNumber: doc
+                Document: doc
             });
 
         } else if (input === "Contact") {
@@ -148,6 +153,7 @@ export const VendorForm = () => {
                         handleChange={handleChange}
                         vendor={vendor}
                         stepItems={items}
+                        upDateAddress={upDateAddress }
                     />)
             case 3:
                 return (

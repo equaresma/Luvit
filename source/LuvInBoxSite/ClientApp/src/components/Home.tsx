@@ -2,6 +2,7 @@ import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
+import './Home.css';
 
 import * as React from 'react';
 import { useState, useEffect } from 'react';
@@ -11,7 +12,6 @@ import { Button } from 'primereact/button';
 import { Dropdown } from 'primereact/dropdown';
 import ProductHomeService from '../service/ProductHomeService';
 import { Rating } from 'primereact/rating';
-import './Home.css';
 
 const Home = () => {
     const [products, setProducts] = useState(null);

@@ -1,4 +1,5 @@
-﻿using com.luvinbox.model.Properties;
+﻿using com.luvinbox.model.helper;
+using com.luvinbox.model.Properties;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -8,31 +9,43 @@ namespace com.luvinbox.model.compose
 	[Serializable]
 	public class Address
 	{
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredLocal", ErrorMessageResourceType = typeof(AppRes))]
+		[ValidateIfRequired(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredLocal", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
+		[MaxLength(255)]
 		[Display(Name = "lblAddLocal", ResourceType = typeof(AppRes))]
 		public virtual String Local { get; set; }
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
+
+		[ValidateIfRequired(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
 		[Display(Name = "lblAddNumber", ResourceType = typeof(AppRes))]
 		public virtual Int32 Number { get; set; }
+
 		[DataType(DataType.Text)]
+		[MaxLength(255)]
 		[Display(Name = "lblAddComplement", ResourceType = typeof(AppRes))]
 		public virtual String Complement { get; set; }
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredCity", ErrorMessageResourceType = typeof(AppRes))]
+
+		[ValidateIfRequired(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredCity", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
+		[MaxLength(150)]
 		[Display(Name = "lblAddCity", ResourceType = typeof(AppRes))]
 		public virtual String City { get; set; }
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredState", ErrorMessageResourceType = typeof(AppRes))]
+
+		[ValidateIfRequired(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredState", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
+		[MaxLength(30)]
 		[Display(Name = "lblAddState", ResourceType = typeof(AppRes))]
 		public virtual String State { get; set; }
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredCountry", ErrorMessageResourceType = typeof(AppRes))]
+
+		[ValidateIfRequired(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredCountry", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
+		[MaxLength(150)]
 		[Display(Name = "lblAddCountry", ResourceType = typeof(AppRes))]
 		public virtual String Country { get; set; }
-		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredZipCode", ErrorMessageResourceType = typeof(AppRes))]
+
+		[ValidateIfRequired(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredZipCode", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
-		[RegularExpression(@"^[0-9]{5,8}-[\d]{3,5}$", ErrorMessageResourceName = "InvalidZipCode", ErrorMessageResourceType = typeof(AppRes))]
+		[MaxLength(20)]
+		[RegularExpression(@"^[0-9]{5,8}[-]?[\d]{3,5}$", ErrorMessageResourceName = "InvalidZipCode", ErrorMessageResourceType = typeof(AppRes))]
 		[Display(Name = "lblAddZipCode", ResourceType = typeof(AppRes))]
 		public virtual String ZipCode { get; set; }
 
@@ -41,6 +54,7 @@ namespace com.luvinbox.model.compose
 
 		public Address()
 		{
+			
 		}
 
 		public override string ToString()

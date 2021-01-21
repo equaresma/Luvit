@@ -4,6 +4,7 @@ require("primeicons/primeicons.css");
 require("primereact/resources/themes/saga-blue/theme.css");
 require("primereact/resources/primereact.css");
 require("primeflex/primeflex.css");
+require("./Home.css");
 var React = require("react");
 var react_1 = require("react");
 var react_redux_1 = require("react-redux");
@@ -12,7 +13,6 @@ var button_1 = require("primereact/button");
 var dropdown_1 = require("primereact/dropdown");
 var ProductHomeService_1 = require("../service/ProductHomeService");
 var rating_1 = require("primereact/rating");
-require("./Home.css");
 var Home = function () {
     var _a = react_1.useState(null), products = _a[0], setProducts = _a[1];
     var _b = react_1.useState('grid'), layout = _b[0], setLayout = _b[1];

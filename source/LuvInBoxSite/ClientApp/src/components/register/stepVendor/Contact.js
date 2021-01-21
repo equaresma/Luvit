@@ -7,10 +7,6 @@ import { Form, FormGroup } from 'reactstrap';
 import { Password } from 'primereact/password';
 import { Trans, useTranslation } from 'react-i18next';
 
-import 'primeicons/primeicons.css';
-import 'primereact/resources/primereact.css';
-import 'primeflex/primeflex.css';
-
 export const Contact = (props) => {
     const [hidden, setHidden] = React.useState(true);
     const [hidden2, setHidden2] = React.useState(true);
@@ -43,14 +39,14 @@ export const Contact = (props) => {
 
     const getActiveComponent = () => {
         if (edit) {
-            return (<div className="row">
-                <div className="col-lg-12">
+            return (
+                <div>
                     <div>
                         <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
                         <br />
                         <br />
                     </div>
-                    <h2><Trans>comercial_contact</Trans></h2>
+                    <h4><Trans>comercial_contact</Trans></h4>
                     <br />
                     <br />
                     <Form onSubmit={confirm}>
@@ -60,29 +56,29 @@ export const Contact = (props) => {
                                 <div className="p-fluid p-formgrid p-grid">
                                     <div className="p-field p-col-4">
                                         <InputText id="firstName" name="FirstName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.FirstName}
-                                            placeholder={t('lbl_name')} tabIndex="1"/>
+                                            placeholder={t('lbl_name')} />
                                     </div>
                                     <div className="p-field p-col-4">
                                         <InputText id="middleName" name="MiddleName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.MiddleName}
-                                            placeholder={t('lbl_middle_name')} tabIndex="2"/>
+                                            placeholder={t('lbl_middle_name')} />
                                     </div>
                                     <div className="p-field p-col-4">
                                         <InputText id="familyName" name="FamilyName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.FamilyName}
-                                            placeholder={t('lbl_last_name')} tabIndex="3"/>
+                                            placeholder={t('lbl_last_name')} />
                                     </div>
                                     <div className="p-field p-col-12">
                                         <InputText id="email" name="Email" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.Email} placeholder="E-mail"
-                                            aria-describedby="email-help" tabIndex="4"/>
+                                            aria-describedby="email-help" />
                                         <small id="email-help" className="p-invalid p-d-block text-right"><Trans>email_fmt</Trans></small>
                                     </div>
                                     <div className="p-field p-col-6">
                                         <InputMask id="phone" name="Phone" mask="+99(99) 9999-9999" onValueChange={handleChange('Phone')} defaultValue={vendor.Contact.Phone}
-                                            placeholder={t('phone')} tabIndex="5"/>
+                                            placeholder={t('phone')} />
                                         <small id="mainPhone-help" className="p-d-block text-right"><Trans>phone_fmt</Trans></small>
                                     </div>
                                     <div className="p-field p-col-6">
                                         <InputMask id="mobile" name="Mobile" mask="+99(99) 99999-9999" onValueChange={handleChange('Mobile')} defaultValue={vendor.Contact.Mobile}
-                                            placeholder={t('mobile')} tabIndex="6"/>
+                                            placeholder={t('mobile')} />
                                         <small id="mobile-help" className="p-d-block text-right"><Trans>mobile_fmt</Trans></small>
                                     </div>
                                 </div>
@@ -91,16 +87,20 @@ export const Contact = (props) => {
                                 <h4><Trans>Login</Trans></h4>
                                 <div className="p-field">
                                     <div className="p-inputgroup">
-                                        <InputText id="txtPwd" name="txtPwd" type="text" placeholder="Senha" defaultValue={password} onChange={handleChangeLocal} required hidden={hidden2} />
-                                        <Password id="pwd" name="pwd" placeholder="Senha" defaultValue={password} onChange={handleChangeLocal} required hidden={!hidden2} aria-describedby="country-help" inline="true" />
+                                        <InputText id="txtPwd" name="txtPwd" type="text" placeholder="Senha" defaultValue={password} onChange={handleChangeLocal} required
+                                            hidden={hidden2} />
+                                        <Password id="pwd" name="pwd" placeholder="Senha" defaultValue={password} onChange={handleChangeLocal} required
+                                            hidden={!hidden2} aria-describedby="country-help" inline="true" />
                                         <Button type="button" icon="pi pi-eye" className="p-button-sm p-button-text p-button-plain" onClick={toggleShow2} />
                                     </div>
                                     <small id="country-help" className="p-invalid p-d-block text-right"><Trans>lbl_country_required</Trans></small>
                                 </div>
                                 <div className="p-field">
                                     <div className="p-inputgroup">
-                                        <InputText id="txtPassword" name="txtPassword" type="text" placeholder="Confirme a Senha" defaultValue={vendor.Contact.Login.Password} onChange={handleChange('Login')} required hidden={hidden} className={password == vendor.Contact.Login.Password ? 'p-valid' : 'p-invalid'} />
-                                        <Password id="password" name="Password" placeholder="Confirme a Senha" defaultValue={vendor.Contact.Login.Password} onChange={handleChange('Login')} required hidden={!hidden} aria-describedby="country2-help" className={password == vendor.Contact.Login.Password ? 'p-valid' : 'p-invalid'} />
+                                        <InputText id="txtPassword" name="txtPassword" type="text" placeholder="Confirme a Senha" defaultValue={vendor.Contact.Login.Password}
+                                            onChange={handleChange('Login')} required hidden={hidden} className={password == vendor.Contact.Login.Password ? 'p-valid' : 'p-invalid'} />
+                                        <Password id="password" name="Password" placeholder="Confirme a Senha" defaultValue={vendor.Contact.Login.Password}
+                                            onChange={handleChange('Login')} required hidden={!hidden} aria-describedby="country2-help" className={password == vendor.Contact.Login.Password ? 'p-valid' : 'p-invalid'} />
                                         <Button type="button" icon="pi pi-eye" className="p-button-sm p-button-text p-button-plain" onClick={toggleShow} />
                                     </div>
                                     <small id="country2-help" className="p-invalid p-d-block text-right"><Trans>lbl_country_required</Trans></small>
@@ -123,14 +123,13 @@ export const Contact = (props) => {
                         </div>
                     </Form>
                 </div>
-            </div>)
+            )
         } else {
             return (
-                <div className="row">
-                    <div className="col-12">
-                        <h1><Trans>lbl_confirmation</Trans></h1>
-                    </div>
-                </div>)
+                <div>
+                    <h3><Trans>lbl_confirmation</Trans></h3>
+                </div>
+            )
         }
     }
 

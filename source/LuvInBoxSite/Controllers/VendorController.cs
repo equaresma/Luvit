@@ -28,7 +28,7 @@ namespace com.luvinbox.site.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
             }
         }
 
@@ -42,7 +42,7 @@ namespace com.luvinbox.site.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message) ;
             }
         }
 
@@ -59,7 +59,7 @@ namespace com.luvinbox.site.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex);
+                    return BadRequest(ex.Message);
                 }
             }
             else
@@ -78,7 +78,7 @@ namespace com.luvinbox.site.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex);
+                return BadRequest(ex.Message);
             }
         }
     }

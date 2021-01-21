@@ -22,7 +22,7 @@ namespace com.luvinbox.site.Controllers
                     return StatusCode(500, "Invalid File");
 
                 FileInfo f = new FileInfo(uploadFile.FileName);
-                string newFileName = $"{name}.{f.Extension}";
+                string newFileName = $"{name}{f.Extension}";
                 string path = Path.Combine(Directory.GetCurrentDirectory(), "images/logos", newFileName);
 
                 using (Stream stream = new FileStream(path, FileMode.Create))

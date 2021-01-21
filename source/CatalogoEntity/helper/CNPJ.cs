@@ -13,8 +13,8 @@ namespace com.luvinbox.model.helper
             ValidationResult result = null;
             object instance = validationContext.ObjectInstance;
             Type type = instance.GetType();
-            PropertyInfo propertyDoc = type.GetProperty("DocumentNumber");
-            Document doc = propertyDoc.GetValue(instance) as Document;
+            PropertyInfo propertyDoc = type.GetProperty("DocumentNumber") ?? type.GetProperty("Document");
+            DocumentAbs doc = propertyDoc.GetValue(instance) as DocumentAbs;
 
             if (doc != null) {
                 if (doc.Type == enums.enumDocumentType.enumDocCNPJ)
