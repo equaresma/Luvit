@@ -177,6 +177,9 @@
   <data name="enumPostgraduate" xml:space="preserve">
     <value>Pós Graduação</value>
   </data>
+  <data name="frmDateDataN" xml:space="preserve">
+    <value>dd-MM-yyyy</value>
+  </data>
   <data name="lblAddCity" xml:space="preserve">
     <value>Cidade</value>
   </data>
@@ -335,5 +338,56 @@
   </data>
   <data name="RequiredName" xml:space="preserve">
     <value>Nome  é obrigatório</value>
+  </data>
+  <data name="lblAccountNumber" xml:space="preserve">
+    <value>Conta Corrente</value>
+  </data>
+  <data name="lblBankBranch" xml:space="preserve">
+    <value>Agência</value>
+  </data>
+  <data name="lblBankCode" xml:space="preserve">
+    <value>Banco</value>
+  </data>
+  <data name="lblCompanyName" xml:space="preserve">
+    <value>Razão Social</value>
+  </data>
+  <data name="RequiredCompanyName" xml:space="preserve">
+    <value>Razão Social é obrigatório</value>
+  </data>
+  <data name="lblName" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="lblFantasyName" xml:space="preserve">
+    <value>Nome fantasia</value>
+  </data>
+  <data name="lblPhoneNumber" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="InvalidZipCode" xml:space="preserve">
+    <value>CEP inválido</value>
+  </data>
+  <data name="RequiredCity" xml:space="preserve">
+    <value>Cidade é obrigatório</value>
+  </data>
+  <data name="lblNumber" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="RequiredCountry" xml:space="preserve">
+    <value>País é obrigatório</value>
+  </data>
+  <data name="RequiredNumber" xml:space="preserve">
+    <value>Número é obrigatório</value>
+  </data>
+  <data name="RequiredState" xml:space="preserve">
+    <value>Estado é obrigatório</value>
+  </data>
+  <data name="RequiredZipCode" xml:space="preserve">
+    <value>CEP é obrigatório</value>
+  </data>
+  <data name="lblAddress" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="frmZipCodeFmt" xml:space="preserve">
+    <value>/[0-9]{5}-[\d]{3}/g</value>
   </data>
 </root>

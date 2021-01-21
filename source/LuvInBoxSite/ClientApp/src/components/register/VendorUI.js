@@ -75,7 +75,7 @@ class VendorUI extends Component {
                     LastName: '', MiddleName: '', FirstName: '', Birthday: null, Email: '', Phone: '', Mobile: '',
                     login: { UserName: '', Password: '' }
                 },
-                BankInfo: { BankCode: '', BankBranch: '', AccoundNumber: '' }
+                BankInfo: { BankCode: '', BankBranch: '', AccountNumber: '' }
             },
             displayDialog: true
         });

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace com.luvinbox.model {
+namespace com.luvinbox.model.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace com.luvinbox.model {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("com.luvinbox.model.AppRes", typeof(AppRes).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("com.luvinbox.model.Properties.AppRes", typeof(AppRes).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -241,6 +241,33 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MM-dd-yyyy.
+        /// </summary>
+        public static string frmDateDataN {
+            get {
+                return ResourceManager.GetString("frmDateDataN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^\d{5}([-]|\s*)?(\d{4})?$.
+        /// </summary>
+        public static string frmZipCodeFmt {
+            get {
+                return ResourceManager.GetString("frmZipCodeFmt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Zip code.
+        /// </summary>
+        public static string InvalidZipCode {
+            get {
+                return ResourceManager.GetString("InvalidZipCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account number.
         /// </summary>
         public static string lblAccountNumber {
@@ -291,6 +318,15 @@ namespace com.luvinbox.model {
         public static string lblAddNumber {
             get {
                 return ResourceManager.GetString("lblAddNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string lblAddress {
+            get {
+                return ResourceManager.GetString("lblAddress", resourceCulture);
             }
         }
         
@@ -385,6 +421,15 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Company Name.
+        /// </summary>
+        public static string lblCompanyName {
+            get {
+                return ResourceManager.GetString("lblCompanyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Degree.
         /// </summary>
         public static string lblDegree {
@@ -426,6 +471,15 @@ namespace com.luvinbox.model {
         public static string lblFamilyName {
             get {
                 return ResourceManager.GetString("lblFamilyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fantasy name.
+        /// </summary>
+        public static string lblFantasyName {
+            get {
+                return ResourceManager.GetString("lblFantasyName", resourceCulture);
             }
         }
         
@@ -520,6 +574,24 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string lblName {
+            get {
+                return ResourceManager.GetString("lblName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number.
+        /// </summary>
+        public static string lblNumber {
+            get {
+                return ResourceManager.GetString("lblNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Discount.
         /// </summary>
         public static string lblOff {
@@ -601,6 +673,15 @@ namespace com.luvinbox.model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Phone number.
+        /// </summary>
+        public static string lblPhoneNumber {
+            get {
+                return ResourceManager.GetString("lblPhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Position.
         /// </summary>
         public static string lblPosition {
@@ -651,6 +732,33 @@ namespace com.luvinbox.model {
         public static string RequiredBankCode {
             get {
                 return ResourceManager.GetString("RequiredBankCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City is required.
+        /// </summary>
+        public static string RequiredCity {
+            get {
+                return ResourceManager.GetString("RequiredCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company name is required.
+        /// </summary>
+        public static string RequiredCompanyName {
+            get {
+                return ResourceManager.GetString("RequiredCompanyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country is required.
+        /// </summary>
+        public static string RequiredCountry {
+            get {
+                return ResourceManager.GetString("RequiredCountry", resourceCulture);
             }
         }
         
@@ -750,6 +858,33 @@ namespace com.luvinbox.model {
         public static string RequiredNumber {
             get {
                 return ResourceManager.GetString("RequiredNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number is required.
+        /// </summary>
+        public static string RequiredNumber1 {
+            get {
+                return ResourceManager.GetString("RequiredNumber1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State is required.
+        /// </summary>
+        public static string RequiredState {
+            get {
+                return ResourceManager.GetString("RequiredState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip code is required.
+        /// </summary>
+        public static string RequiredZipCode {
+            get {
+                return ResourceManager.GetString("RequiredZipCode", resourceCulture);
             }
         }
     }

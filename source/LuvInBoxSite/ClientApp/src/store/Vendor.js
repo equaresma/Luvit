@@ -15,8 +15,7 @@ export const actionCreators = {
         const Vendors = await response.json();
         dispatch({ type: 'FETCH_VENDORS', Vendors });
     },
-    saveVendor: Vendor => async (dispatch, getState) => {
-
+    saveVendor: Vendor => async (dispatch, getState) => {       
         const url = def_url;
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
@@ -31,8 +30,11 @@ export const actionCreators = {
         const request = new Request(url, requestOptions);
         await fetch(request)
             .then(data => data.text())
-            .then(text => alert(text))
-            .catch(err => {
+            .then(text => {                
+                let ovo = text;
+                console.log("Msg: " + ovo);
+            }).catch(err => {
+                let ovo = err;
                 console.log("Error Reading data " + err);
             });
         dispatch({ type: 'SAVE_VENDOR', Vendor });

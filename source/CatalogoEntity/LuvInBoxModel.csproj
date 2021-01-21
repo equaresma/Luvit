@@ -17,6 +17,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppRes.resx</DependentUpon>
     </Compile>
+    <Compile Update="Properties\AppRes.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppRes.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +29,13 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AppRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\AppRes.pt-BR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\AppRes.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppRes.Designer.cs</LastGenOutput>
     </EmbeddedResource>

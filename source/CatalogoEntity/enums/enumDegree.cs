@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using com.luvinbox.model.Properties;
+using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.model.enums
 {

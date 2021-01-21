@@ -45,30 +45,36 @@ export const SetupStore = (props) => {
                         <div className="p-fluid">
                             <div className="p-field p-col-12">
                                 <Label>Logo</Label>
-                                <FileUpload mode="basic" name="LogoURL" url={"api/file?name=" + vendor.DocumentNumber.Number} accept="image/*" maxFileSize={60000} onChange={handleChange('LogoURL')} onUpload={onUpload} auto chooseLabel={t('file_browse')} onError={onError} defaultValue={ vendor.LogoURL}/>
+                                <FileUpload mode="basic" name="LogoURL" url={"api/file?name=" + vendor.DocumentNumber.Number} accept="image/*" maxFileSize={60000} onChange={handleChange('LogoURL')} onUpload={onUpload}
+                                    auto chooseLabel={t('file_browse')} onError={onError} defaultValue={vendor.LogoURL} tabIndex="1" required/>
                                 <small id="fileup-help" className="p-invalid p-d-block text-right"><Trans>file_upload_max_size</Trans></small>
                             </div>
                             <div className="p-field p-col-12">
-                                <InputText id="webSite" name="WebSite" onChange={handleChange('WebSite')} defaultValue={vendor.WebSite} required maxLength="1000" placeholder="Website" className="p-d-block" type="text" aria-describedby="webSite-help" />
+                                <InputText id="webSite" name="WebSite" onChange={handleChange('WebSite')} defaultValue={vendor.WebSite} required maxLength="1000"
+                                    placeholder="Website" className="p-d-block" type="text" aria-describedby="webSite-help" tabIndex="2"/>
                                 <small id="webSite-help" className="p-invalid p-d-block text-right"><Trans>lbl_web_site</Trans></small>
                             </div>
                             <div className="p-field p-col-12">
-                                <InputText id="email" name="Email" onChange={handleChange('Email')} defaultValue={vendor.Email} required maxLength="1000" placeholder="E-mail" className="p-d-block" type="text" aria-describedby="email-help" />
+                                <InputText id="email" name="Email" onChange={handleChange('Email')} defaultValue={vendor.Email} required maxLength="1000"
+                                    placeholder="E-mail" className="p-d-block" type="text" aria-describedby="email-help" tabIndex="3"/>
                                 <small id="email-help" className="p-invalid p-d-block text-right"><Trans>email_fmt</Trans></small>
                             </div>
                             <FormGroup>
                                 <h4><Trans>tit_bank</Trans></h4>
                                 <div className="p-fluid p-formgrid p-grid">
                                     <div className="p-field p-col-3">
-                                        <InputText id="bankCode" name="BankCode" onChange={handleChange('BankInfo')} defaultValue={vendor.BankCode} required maxLength="1000" placeholder={t('lbl_bank_code')} className="p-d-block" type="text" aria-describedby="bankCode-help" />
+                                        <InputText id="bankCode" name="BankCode" onChange={handleChange('BankInfo')} defaultValue={vendor.BankCode} required maxLength="1000" placeholder={t('lbl_bank_code')}
+                                            className="p-d-block" type="text" aria-describedby="bankCode-help" tabIndex="4"/>
                                         <small id="bankCode-help" className="p-invalid p-d-block text-right"><Trans>lbl_bank_code</Trans></small>
                                     </div>
                                     <div className="p-field p-col-3">
-                                        <InputText id="bankBranch" name="BankBranch" onChange={handleChange('BankInfo')} defaultValue={vendor.BankBranch} required maxLength="1000" placeholder={t('lbl_bank_branch')} className="p-d-block" type="text" aria-describedby="bankBranch-help" />
+                                        <InputText id="bankBranch" name="BankBranch" onChange={handleChange('BankInfo')} defaultValue={vendor.BankBranch} required maxLength="1000"
+                                            placeholder={t('lbl_bank_branch')} className="p-d-block" type="text" aria-describedby="bankBranch-help" tabIndex="5"/>
                                         <small id="bankBranch-help" className="p-invalid p-d-block text-right"><Trans>lbl_bank_branch</Trans></small>
                                     </div>
                                     <div className="p-field p-col-3">
-                                        <InputText id="accoundNumber" name="AccoundNumber" onChange={handleChange('BankInfo')} defaultValue={vendor.AccoundNumber} required maxLength="1000" placeholder={t('lbl_bank_account')} className="p-d-block" type="text" aria-describedby="accoundNumber-help" />
+                                        <InputText id="accoundNumber" name="AccountNumber" onChange={handleChange('BankInfo')} defaultValue={vendor.AccountNumber} required maxLength="1000"
+                                            placeholder={t('lbl_bank_account')} className="p-d-block" type="text" aria-describedby="accoundNumber-help" tabIndex="6"/>
                                         <small id="accoundNumber-help" className="p-invalid p-d-block text-right"><Trans>lbl_bank_account</Trans></small>
                                     </div>
                                 </div>

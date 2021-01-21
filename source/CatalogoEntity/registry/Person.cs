@@ -1,5 +1,6 @@
 ﻿using com.luvinbox.model.compose;
 using com.luvinbox.model.enums;
+using com.luvinbox.model.Properties;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;

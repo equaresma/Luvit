@@ -33,24 +33,26 @@ export const Details = (props) => {
                     <Form onSubmit={next}>
                         <div className="p-fluid">
                             <InputText id="name" name="Name" onChange={handleChange('Name')} defaultValue={vendor.Name} type="text" aria-describedby="username2-help" className="p-d-block" required maxLength="120" placeholder={t('lbl_name')} />
-                            <small id="username2-help" className="p-d-block text-right"><Trans>lbl_name_required</Trans></small>
+                            <small id="username2-help" className="p-d-block text-right" tabIndex="1"><Trans>lbl_name_required</Trans></small>
                         </div>
                         <div className="p-fluid">
                             <InputText id="fantasyName" name="FantasyName" onChange={handleChange('FantasyName')} defaultValue={vendor.FantasyName} type="text" aria-describedby="userfantasyName2-help" className="p-d-block" required maxLength="120" placeholder={t('lbl_fantasy_name')} />
-                            <small id="userfantasyName2-help" className="p-d-block text-right"><Trans>lbl_fantasy_name_required</Trans></small>
+                            <small id="userfantasyName2-help" className="p-d-block text-right" tabIndex="2"><Trans>lbl_fantasy_name_required</Trans></small>
                         </div>
                         <div className="p-fluid">
                             <InputText id="number" name="Number" onChange={handleChange('DocumentNumber')} defaultValue={vendor.DocumentNumber.Number} type="text" aria-describedby="number-help" className="p-d-block" required maxLength="30" placeholder={t('lbl_document')} />
-                            <small id="number-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
-                        </div>
-                        <div className="p-fluid">
-                            <Calendar id="foundedIn" name="FoundedIn" defaultValue={vendor.FoundedIn} onChange={handleChange('FoundedIn')} aria-describedby="foundedIn-help" required placeholder={t('lbl_founded_in')}></Calendar>
-                            <small id="foundedIn-help" className="p-d-block text-right"><Trans>lbl_founded_in_required</Trans></small>
+                            <small id="number-help" className="p-d-block text-right" tabIndex="3"><Trans>lbl_document_required</Trans></small>
                         </div>
                         <div className="p-fluid">
                             <InputMask id="mainPhone" name="MainPhone" type="text" mask="+99(99) 9999-9999" onChange={handleChange('MainPhone')} value={vendor.MainPhone} aria-describedby="mainPhone-help" className="p-d-block" required maxLength="30" placeholder={t('phone')} />
-                            <small id="mainPhone-help" className="p-d-block text-right"><Trans>phone_fmt</Trans></small>
+                            <small id="mainPhone-help" className="p-d-block text-right" tabIndex="4"><Trans>phone_fmt</Trans></small>
                         </div>
+                        <div className="p-fluid">
+                            <Calendar id="foundedIn" name="FoundedIn" value={vendor.FoundedIn} onChange={handleChange('FoundedIn')} aria-describedby="foundedIn-help" required
+                                placeholder={t('lbl_founded_in')} className="p-calendar" tabIndex="5"></Calendar>
+                            <small id="foundedIn-help" className="p-d-block text-right"><Trans>lbl_founded_in_required</Trans></small>
+                        </div>
+
                         <br />
                         <Button
                             label={t("btn_next")}

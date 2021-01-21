@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using com.luvinbox.model.Properties;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -31,7 +32,7 @@ namespace com.luvinbox.model.compose
 		public virtual String Country { get; set; }
 		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredZipCode", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
-		[RegularExpression(@"^\d{8}$", ErrorMessageResourceName = "InvalidZipCode", ErrorMessageResourceType = typeof(AppRes))]
+		[RegularExpression(@"^[0-9]{5,8}-[\d]{3,5}$", ErrorMessageResourceName = "InvalidZipCode", ErrorMessageResourceType = typeof(AppRes))]
 		[Display(Name = "lblAddZipCode", ResourceType = typeof(AppRes))]
 		public virtual String ZipCode { get; set; }
 

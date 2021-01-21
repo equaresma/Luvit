@@ -1,5 +1,6 @@
 ﻿using com.luvinbox.model.enums;
 using com.luvinbox.model.helper;
+using com.luvinbox.model.Properties;
 using ExpressiveAnnotations.Attributes;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -13,9 +14,11 @@ namespace com.luvinbox.model.compose
         
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
+        [Display(Name = "lblNumber", ResourceType = typeof(AppRes))]
         public String Number { get; set; }
         
         [RequiredIf("Type == enumDocumentType.enumDocOthers")]
+        [Display(Name = "lblName", ResourceType = typeof(AppRes))]
         public String Name { get; set; }
         
         public override int GetHashCode()

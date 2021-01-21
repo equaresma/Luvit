@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using com.luvinbox.model.compose;
 using com.luvinbox.model.enums;
+using com.luvinbox.model.Properties;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace com.luvinbox.model.registry

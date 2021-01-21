@@ -59,24 +59,30 @@ export const Contact = (props) => {
                                 <h4><Trans>Contato</Trans></h4>
                                 <div className="p-fluid p-formgrid p-grid">
                                     <div className="p-field p-col-4">
-                                        <InputText id="firstName" name="FirstName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.FirstName} placeholder={t('lbl_name')} />
+                                        <InputText id="firstName" name="FirstName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.FirstName}
+                                            placeholder={t('lbl_name')} tabIndex="1"/>
                                     </div>
                                     <div className="p-field p-col-4">
-                                        <InputText id="middleName" name="MiddleName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.MiddleName} placeholder={t('lbl_middle_name')} />
+                                        <InputText id="middleName" name="MiddleName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.MiddleName}
+                                            placeholder={t('lbl_middle_name')} tabIndex="2"/>
                                     </div>
                                     <div className="p-field p-col-4">
-                                        <InputText id="familyName" name="FamilyName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.FamilyName} placeholder={t('lbl_last_name')} />
+                                        <InputText id="familyName" name="FamilyName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.FamilyName}
+                                            placeholder={t('lbl_last_name')} tabIndex="3"/>
                                     </div>
                                     <div className="p-field p-col-12">
-                                        <InputText id="email" name="Email" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.Email} placeholder="E-mail" aria-describedby="email-help" />
+                                        <InputText id="email" name="Email" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.Email} placeholder="E-mail"
+                                            aria-describedby="email-help" tabIndex="4"/>
                                         <small id="email-help" className="p-invalid p-d-block text-right"><Trans>email_fmt</Trans></small>
                                     </div>
                                     <div className="p-field p-col-6">
-                                        <InputMask id="phone" name="Phone" mask="+99(99) 9999-9999" onValueChange={handleChange('Phone')} defaultValue={vendor.Contact.Phone} placeholder={t('phone')} />
+                                        <InputMask id="phone" name="Phone" mask="+99(99) 9999-9999" onValueChange={handleChange('Phone')} defaultValue={vendor.Contact.Phone}
+                                            placeholder={t('phone')} tabIndex="5"/>
                                         <small id="mainPhone-help" className="p-d-block text-right"><Trans>phone_fmt</Trans></small>
                                     </div>
                                     <div className="p-field p-col-6">
-                                        <InputMask id="mobile" name="Mobile" mask="+99(99) 99999-9999" onValueChange={handleChange('Mobile')} defaultValue={vendor.Contact.Mobile} placeholder={t('mobile')} />
+                                        <InputMask id="mobile" name="Mobile" mask="+99(99) 99999-9999" onValueChange={handleChange('Mobile')} defaultValue={vendor.Contact.Mobile}
+                                            placeholder={t('mobile')} tabIndex="6"/>
                                         <small id="mobile-help" className="p-d-block text-right"><Trans>mobile_fmt</Trans></small>
                                     </div>
                                 </div>

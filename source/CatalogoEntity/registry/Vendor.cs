@@ -1,4 +1,5 @@
 ﻿using com.luvinbox.model.compose;
+using com.luvinbox.model.Properties;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
@@ -12,9 +13,9 @@ namespace com.luvinbox.model.registry
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredCompanyName", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
-        [Display(Name = "lblName", ResourceType = typeof(AppRes))]
+        [Display(Name = "lblCompanyName", ResourceType = typeof(AppRes))]
         public string Name { get; set; }
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredFantasyName", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
