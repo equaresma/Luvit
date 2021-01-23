@@ -35,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\components\CarouselProducts.tsx" />
     <None Remove="ClientApp\src\components\institutional\whoweare.tsx" />
     <None Remove="ClientApp\src\service\AddressService.ts" />
   </ItemGroup>

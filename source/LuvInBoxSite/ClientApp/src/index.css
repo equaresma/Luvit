@@ -290,6 +290,25 @@ a.footLnk:active {
     margin-bottom: 2rem;
 }
 
+.redCard {
+    background-color: #CC0146;
+    width: 100%;
+}
+.whiteCard {
+    background-color: #fffefe;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+.carouselTitle {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    color: #fffefe;
+}
+
 input[type=text] {
     border: none;
     border-bottom: 1px solid;
