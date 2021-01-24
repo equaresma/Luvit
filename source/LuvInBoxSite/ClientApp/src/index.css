@@ -272,7 +272,8 @@ a.footLnk:active {
 #footer {
     position: relative;
     clear: both;
-    background-color: black;
+    /*background-color: black;*/
+    background-color: #CC0146;
     color: white;
     text-align: center;
     margin-top: 50px;
@@ -289,7 +290,9 @@ a.footLnk:active {
 }
 
 .redCard {
-    background-color: #CC0146;
+    /*background-color: #CC0146;*/
+    /*background-color: #CA9CAD;*/
+    background-color: white;
     width: 100%;
 }
 .whiteCard {

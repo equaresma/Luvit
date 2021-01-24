@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react'
+﻿import React, { Component } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { InputMask } from 'primereact/inputmask';
 import { Button } from 'primereact/button';
@@ -110,15 +110,15 @@ export const Contact = (props) => {
                         <br />
                         <div className="p-formgroup-inline">
                             <Button
-                                label={t("Confirm")}
+                                label={t("btn_confirm")}
                                 type="button"
                                 onClick={confirm}
                             />
                             <Button
                                 style={{ marginLeft: "10px" }}
-                                label={t("Back")}
+                                label={t("btn_prev")}
                                 type="button"
-                                onClick={back}
+                                onClick={t('back')}
                             />
                         </div>
                     </Form>

@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react'
+﻿import React, { Component } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { InputMask } from 'primereact/inputmask';
 import { Button } from 'primereact/button';

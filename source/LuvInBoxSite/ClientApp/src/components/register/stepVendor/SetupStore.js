@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react'
+﻿import React, { Component } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Steps } from 'primereact/steps';

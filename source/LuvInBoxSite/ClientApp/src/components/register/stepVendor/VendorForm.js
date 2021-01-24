@@ -1,5 +1,5 @@
-﻿import React, { Component } from 'react'
-import { useDispatch } from 'react-redux'
+﻿import React, { Component } from 'react';
+import { useDispatch } from 'react-redux';
 import { actionCreators } from '../../../store/Vendor';
 import { Details } from './Details';
 import { Contact } from './Contact';
