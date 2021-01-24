@@ -7,10 +7,8 @@ require("primeflex/primeflex.css");
 require("./Home.css");
 var React = require("react");
 var react_redux_1 = require("react-redux");
-var CarouselProducts_1 = require("./CarouselProducts");
 var Home = function () {
-    return (React.createElement("div", { className: "containerCarouselCnt" },
-        React.createElement(CarouselProducts_1.CarouselProducts, null)));
+    return (React.createElement("div", { className: "container-fluid" }));
 };
 exports.default = react_redux_1.connect()(Home);
 //# sourceMappingURL=Home.js.map

@@ -48,9 +48,11 @@ var CarouselProducts = function () {
                         React.createElement(button_1.Button, { icon: "pi pi-star", className: "p-button-success p-button-rounded p-mr-2" }),
                         React.createElement(button_1.Button, { icon: "pi pi-cog", className: "p-button-help p-button-rounded" }))))));
     };
-    return (React.createElement("div", { className: "redCard" },
-        React.createElement(carousel_1.Carousel, { value: products, numVisible: 3, numScroll: 1, responsiveOptions: responsiveOptions, className: "custom-carousel", circular: true, autoplayInterval: 3000, itemTemplate: productTemplate, header: React.createElement("div", { className: "carouselTitle" },
-                React.createElement("h5", null, "Destaques")) })));
+    return (React.createElement("div", { className: "container-fluid" },
+        React.createElement("div", { className: "row" },
+            React.createElement("div", { className: "redCard" },
+                React.createElement(carousel_1.Carousel, { value: products, numVisible: 3, numScroll: 1, responsiveOptions: responsiveOptions, className: "custom-carousel", circular: true, autoplayInterval: 3000, itemTemplate: productTemplate, header: React.createElement("div", { className: "carouselTitle" },
+                        React.createElement("h5", null, "Destaques")) })))));
 };
 exports.CarouselProducts = CarouselProducts;
 //# sourceMappingURL=CarouselProducts.js.map

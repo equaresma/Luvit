@@ -13,16 +13,19 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+require("./NavMenu.css");
 var React = require("react");
 var reactstrap_1 = require("reactstrap");
 var react_router_dom_1 = require("react-router-dom");
-require("./NavMenu.css");
+var inputtext_1 = require("primereact/inputtext");
+var button_1 = require("primereact/button");
 var NavMenu = /** @class */ (function (_super) {
     __extends(NavMenu, _super);
     function NavMenu() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
-            isOpen: false
+            isOpen: false,
+            search: ''
         };
         _this.toggle = function () {
             _this.setState({
@@ -37,19 +40,21 @@ var NavMenu = /** @class */ (function (_super) {
                 React.createElement(reactstrap_1.Container, null,
                     React.createElement(reactstrap_1.NavbarBrand, { tag: react_router_dom_1.Link, to: "/" },
                         React.createElement("img", { src: "/logo.png", height: "55" })),
+                    React.createElement(reactstrap_1.Nav, { right: true, eventKey: 0 },
+                        React.createElement("form", { className: "mx-2 my-auto d-inline w-100" },
+                            React.createElement("div", { className: "input-group" },
+                                React.createElement("span", { className: "p-input-icon-right" },
+                                    React.createElement("i", { className: "pi pi-search" }),
+                                    React.createElement(inputtext_1.InputText, { defaultValue: this.state.search, placeholder: "Search", className: "form-control" }))))),
                     React.createElement(reactstrap_1.NavbarToggler, { onClick: this.toggle, className: "mr-2" }),
                     React.createElement(reactstrap_1.Collapse, { className: "d-sm-inline-flex flex-sm-row-reverse", isOpen: this.state.isOpen, navbar: true },
                         React.createElement("ul", { className: "navbar-nav flex-grow" },
                             React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { tag: react_router_dom_1.Link, className: "text-dark", to: "/" }, "Home")),
+                                React.createElement(button_1.Button, { icon: "pi pi-home", className: "p-button-rounded p-button-info p-button-text" })),
                             React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { tag: react_router_dom_1.Link, className: "text-dark", to: "/counter" }, "Counter")),
+                                React.createElement(button_1.Button, { icon: "pi pi-user", className: "p-button-rounded p-button-info p-button-text" })),
                             React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { tag: react_router_dom_1.Link, className: "text-dark", to: "/fetch-data" }, "Fetch data")),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { tag: react_router_dom_1.Link, className: "text-dark", to: "/fetch-data" }, "Fetch data")),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { tag: react_router_dom_1.Link, className: "text-dark", to: "/register/vendorUI" }, "Vendor UI"))))))));
+                                React.createElement(button_1.Button, { icon: "pi pi-shopping-cart", className: "p-button-rounded p-button-info p-button-text" }))))))));
     };
     return NavMenu;
 }(React.PureComponent));
