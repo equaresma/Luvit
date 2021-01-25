@@ -6,7 +6,7 @@ import Counter from './components/Counter';
 import FetchData from './components/FetchData';
 import { WhoWeAre } from './components/institutional/whoweare';
 import { VendorForm } from './components/register/stepVendor/VendorForm';
-
+import { CustomerForm } from './components/register/stepCustomer/CustomerForm';
 
 import  VendorUI  from './components/register/VendorUI';
 
@@ -27,5 +27,6 @@ export default () => (
         <Route path='/institutional/whoweare' component={WhoWeAre} />
         <Route path='/register/vendor' component={VendorForm} />
         <Route path='/register/vendorUI' component={VendorUI} />
+        <Route path='/register/customer' component={CustomerForm} />
     </Layout>
 );

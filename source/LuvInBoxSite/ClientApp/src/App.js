@@ -8,6 +8,7 @@ var Counter_1 = require("./components/Counter");
 var FetchData_1 = require("./components/FetchData");
 var whoweare_1 = require("./components/institutional/whoweare");
 var VendorForm_1 = require("./components/register/stepVendor/VendorForm");
+var CustomerForm_1 = require("./components/register/stepCustomer/CustomerForm");
 var VendorUI_1 = require("./components/register/VendorUI");
 var fontawesome_svg_core_1 = require("@fortawesome/fontawesome-svg-core");
 var free_brands_svg_icons_1 = require("@fortawesome/free-brands-svg-icons");
@@ -20,5 +21,6 @@ exports.default = (function () { return (React.createElement(Layout_1.default, n
     React.createElement(react_router_1.Route, { path: '/fetch-data/:startDateIndex?', component: FetchData_1.default }),
     React.createElement(react_router_1.Route, { path: '/institutional/whoweare', component: whoweare_1.WhoWeAre }),
     React.createElement(react_router_1.Route, { path: '/register/vendor', component: VendorForm_1.VendorForm }),
-    React.createElement(react_router_1.Route, { path: '/register/vendorUI', component: VendorUI_1.default }))); });
+    React.createElement(react_router_1.Route, { path: '/register/vendorUI', component: VendorUI_1.default }),
+    React.createElement(react_router_1.Route, { path: '/register/customer', component: CustomerForm_1.CustomerForm }))); });
 //# sourceMappingURL=App.js.map

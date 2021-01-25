@@ -38,9 +38,9 @@ export const Details = (props) => {
                     <small id="userfantasyName2-help" className="p-d-block text-right"><Trans>lbl_fantasy_name_required</Trans></small>
                 </div>
                 <div className="p-fluid">
-                    <InputText id="number" name="Number" onChange={handleChange('Document')} defaultValue={vendor.Document.Number} type="text"
-                        aria-describedby="number-help" className="p-d-block" required maxLength="30" placeholder={t('lbl_document')} />
-                    <small id="number-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
+                    <InputMask id="Number" name="Number" type="text" mask="99.999.999/9999-99" onChange={handleChange('Document')}
+                        defaultValue={vendor.Document.Number} placeholder={t('lbl_document')} aria-describedby="document-help" />
+                    <small id="document-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
                 </div>
                 <div className="p-fluid">
                     <InputMask id="mainPhone" name="MainPhone" type="text" mask="+99(99) 9999-9999" onChange={handleChange('MainPhone')} value={vendor.MainPhone}

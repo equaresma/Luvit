@@ -4,7 +4,6 @@ var React = require("react");
 var reactstrap_1 = require("reactstrap");
 var NavMenu_1 = require("./NavMenu");
 var NavFooter_1 = require("./NavFooter");
-//import '../../node_modules/primereact/resources/primereact.css';
 var CarouselProducts_1 = require("./CarouselProducts");
 exports.default = (function (props) { return (React.createElement(React.Fragment, null,
     React.createElement(NavMenu_1.default, null),

@@ -2,6 +2,7 @@
 using com.luvinbox.model.enums;
 using com.luvinbox.model.helper;
 using com.luvinbox.model.Properties;
+using com.luvinbox.model.system;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -27,6 +28,8 @@ namespace com.luvinbox.model.registry
 
         [Display(Name = "lblDegree", ResourceType = typeof(AppRes))]
         public enumDegree Degree { get; set; }
+
+        public Login Login { get; set; }
 
         public Customer()
         {

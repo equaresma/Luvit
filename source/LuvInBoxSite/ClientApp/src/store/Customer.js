@@ -1,21 +1,21 @@
-﻿const def_url = 'api/vendor/';
+﻿const def_url = 'api/customer/';
 
 const initialState = {
-    Vendors: [],
+    Customers: [],
     loading: false,
     errors: {},
     forceReload: false
 }
 
 export const actionCreators = {
-    requestVendors: () => async (dispatch, getState) => {
+    requestCustomers: () => async (dispatch, getState) => {
 
         const url = def_url;
         const response = await fetch(url);
-        const Vendors = await response.json();
-        dispatch({ type: 'FETCH_VENDORS', Vendors });
+        const Customers = await response.json();
+        dispatch({ type: 'FETCH_CUSTOMERS', Customers });
     },
-    saveVendor: Vendor => async (dispatch, getState) => {       
+    saveCustomer: Customer => async (dispatch, getState) => {       
         const url = def_url;
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
@@ -25,7 +25,7 @@ export const actionCreators = {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(Vendor)
+            body: JSON.stringify(Customer)
         };
         const request = new Request(url, requestOptions);
         await fetch(request)
@@ -37,16 +37,16 @@ export const actionCreators = {
                 let ovo = err;
                 console.log("Error Reading data " + err);
             });
-        dispatch({ type: 'SAVE_VENDOR', Vendor });
+        dispatch({ type: 'SAVE_CUSTOMER', Customer });
     },
-    deleteVendor: Id => async (dispatch, getState) => {
+    deleteCustomer: Id => async (dispatch, getState) => {
         const url = def_url + Id;
         const requestOptions = {
             method: 'DELETE',
         };
         const request = new Request(url, requestOptions);
         await fetch(request);
-        dispatch({ type: 'DELETE_VENDOR', Id });
+        dispatch({ type: 'DELETE_CUSTOMER', Id });
     }
 };
 
@@ -54,23 +54,23 @@ export const reducer = (state, action) => {
     state = state || initialState;
 
     switch (action.type) {
-        case 'FETCH_VENDORS': {
+        case 'FETCH_CUSTOMERS': {
             return {
                 ...state,
-                Vendors: action.Vendors,
+                Customers: action.Customers,
                 loading: false,
                 errors: {},
                 forceReload: false
             }
         }
-        case 'SAVE_VENDOR': {
+        case 'SAVE_CUSTOMER': {
             return {
                 ...state,
-                Vendors: Object.assign({}, action.Vendor),
+                Customers: Object.assign({}, action.Customer),
                 forceReload: true
             }
         }
-        case 'DELETE_VENDOR': {
+        case 'DELETE_CUSTOMER': {
             return {
                 ...state,
                 Id: action.Id,

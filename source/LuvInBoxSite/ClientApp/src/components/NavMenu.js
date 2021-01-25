@@ -13,12 +13,11 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-require("./NavMenu.css");
 var React = require("react");
 var reactstrap_1 = require("reactstrap");
 var react_router_dom_1 = require("react-router-dom");
 var inputtext_1 = require("primereact/inputtext");
-var button_1 = require("primereact/button");
+require("./NavMenu.css");
 var NavMenu = /** @class */ (function (_super) {
     __extends(NavMenu, _super);
     function NavMenu() {
@@ -40,7 +39,7 @@ var NavMenu = /** @class */ (function (_super) {
                 React.createElement(reactstrap_1.Container, null,
                     React.createElement(reactstrap_1.NavbarBrand, { tag: react_router_dom_1.Link, to: "/" },
                         React.createElement("img", { src: "/logo.png", height: "55" })),
-                    React.createElement(reactstrap_1.Nav, { right: true, eventKey: 0 },
+                    React.createElement(reactstrap_1.Nav, null,
                         React.createElement("form", { className: "mx-2 my-auto d-inline w-100" },
                             React.createElement("div", { className: "input-group" },
                                 React.createElement("span", { className: "p-input-icon-right" },
@@ -50,11 +49,14 @@ var NavMenu = /** @class */ (function (_super) {
                     React.createElement(reactstrap_1.Collapse, { className: "d-sm-inline-flex flex-sm-row-reverse", isOpen: this.state.isOpen, navbar: true },
                         React.createElement("ul", { className: "navbar-nav flex-grow" },
                             React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(button_1.Button, { icon: "pi pi-home", className: "p-button-rounded p-button-info p-button-text" })),
+                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "/" },
+                                    React.createElement("i", { className: "pi pi-home" }))),
                             React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(button_1.Button, { icon: "pi pi-user", className: "p-button-rounded p-button-info p-button-text" })),
+                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "/register/customer" },
+                                    React.createElement("i", { className: "pi pi-user" }))),
                             React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(button_1.Button, { icon: "pi pi-shopping-cart", className: "p-button-rounded p-button-info p-button-text" }))))))));
+                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },
+                                    React.createElement("i", { className: "pi pi-shopping-cart" })))))))));
     };
     return NavMenu;
 }(React.PureComponent));

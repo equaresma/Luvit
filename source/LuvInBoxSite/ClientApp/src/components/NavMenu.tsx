@@ -1,12 +1,9 @@
-import './NavMenu.css';
-
 import * as React from 'react';
 import { Collapse, Container, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
-import { width } from '@fortawesome/free-solid-svg-icons/faLevelDownAlt';
 
+import './NavMenu.css';
 
 export default class NavMenu extends React.PureComponent<{}, { isOpen: boolean }> {
     public state = {
@@ -22,7 +19,7 @@ export default class NavMenu extends React.PureComponent<{}, { isOpen: boolean }
                         <NavbarBrand tag={Link} to="/">
                             <img src="/logo.png" height="55" />
                         </NavbarBrand>
-                        <Nav right eventKey={0}>
+                        <Nav>
                             <form className="mx-2 my-auto d-inline w-100">
                                 <div className="input-group">
                                     <span className="p-input-icon-right">
@@ -36,13 +33,13 @@ export default class NavMenu extends React.PureComponent<{}, { isOpen: boolean }
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={this.state.isOpen} navbar>
                             <ul className="navbar-nav flex-grow">
                                 <NavItem>
-                                    <Button icon="pi pi-home" className="p-button-rounded p-button-info p-button-text" />
+                                    <NavLink className="footLnk" href="/"><i className="pi pi-home"></i></NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <Button icon="pi pi-user" className="p-button-rounded p-button-info p-button-text" />
+                                    <NavLink className="footLnk" href="/register/customer"><i className="pi pi-user"></i></NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <Button icon="pi pi-shopping-cart" className="p-button-rounded p-button-info p-button-text" />
+                                    <NavLink className="footLnk" href="#"><i className="pi pi-shopping-cart"></i></NavLink>
                                 </NavItem>
                             </ul>
                         </Collapse>

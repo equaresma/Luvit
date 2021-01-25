@@ -1,19 +1,42 @@
-﻿import React, { Component } from 'react';
+﻿import React from 'react';
 import { InputText } from 'primereact/inputtext';
 import { InputMask } from 'primereact/inputmask';
 import { Button } from 'primereact/button';
 import { Steps } from 'primereact/steps';
 import { Form, FormGroup } from 'reactstrap';
+import { Dropdown } from 'primereact/dropdown';
 import { Password } from 'primereact/password';
 import { Trans, useTranslation } from 'react-i18next';
 
-export const Contact = (props) => {
+export const CustomerContact = (props) => {
     const [hidden, setHidden] = React.useState(true);
     const [hidden2, setHidden2] = React.useState(true);
     const [password, setPwd] = React.useState('');
     const [edit, setEdit] = React.useState(true);
-    const { handleChange, stepItems, currentStep, vendor, save } = props;
+    const { handleChange, stepItems, currentStep, customer, save } = props;
     const { t } = useTranslation();
+
+    const maritalStatusOptions = [
+        { name: t('lbl_single'), code: 0 },
+        { name: t('lbl_married'), code: 1 },
+        { name: t('lbl_separated'), code: 2 },
+        { name: t('lbl_divorced'), code: 3 },
+        { name: t('lbl_widowed'), code: 4 }
+    ];
+
+    const degreeOptions = [
+        { name: t('lbl_highschool'), code: 0 },
+        { name: t('lbl_college'), code: 1 },
+        { name: t('lbl_mba'), code: 2 },
+        { name: t('lbl_postgraduate'), code: 3 },
+        { name: t('lbl_master'), code: 4 },
+        { name: t('lbl_phd'), code: 5 }
+    ];
+
+    const genderOptions = [
+        { name: t('lbl_female'), code: 0 },
+        { name: t('lbl_male'), code: 1 },
+    ];
 
     const toggleShow = () => {
         setHidden(!hidden);
@@ -51,36 +74,26 @@ export const Contact = (props) => {
                     <br />
                     <Form onSubmit={confirm}>
                         <div className="p-fluid">
-                            <FormGroup id="grpLogin" name="grpLogin">
-                                <h4><Trans>Contato</Trans></h4>
-                                <div className="p-fluid p-formgrid p-grid">
-                                    <div className="p-field p-col-4">
-                                        <InputText id="firstName" name="FirstName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.FirstName}
-                                            placeholder={t('lbl_name')} />
-                                    </div>
-                                    <div className="p-field p-col-4">
-                                        <InputText id="middleName" name="MiddleName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.MiddleName}
-                                            placeholder={t('lbl_middle_name')} />
-                                    </div>
-                                    <div className="p-field p-col-4">
-                                        <InputText id="familyName" name="FamilyName" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.FamilyName}
-                                            placeholder={t('lbl_family_name')} />
-                                    </div>
-                                    <div className="p-field p-col-12">
-                                        <InputText id="email" name="Email" type="text" onChange={handleChange('Contact')} defaultValue={vendor.Contact.Email} placeholder="E-mail"
-                                            aria-describedby="email-help" />
-                                        <small id="email-help" className="p-invalid p-d-block text-right"><Trans>email_fmt</Trans></small>
-                                    </div>
-                                    <div className="p-field p-col-6">
-                                        <InputMask id="phone" name="Phone" mask="+99(99) 9999-9999" onValueChange={handleChange('Phone')} defaultValue={vendor.Contact.Phone}
-                                            placeholder={t('phone')} />
-                                        <small id="mainPhone-help" className="p-d-block text-right"><Trans>phone_fmt</Trans></small>
-                                    </div>
-                                    <div className="p-field p-col-6">
-                                        <InputMask id="mobile" name="Mobile" mask="+99(99) 99999-9999" onValueChange={handleChange('Mobile')} defaultValue={vendor.Contact.Mobile}
-                                            placeholder={t('mobile')} />
-                                        <small id="mobile-help" className="p-d-block text-right"><Trans>mobile_fmt</Trans></small>
-                                    </div>
+                            <FormGroup id="grpData" name="grpData">
+                                <h4><Trans>lbl_identification</Trans></h4>
+                                <div className="p-fluid">
+                                    <InputMask id="Number" name="Number" type="text" mask="999.999.999-99" onValueChange={handleChange('Document')}
+                                        defaultValue={customer.Document.Number} placeholder={t('lbl_document')} aria-describedby="document-help"/>
+                                    <small id="document-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
+                                </div>
+                                <div className="p-fluid">
+                                    <Dropdown id="Gender" name="Gender" value={customer.Gender} options={genderOptions} onChange={handleChange('Gender')} optionLabel="name"
+                                        placeholder={t('lbl_gender')} optionValue="code" aria-describedby="gender-help"/>
+                                    <small id="gender-help" className="p-d-block text-right"><Trans>lbl_gender_required</Trans></small>
+                                </div>
+                                <div className="p-fluid">
+                                    <Dropdown id="MaritalStatus" name="MaritalStatus" value={customer.MaritalStatus} options={maritalStatusOptions}
+                                        onChange={handleChange('MaritalStatus')} optionLabel="name" placeholder={t('lbl_marital_status')} optionValue="code" aria-describedby="marital-help"/>
+                                    <small id="marital-help" className="p-d-block text-right"><Trans>lbl_marital_status_required</Trans></small>
+                                </div>
+                                <div className="p-fluid">
+                                    <Dropdown id="Degree" name="Degree" value={customer.Degree} options={degreeOptions} onChange={handleChange('Degree')} optionLabel="name"
+                                        placeholder={t('lbl_degree')} optionValue="code"/>
                                 </div>
                             </FormGroup>
                             <FormGroup id="grpLogin" name="grpLogin">
@@ -97,10 +110,10 @@ export const Contact = (props) => {
                                 </div>
                                 <div className="p-field">
                                     <div className="p-inputgroup">
-                                        <InputText id="txtPassword" name="txtPassword" type="text" placeholder="Confirme a Senha" defaultValue={vendor.Contact.Login.Password}
-                                            onChange={handleChange('Login')} required hidden={hidden} className={password == vendor.Contact.Login.Password ? 'p-valid' : 'p-invalid'} />
-                                        <Password id="password" name="Password" placeholder="Confirme a Senha" defaultValue={vendor.Contact.Login.Password}
-                                            onChange={handleChange('Login')} required hidden={!hidden} aria-describedby="country2-help" className={password == vendor.Contact.Login.Password ? 'p-valid' : 'p-invalid'} />
+                                        <InputText id="txtPassword" name="txtPassword" type="text" placeholder="Confirme a Senha" defaultValue={customer.Login.Password}
+                                            onChange={handleChange('Login')} required hidden={hidden} className={password == customer.Login.Password ? 'p-valid' : 'p-invalid'} />
+                                        <Password id="password" name="Password" placeholder="Confirme a Senha" defaultValue={customer.Login.Password}
+                                            onChange={handleChange('Login')} required hidden={!hidden} aria-describedby="country2-help" className={password == customer.Login.Password ? 'p-valid' : 'p-invalid'} />
                                         <Button type="button" icon="pi pi-eye" className="p-button-sm p-button-text p-button-plain" onClick={toggleShow} />
                                     </div>
                                     <small id="country2-help" className="p-invalid p-d-block text-right"><Trans>lbl_country_required</Trans></small>

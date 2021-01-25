@@ -272,8 +272,7 @@ a.footLnk:active {
 #footer {
     position: relative;
     clear: both;
-    /*background-color: black;*/
-    background-color: #CC0146;
+    background-color: black;
     color: white;
     text-align: center;
     margin-top: 50px;
@@ -290,9 +289,7 @@ a.footLnk:active {
 }
 
 .redCard {
-    /*background-color: #CC0146;*/
-    /*background-color: #CA9CAD;*/
-    background-color: white;
+    background-color: #CC0146;
     width: 100%;
 }
 .whiteCard {
@@ -327,4 +324,37 @@ ul.nav {
 
 span.p-input-icon-right {
     width: 100%
+}
+
+
+element.style {
+}
+
+<style >
+.p-fluid .p-dropdown {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+<style >
+.p-dropdown {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+<style >
+.p-component, .p-component * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.p-dropdown {
+    border: none!important;
+    border-bottom: 1px solid!important;
 }

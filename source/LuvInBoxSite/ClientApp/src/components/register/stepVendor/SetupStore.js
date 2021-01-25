@@ -28,6 +28,12 @@ export const SetupStore = (props) => {
         alert(e.xhr.responseText);
     }
 
+    const getCleanDoc = () => {
+        return vendor.Document.Number?.replace('.', '')
+            .replace('/', '')
+            .replace('-', '');
+    }
+
     return (
         <div>
             <div>
@@ -42,7 +48,7 @@ export const SetupStore = (props) => {
                 <div className="p-fluid">
                     <div className="p-field p-col-12">
                         <Label>Logo</Label>
-                        <FileUpload mode="basic" name="LogoURL" url={"api/file?name=" + vendor.Document.Number} accept="image/*" maxFileSize={60000} onChange={handleChange('LogoURL')} onUpload={onUpload}
+                        <FileUpload mode="basic" name="LogoURL" url={"api/file?name=" + getCleanDoc()} accept="image/*" maxFileSize={60000} onChange={handleChange('LogoURL')} onUpload={onUpload}
                             auto chooseLabel={t('file_browse')} onError={onError} defaultValue={vendor.LogoURL} required />
                         <small id="fileup-help" className="p-invalid p-d-block text-right"><Trans>file_upload_max_size</Trans></small>
                     </div>
