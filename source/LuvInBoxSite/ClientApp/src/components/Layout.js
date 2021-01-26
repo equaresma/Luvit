@@ -4,10 +4,10 @@ var React = require("react");
 var reactstrap_1 = require("reactstrap");
 var NavMenu_1 = require("./NavMenu");
 var NavFooter_1 = require("./NavFooter");
-var CarouselProducts_1 = require("./CarouselProducts");
+var CarouselPromo_1 = require("./CarouselPromo");
 exports.default = (function (props) { return (React.createElement(React.Fragment, null,
     React.createElement(NavMenu_1.default, null),
-    React.createElement(CarouselProducts_1.CarouselProducts, null),
+    React.createElement(CarouselPromo_1.CarouselPromo, null),
     React.createElement(reactstrap_1.Container, null, props.children),
     React.createElement(NavFooter_1.default, null))); });
 //# sourceMappingURL=Layout.js.map

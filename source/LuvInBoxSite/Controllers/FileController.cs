@@ -23,7 +23,7 @@ namespace com.luvinbox.site.Controllers
 
                 FileInfo f = new FileInfo(uploadFile.FileName);
                 string newFileName = $"{name}{f.Extension}";
-                string path = Path.Combine(Directory.GetCurrentDirectory(), "images/logos", newFileName);
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "ClientApp/public/images/logos", newFileName);
 
                 using (Stream stream = new FileStream(path, FileMode.Create))
                 {

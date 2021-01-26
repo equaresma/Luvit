@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';
 import ProductService from '../service/ProductHomeService';
-import './Carousel.css';
+import './CarouselProducts.css';
 
 export const CarouselProducts = () => {
     const [products, setProducts] = useState([]);

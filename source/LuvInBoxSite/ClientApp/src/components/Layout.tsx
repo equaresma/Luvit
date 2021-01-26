@@ -2,12 +2,12 @@ import * as React from 'react';
 import { Container } from 'reactstrap';
 import NavMenu from './NavMenu';
 import NavFooter from './NavFooter';
-import { CarouselProducts } from './CarouselProducts';
+import { CarouselPromo } from './CarouselPromo';
 
 export default (props: { children?: React.ReactNode }) => (
     <React.Fragment>
         <NavMenu />
-        <CarouselProducts />
+        <CarouselPromo />
         <Container>
             {props.children}
         </Container>

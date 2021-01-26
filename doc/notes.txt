@@ -1,0 +1,12 @@
+Carousel: - A dúvida sobre o site ser discreto.
+	Será produtos ou propagandas? - Propagandas
+	Menu lateral de categorias.	
+	
+Esclarecimentos:
+	Onde é azul - vai ser um tom de vermelho da paleta de cores.
+
+Planejamento
+		Finalizar os cadastros de Fornecedores e Clientes
+		Cadastro de Produtos: Tela vs Robo?(preciso saber deles o que estão planejando quanto ao contato com os fornecedores)
+		Login
+	
