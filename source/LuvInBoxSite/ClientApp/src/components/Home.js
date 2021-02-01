@@ -1,14 +1,24 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-require("primeicons/primeicons.css");
-require("primereact/resources/themes/saga-blue/theme.css");
-require("primereact/resources/primereact.css");
-require("primeflex/primeflex.css");
-require("./Home.css");
-var React = require("react");
-var react_redux_1 = require("react-redux");
-var Home = function () {
-    return (React.createElement("div", { className: "container-fluid" }));
-};
-exports.default = react_redux_1.connect()(Home);
-//# sourceMappingURL=Home.js.map
+import * as React from 'react';
+import { connect } from 'react-redux';
+import NavMenu from './NavMenu';
+import NavFooter from './NavFooter';
+import { CarouselPromo } from './CarouselPromo';
+import { CarouselProducts } from './CarouselProducts';
+import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.css';
+import 'primeflex/primeflex.css';
+import './Home.css';
+
+const Home = () => {
+    return (
+        <div>
+            <NavMenu />
+            <CarouselPromo />
+            <CarouselProducts />
+            <NavFooter />
+        </div>
+    );
+}
+
+export default connect()(Home);

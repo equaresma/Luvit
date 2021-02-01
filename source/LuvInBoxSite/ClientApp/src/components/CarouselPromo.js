@@ -1,13 +1,12 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.CarouselPromo = void 0;
-var React = require("react");
-var react_1 = require("react");
-var carousel_1 = require("primereact/carousel");
-require("./CarouselPromo.css");
-var CarouselPromo = function () {
-    var _a = react_1.useState([]), promos = _a[0], setPromos = _a[1];
-    var responsiveOptions = [
+﻿import * as React from 'react';
+import { useState, useEffect } from 'react';
+import { Carousel } from 'primereact/carousel';
+
+import './CarouselPromo.css';
+
+export const CarouselPromo = () => {
+    const [promos, setPromos] = useState([]);
+    const responsiveOptions = [
         {
             breakpoint: '1024px',
             numVisible: 3,
@@ -24,19 +23,31 @@ var CarouselPromo = function () {
             numScroll: 1
         }
     ];
-    react_1.useEffect(function () {
+
+    useEffect(() => {
         setPromos(['manifesto.jpg', 'promocao-frete.jpg', 'promocao-verao.jpg']);
     }, []);
-    var productTemplate = function (promo) {
-        return (React.createElement("div", { className: "promo-item" },
-            React.createElement("div", { className: "promo-item-content" },
-                React.createElement("div", { className: "p-mb-3 whiteCard" },
-                    React.createElement("img", { src: "/images/promotional/" + promo, alt: promo, className: "promo-image" })))));
-    };
-    return (React.createElement("div", { className: "container-fluid" },
-        React.createElement("div", { className: "row" },
-            React.createElement("div", { className: "card" },
-                React.createElement(carousel_1.Carousel, { value: promos, numVisible: 1, numScroll: 1, responsiveOptions: responsiveOptions, className: "custom-carousel", circular: true, autoplayInterval: 6000, itemTemplate: productTemplate })))));
-};
-exports.CarouselPromo = CarouselPromo;
-//# sourceMappingURL=CarouselPromo.js.map
+
+    const productTemplate = (promo) => {
+        return (
+            <div className="promo-item">
+                <div className="promo-item-content">
+                    <div className="p-mb-3 whiteCard">
+                        <img src={"/images/promotional/" + promo} alt={promo} className="promo-image" />
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="container-fluid">
+            <div className="row">
+                <div className="card">
+                    <Carousel value={promos} numVisible={1} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel" circular
+                        autoplayInterval={6000} itemTemplate={productTemplate} />
+                </div>
+            </div>
+        </div>
+    );
+}

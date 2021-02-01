@@ -71,5 +71,10 @@
   "lbl_mba": "MBA",
   "lbl_postgraduate": "Pós Graduação",
   "lbl_master": "Mestrado",
-  "lbl_phd": "Phd"
+  "lbl_phd": "Phd",
+  "lbl_username": "Usuário",
+  "lbl_pwd": "Senha",
+  "btn_enter": "Entrar",
+  "tit_is_new": "É novo por aqui?",
+  "tit_create_account": "Criar nova conta"
 }

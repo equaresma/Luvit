@@ -40,14 +40,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\components\CarouselProducts.tsx" />
-    <None Remove="ClientApp\src\components\CarouselPromo.tsx" />
+    <None Remove="ClientApp\src\components\CarouselProducts.js" />
+    <None Remove="ClientApp\src\components\CarouselPromo.js" />
     <None Remove="ClientApp\src\components\institutional\whoweare.tsx" />
     <None Remove="ClientApp\src\service\AddressService.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Remove="ClientApp\src\components\NavFooter.tsx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,9 +52,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ClientApp\src\components\NavMenu - Copy.js.map">
-      <DependentUpon>NavMenu.js.map</DependentUpon>
-    </None>
+    <TypeScriptCompile Include="ClientApp\src\App.js" />
+    <TypeScriptCompile Include="ClientApp\src\components\CarouselProducts.js" />
+    <TypeScriptCompile Include="ClientApp\src\components\CarouselPromo.js" />
+    <TypeScriptCompile Include="ClientApp\src\components\Home.js" />
+    <TypeScriptCompile Include="ClientApp\src\components\NavMenu.js" />
+    <TypeScriptCompile Include="ClientApp\src\index.js" />
+    <TypeScriptCompile Include="ClientApp\src\react-app-env.d.js" />
+    <TypeScriptCompile Include="ClientApp\src\registerServiceWorker.js" />
+    <TypeScriptCompile Include="ClientApp\src\store\configureStore.js" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

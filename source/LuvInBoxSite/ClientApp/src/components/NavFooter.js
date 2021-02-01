@@ -1,82 +1,77 @@
-"use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = require("react");
-var reactstrap_1 = require("reactstrap");
-var react_i18next_1 = require("react-i18next");
-var react_fontawesome_1 = require("@fortawesome/react-fontawesome");
-var NavFooter = /** @class */ (function (_super) {
-    __extends(NavFooter, _super);
-    function NavFooter() {
-        return _super !== null && _super.apply(this, arguments) || this;
+import * as React from 'react';
+import { Nav, NavItem, NavLink } from 'reactstrap';
+import { Trans } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+export default class NavFooter extends React.PureComponent{
+    render() {
+        return (
+            <footer id="footer">
+                <div className="container-fluid">
+                    <div className="row">
+                        <div id="first_footer" className="col-md-4">
+                            <Nav vertical>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="/institutional/whoweare"><Trans>footer_who_wew_are</Trans></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#"><Trans>footer_privacy_policy</Trans></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#"><Trans>footer_return_policy</Trans></NavLink>
+                                </NavItem>
+                            </Nav>
+                        </div>
+                        <div id="secound_footer" className="col-md-4">
+                            <Nav vertical>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#">FAQ</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#"><Trans>footer_contact_us</Trans></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#"><FontAwesomeIcon icon={['fab', 'whatsapp']} />&nbsp;WhatsApp</NavLink>
+                                </NavItem>
+                            </Nav>
+                        </div>
+                        <div id="third_footer" className="col-md-4">
+                            <Nav vertical>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="/register/vendor"><Trans>footer_be_vendor</Trans></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#"><Trans>footer_vendors_area</Trans></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#">FAQ</NavLink>
+                                </NavItem>
+                            </Nav>
+                        </div>
+                    </div>
+                    <div className="row" style={{ marginTop: "25px", marginBottom: "25px" }}>
+                        <div className="col-md-12">
+                            <Nav className="center">
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#"><FontAwesomeIcon icon={['fab', 'facebook']} /></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#"><FontAwesomeIcon icon={['fab', 'instagram']} /></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#"><FontAwesomeIcon icon={['fab', 'youtube']} /></NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink className="footLnk" href="#"><FontAwesomeIcon icon={['fab', 'twitter']} /></NavLink>
+                                </NavItem>
+                            </Nav>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-12"></div>
+                    </div>
+                </div>
+            </footer>
+        );
     }
-    NavFooter.prototype.render = function () {
-        return (React.createElement("footer", { id: "footer" },
-            React.createElement("div", { className: "container-fluid" },
-                React.createElement("div", { className: "row" },
-                    React.createElement("div", { id: "first_footer", className: "col-md-4" },
-                        React.createElement(reactstrap_1.Nav, { vertical: true },
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "/institutional/whoweare" },
-                                    React.createElement(react_i18next_1.Trans, null, "footer_who_wew_are"))),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },
-                                    React.createElement(react_i18next_1.Trans, null, "footer_privacy_policy"))),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },
-                                    React.createElement(react_i18next_1.Trans, null, "footer_return_policy"))))),
-                    React.createElement("div", { id: "secound_footer", className: "col-md-4" },
-                        React.createElement(reactstrap_1.Nav, { vertical: true },
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" }, "FAQ")),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },
-                                    React.createElement(react_i18next_1.Trans, null, "footer_contact_us"))),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },
-                                    React.createElement(react_fontawesome_1.FontAwesomeIcon, { icon: ['fab', 'whatsapp'] }),
-                                    "\u00A0WhatsApp")))),
-                    React.createElement("div", { id: "third_footer", className: "col-md-4" },
-                        React.createElement(reactstrap_1.Nav, { vertical: true },
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "/register/vendor" },
-                                    React.createElement(react_i18next_1.Trans, null, "footer_be_vendor"))),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },
-                                    React.createElement(react_i18next_1.Trans, null, "footer_vendors_area"))),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" }, "FAQ"))))),
-                React.createElement("div", { className: "row", style: { marginTop: "25px", marginBottom: "25px" } },
-                    React.createElement("div", { className: "col-md-12" },
-                        React.createElement(reactstrap_1.Nav, { className: "center" },
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },
-                                    React.createElement(react_fontawesome_1.FontAwesomeIcon, { icon: ['fab', 'facebook'] }))),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },
-                                    React.createElement(react_fontawesome_1.FontAwesomeIcon, { icon: ['fab', 'instagram'] }))),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },
-                                    React.createElement(react_fontawesome_1.FontAwesomeIcon, { icon: ['fab', 'youtube'] }))),
-                            React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },
-                                    React.createElement(react_fontawesome_1.FontAwesomeIcon, { icon: ['fab', 'twitter'] })))))),
-                React.createElement("div", { className: "row" },
-                    React.createElement("div", { className: "col-md-12" })))));
-    };
-    return NavFooter;
-}(React.PureComponent));
-exports.default = NavFooter;
-//# sourceMappingURL=NavFooter.js.map
+}

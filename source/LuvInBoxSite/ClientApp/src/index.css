@@ -326,17 +326,14 @@ span.p-input-icon-right {
     width: 100%
 }
 
-
 element.style {
 }
 
-<style >
 .p-fluid .p-dropdown {
     display: -ms-flexbox;
     display: flex;
 }
 
-<style >
 .p-dropdown {
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -348,7 +345,6 @@ element.style {
     user-select: none;
 }
 
-<style >
 .p-component, .p-component * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -357,4 +353,9 @@ element.style {
 .p-dropdown {
     border: none!important;
     border-bottom: 1px solid!important;
+}
+
+.granContainer {
+    width: 100%!important;
+    max-width: 100%!important;
 }

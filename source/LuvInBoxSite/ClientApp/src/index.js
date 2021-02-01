@@ -1,23 +1,28 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-require("bootstrap/dist/css/bootstrap.css");
-require("./index.css");
-var React = require("react");
-var ReactDOM = require("react-dom");
-require("./i18n");
-var react_redux_1 = require("react-redux");
-var connected_react_router_1 = require("connected-react-router");
-var history_1 = require("history");
-var configureStore_1 = require("./store/configureStore");
-var App_1 = require("./App");
-var registerServiceWorker_1 = require("./registerServiceWorker");
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import './i18n';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import { createBrowserHistory } from 'history';
+import configureStore from './store/configureStore';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
+
 // Create browser history to use in the Redux store
-var baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
-var history = history_1.createBrowserHistory({ basename: baseUrl });
+const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
+const history = createBrowserHistory({ basename: baseUrl });
+
 // Get the application-wide store instance, prepopulating with state from the server where available.
-var store = configureStore_1.default(history);
-ReactDOM.render(React.createElement(react_redux_1.Provider, { store: store },
-    React.createElement(connected_react_router_1.ConnectedRouter, { history: history },
-        React.createElement(App_1.default, null))), document.getElementById('root'));
-registerServiceWorker_1.default();
-//# sourceMappingURL=index.js.map
+const store = configureStore(history);
+
+ReactDOM.render(
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <App />
+        </ConnectedRouter>
+    </Provider>,
+    document.getElementById('root'));
+
+registerServiceWorker();

@@ -31,11 +31,11 @@ export const actionCreators = {
         await fetch(request)
             .then(data => data.text())
             .then(text => {                
-                let ovo = text;
-                console.log("Msg: " + ovo);
+                let msg = text;
+                console.log("Msg: " + msg);
             }).catch(err => {
-                let ovo = err;
-                console.log("Error Reading data " + err);
+                let msg = err;
+                console.log("Error Reading data " + msg);
             });
         dispatch({ type: 'SAVE_VENDOR', Vendor });
     },

@@ -66,11 +66,16 @@
   "lbl_separated": "Separeted",
   "lbl_divorced": "Divorced",
   "lbl_widowed": "Widowed",
-  "lbl_degree":  "Degree",
+  "lbl_degree": "Degree",
   "lbl_highschool": "Highschool",
   "lbl_college": "College",
   "lbl_mba": "MBA",
   "lbl_postgraduate": "Postgraduate",
   "lbl_master": "Master",
-  "lbl_phd": "Phd"
+  "lbl_phd": "Phd",
+  "lbl_username": "User name",
+  "lbl_pwd": "Passowrd",
+  "btn_enter": "Enter",
+  "tit_is_new": "Is it new here?",
+  "tit_create_account":  "Create new account"
 }

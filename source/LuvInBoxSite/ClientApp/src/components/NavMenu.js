@@ -52,7 +52,7 @@ var NavMenu = /** @class */ (function (_super) {
                                 React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "/" },
                                     React.createElement("i", { className: "pi pi-home" }))),
                             React.createElement(reactstrap_1.NavItem, null,
-                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "/register/customer" },
+                                React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "/account/login" },
                                     React.createElement("i", { className: "pi pi-user" }))),
                             React.createElement(reactstrap_1.NavItem, null,
                                 React.createElement(reactstrap_1.NavLink, { className: "footLnk", href: "#" },

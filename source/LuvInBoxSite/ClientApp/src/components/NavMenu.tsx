@@ -36,7 +36,7 @@ export default class NavMenu extends React.PureComponent<{}, { isOpen: boolean }
                                     <NavLink className="footLnk" href="/"><i className="pi pi-home"></i></NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="footLnk" href="/register/customer"><i className="pi pi-user"></i></NavLink>
+                                    <NavLink className="footLnk" href="/account/login"><i className="pi pi-user"></i></NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="footLnk" href="#"><i className="pi pi-shopping-cart"></i></NavLink>
