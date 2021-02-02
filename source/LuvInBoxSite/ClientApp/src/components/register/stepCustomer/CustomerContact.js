@@ -64,76 +64,74 @@ export const CustomerContact = (props) => {
         if (edit) {
             return (
                 <div>
-                    <div>
+                    <div className="divSteps">
                         <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
-                        <br />
-                        <br />
                     </div>
-                    <h4><Trans>comercial_contact</Trans></h4>
-                    <br />
-                    <br />
-                    <Form onSubmit={confirm}>
-                        <div className="p-fluid">
-                            <FormGroup id="grpData" name="grpData">
-                                <h4><Trans>lbl_identification</Trans></h4>
-                                <div className="p-fluid">
-                                    <InputMask id="Number" name="Number" type="text" mask="999.999.999-99" onValueChange={handleChange('Document')}
-                                        defaultValue={customer.Document.Number} placeholder={t('lbl_document')} aria-describedby="document-help"/>
-                                    <small id="document-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
-                                </div>
-                                <div className="p-fluid">
-                                    <Dropdown id="Gender" name="Gender" value={customer.Gender} options={genderOptions} onChange={handleChange('Gender')} optionLabel="name"
-                                        placeholder={t('lbl_gender')} optionValue="code" aria-describedby="gender-help"/>
-                                    <small id="gender-help" className="p-d-block text-right"><Trans>lbl_gender_required</Trans></small>
-                                </div>
-                                <div className="p-fluid">
-                                    <Dropdown id="MaritalStatus" name="MaritalStatus" value={customer.MaritalStatus} options={maritalStatusOptions}
-                                        onChange={handleChange('MaritalStatus')} optionLabel="name" placeholder={t('lbl_marital_status')} optionValue="code" aria-describedby="marital-help"/>
-                                    <small id="marital-help" className="p-d-block text-right"><Trans>lbl_marital_status_required</Trans></small>
-                                </div>
-                                <div className="p-fluid">
-                                    <Dropdown id="Degree" name="Degree" value={customer.Degree} options={degreeOptions} onChange={handleChange('Degree')} optionLabel="name"
-                                        placeholder={t('lbl_degree')} optionValue="code"/>
-                                </div>
-                            </FormGroup>
-                            <FormGroup id="grpLogin" name="grpLogin">
-                                <h4><Trans>Login</Trans></h4>
-                                <div className="p-field">
-                                    <div className="p-inputgroup">
-                                        <InputText id="txtPwd" name="txtPwd" type="text" placeholder="Senha" defaultValue={password} onChange={handleChangeLocal} required
-                                            hidden={hidden2} />
-                                        <Password id="pwd" name="pwd" placeholder="Senha" defaultValue={password} onChange={handleChangeLocal} required
-                                            hidden={!hidden2} aria-describedby="country-help" inline="true" />
-                                        <Button type="button" icon="pi pi-eye" className="p-button-sm p-button-text p-button-plain" onClick={toggleShow2} />
+                    <div className="card">
+                        <Form onSubmit={confirm}>
+                            <div className="p-fluid">
+                                <FormGroup id="grpData" name="grpData">
+                                    <h4><Trans>lbl_identification</Trans></h4>
+                                    <br />
+                                    <div className="p-fluid">
+                                        <InputMask id="Number" name="Number" type="text" mask="999.999.999-99" onValueChange={handleChange('Document')}
+                                            defaultValue={customer.Document.Number} placeholder={t('lbl_document')} aria-describedby="document-help" />
+                                        <small id="document-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
                                     </div>
-                                    <small id="country-help" className="p-invalid p-d-block text-right"><Trans>lbl_country_required</Trans></small>
-                                </div>
-                                <div className="p-field">
-                                    <div className="p-inputgroup">
-                                        <InputText id="txtPassword" name="txtPassword" type="text" placeholder="Confirme a Senha" defaultValue={customer.Login.Password}
-                                            onChange={handleChange('Login')} required hidden={hidden} className={password == customer.Login.Password ? 'p-valid' : 'p-invalid'} />
-                                        <Password id="password" name="Password" placeholder="Confirme a Senha" defaultValue={customer.Login.Password}
-                                            onChange={handleChange('Login')} required hidden={!hidden} aria-describedby="country2-help" className={password == customer.Login.Password ? 'p-valid' : 'p-invalid'} />
-                                        <Button type="button" icon="pi pi-eye" className="p-button-sm p-button-text p-button-plain" onClick={toggleShow} />
+                                    <div className="p-fluid">
+                                        <Dropdown id="Gender" name="Gender" value={customer.Gender} options={genderOptions} onChange={handleChange('Gender')} optionLabel="name"
+                                            placeholder={t('lbl_gender')} optionValue="code" aria-describedby="gender-help" />
+                                        <small id="gender-help" className="p-d-block text-right"><Trans>lbl_gender_required</Trans></small>
                                     </div>
-                                    <small id="country2-help" className="p-invalid p-d-block text-right"><Trans>lbl_country_required</Trans></small>
-                                </div>
-                            </FormGroup>
-                        </div>
-                        <br />
-                        <div className="p-formgroup-inline">
-                            <Button
-                                label={t("btn_confirm")}
-                                type="submit"
-                            />
-                            <Button
-                                style={{ marginLeft: "10px" }}
-                                label={t("btn_prev")}
-                                type="button"
-                                onClick={back}
-                            />
-                        </div>
-                    </Form>
+                                    <div className="p-fluid">
+                                        <Dropdown id="MaritalStatus" name="MaritalStatus" value={customer.MaritalStatus} options={maritalStatusOptions}
+                                            onChange={handleChange('MaritalStatus')} optionLabel="name" placeholder={t('lbl_marital_status')} optionValue="code" aria-describedby="marital-help" />
+                                        <small id="marital-help" className="p-d-block text-right"><Trans>lbl_marital_status_required</Trans></small>
+                                    </div>
+                                    <div className="p-fluid">
+                                        <Dropdown id="Degree" name="Degree" value={customer.Degree} options={degreeOptions} onChange={handleChange('Degree')} optionLabel="name"
+                                            placeholder={t('lbl_degree')} optionValue="code" />
+                                    </div>
+                                </FormGroup>
+                                <FormGroup id="grpLogin" name="grpLogin">
+                                    <h4><Trans>Login</Trans></h4>
+                                    <div className="p-field">
+                                        <div className="p-inputgroup">
+                                            <InputText id="txtPwd" name="txtPwd" type="text" placeholder="Senha" defaultValue={password} onChange={handleChangeLocal} required
+                                                hidden={hidden2} />
+                                            <Password id="pwd" name="pwd" placeholder="Senha" defaultValue={password} onChange={handleChangeLocal} required
+                                                hidden={!hidden2} aria-describedby="country-help" inline="true" />
+                                            <Button type="button" icon="pi pi-eye" className="p-button-sm p-button-text p-button-plain" onClick={toggleShow2} />
+                                        </div>
+                                        <small id="country-help" className="p-invalid p-d-block text-right"><Trans>lbl_country_required</Trans></small>
+                                    </div>
+                                    <div className="p-field">
+                                        <div className="p-inputgroup">
+                                            <InputText id="txtPassword" name="txtPassword" type="text" placeholder="Confirme a Senha" defaultValue={customer.Login.Password}
+                                                onChange={handleChange('Login')} required hidden={hidden} className={password == customer.Login.Password ? 'p-valid' : 'p-invalid'} />
+                                            <Password id="password" name="Password" placeholder="Confirme a Senha" defaultValue={customer.Login.Password}
+                                                onChange={handleChange('Login')} required hidden={!hidden} aria-describedby="country2-help" className={password == customer.Login.Password ? 'p-valid' : 'p-invalid'} />
+                                            <Button type="button" icon="pi pi-eye" className="p-button-sm p-button-text p-button-plain" onClick={toggleShow} />
+                                        </div>
+                                        <small id="country2-help" className="p-invalid p-d-block text-right"><Trans>lbl_country_required</Trans></small>
+                                    </div>
+                                </FormGroup>
+                            </div>
+                            <br />
+                            <div className="p-formgroup-inline">
+                                <Button
+                                    label={t("btn_confirm")}
+                                    type="submit"
+                                />
+                                <Button
+                                    style={{ marginLeft: "10px" }}
+                                    label={t("btn_prev")}
+                                    type="button"
+                                    onClick={back}
+                                />
+                            </div>
+                        </Form>
+                    </div>
                 </div>
             )
         } else {

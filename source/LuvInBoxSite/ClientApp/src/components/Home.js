@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import NavMenu from './NavMenu';
-import NavFooter from './NavFooter';
 import { CarouselPromo } from './CarouselPromo';
 import { CarouselProducts } from './CarouselProducts';
 import 'primeicons/primeicons.css';
@@ -12,11 +10,9 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div>
-            <NavMenu />
+        <div>            
             <CarouselPromo />
-            <CarouselProducts />
-            <NavFooter />
+            <CarouselProducts />            
         </div>
     );
 }

@@ -52,10 +52,6 @@ p {
     margin: 0 0 1rem 0;
 }
 
-.card {
-    margin-bottom: 2rem;
-}
-
 input[type="number"] {
     -moz-appearance: textfield;
 }
@@ -285,13 +281,26 @@ a.footLnk:active {
 }
 
 .card {
+    margin-top: 100px;
     margin-bottom: 2rem;
+    max-width: 70%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .redCard {
     background-color: #CC0146;
-    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 2rem;
+    max-width: 70%;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
+
 .whiteCard {
     background-color: #fffefe;
     padding-left: 2em;
@@ -358,4 +367,8 @@ element.style {
 .granContainer {
     width: 100%!important;
     max-width: 100%!important;
+}
+
+.divSteps {
+    margin: 50px 50px 100px 50px
 }

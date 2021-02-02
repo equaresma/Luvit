@@ -20,7 +20,7 @@ export const Login = () => {
         const { target } = e;
         setUser({
             ...user,
-            [input]: target.value
+            [target.name]: target.value
         });
     }
 
@@ -33,16 +33,16 @@ export const Login = () => {
     return (
         <div>
             <Form onSubmit={confirm}>
-                <div className="p-fluid">
+                <div className="card">
                     <FormGroup id="grpLogin" name="grpLogin">
-                        <div className="card">
+                        <div>
                             <div><label htmlFor="userName"><Trans>lbl_username</Trans></label></div>
                             <div>
-                                <InputText id="userName" name="userName" type="text" onChange={(e) => { handleChange(e) }} value={user.userName} required />
+                                <InputText id="userName" name="userName" type="text" onChange={handleChange()} value={user.userName} required />
                             </div>
                             <div><label htmlFor="pwd"><Trans>lbl_pwd</Trans></label></div>
                             <div>
-                                <Password id="pwd" type="text" onChange={(e) => { handleChange(e) }} value={user.password} required />
+                                <Password id="password" name="password" type="text" onChange={handleChange()} value={user.password} required feedback={false}/>
                             </div>
                             <br />
                             <Button

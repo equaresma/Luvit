@@ -32,7 +32,7 @@ export const CarouselPromo = () => {
         return (
             <div className="promo-item">
                 <div className="promo-item-content">
-                    <div className="p-mb-3 whiteCard">
+                    <div className="p-mb-3 withCard">
                         <img src={"/images/promotional/" + promo} alt={promo} className="promo-image" />
                     </div>
                 </div>
@@ -43,7 +43,7 @@ export const CarouselPromo = () => {
     return (
         <div className="container-fluid">
             <div className="row">
-                <div className="card">
+                <div className="col-12">
                     <Carousel value={promos} numVisible={1} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel" circular
                         autoplayInterval={6000} itemTemplate={productTemplate} />
                 </div>

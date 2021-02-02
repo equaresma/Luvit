@@ -59,9 +59,11 @@ export const CarouselProducts = () => {
     return (
         <div className="container-fluid">
             <div className="row">
-                <div className="redCard">
-                    <Carousel value={products} numVisible={3} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel" circular
-                        autoplayInterval={3000} itemTemplate={productTemplate} header={<div className="carouselTitle"><h5>Destaques</h5></div>} />
+                <div className="col-12">
+                    <div className="card">
+                        <Carousel value={products} numVisible={3} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel" circular
+                            autoplayInterval={3000} itemTemplate={productTemplate} header={<div className="carouselTitle"><h5>Destaques</h5></div>} />
+                    </div>
                 </div>
             </div>
         </div>
