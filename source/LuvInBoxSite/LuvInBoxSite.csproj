@@ -11,6 +11,7 @@
     <RootNamespace>com.luvinbox.site</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'LuvInBoxSite' " />
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.10" />
     <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.1.2">
@@ -24,10 +25,10 @@
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="%2a%2a\**" />
     <Content Remove="ClientApp\public\images\carousel - Copy\**" />
-    <None Remove="$(SpaRoot)**" />
     <None Remove="%2a%2a\**" />
     <None Remove="ClientApp\public\images\carousel - Copy\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+    <None Remove="ClientApp\src\components\CarouselPromo %28copiar%29.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,8 +62,13 @@
     <TypeScriptCompile Include="ClientApp\src\react-app-env.d.js" />
     <TypeScriptCompile Include="ClientApp\src\registerServiceWorker.js" />
     <TypeScriptCompile Include="ClientApp\src\store\configureStore.js" />
+    <TypeScriptCompile Include="ClientApp\src\components\CarouselCategory.js" />
+    <TypeScriptCompile Include="ClientApp\src\components\CarouselCategory.css" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ClientApp\public\images\manifest\" />
+  </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
@@ -81,7 +87,7 @@
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
       <DistFiles Include="$(SpaRoot)build\**; $(SpaRoot)build-ssr\**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+      <ResolvedFileToPublish Include="@(DistFiles-&gt;'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>%(DistFiles.Identity)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>

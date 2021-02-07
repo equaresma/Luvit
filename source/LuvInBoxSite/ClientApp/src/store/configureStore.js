@@ -5,7 +5,7 @@ import { History } from 'history';
 //import { ApplicationState, reducers } from './';
 import * as Vendor from './Vendor';
 
-export default function configureStore(history: History, initialState/*?: ApplicationState*/) {
+export default function configureStore(history, initialState/*?: ApplicationState*/) {
     const reducers = {
         vendors: Vendor.reducer
     };

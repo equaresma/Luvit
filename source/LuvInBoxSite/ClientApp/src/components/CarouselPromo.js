@@ -25,7 +25,7 @@ export const CarouselPromo = () => {
     ];
 
     useEffect(() => {
-        setPromos(['manifesto.jpg', 'promocao-frete.jpg', 'promocao-verao.jpg']);
+        setPromos(['manifest-banner.png','promocao-frete.jpg','promocao-verao.jpg']);
     }, []);
 
     const productTemplate = (promo) => {
@@ -45,7 +45,7 @@ export const CarouselPromo = () => {
             <div className="row">
                 <div className="col-12">
                     <Carousel value={promos} numVisible={1} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel" circular
-                        autoplayInterval={6000} itemTemplate={productTemplate} />
+                        autoplayInterval={8000} itemTemplate={productTemplate} />
                 </div>
             </div>
         </div>
