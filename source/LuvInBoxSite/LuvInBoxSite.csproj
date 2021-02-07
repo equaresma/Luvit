@@ -28,6 +28,8 @@
     <None Remove="%2a%2a\**" />
     <None Remove="ClientApp\public\images\carousel - Copy\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+    <None Remove="ClientApp\public\images\icons\Roupas Intimas.png" />
+    <None Remove="ClientApp\public\images\icons\Roupas Intimas.png" />
     <None Remove="ClientApp\src\components\CarouselPromo %28copiar%29.js" />
   </ItemGroup>
 
@@ -87,7 +89,7 @@
     <!-- Include the newly-built files in the publish output -->
     <ItemGroup>
       <DistFiles Include="$(SpaRoot)build\**; $(SpaRoot)build-ssr\**" />
-      <ResolvedFileToPublish Include="@(DistFiles-&gt;'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>%(DistFiles.Identity)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>

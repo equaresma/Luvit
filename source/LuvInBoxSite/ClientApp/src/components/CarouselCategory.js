@@ -26,22 +26,22 @@ export const CarouselCategory = () => {
 
     useEffect(() => {
         setCategs(['Acessorios.png',
-            'Ambiente_romantico.png', 
-            'Brincadeiras_Jogos.png', 
-            'Cosmeticos.png', 
-            'Fantasias.png', 
-            'Fetiche.png', 
-            'Livros.png', 
-            'Mais_vendidos.png', 
-            'Masculino.png', 
-            'Para_elas.png', 
-            'Plugs PNG.png', 
-            'Pompoarismo.png', 
-            'Promocoes.png', 
-            'Protese.png', 
-            'Roupas_Intimas.png', 
-            'Suplementos.png', 
-            'Vibradores.png']);        
+                    'Ambiente_romantico.png', 
+                    'Brincadeiras_Jogos.png', 
+                    'Cosmeticos.png', 
+                    'Fantasias.png', 
+                    'Fetiche.png', 
+                    'Livros.png', 
+                    'Mais_vendidos.png', 
+                    'Masculino.png', 
+                    'Para_elas.png', 
+                    'Plugs.png', 
+                    'Pompoarismo.png', 
+                    'Promocoes.png', 
+                    'Protese.png', 
+                    'Roupas_Intimas.png', 
+                    'Suplementos.png', 
+                    'Vibradores.png']);        
     }, []);
 
     const categTemplate = (categ) => {      
