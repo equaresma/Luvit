@@ -62,7 +62,7 @@ export const CarouselCategory = () => {
                 <div className="col-12">
                     <div className="card">
                         <Carousel value={categs} numVisible={8} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel" circular
-                                autoplayInterval={6000} itemTemplate={categTemplate} />
+                            autoplayInterval={6000} itemTemplate={categTemplate} indicatorsContentClassName="hideIndicators" />
                     </div>
                 </div>
             </div>

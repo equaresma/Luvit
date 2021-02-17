@@ -1,4 +1,5 @@
 {
+  "search":  "Search",
   "footer_who_wew_are": "Who we area",
   "footer_privacy_policy": "Privacy Policy",
   "footer_return_policy": "Return Policy",
@@ -77,5 +78,5 @@
   "lbl_pwd": "Passowrd",
   "btn_enter": "Enter",
   "tit_is_new": "Is it new here?",
-  "tit_create_account":  "Create new account"
+  "tit_create_account": "Create new account"
 }

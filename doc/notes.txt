@@ -1,12 +1,62 @@
+01/21
+===========================================================================================================================================	
 Carousel: - A dúvida sobre o site ser discreto.
 	Será produtos ou propagandas? - Propagandas
 	Menu lateral de categorias.	
 	
 Esclarecimentos:
 	Onde é azul - vai ser um tom de vermelho da paleta de cores.
+===========================================================================================================================================	
+07/02/21
+Paypal: 4,79% + tarifa fixa: BRL 0,60
+Operação de R$ 10,00
 
+CERTIFICADO DIGITAL para Emissão de NFe
+
+===========================================================================================================================================	
 Planejamento
 		Finalizar os cadastros de Fornecedores e Clientes
 		Cadastro de Produtos: Tela vs Robo?(preciso saber deles o que estão planejando quanto ao contato com os fornecedores)
 		Login
-	
+		Apresentação dos produtos filtrado por categoria
+		Comparação do produto selecionado.
+
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background-color: #2196F3;
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator button {
+    background-color: #f44336;
+    width: 2rem;
+    height: 0.5rem;
+    -webkit-transition: background-color 0.2s, color 0.2s, -webkit-box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, -webkit-box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+    border-radius: 0;
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background: #E3F2FD;
+    color: #495057;
+}
+
+
+[BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+
+import { useHistory } from "react-router-dom";
+
+function HomeButton() {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push("/home");
+  }
+
+  return (
+    <button type="button" onClick={handleClick}>
+      Go home
+    </button>
+  );
+}

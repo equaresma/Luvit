@@ -293,6 +293,7 @@ a.footLnk:active {
     padding: 10px;
     display: flex;
     justify-content: center;
+    border: none;
 }
 
 .redCard {
@@ -304,6 +305,7 @@ a.footLnk:active {
     padding: 10px;
     display: flex;
     justify-content: center;
+    border: none;
 }
 
 .whiteCard {
@@ -312,6 +314,7 @@ a.footLnk:active {
     padding-right: 2em;
     padding-bottom: 2em;
     padding-top: 2em;
+    border: none;
 }
 .carouselTitle {
     padding-left: 2em;
@@ -446,4 +449,21 @@ element.style {
     -webkit-animation: blink normal 2s infinite ease-in-out; /* Webkit */
     -ms-animation: blink normal 2s infinite ease-in-out; /* IE */
     animation: blink normal 2s infinite ease-in-out; /* Opera and prob css3 final iteration */
+}
+
+/*carousel indicators*/
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background-color: #AE194C;
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator button {
+    background-color: #CA9CAD;
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background: #AE194C;
+}
+
+ul.hideIndicators {
+    display: none !important;
 }

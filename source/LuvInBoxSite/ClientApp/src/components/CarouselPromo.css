@@ -10,6 +10,7 @@
     width: 50%;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
+
 .carousel-promo .promo-item .promo-item-content {
     border: 1px solid var(--surface-d);
     border-radius: 3px;
@@ -34,4 +35,3 @@
     height: 350px;
     justify-content: center
 }
-

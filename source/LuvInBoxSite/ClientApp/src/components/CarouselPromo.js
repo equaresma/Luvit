@@ -45,7 +45,7 @@ export const CarouselPromo = () => {
             <div className="row">
                 <div className="col-12">
                     <Carousel value={promos} numVisible={1} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel" circular
-                        autoplayInterval={8000} itemTemplate={productTemplate} />
+                        autoplayInterval={8000} itemTemplate={productTemplate} indicatorsContentClassName="hideIndicators"/>
                 </div>
             </div>
         </div>

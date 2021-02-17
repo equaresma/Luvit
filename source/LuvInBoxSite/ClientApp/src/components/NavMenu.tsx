@@ -2,16 +2,19 @@ import * as React from 'react';
 import { Collapse, Container, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { InputText } from 'primereact/inputtext';
+import { withTranslation } from 'react-i18next';
 
 import './NavMenu.css';
 
-export default class NavMenu extends React.PureComponent<{}, { isOpen: boolean }> {
+class NavMenu extends React.PureComponent<{t}, { isOpen: boolean }> {
     public state = {
         isOpen: false,
         search: ''
     };
 
     public render() {
+        const { t } = this.props;
+
         return (
             <header>
                 <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" light>
@@ -24,7 +27,7 @@ export default class NavMenu extends React.PureComponent<{}, { isOpen: boolean }
                                 <div className="input-group">
                                     <span className="p-input-icon-right">
                                         <i className="pi pi-search" />
-                                        <InputText defaultValue={this.state.search} placeholder="Search" className="form-control" />
+                                        <InputText defaultValue={this.state.search} placeholder={t('search')} className="form-control" />
                                     </span>
                                 </div>
                             </form>
@@ -55,3 +58,5 @@ export default class NavMenu extends React.PureComponent<{}, { isOpen: boolean }
         });
     }
 }
+
+export default withTranslation()(NavMenu)
