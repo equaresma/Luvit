@@ -1,4 +1,4 @@
-﻿const def_url = 'api/vendor/';
+﻿const def_url = 'api/vendorS/';
 
 const initialState = {
     Vendors: [],

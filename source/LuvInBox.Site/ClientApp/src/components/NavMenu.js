@@ -40,7 +40,7 @@ var NavMenu = /** @class */ (function (_super) {
             React.createElement(reactstrap_1.Navbar, { className: "navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3", light: true },
                 React.createElement(reactstrap_1.Container, null,
                     React.createElement(reactstrap_1.NavbarBrand, { tag: react_router_dom_1.Link, to: "/" },
-                        React.createElement("img", { src: "/logo.png", height: "55" })),
+                        React.createElement("img", { src: "/logo.png", height: "110" })),
                     React.createElement(reactstrap_1.Nav, null,
                         React.createElement("form", { className: "mx-2 my-auto d-inline w-100" },
                             React.createElement("div", { className: "input-group" },

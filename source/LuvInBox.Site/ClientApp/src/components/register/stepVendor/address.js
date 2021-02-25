@@ -6,7 +6,7 @@ import { Checkbox } from 'primereact/checkbox';
 import { Steps } from 'primereact/steps';
 import { Trans, useTranslation } from 'react-i18next';
 import { Form } from 'reactstrap';
-import AddressService from '../../../service/AddressService';
+import AddressService from '../../../service/addressService';
 
 export const Address = (props) => {
     const { upDateAddress, handleChange, stepItems, currentStep } = props;
@@ -25,7 +25,7 @@ export const Address = (props) => {
     }
 
     const getAddress = e => {
-        const addressService = new AddressService();
+        const addressService = new addressService();
         const cep = e.target.value;
 
         addressService.getAddressByCEP(cep)

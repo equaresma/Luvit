@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Container } from 'reactstrap';
-import NavMenu from './NavMenu';
+import NavMenu from './navMenu';
 import NavFooter from './navFooter';
 
 export default (props: { children?: React.ReactNode }) => (

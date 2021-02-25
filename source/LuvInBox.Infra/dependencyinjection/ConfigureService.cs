@@ -8,8 +8,10 @@ namespace com.luvinbox.infra.dependencyinjection
     {
         public static void ConfigureDependenciesService(IServiceCollection serviceCollection)
         {
+            serviceCollection.AddTransient<ICustomerService, CustomerService>();
             serviceCollection.AddTransient<IUserService, UserService>();
-           // serviceCollection.AddTransient<ILoginService, LoginService>();
+            serviceCollection.AddTransient<ILoginService, LoginService>();
+            serviceCollection.AddTransient<IVendorService, VendorService>();
         }
     }
 }

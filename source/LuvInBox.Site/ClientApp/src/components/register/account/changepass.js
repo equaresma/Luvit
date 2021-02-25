@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import { useDispatch } from 'react-redux';
-import { actionCreators } from '../../../store/Vendor';
+import { actionCreators } from '../../../store/vendor';
 import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { Form, FormGroup } from 'reactstrap';

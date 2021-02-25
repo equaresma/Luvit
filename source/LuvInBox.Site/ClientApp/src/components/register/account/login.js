@@ -29,7 +29,7 @@ export const Login = () => {
     const confirm = () => {
         if (user.userName && user.password) {
             dispatch(actionCreators.doLogin(user)).then(x => {                
-                history.push("/home");
+                history.push("/");
             });
         }
     }

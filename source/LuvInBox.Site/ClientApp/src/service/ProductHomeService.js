@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var ProductHomeService = /** @class */ (function () {
-    function ProductHomeService() {
+var productHomeService = /** @class */ (function () {
+    function productHomeService() {
         this.data = {
             "products": [
                 { "id": "1000", "code": "f230fh0g3", "name": "Bamboo Watch", "description": "Product Description", "image": "bamboo-watch.jpg", "price": 65, "category": "Accessories", "quantity": 24, "inventoryStatus": "INSTOCK", "rating": 5 },
@@ -17,19 +17,19 @@ var ProductHomeService = /** @class */ (function () {
             ]
         };
     }
-    ProductHomeService.prototype.getProductsSmall = function () {
+    productHomeService.prototype.getProductsSmall = function () {
         //return axios.get('api/product');
         return this.data;
     };
-    ProductHomeService.prototype.getProducts = function () {
+    productHomeService.prototype.getProducts = function () {
         //return axios.get('api/product');
         return this.data;
     };
-    ProductHomeService.prototype.getProductsWithOrdersSmall = function () {
+    productHomeService.prototype.getProductsWithOrdersSmall = function () {
         //return axios.get('api/product');
         return this.data;
     };
-    return ProductHomeService;
+    return productHomeService;
 }());
-exports.default = ProductHomeService;
-//# sourceMappingURL=ProductHomeService.js.map
+exports.default = productHomeService;
+//# sourceMappingURL=productHomeService.js.map

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';
-import ProductService from '../service/ProductHomeService';
+import productService from '../service/productHomeService';
 import './carouselProducts.css';
 
 export const CarouselProducts = () => {
@@ -25,10 +25,10 @@ export const CarouselProducts = () => {
         }
     ];
 
-    const productService = new ProductService();
+    const service = new productService();
 
     useEffect(() => {
-        setProducts(productService.getProductsSmall().products.slice(0, 9));
+        setProducts(service.getProductsSmall().products.slice(0, 9));
         //.then(data => setProducts(Array(data).slice(0, 9)));
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 

@@ -21,7 +21,7 @@ class NavMenu extends React.PureComponent<{t}, { isOpen: boolean }> {
                 <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" light>
                     <Container>
                         <NavbarBrand tag={Link} to="/">
-                            <img src="/logo.png" height="55" />
+                            <img src="/logo.png" height="110" />
                         </NavbarBrand>
                         <Nav>
                             <form className="mx-2 my-auto d-inline w-100">

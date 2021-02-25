@@ -1,6 +1,6 @@
 ﻿import axios from 'axios';
 
-export default class AddressService {
+export default class addressService {
     getAddressByCEP(zipCode: string) {
         //Nova variável "cep" somente com dígitos.
         var cep = zipCode.replace(/\D/g, '');

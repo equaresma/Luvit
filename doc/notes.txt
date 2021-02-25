@@ -10,3 +10,4 @@ Planejamento
 		Cadastro de Produtos: Tela vs Robo?(preciso saber deles o que estão planejando quanto ao contato com os fornecedores)
 		Login
 	
+No react usar Link ao inves do a, para não recarregar a página toda, se precisar recarregar ai sim usar o a.	
