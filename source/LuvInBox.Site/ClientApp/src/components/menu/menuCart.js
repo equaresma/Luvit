@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { NavLink } from 'reactstrap';
 import { connect } from 'react-redux';
+import { Badge } from 'primereact/badge';
 
 class MenuCart extends React.PureComponent {
     render() {
         const { count } = this.props;
 
         if (count > 0) {
-            return (<NavLink className="footLnk" href="/cart"><i className="pi pi-shopping-cart">Cart({count})</i></NavLink>);
+            return (<NavLink className="footLnk" href="/cart"><i className="pi pi-shopping-cart"><Badge value={count} severity="success" className="p-mr-2">Cart</Badge></i></NavLink>);
         } else
-            return (<NavLink className="footLnk" href="/cart"><i className="pi pi-shopping-cart">Cart</i></NavLink>);
+            return (<NavLink className="footLnk" href="/cart"><i className="pi pi-shopping-cart"></i></NavLink>);
     }
 }
 

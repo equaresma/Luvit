@@ -1,36 +1,24 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { actionCreators } from '../../store/login';
 import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { Form, FormGroup } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Button } from 'primereact/button';
 import { Trans, useTranslation } from 'react-i18next';
-import { useHistory } from "react-router-dom";
+import { userActions } from '../../_actions';
 
 export const Login = () => {
-    const history = useHistory();
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const [user, setUser] = React.useState({
-        email: '',
-        password: ''
-    });
+    const [id, setID] = useState('');
+    const [pwd, setPWD] = useState('');
 
-    const handleChange = input => e => {
-        const { target } = e;
-        setUser({
-            ...user,
-            [target.name]: target.value
-        });
-    }
+    const confirm = (e) => {
+        e.preventDefault();
 
-    const confirm = () => {
-        if (user.userName && user.password) {
-            dispatch(actionCreators.doLogin(user)).then(x => {
-                history.push("/");
-            });
+        if (id && pwd) {
+            dispatch(userActions.login(id, pwd));
         }
     }
 
@@ -42,11 +30,11 @@ export const Login = () => {
                         <div>
                             <div><label htmlFor="userName"><Trans>lbl_username</Trans></label></div>
                             <div>
-                                <InputText id="userName" name="userName" type="text" onChange={handleChange()} value={user.email} required />
+                                <InputText id="userName" name="userName" type="text" value={id} onChange={e => setID(e.target.value)} required />
                             </div>
                             <div><label htmlFor="pwd"><Trans>lbl_pwd</Trans></label></div>
                             <div>
-                                <Password id="password" name="password" type="text" onChange={handleChange()} value={user.password} required feedback={false} />
+                                <Password id="password" name="password" type="text" value={pwd} onChange={e => setPWD(e.target.value)} required feedback={false} />
                             </div>
                             <br />
                             <Button

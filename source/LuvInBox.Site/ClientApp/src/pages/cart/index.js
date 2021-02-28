@@ -7,7 +7,7 @@ const Cart = (props) => {
 
     useEffect(() => {
         if (props.reload)
-            dispatch(cartActions.getAll());
+            dispatch(cartActions.get());
     });
 
     const removeProd = (item) => {
@@ -39,7 +39,7 @@ function mapStateToProps(state) {
         }
     } else {
         return {
-            cart: Array.isArray(state.cart.cart) ? state.products.cart : new Array(),
+            cart: Array.isArray(state.cart.cart) ? state.cart.cart : new Array(),
             reload: true,
             error: state.products.error
         }

@@ -15,3 +15,10 @@ html { font-size: 14px; }
 .siteLogo {
     height: 70px;
 }
+
+.blank {
+}
+
+.hidden {
+    display: none;
+}
