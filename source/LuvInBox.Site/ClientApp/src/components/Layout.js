@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var reactstrap_1 = require("reactstrap");
-var NavMenu_1 = require("./NavMenu");
-var NavFooter_1 = require("./navFooter");
+var NavMenu_1 = require("./menu/navMenu");
+var NavFooter_1 = require("./menu/navFooter");
 exports.default = (function (props) { return (React.createElement(React.Fragment, null,
     React.createElement(NavMenu_1.default, null),
     React.createElement(reactstrap_1.Container, { className: "granContainer" }, props.children),

@@ -80,5 +80,6 @@
   "lbl_pwd_confirm": "Password confirmation",
   "btn_enter": "Enter",
   "tit_is_new": "Is it new here?",
-  "tit_create_account": "Create new account"
+  "tit_create_account": "Create new account",
+  "lbl_highlighted": "Highlighted"
 }

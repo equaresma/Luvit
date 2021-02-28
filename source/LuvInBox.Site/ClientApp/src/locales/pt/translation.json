@@ -79,5 +79,6 @@
   "lbl_pwd_confirm": "Confirmação de senha",
   "btn_enter": "Entrar",
   "tit_is_new": "É novo por aqui?",
-  "tit_create_account": "Criar nova conta"
+  "tit_create_account": "Criar nova conta",
+  "lbl_highlighted": "Destaque"
 }

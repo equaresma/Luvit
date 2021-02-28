@@ -1,6 +1,6 @@
 ﻿const def_url = 'api/customers/';
 
-const initialState = {
+const customerInitialState = {
     Customers: [],
     Customer: {
         FamilyName: '',
@@ -60,7 +60,7 @@ export const customerActionCreators = {
 };
 
 export const customerReducer = (state, action) => {
-    state = state || initialState;
+    state = state || customerInitialState;
 
     switch (action.type) {
         case 'INCR_CUSTOMER':
