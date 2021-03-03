@@ -51,8 +51,8 @@ const CarouselProducts = (props) => {
                         <h6 className="p-mt-0 p-mb-3">${product.price}</h6>
                         <span className={`product-badge status-${product.inventoryStatus}`}>{product.inventoryStatus}</span>
                         <div className="car-buttons p-mt-5">
-                            <Button icon="pi pi-search" className="p-button p-button-rounded p-mr-2" />
-                            <Button icon="pi pi-star" className="p-button-success p-button-rounded p-mr-2" />
+                            <Button icon="pi pi-search p-button-search" className="p-button p-button-rounded p-mr-2" />
+                            <Button icon="pi pi-heart" className="p-button-success p-button-rounded p-mr-2" />
                             <Button icon="pi pi-shopping-cart" className="p-button-help p-button-rounded" onClick={(e) => addProd(product)}/>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ const CarouselProducts = (props) => {
                 <div className="col-12">
                     <div className="card">
                         <Carousel value={props.products} numVisible={3} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel" circular
-                            autoplayInterval={6000} itemTemplate={productTemplate} header={<div className="carouselTitle"><h5><Trans>lbl_featured</Trans></h5></div>} />
+                            itemTemplate={productTemplate} header={<div className="carouselTitle"><h5><Trans>lbl_highlighted</Trans></h5></div>} />
                     </div>
                 </div>
             </div>

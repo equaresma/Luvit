@@ -469,8 +469,47 @@ ul.hideIndicators {
 }
 
 /*btn-primary ovveride */
-.btn-primary .p-badge .p-badge-success {
+.btn-primary {
     color: #fff !important;
     background-color: #CC0146 !important;
     border-color: #CC0146 !important;
 }
+
+.p-button-success  {
+    color: #fff !important;
+    background-color: #CC0146 !important;
+    border-color: #CC0146 !important;
+}
+
+.p-button-success {
+    color: #fff !important;
+    background-color: #CC0146 !important;
+    border-color: #CC0146 !important;
+}
+
+.p-button-help {
+    color: #fff !important;
+    background-color: #CC0146 !important;
+    border-color: #CC0146 !important;
+}
+
+.p-badge.p-badge-success {
+    color: #fff !important;
+    background-color: #CC0146 !important;
+    border-color: #CC0146 !important;
+}
+
+.p-button {
+    background-color: #CC0146 !important;
+    border-color: #CC0146 !important;
+}
+
+    .p-button:enabled:active {
+        background-color: #CA9CAD !important;
+        border-color: #CA9CAD !important;
+    }
+
+    .p-button:enabled:hover {
+        background-color: #CA9CAD !important;
+        border-color: #CA9CAD !important;
+    }

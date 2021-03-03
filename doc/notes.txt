@@ -11,3 +11,18 @@ Planejamento
 		Login
 	
 No react usar Link ao inves do a, para não recarregar a página toda, se precisar recarregar ai sim usar o a.	
+
+luvitmarketplace@gmail.com
+
+Próximas Atividades :
+ - Login usando a API
+ - Finalizar Cadastro de Cliente no backend.
+ - Finalizar Cadastro de Fornecedor no front(ajustes)e backend .  
+ - Definir estratégia de persistência de imagens( logo fornecedor / avatar cliente / foto produto) no servidor.
+ - Preparar a API para receber imagens das fotos dos produtos.
+ - CSS utilizar corretamente a paleta de cores para ícones / botões e links do site.
+ - Zoom do produto
+ - Finalizar carrinho
+ - Lista de desejos (botão coração na lista de produtos add na lista de desejos).
+ - Pagamentos.
+ - Gamefication 

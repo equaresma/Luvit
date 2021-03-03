@@ -24,27 +24,29 @@ export const Login = () => {
 
     return (
         <div>
-            <Form onSubmit={confirm}>
-                <div className="card">
-                    <FormGroup id="grpLogin" name="grpLogin">
+            <Form onSubmit={confirm}>                
+                <div className="card" style={{ marginTop: "25px" }}>
+                    <h4>Login</h4>
+                    <br/>
+                    <FormGroup id="grpLogin" name="grpLogin" style={{ margin: "25px", padding: "2em"}}>
                         <div>
                             <div><label htmlFor="userName"><Trans>lbl_username</Trans></label></div>
                             <div>
                                 <InputText id="userName" name="userName" type="text" value={id} onChange={e => setID(e.target.value)} required />
                             </div>
-                            <div><label htmlFor="pwd"><Trans>lbl_pwd</Trans></label></div>
+                            <div style={{marginTop: "25px"}}><label htmlFor="pwd"><Trans>lbl_pwd</Trans></label></div>
                             <div>
                                 <Password id="password" name="password" type="text" value={pwd} onChange={e => setPWD(e.target.value)} required feedback={false} />
                             </div>
-                            <br />
                             <Button
                                 label={t("btn_enter")}
                                 type="submit"
                                 className="btn btn-primary"
+                                style={{marginTop: "25px"}}
                             />
                         </div>
                     </FormGroup>
-                    <FormGroup id="grpNew" name="grpNew">
+                    <FormGroup id="grpNew" name="grpNew" style={{ marginTop: "25px" }}>
                         <h4><Trans>tit_is_new</Trans></h4>
                         <Link to="/register/customer"><Trans>tit_create_account</Trans></Link>
                     </FormGroup>

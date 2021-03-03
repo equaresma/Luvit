@@ -80,5 +80,9 @@
   "btn_enter": "Entrar",
   "tit_is_new": "É novo por aqui?",
   "tit_create_account": "Criar nova conta",
-  "lbl_highlighted": "Destaque"
+  "lbl_highlighted": "Destaque",
+  "lbl_remove_product": "Remover produto",
+  "lbl_empty_cart": "Esvaziar carrinho",
+  "lbl_cart": "Carrinho de compras",
+  "lbl_list_of_products":  "Lista de Produtos"
 }

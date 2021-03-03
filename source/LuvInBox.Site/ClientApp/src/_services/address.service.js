@@ -6,14 +6,14 @@ export const addressService = {
 };
 
 async function find(zipcode) {
-    let url = "//viacep.com.br/ws/" + zipcode + "/json/?callback=?";
+    let url = "https://viacep.com.br/ws/" + zipcode + "/json/?callback=?";
 
      const requestOptions = {
          method: 'GET',
          headers: { 'Content-Type': 'application/json' },         
      };
 
-     return fetch(url, requestOptions)
+     return await fetch(url, requestOptions)
          .then(handleResponse)
          .then(address => {
              address.ZipCode = zipcode;
@@ -23,12 +23,13 @@ async function find(zipcode) {
 
 function handleResponse(response) {
     return response.text().then(text => {
-        const data = text && JSON.parse(text);
+        const data = text;
+
         if (!response.ok) {
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
         } else {
-            let strJson = response.data.replace('?', '').replace('(', '').replace(')', '').replace(';', '');
+            let strJson = data.replace('?', '').replace('(', '').replace(')', '').replace(';', '');
             let dados = JSON.parse(strJson);
 
             if (dados.hasOwnProperty('error')) {
@@ -40,13 +41,12 @@ function handleResponse(response) {
                     Complement: dados.complemento + ' ' + dados.bairro,
                     City: dados.localidade,
                     State: dados.uf,
+                    ZipCode: '',
                     Country: 'Brasil'
                 };
 
                 return Promise.resolve(nAdd);
             }
         }
-
-        return data;
     });
 }

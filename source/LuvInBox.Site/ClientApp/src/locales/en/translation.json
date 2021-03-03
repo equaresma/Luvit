@@ -81,5 +81,9 @@
   "btn_enter": "Enter",
   "tit_is_new": "Is it new here?",
   "tit_create_account": "Create new account",
-  "lbl_highlighted": "Highlighted"
+  "lbl_highlighted": "Highlighted",
+  "lbl_remove_product": "Remove product",
+  "lbl_empty_cart": "Empty cart",
+  "lbl_cart": "Cart",
+  "lbl_list_of_products": "List of Products"
 }
