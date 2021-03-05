@@ -6,7 +6,7 @@ namespace com.luvinbox.domain.dtos
 {
     public class VendorContactDTO : PersonDTO
     {
-        public LoginDTO Login { get; set; }
+        public UserDTO User  { get; set; }
 
         [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
         public override IDocument Document { get; set; }
@@ -16,7 +16,7 @@ namespace com.luvinbox.domain.dtos
 
         public VendorContactDTO()
         {
-            Login = new LoginDTO();
+            User = new UserDTO();
             Document = new ContactDocument();
         }
     }

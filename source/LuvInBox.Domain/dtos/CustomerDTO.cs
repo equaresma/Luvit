@@ -28,12 +28,17 @@ namespace com.luvinbox.domain.dtos
         [Display(Name = "lblDegree", ResourceType = typeof(AppRes))]
         public enumDegree Degree { get; set; }
 
-        public LoginDTO Login { get; set; }
+        public string Nickname { get; set; }
+
+        public bool IsPublic { get; set; }
+
+        public UserDTO User { get; set; }
 
         public CustomerDTO()
         {
             Document = new CustomerDocument();
             Address = new Address();
+            User = new UserDTO();
         }
     }
 }

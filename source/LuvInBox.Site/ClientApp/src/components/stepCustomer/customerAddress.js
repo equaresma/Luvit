@@ -69,7 +69,7 @@ const CustomerAddress = (props) => {
                             <small id="zipCode-help" className="p-invalid p-d-block text-right"><Trans>lbl_zipcode_required</Trans></small>
                         </div>
                         <div className="p-field p-col-12 p-md-6">
-                            <InputNumber id="Number" name="Number" onValueChange={handleChange('Address')} defaultValue={address.Number} required
+                            <InputNumber id="Number" name="Number" onValueChange={handleChange('Address')} value={address.Number} required
                                 aria-describedby="number-help" className="text-right" />
                             <small id="number-help" className="p-invalid p-d-block text-right"><Trans>lbl_number_required</Trans></small>
                         </div>

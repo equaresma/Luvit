@@ -25,7 +25,7 @@ namespace com.luvinbox.domain.dtos
 
 		[DataType(DataType.Date)]
 		[Display(Name = "lblBirthday", ResourceType = typeof(AppRes))]
-		public DateTime? Birthday { get; set; }
+		public DateTime Birthday { get; set; }
 
 		[Display(Name = "lblAddress", ResourceType = typeof(AppRes))]
 		public virtual Address Address { get; set; }

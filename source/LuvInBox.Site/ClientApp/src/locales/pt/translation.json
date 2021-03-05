@@ -84,5 +84,9 @@
   "lbl_remove_product": "Remover produto",
   "lbl_empty_cart": "Esvaziar carrinho",
   "lbl_cart": "Carrinho de compras",
-  "lbl_list_of_products":  "Lista de Produtos"
+  "lbl_list_of_products": "Lista de Produtos",
+  "lbl_strength_weak": "Fraca",
+  "lbl_strength_medium": "Média",
+  "lbl_strength_strong": "Forte",
+  "lbl_is_public_profile":  "Perfil público"
 }

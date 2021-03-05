@@ -12,40 +12,45 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
 
-namespace LuvInBox.Service.Services
-{
-    public class LoginService : ILoginService
-    {
+namespace LuvInBox.Service.Services {
+    public class LoginService : ILoginService {
         private readonly ILoginRepository _repository;
+        private readonly IUserRepository _userRepository;
         private SigningConfigurations _signingConfigurations;
         private TokenConfigurations _tokenConfigurations;
         private IConfiguration _configuration;
         private readonly IMapper _mapper;
 
-        public LoginService(ILoginRepository repository, SigningConfigurations signingConfigurations,
-                            TokenConfigurations tokenConfigurations, IConfiguration configuration, IMapper mapper)
-        {
+        public LoginService(ILoginRepository repository, IUserRepository userRepository, SigningConfigurations signingConfigurations,
+                            TokenConfigurations tokenConfigurations, IConfiguration configuration, IMapper mapper) {
             _repository = repository;
+            _userRepository = userRepository;
             _signingConfigurations = signingConfigurations;
             _tokenConfigurations = tokenConfigurations;
             _configuration = configuration;
         }
-        public async Task<object> FindByLogin(LoginDTO login)
-        {
-            if (login != null && !String.IsNullOrWhiteSpace(login.Email))
-            {
-                var userEntity = await _repository.FindByLogin(login.Email);
+        public async Task<object> FindByLogin(LoginDTO login) {
+            if (login != null && !String.IsNullOrWhiteSpace(login.Email)) {
+                var userEntity = await _userRepository.FindByLogin(login.Email);
+                var loginEntity = await _repository.FindLastLogin(login.Email);
 
-                if (userEntity == null)
-                {
-                    return new
-                    {
+                if (loginEntity != null) {
+                    if (loginEntity.IsActive && loginEntity.RemoteAddress != login.RemoteAddress)
+                        throw new Exception($"{login.Email} is already logged");
+                    //verify expiration
+                    if(loginEntity.Expiration <= DateTime.Now)
+                        throw new Exception("Token expired");
+
+                    //return loggeed user info
+                    return SuccessObject(loginEntity.CreateAt, loginEntity.Expiration, loginEntity.Token, login);
+                }
+
+                if (userEntity == null) {
+                    return new {
                         authenticated = false,
                         message = "Falha na autenticação"
                     };
-                }
-                else
-                {
+                } else {
                     var identity = new ClaimsIdentity(
                         new GenericIdentity(userEntity.Name),
                         new[]
@@ -59,32 +64,32 @@ namespace LuvInBox.Service.Services
                     DateTime expiration = created + TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
 
                     var handler = new JwtSecurityTokenHandler();
-                    var token = CreateToken(identity, created, expiration, handler);
-                    return SuccessObject(created, expiration, token, login);
+                    var token = CreateToken(identity, created, expiration, handler);                    
+                    var entity = _mapper.Map<Login>(login);
 
+                    entity.Token  = token;
+                    entity.Expiration = expiration;
+
+                    await _repository.Create(entity);
+
+                    return SuccessObject(created, expiration, token, login);
                 }
-            }
-            else
-            {
-                return new
-                {
+            } else {
+                return new {
                     authenticated = false,
                     message = "Falha na autenticação"
                 };
             }
         }
 
-        public async Task<LoginDTO> Put(string id, LoginDTO login)
-        {
+        public async Task<LoginDTO> Put(string id, LoginDTO login) {
             var entity = _mapper.Map<Login>(login);
             var ret = await _repository.Update(id, entity);
             return _mapper.Map<LoginDTO>(ret);
         }
 
-        private string CreateToken(ClaimsIdentity identity, DateTime create, DateTime exp, JwtSecurityTokenHandler handler)
-        {
-            var securityToken = handler.CreateJwtSecurityToken(new SecurityTokenDescriptor
-            {
+        private string CreateToken(ClaimsIdentity identity, DateTime create, DateTime exp, JwtSecurityTokenHandler handler) {
+            var securityToken = handler.CreateJwtSecurityToken(new SecurityTokenDescriptor {
                 Issuer = _tokenConfigurations.Issuer,
                 Audience = _tokenConfigurations.Audience,
                 SigningCredentials = _signingConfigurations.SigningCredentials,
@@ -97,10 +102,8 @@ namespace LuvInBox.Service.Services
             var token = handler.WriteToken(securityToken);
             return token;
         }
-        private object SuccessObject(DateTime create, DateTime exp, string token, LoginDTO dto)
-        {
-            return new
-            {
+        private object SuccessObject(DateTime create, DateTime exp, string token, LoginDTO dto) {
+            return new {
                 authenticated = true,
                 created = create.ToString("yyyy-MM-dd HH:mm:ss"),
                 expiration = exp.ToString("yyyy-MM-dd HH:mm:ss"),
@@ -108,7 +111,6 @@ namespace LuvInBox.Service.Services
                 userName = dto.Email,
                 message = "Usuário Logado"
             };
-
-        }        
+        }
     }
 }

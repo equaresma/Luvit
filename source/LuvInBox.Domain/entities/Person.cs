@@ -11,7 +11,7 @@ namespace com.luvinbox.domain.entities
 		public string MiddleName { get; set; }
 		public string FirstName { get; set; }
 		[BsonDateTimeOptions(Kind = DateTimeKind.Local)]
-		public DateTime? Birthday { get; set; }
+		public DateTime Birthday { get; set; }
 		public virtual Address Address { get; set; }
 		public virtual SocialMedia SocialNetwork { get; set; }
 		public String Phone { get; set; }

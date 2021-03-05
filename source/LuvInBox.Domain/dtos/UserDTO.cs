@@ -11,6 +11,7 @@ namespace com.luvinbox.domain.dtos
         [EmailAddress(ErrorMessage = "Email inválido")]
         public string Email { get; set; }
         [Required]
+        [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})")]
         public string Password
         {
             get; set;

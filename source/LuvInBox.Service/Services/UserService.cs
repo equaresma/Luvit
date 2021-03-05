@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LuvInBox.Service.Services
 {
-    public class UserService : IUserService
+    internal class UserService : IUserService
     {
         private IRepository<User> _repository;
         private readonly IMapper _mapper;
