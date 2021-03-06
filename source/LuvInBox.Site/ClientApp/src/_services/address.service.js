@@ -1,31 +1,42 @@
+import axios from 'axios';
 //import config from 'config';
-import { authHeader } from '../_helpers';
+//import { authHeader } from '../_helpers';
 
 export const addressService = {
     find
 };
 
 async function find(zipcode) {
-    let url = "https://viacep.com.br/ws/" + zipcode + "/json/?callback=?";
+    //New variable "cep" only digits.
+    var cep = zipcode.replace(/\D/g, '');
+    let url = "https://viacep.com.br/ws/" + cep + "/json/?callback=?";
 
-     const requestOptions = {
-         method: 'GET',
-         headers: { 'Content-Type': 'application/json' },         
-     };
+    //const requestOptions = {
+    //    method: 'GET',
+    //    headers: { 'Content-Type': 'application/json' },         
+    //};
 
-     return await fetch(url, requestOptions)
-         .then(handleResponse)
-         .then(address => {
-             address.ZipCode = zipcode;
-             return address;
-         });
+    //return await fetch(url, requestOptions)
+    //    .then(handleResponse)
+    //    .then(address => {
+    //        address.ZipCode = zipcode;
+    //        return address;
+    //    });
+
+    
+    return axios.get(url)
+        .then(handleResponse)
+        .then(address => {
+            address.ZipCode = cep;
+            return address;
+        });
 }
 
 function handleResponse(response) {
-    return response.text().then(text => {
-        const data = text;
+    //return response.text().then(text => {
+        const data = response.data;
 
-        if (!response.ok) {
+        if (!response.status === 200) {
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
         } else {
@@ -48,5 +59,5 @@ function handleResponse(response) {
                 return Promise.resolve(nAdd);
             }
         }
-    });
+    //});
 }

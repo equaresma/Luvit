@@ -22,11 +22,13 @@ Próximas Atividades :
 		Adiionar atributo publico | privado
 		Nickname
 	
-	Tratar email(nome usuário) já existente - não permitir cadastro.
-	validar campos data de nascimento(menor) cpf único.
-	criptografar senha.
-	não permitir senha fraca
-	-- no login gerar registro de login
+		Tratar email(nome usuário) já existente - não permitir cadastro.
+		validar campos data de nascimento(menor) cpf único.
+		criptografar senha.
+		não permitir senha fraca
+		-- no login gerar registro de login
+	 
+	 
 	 
  - Finalizar Cadastro de Fornecedor no front(ajustes)e backend .  
 	Aplicar regras - validar email.

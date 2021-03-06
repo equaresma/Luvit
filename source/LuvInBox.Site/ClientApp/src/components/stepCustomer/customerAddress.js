@@ -23,7 +23,7 @@ const CustomerAddress = (props) => {
             [target.name]: target.type === "checkbox" ? target.checked : target.value
         });
 
-        customer.address = address;
+        customer.Address = address;
         setCustomer(customer);
     }
 
@@ -46,7 +46,6 @@ const CustomerAddress = (props) => {
                 setAddress(nAdd);
                 customer.Address = nAdd;
                 setCustomer(customer);
-                setAddress(nAdd);
             })
             .catch((err) => {
                 alert('Erro ao consultar CEP: ' + err.message);

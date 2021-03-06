@@ -31,7 +31,7 @@ namespace com.luvinbox.site.Controllers
         public async Task<CustomerDTO> Get(string id) => await _service.Get(id);
 
         // POST api/<CustomerController>
-        [AllowAnonymous]
+       // [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Post(CustomerDTO instance)
         {

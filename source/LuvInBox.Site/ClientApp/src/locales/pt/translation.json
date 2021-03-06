@@ -74,6 +74,7 @@
   "lbl_master": "Mestrado",
   "lbl_phd": "Phd",
   "lbl_username": "Usuário",
+  "lbl_pwd_constraint": "'Senhas não conferem ou não é uma senha forte'",
   "lbl_pwd": "Senha",
   "lbl_pwd_required": "Senha é obrigatória",
   "lbl_pwd_confirm": "Confirmação de senha",
@@ -85,8 +86,9 @@
   "lbl_empty_cart": "Esvaziar carrinho",
   "lbl_cart": "Carrinho de compras",
   "lbl_list_of_products": "Lista de Produtos",
+  "lbl_nick": "Apelido",
   "lbl_strength_weak": "Fraca",
   "lbl_strength_medium": "Média",
   "lbl_strength_strong": "Forte",
-  "lbl_is_public_profile":  "Perfil público"
+  "lbl_is_public_profile": "Perfil público"
 }

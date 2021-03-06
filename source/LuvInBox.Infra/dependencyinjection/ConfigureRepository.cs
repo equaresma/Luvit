@@ -9,6 +9,7 @@ namespace com.luvinbox.infra.dependencyinjection {
     public class ConfigureRepository {
         public static void ConfigureDependenciesService(IServiceCollection serviceCollection, IConfiguration configuration) {
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+            serviceCollection.AddScoped<ICustomerRepository, CustomerImplement>();
             serviceCollection.AddScoped<ILoginRepository, LoginImplement>();
             serviceCollection.AddScoped<IUserRepository, UserImplement>();
         }

@@ -7,5 +7,6 @@ namespace com.luvinbox.domain.services
     {
         Task<object> FindByLogin(LoginDTO login);
         Task<LoginDTO> Put(string id, LoginDTO login);
+        Task<bool> Logoff(string username);
     }
 }

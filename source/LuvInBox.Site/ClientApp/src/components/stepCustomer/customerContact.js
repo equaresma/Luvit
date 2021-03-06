@@ -7,9 +7,10 @@ import { Steps } from 'primereact/steps';
 import { Form, FormGroup } from 'reactstrap';
 import { Dropdown } from 'primereact/dropdown';
 import { Password } from 'primereact/password';
+import { Checkbox } from 'primereact/checkbox';
 import { Trans, useTranslation } from 'react-i18next';
 import { customerActions } from '../../../src/_actions/customer.actions';
-import { util } from '../../../src/_helpers/util';
+import util from '../../../src/_helpers/util';
 
 const CustomerContact = (props) => {
     const dispatch = useDispatch();
@@ -18,7 +19,8 @@ const CustomerContact = (props) => {
     const [edit, setEdit] = React.useState(true);
     const { stepItems, currentStep } = props;
     const { t } = useTranslation();
-    const [customer, setCustomer] = useState(props.customer);
+    const [customer, setCustomer] = useState(props.customer);    
+    const [error] = useState(props.error);
 
     const handleChange = input => e => {
         const { target } = e;
@@ -74,10 +76,12 @@ const CustomerContact = (props) => {
 
     const confirm = e => {
         e.preventDefault();
-        if (password == passwordConf && util.passwordIsStrong(passwordIsStrong)) {
+        if (password == passwordConf && util.isPasswordStrong(password)) {
             customer.Login.Email = customer.Email;
             customer.Login.Password = password;
-            dispatch(customerActions.createCustomer(customer));
+            dispatch(customerActions.create(customer));
+        } else {
+            alert(t('lbl_pwd_constraint'));
         }
     }
 
@@ -87,9 +91,10 @@ const CustomerContact = (props) => {
     }
 
     const getActiveComponent = () => {
-        if (edit) {
+        if (edit) {           
             return (
                 <div>
+                    <div>{error}</div>
                     <div className="divSteps">
                         <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
                     </div>
@@ -103,9 +108,9 @@ const CustomerContact = (props) => {
                                         <InputText id="Nickname" name="Nickname" type="text" onChange={handleChange()} value={customer.Nickname} placeholder={t('lbl_nick')} />
                                     </div>
                                     <div className="p-fluid">
-                                        <div className="p-field-checkbox">
-                                            <Checkbox inputId="IsPublic" name="IsPublic" onChange={handleChange()} checked={props.IsPublic} />
-                                            <label htmlFor="hasPhysicalStore"><Trans>lbl_is_public_profile</Trans></label>
+                                        <div className="p-field-checkbox" style={{ marginTop: "20px" }}>
+                                            <Checkbox inputId="IsPublic" name="IsPublic" onChange={handleChange()} checked={customer.IsPublic} />
+                                            <label htmlFor="IsPublic"><Trans>lbl_is_public_profile</Trans></label>
                                         </div>
                                     </div>
                                     <div className="p-fluid">
@@ -131,11 +136,11 @@ const CustomerContact = (props) => {
                                 <FormGroup id="grpLogin" name="grpLogin">
                                     <h4><Trans>Login</Trans></h4>
                                     <div className="p-field">
-                                        <label>Usuário</label><span>{customer.Email}</span>
+                                        <label><b>Usuário:&nbsp;</b></label><span>{customer.Email}</span>
                                     </div>
                                     <div className="p-field">
                                         <div className="p-inputgroup">
-                                            <Password id="pwd" name="pwd" placeholder="Senha" value={password} toggleMask onChange={handleChangeLocal} required
+                                            <Password id="pwd" name="pwd" placeholder="Senha" value={password} toggleMask onChange={handleChangeLocal} required className={util.isPasswordStrong(password) ? 'p-valid' : 'p-invalid'}
                                                 aria-describedby="pwd-help" inline="true" weakLabel={t('lbl_strength_weak')} mediumLabel={t('lbl_strength_medium')} strongLabel={t('lbl_strength_strong')} />
                                         </div>
                                         <small id="pwd-help" className="p-invalid p-d-block text-right"><Trans>lbl_pwd_required</Trans></small>
@@ -143,7 +148,7 @@ const CustomerContact = (props) => {
                                     <div className="p-field">
                                         <div className="p-inputgroup">
                                             <Password id="password" name="Password" placeholder={t('lbl_pwd_confirm')} value={passwordConf} toggleMask onChange={handleChangeLocalConf} required
-                                                aria-describedby="pwd-help2-help" className={password == passwordConf ? 'p-valid' : 'p-invalid'} weakLabel={t('lbl_strength_weak')} mediumLabel={t('lbl_strength_medium')} strongLabel={t('lbl_strength_strong')} />
+                                                aria-describedby="pwd-help2-help" className={password == passwordConf && util.isPasswordStrong(handleChangeLocalConf) ? 'p-valid' : 'p-invalid'} weakLabel={t('lbl_strength_weak')} mediumLabel={t('lbl_strength_medium')} strongLabel={t('lbl_strength_strong')} />
                                         </div>
                                         <small id="pwd-help2-help" className="p-invalid p-d-block text-right"><Trans>lbl_pwd_required</Trans></small>
                                     </div>
@@ -175,11 +180,16 @@ const CustomerContact = (props) => {
         }
     }
 
-    return (getActiveComponent());
+    return (        
+        getActiveComponent()
+    );
 }
 
 function mapStateToProps(state) {
-    return { customer: state.customer.customer };
+    return {
+        customer: state.customer.customer,
+        error: state.customer.error
+    };
 }
 
 export default connect(mapStateToProps)(CustomerContact);

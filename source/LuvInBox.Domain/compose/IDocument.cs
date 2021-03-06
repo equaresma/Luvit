@@ -1,4 +1,6 @@
-﻿namespace com.luvinbox.domain.compose
+﻿using System;
+
+namespace com.luvinbox.domain.compose
 {
     public interface IDocument
     {

@@ -7,39 +7,37 @@ export const userService = {
 };
 
 async function login(username, password) {
-    // const requestOptions = {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ username, password })
-    // };
+     const requestOptions = {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({ username, password })
+     };
 
-    // return await fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
-    //     .then(handleResponse)
-    //     .then(user => {
-    //         // store user details and jwt token in local storage to keep user logged in between page refreshes
-    //         localStorage.setItem('user', JSON.stringify(user));
+    return await fetch('api/Login/DoLogin', requestOptions)
+         .then(handleResponse)
+         .then(user => {
+             // store user details and jwt token in local storage to keep user logged in between page refreshes
+             localStorage.setItem('user', JSON.stringify(user));
 
-    //         return user;
-    //     });
-    let promisse = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (username == "edu" && password == "123") {
-                const u = { firstName: "Eduardo", lastName: "Quaresma", token: 'abc' };
-                localStorage.setItem('user', JSON.stringify(u));
-                resolve(u);
-            } else
-                resolve(null);
-        }, 500);
-    });
-
-    const user = await promisse;
-    return user;
+             return user;
+         });
 }
 
-function logout() {
-    // remove user from local storage to log user out
-    localStorage.removeItem('user');
-    localStorage.removeItem('cart');
+async function logout(username) {
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username })
+    };
+
+    return await fetch(`api/Login/Logoff?username=${username}`, requestOptions)
+        .then(handleResponse)
+        .then(res => {
+            // remove user from local storage to log user out
+            localStorage.removeItem('user');
+            localStorage.removeItem('cart');
+            return res;
+        });
 }
 
 function handleResponse(response) {

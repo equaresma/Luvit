@@ -17,7 +17,7 @@ namespace com.luvinbox.domain.entities
 		public String Phone { get; set; }
 		public String Mobile { get; set; }
 		public string Email { get; set; }
-		public abstract IDocument Document { get; set; }
+		public abstract DocumentAbs Document { get; set; }
 		
 		public Person()
 		{

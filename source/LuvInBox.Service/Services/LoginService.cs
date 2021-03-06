@@ -28,6 +28,7 @@ namespace LuvInBox.Service.Services {
             _signingConfigurations = signingConfigurations;
             _tokenConfigurations = tokenConfigurations;
             _configuration = configuration;
+            _mapper = mapper;
         }
         public async Task<object> FindByLogin(LoginDTO login) {
             if (login != null && !String.IsNullOrWhiteSpace(login.Email)) {
@@ -38,7 +39,7 @@ namespace LuvInBox.Service.Services {
                     if (loginEntity.IsActive && loginEntity.RemoteAddress != login.RemoteAddress)
                         throw new Exception($"{login.Email} is already logged");
                     //verify expiration
-                    if(loginEntity.Expiration <= DateTime.Now)
+                    if (loginEntity.Expiration <= DateTime.Now)
                         throw new Exception("Token expired");
 
                     //return loggeed user info
@@ -64,10 +65,10 @@ namespace LuvInBox.Service.Services {
                     DateTime expiration = created + TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
 
                     var handler = new JwtSecurityTokenHandler();
-                    var token = CreateToken(identity, created, expiration, handler);                    
+                    var token = CreateToken(identity, created, expiration, handler);
                     var entity = _mapper.Map<Login>(login);
 
-                    entity.Token  = token;
+                    entity.Token = token;
                     entity.Expiration = expiration;
 
                     await _repository.Create(entity);
@@ -111,6 +112,17 @@ namespace LuvInBox.Service.Services {
                 userName = dto.Email,
                 message = "Usuário Logado"
             };
+        }
+
+        public async Task<bool> Logoff(string username) {
+            var loginEntity = await _repository.FindLastLogin(username);
+
+            if (loginEntity == null)
+                return false;
+
+            loginEntity.IsActive = false;
+            await _repository.Update(loginEntity.Id, loginEntity);
+            return true;
         }
     }
 }

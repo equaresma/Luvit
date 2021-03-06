@@ -17,28 +17,24 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 
-namespace LuvInBox.Site
-{
-    public class Startup
-    {
-        public Startup(IConfiguration configuration)
-        {
+namespace LuvInBox.Site {
+    public class Startup {
+        public Startup(IConfiguration configuration) {
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
+        public void ConfigureServices(IServiceCollection services) {
+            services.Configure<IRepositorySettings>(Configuration.GetSection(nameof(RepositorySettingsDTO)));
             services.Configure<RepositorySettingsDTO>(Configuration.GetSection(nameof(RepositorySettingsDTO)));
             services.AddSingleton<IRepositorySettings>(sp => sp.GetRequiredService<IOptions<RepositorySettingsDTO>>().Value);
 
             ConfigureService.ConfigureDependenciesService(services);
             ConfigureRepository.ConfigureDependenciesService(services, Configuration);
 
-            var mapperCfg = new MapperConfiguration(c =>
-            {
+            var mapperCfg = new MapperConfiguration(c => {
                 c.AddProfile(new DtoToEntityProfile());
             });
 
@@ -53,12 +49,10 @@ namespace LuvInBox.Site
             new ConfigureFromConfigurationOptions<TokenConfigurations>(Configuration.GetSection(nameof(TokenConfigurations))).Configure(tokenConfigurations);
             services.AddSingleton(tokenConfigurations);
 
-            services.AddAuthentication(authOoptions =>
-            {
+            services.AddAuthentication(authOoptions => {
                 authOoptions.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 authOoptions.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(bearerOptions =>
-            {
+            }).AddJwtBearer(bearerOptions => {
                 var paramsValidation = bearerOptions.TokenValidationParameters;
                 paramsValidation.IssuerSigningKey = signingConfigurations.Key;
                 paramsValidation.ValidAudience = tokenConfigurations.Audience;
@@ -68,19 +62,16 @@ namespace LuvInBox.Site
                 paramsValidation.ClockSkew = TimeSpan.Zero;
             });
 
-            services.AddAuthorization(auth =>
-            {
+            services.AddAuthorization(auth => {
                 auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
                 .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
                 .RequireAuthenticatedUser().Build());
             });
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
+            services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Luv In Box Web Plataform", Version = "v1" });
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-                {
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme() {
                     Description = "Enter JWT Token",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
@@ -100,33 +91,30 @@ namespace LuvInBox.Site
             });
 
             // In production, the React files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {
+            services.AddSpaStaticFiles(configuration => {
                 configuration.RootPath = "ClientApp/build";
             });
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: "ViaCepPolicy",
-                                  builder =>
-                                  {
-                                      builder.WithOrigins("https://viacep.com.br", "http://viacep.com.br")
-                                                  .WithMethods("GET","POST");
-                                  });
-            });
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy(name: "ViaCepPolicy",
+            //                      builder =>
+            //                      {
+            //                          builder.WithOrigins("https://viacep.com.br", "http://viacep.com.br")
+            //                                      .WithMethods("GET","POST");
+            //                      });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+            if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
 
+
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
+            app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Site v1");
                 c.RoutePrefix = "apidoc";
             });
@@ -134,24 +122,21 @@ namespace LuvInBox.Site
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            
-            app.UseCors();
+
+            //app.UseCors();
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
+            app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
-            app.UseSpa(spa =>
-            {
+            app.UseSpa(spa => {
                 spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment())
-                {
+                if (env.IsDevelopment()) {
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });

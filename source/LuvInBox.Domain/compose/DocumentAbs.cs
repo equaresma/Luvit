@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.domain.compose
 {
+    [Serializable]
     public abstract class DocumentAbs : IDocument
     {
         private enumDocumentType __type;

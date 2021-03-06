@@ -59,5 +59,22 @@ namespace LuvInBox.Site.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPut]
+        public async Task<ActionResult> Logoff(string username) {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try {
+                var ret = await _service.Logoff(username);
+
+                if (ret)
+                    return Ok(ret);
+                else
+                    return NotFound(username);
+            } catch (Exception ex) {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

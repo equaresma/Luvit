@@ -9,7 +9,7 @@ namespace com.luvinbox.domain.dtos
         public UserDTO User  { get; set; }
 
         [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
-        public override IDocument Document { get; set; }
+        public override DocumentAbs Document { get; set; }
 
         [Display(Name = "lblAddress", ResourceType = typeof(AppRes))]
         public override Address Address { get; set; }
