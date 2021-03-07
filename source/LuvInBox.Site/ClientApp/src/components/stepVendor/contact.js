@@ -22,14 +22,14 @@ export const Contact = (props) => {
         const { target } = e;
 
         if (input === "Contact") {
-            const doc = {
+            const contact = {
                 ...vendor.Contact,
                 [target.name]: target.value
             }
 
             setVendor({
                 ...vendor,
-                Document: doc
+                Contact: contact
             });
 
         } else {
@@ -51,8 +51,8 @@ export const Contact = (props) => {
     const confirm = e => {
         e.preventDefault();
         if (password == passwordConf && util.isPasswordStrong(password)) {
-            vendor.Contact.User.Name = vendor.Email;
-            vendor.Contact.User.Password = password;
+            vendor.User.Name = vendor.Email;
+            vendor.User.Password = password;
             dispatch(vendorActions.create(vendor));
         } else {
             alert(t('lbl_pwd_constraint'));

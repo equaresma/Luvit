@@ -5,12 +5,10 @@ using com.luvinbox.domain.Properties;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace com.luvinbox.domain.dtos
-{
+namespace com.luvinbox.domain.dtos {
     [CPF(ErrorMessage = "CPF inválido")]
     [Serializable]
-    public class CustomerDTO : PersonDTO
-    {
+    public class CustomerDTO : PersonDTO {
         [Required]
         [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
         public CustomerDocument Document { get; set; }
@@ -34,8 +32,7 @@ namespace com.luvinbox.domain.dtos
 
         public UserDTO User { get; set; }
 
-        public CustomerDTO()
-        {
+        public CustomerDTO() {
             Document = new CustomerDocument();
             Address = new Address();
             User = new UserDTO();

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace com.luvinbox.site.Controllers
 {
-    [Route("api/vendor")]
+    [Route("api/[controller]")]
     [ApiController]
     public class VendorsController : ControllerBase
     {

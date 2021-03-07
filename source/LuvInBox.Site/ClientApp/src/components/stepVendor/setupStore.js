@@ -17,9 +17,15 @@ export const SetupStore = (props) => {
     const handleChange = input => e => {
         const { target } = e;
         if (input === 'BankInfo') {
-            setVendor({
+
+            const bank = {
                 ...vendor.BankInfo,
                 [target.name]: target.value
+            }
+
+            setVendor({
+                ...vendor,
+                BankInfo: bank
             });
         } else {
             setVendor({
@@ -49,25 +55,28 @@ export const SetupStore = (props) => {
     }
 
     const getCleanDoc = () => {
-        return vendor.Document.Number.replace('.', '')
-            .replace('/', '')
-            .replace('-', '');
+        if (vendor.Document)
+            if (vendor.Document.Number)
+                return vendor.Document.Number.replace('.', '')
+                    .replace('/', '')
+                    .replace('-', '');
+
+        return "";
     }
 
     return (
         <div>
             <div className="divSteps">
                 <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
-            </div>            
+            </div>
             <div className="card">
                 <Form onSubmit={next} encType='multipart/form-data'>
                     <div className="p-fluid">
                         <h4><Trans>setup_store</Trans></h4>
-                        <br/>
+                        <br />
                         <div className="p-field p-col-12">
                             <Label>Logo</Label>
-                            <FileUpload mode="basic" name="LogoURL" url={"api/file?name=" + getCleanDoc()} accept="image/*" maxFileSize={60000} onChange={handleChange()} onUpload={onUpload}
-                                auto chooseLabel={t('file_browse')} onError={onError} defaultValue={vendor.LogoURL} required />
+                            <FileUpload name="LogoURL" url={"api/file?name=" + getCleanDoc()} accept="image/*" maxFileSize={60000} onUpload={onUpload} chooseLabel={t('file_browse')} onError={onError} required />
                             <small id="fileup-help" className="p-invalid p-d-block text-right"><Trans>file_upload_max_size</Trans></small>
                         </div>
                         <div className="p-field p-col-12">

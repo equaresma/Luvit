@@ -6,7 +6,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.domain.compose
 {
-    [CPF(ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
     public class ContactDocument : DocumentAbs
     {
         public ContactDocument()

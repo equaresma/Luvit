@@ -13,7 +13,7 @@ class MenuLogin extends React.PureComponent {
                     <i className="pi pi-user-edit p-overlay-badge">
                         <Badge severity="success"></Badge>
                     </i>
-                    <span>{user.firstName + ' ' + user.lastName}</span>
+                    <span>{user.Username}</span>
                 </NavLink>);
         } else
             return (

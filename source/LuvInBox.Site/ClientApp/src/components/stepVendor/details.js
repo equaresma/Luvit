@@ -16,10 +16,23 @@ const Details = (props) => {
 
     const handleChange = input => e => {
         const { target } = e;
-        setVendor({
-            ...vendor,
-            [target.name]: target.type === "checkbox" ? target.checked : target.value
-        });
+        if (input === "Document") {
+            const doc = {
+                ...vendor.Document,
+                [target.name]: target.value
+            }
+
+            setVendor({
+                ...vendor,
+                Document: doc
+            });
+
+        } else {
+            setVendor({
+                ...vendor,
+                [target.name]: target.type === "checkbox" ? target.checked : target.value
+            });
+        }
     }
 
     const next = e => {
@@ -38,22 +51,22 @@ const Details = (props) => {
                     <h4><Trans>general_info</Trans></h4>
                     <br/>
                     <div className="p-fluid">
-                        <InputText id="name" name="Name" onChange={handleChange()} defaultValue={vendor.Name} type="text" aria-describedby="name-help"
+                        <InputText id="name" name="Name" onChange={handleChange()} value={vendor.Name} type="text" aria-describedby="name-help"
                             className="p-d-block" required maxLength="120" placeholder={t('lbl_name')} maxLength="150"/>
                         <small id="name-help" className="p-d-block text-right"><Trans>lbl_name_required</Trans></small>
                     </div>
                     <div className="p-fluid">
-                        <InputText id="fantasyName" name="FantasyName" onChange={handleChange('FantasyName')} defaultValue={vendor.FantasyName} type="text"
+                        <InputText id="fantasyName" name="FantasyName" onChange={handleChange()} value={vendor.FantasyName} type="text"
                             aria-describedby="userfantasyName2-help" className="p-d-block" required maxLength="120" placeholder={t('lbl_fantasy_name')} />
                         <small id="userfantasyName2-help" className="p-d-block text-right"><Trans>lbl_fantasy_name_required</Trans></small>
                     </div>
                     <div className="p-fluid">
-                        <InputMask id="Number" name="Number" type="text" mask="99.999.999/9999-99" onValueChange={handleChange('Document')}
-                            defaultValue={vendor.Document.Number} placeholder={t('lbl_document')} aria-describedby="document-help" />
+                        <InputMask id="Number" name="Number" type="text" mask="99.999.999/9999-99" onChange={handleChange('Document')}
+                            value={vendor.Document.Number} placeholder={t('lbl_document')} aria-describedby="document-help" />
                         <small id="document-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
                     </div>
                     <div className="p-fluid">
-                        <InputMask id="mainPhone" name="MainPhone" type="text" mask="+99(99) 9999-9999" onChange={handleChange('MainPhone')} value={vendor.MainPhone}
+                        <InputMask id="mainPhone" name="MainPhone" type="text" mask="+99(99) 9999-9999" onChange={handleChange()} value={vendor.MainPhone}
                             aria-describedby="mainPhone-help" className="p-d-block" required maxLength="30" placeholder={t('phone')} />
                         <small id="mainPhone-help" className="p-d-block text-right"><Trans>phone_fmt</Trans></small>
                     </div>

@@ -25,19 +25,22 @@ async function login(username, password) {
          .then(user => {
              // store user details and jwt token in local storage to keep user logged in between page refreshes
              localStorage.setItem('user', JSON.stringify(user));
-
              return user;
          });
 }
 
-async function logout(username) {
+async function logout() {
+    let user = JSON.parse(localStorage.getItem('user'));
+
+    if (!user)
+        return;
+
     const requestOptions = {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username })
     };
 
-    return await fetch(`api/Login/Logoff?username=${username}`, requestOptions)
+    return await fetch(`api/Login/Logoff?username=${user.Username}`, requestOptions)
         .then(handleResponse)
         .then(res => {
             // remove user from local storage to log user out

@@ -4,12 +4,10 @@ using com.luvinbox.domain.Properties;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace com.luvinbox.domain.dtos
-{
+namespace com.luvinbox.domain.dtos {
     [CNPJ(ErrorMessage = "CNPJ inválido")]
     [Serializable]
-    public class VendorDTO : BaseDTO
-    {
+    public class VendorDTO : BaseDTO {
         [MaxLength(150)]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredCompanyName", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
@@ -29,7 +27,7 @@ namespace com.luvinbox.domain.dtos
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
-        [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]        
+        [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
         public CompanyDocument Document { get; set; }
 
         [MaxLength(300)]
@@ -48,7 +46,7 @@ namespace com.luvinbox.domain.dtos
         [RegularExpression(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$", ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(AppRes))]
         [Display(Name = "lblEmail", ResourceType = typeof(AppRes))]
         public string Email { get; set; }
-        
+
         [Required]
         [Display(Name = "lblMainAddress", ResourceType = typeof(AppRes))]
         public Address MainAddress { get; set; }
@@ -74,13 +72,11 @@ namespace com.luvinbox.domain.dtos
 
         public UserDTO User { get; set; }
 
-        public VendorDTO()
-        {
+        public VendorDTO() {
             MainAddress = new Address();
         }
 
-        public override String ToString()
-        {
+        public override String ToString() {
             return String.Format($"{Document.Number} - {Name}");
         }
     }
