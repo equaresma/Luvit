@@ -10,11 +10,13 @@ namespace com.luvinbox.domain.dtos
     [Serializable]
     public class VendorDTO : BaseDTO
     {
+        [MaxLength(150)]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredCompanyName", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
         [Display(Name = "lblCompanyName", ResourceType = typeof(AppRes))]
         public string Name { get; set; }
 
+        [MaxLength(120)]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredFantasyName", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
         [Display(Name = "lblFantasyName", ResourceType = typeof(AppRes))]
@@ -27,17 +29,20 @@ namespace com.luvinbox.domain.dtos
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
-        [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
+        [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]        
         public CompanyDocument Document { get; set; }
 
+        [MaxLength(300)]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredLogoSite", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.ImageUrl)]
         [Display(Name = "lblLogoURL", ResourceType = typeof(AppRes))]
         public string LogoURL { get; set; }
 
+        [MaxLength(300)]
         [DataType(DataType.Url)]
         public string WebSite { get; set; }
 
+        [MaxLength(150)]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredEmail", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.EmailAddress)]
         [RegularExpression(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$", ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(AppRes))]
@@ -47,11 +52,13 @@ namespace com.luvinbox.domain.dtos
         [Required]
         [Display(Name = "lblMainAddress", ResourceType = typeof(AppRes))]
         public Address MainAddress { get; set; }
-        
+
+        [MaxLength(20)]
         [Display(Name = "lblPhoneNumber", ResourceType = typeof(AppRes))]
         [DataType(DataType.PhoneNumber)]
         public String MainPhone { get; set; }
 
+        [MaxLength(20)]
         [Display(Name = "lblMobileNumber", ResourceType = typeof(AppRes))]
         [DataType(DataType.PhoneNumber)]
         public String Mobile { get; set; }
@@ -64,6 +71,8 @@ namespace com.luvinbox.domain.dtos
 
         [Display(Name = "lblBankInfo", ResourceType = typeof(AppRes))]
         public BankInformation BankInfo { get; set; }
+
+        public UserDTO User { get; set; }
 
         public VendorDTO()
         {

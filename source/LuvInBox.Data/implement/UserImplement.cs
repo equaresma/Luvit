@@ -15,7 +15,7 @@ namespace com.luvinbox.data.implement
 
         public async Task<User> FindByLogin(string email)
         {
-            var list = await Find(x => x.Email == email);
+            var list = await Find(x => x.Name == email);
             return list.FirstOrDefault();
         }
     }

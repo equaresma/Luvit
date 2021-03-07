@@ -1,15 +1,17 @@
 ﻿using com.luvinbox.domain.enums;
+using com.luvinbox.domain.helper;
 using com.luvinbox.domain.Properties;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.domain.compose
 {
+    [CNPJ(ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
     public class CompanyDocument : DocumentAbs
     {
-        public CompanyDocument(): base(enumDocumentType.enumDocCNPJ)
+        public CompanyDocument()
         {
-
+            Type = enumDocumentType.enumDocCNPJ;
         }
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]

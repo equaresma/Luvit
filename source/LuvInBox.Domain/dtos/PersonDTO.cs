@@ -9,15 +9,18 @@ namespace com.luvinbox.domain.dtos
     [Serializable]
 	public abstract class PersonDTO : BaseDTO
 	{
+		[MaxLength(40)]
 		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredFamilyName", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
 		[Display(Name = "lblFamilyName", ResourceType = typeof(AppRes))]
 		public string FamilyName { get; set; }
 
+		[MaxLength(40)]
 		[DataType(DataType.Text)]
 		[Display(Name = "lblMiddleName", ResourceType = typeof(AppRes))]
 		public string MiddleName { get; set; }
 
+		[MaxLength(20)]
 		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
 		[DataType(DataType.Text)]
 		[Display(Name = "lblFirstName", ResourceType = typeof(AppRes))]
@@ -29,22 +32,24 @@ namespace com.luvinbox.domain.dtos
 
 		[Display(Name = "lblAddress", ResourceType = typeof(AppRes))]
 		public virtual Address Address { get; set; }
-
+		
 		public virtual SocialMedia SocialNetwork { get; set; }
+
+		[MaxLength(20)]
 		[Display(Name = "lblPhoneNumber", ResourceType = typeof(AppRes))]
 		[DataType(DataType.PhoneNumber)]
 		public String Phone { get; set; }
 
+		[MaxLength(20)]
 		[DataType(DataType.PhoneNumber)]
 		[Display(Name = "lblMobileNumber", ResourceType = typeof(AppRes))]
 		public String Mobile { get; set; }
+
+		[MaxLength(150)]
 		[Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredEmail", ErrorMessageResourceType = typeof(AppRes))]
-		[DataType(DataType.Text)]
-		[RegularExpression(@"^([\w\-]+\.)*[\w\- ]+@([\w\- ]+\.)+([\w\-]{2,3})$", ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(AppRes))]
 		[Display(Name = "lblEmail", ResourceType = typeof(AppRes))]
+		[EmailAddress(ErrorMessageResourceName = "RequiredEmail", ErrorMessageResourceType = typeof(AppRes))]
 		public string Email { get; set; }
-		
-		public abstract DocumentAbs Document { get; set; }
 		
 		public PersonDTO()
 		{

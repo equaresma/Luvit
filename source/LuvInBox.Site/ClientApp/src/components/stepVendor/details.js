@@ -1,18 +1,30 @@
-﻿import React, { Component } from 'react';
+﻿import React, { useState } from 'react';
+import { useDispatch, connect } from 'react-redux';
 import { InputText } from 'primereact/inputtext';
 import { InputMask } from 'primereact/inputmask';
 import { Button } from 'primereact/button';
 import { Steps } from 'primereact/steps';
 import { Trans, useTranslation } from 'react-i18next';
-import { Calendar } from 'primereact/calendar';
 import { Form } from 'reactstrap';
+import { vendorActions } from '../../../src/_actions/vendor.actions';
 
-export const Details = (props) => {
-    const { nextStep, handleChange, stepItems, currentStep, vendor } = props;
+const Details = (props) => {
+    const dispatch = useDispatch();
+    const { nextStep, stepItems, currentStep } = props;
     const { t } = useTranslation();
+    const [vendor, setVendor] = useState(props.vendor);
+
+    const handleChange = input => e => {
+        const { target } = e;
+        setVendor({
+            ...vendor,
+            [target.name]: target.type === "checkbox" ? target.checked : target.value
+        });
+    }
 
     const next = e => {
         e.preventDefault();
+        dispatch(vendorActions.incrementVendor(vendor));
         nextStep();
     }
 
@@ -26,9 +38,9 @@ export const Details = (props) => {
                     <h4><Trans>general_info</Trans></h4>
                     <br/>
                     <div className="p-fluid">
-                        <InputText id="name" name="Name" onChange={handleChange('Name')} defaultValue={vendor.Name} type="text" aria-describedby="username2-help"
-                            className="p-d-block" required maxLength="120" placeholder={t('lbl_name')} />
-                        <small id="username2-help" className="p-d-block text-right"><Trans>lbl_name_required</Trans></small>
+                        <InputText id="name" name="Name" onChange={handleChange()} defaultValue={vendor.Name} type="text" aria-describedby="name-help"
+                            className="p-d-block" required maxLength="120" placeholder={t('lbl_name')} maxLength="150"/>
+                        <small id="name-help" className="p-d-block text-right"><Trans>lbl_name_required</Trans></small>
                     </div>
                     <div className="p-fluid">
                         <InputText id="fantasyName" name="FantasyName" onChange={handleChange('FantasyName')} defaultValue={vendor.FantasyName} type="text"
@@ -46,8 +58,8 @@ export const Details = (props) => {
                         <small id="mainPhone-help" className="p-d-block text-right"><Trans>phone_fmt</Trans></small>
                     </div>
                     <div className="p-fluid">
-                        <Calendar id="foundedIn" name="FoundedIn" value={vendor.FoundedIn} onChange={handleChange('FoundedIn')} aria-describedby="foundedIn-help" required
-                            placeholder={t('lbl_founded_in')} className="p-calendar"></Calendar>
+                        <InputMask id="foundedIn" name="FoundedIn" value={vendor.FoundedIn} mask="99/99/9999" slotChar="mm/dd/yyyy"
+                            onChange={handleChange()} aria-describedby="foundedIn-help" required placeholder={t('lbl_founded_in')}></InputMask>
                         <small id="foundedIn-help" className="p-d-block text-right"><Trans>lbl_founded_in_required</Trans></small>
                     </div>
 
@@ -61,3 +73,9 @@ export const Details = (props) => {
         </div>
     );
 }
+
+function mapStateToProps(state) {
+    return { vendor: state.vendor.vendor };
+}
+
+export default connect(mapStateToProps)(Details);

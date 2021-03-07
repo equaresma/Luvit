@@ -7,13 +7,20 @@ export const userService = {
 };
 
 async function login(username, password) {
+    var login = {
+        "name": username,
+        "password": password,
+        "type": 0,
+        "remoteAddress": "",
+        "isActive": true
+    };
      const requestOptions = {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
-         body: JSON.stringify({ username, password })
+         body: JSON.stringify(login)
      };
 
-    return await fetch('api/Login/DoLogin', requestOptions)
+    return await fetch('api/Login/', requestOptions)
          .then(handleResponse)
          .then(user => {
              // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -25,7 +32,7 @@ async function login(username, password) {
 
 async function logout(username) {
     const requestOptions = {
-        method: 'PUT',
+        method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username })
     };

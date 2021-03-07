@@ -13,6 +13,6 @@ namespace com.luvinbox.domain.services
 
         Task<VendorDTO> Put(string id, VendorDTO user);
 
-        Task Delete(string id);
+        Task<bool> Delete(string id);
     }
 }

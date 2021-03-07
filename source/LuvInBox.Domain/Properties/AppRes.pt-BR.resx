@@ -390,4 +390,19 @@
   <data name="frmZipCodeFmt" xml:space="preserve">
     <value>/[0-9]{5}-[\d]{3}/g</value>
   </data>
+  <data name="Msg_Invalid_Age" xml:space="preserve">
+    <value>Idade inválida</value>
+  </data>
+  <data name="Msg_Invalid_Pwd" xml:space="preserve">
+    <value>Senha inválida</value>
+  </data>
+  <data name="Msg_Usr_Already_Exists" xml:space="preserve">
+    <value>Usuário já existe</value>
+  </data>
+  <data name="Msg_Invalid_Foundation" xml:space="preserve">
+    <value>Data da fundação inválida</value>
+  </data>
+  <data name="Msg_Ivalid_BankInfo" xml:space="preserve">
+    <value>Dados bancários inválidos</value>
+  </data>
 </root>

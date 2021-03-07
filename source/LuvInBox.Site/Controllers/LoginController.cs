@@ -60,7 +60,7 @@ namespace LuvInBox.Site.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpGet]
         public async Task<ActionResult> Logoff(string username) {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

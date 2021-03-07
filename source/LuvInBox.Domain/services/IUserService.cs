@@ -14,5 +14,7 @@ namespace com.luvinbox.domain.services
         Task<UserDTO> Put(string id, UserDTO user);
 
         Task Delete(string id);
+
+        Task<bool> Validate(UserDTO user);
     }
 }

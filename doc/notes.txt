@@ -1,4 +1,4 @@
-Carousel: - A dúvida sobre o site ser discreto.
+	Carousel: - A dúvida sobre o site ser discreto.
 	Será produtos ou propagandas? - Propagandas
 	Menu lateral de categorias.	
 	
@@ -28,18 +28,28 @@ Próximas Atividades :
 		não permitir senha fraca
 		-- no login gerar registro de login
 	 
-	 
-	 
- - Finalizar Cadastro de Fornecedor no front(ajustes)e backend .  
-	Aplicar regras - validar email.
+Para 07/03	 
+			
+	- Finalizar Cadastro de Fornecedor no front(ajustes)e backend .  
+		Aplicar regras - validar email.
 	
 	
- - Definir estratégia de persistência de imagens( logo fornecedor / avatar cliente / foto produto) no servidor.
+ - Definir estratégia de persistência de imagens( logo fornecedor / avatar cliente / foto produto) no servidor. Ok 
+	Via api imagem será convertida em EncodeBase64
 	- Preparar a API para receber imagens das fotos dos produtos.
 	
+	MongoDb - salvar imagem com String com EndodeBase64;
+	
+=======================================================================================================	
+	
  - CSS utilizar corretamente a paleta de cores para ícones / botões e links do site.
- - Zoom do produto
+ - Zoom do produto /  modo discreto
  - Finalizar carrinho
  - Lista de desejos (botão coração na lista de produtos add na lista de desejos).
  - Pagamentos.
  - Gamefication 
+
+
+***Mostrar dicionário bilíngue.
+
+

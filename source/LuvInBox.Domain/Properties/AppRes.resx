@@ -333,6 +333,21 @@
   <data name="lblProduct" xml:space="preserve">
     <value>Product</value>
   </data>
+  <data name="Msg_Invalid_Age" xml:space="preserve">
+    <value>Invalid age</value>
+  </data>
+  <data name="Msg_Invalid_Foundation" xml:space="preserve">
+    <value>Invalid Date of Foudation</value>
+  </data>
+  <data name="Msg_Invalid_Pwd" xml:space="preserve">
+    <value>Invalid password</value>
+  </data>
+  <data name="Msg_Ivalid_BankInfo" xml:space="preserve">
+    <value>Invalid Bank info</value>
+  </data>
+  <data name="Msg_Usr_Already_Exists" xml:space="preserve">
+    <value>Username already exists</value>
+  </data>
   <data name="RequiredAccountNumber" xml:space="preserve">
     <value>Account number is required</value>
   </data>

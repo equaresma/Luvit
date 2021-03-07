@@ -1,4 +1,4 @@
-using com.luvinbox.infra.security;
+using com.luvinbox.domain.security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 

@@ -31,13 +31,13 @@ namespace LuvInBox.Service.Services {
             _mapper = mapper;
         }
         public async Task<object> FindByLogin(LoginDTO login) {
-            if (login != null && !String.IsNullOrWhiteSpace(login.Email)) {
-                var userEntity = await _userRepository.FindByLogin(login.Email);
-                var loginEntity = await _repository.FindLastLogin(login.Email);
+            if (login != null && !String.IsNullOrWhiteSpace(login.Name)) {
+                var userEntity = await _userRepository.FindByLogin(login.Name);
+                var loginEntity = await _repository.FindLastLogin(login.Name);
 
                 if (loginEntity != null) {
                     if (loginEntity.IsActive && loginEntity.RemoteAddress != login.RemoteAddress)
-                        throw new Exception($"{login.Email} is already logged");
+                        throw new Exception($"{login.Name} is already logged");
                     //verify expiration
                     if (loginEntity.Expiration <= DateTime.Now)
                         throw new Exception("Token expired");
@@ -109,7 +109,7 @@ namespace LuvInBox.Service.Services {
                 created = create.ToString("yyyy-MM-dd HH:mm:ss"),
                 expiration = exp.ToString("yyyy-MM-dd HH:mm:ss"),
                 accessToken = token,
-                userName = dto.Email,
+                userName = dto.Name,
                 message = "Usuário Logado"
             };
         }

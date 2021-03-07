@@ -1,8 +1,8 @@
 ﻿import React from 'react';
-import { Details } from '../../components/stepVendor/details';
-import { Contact } from '../../components/stepVendor/contact';
-import { Address } from '../../components/stepVendor/address';
-import { SetupStore } from '../../components/stepVendor/setupStore';
+import Details from '../../components/stepVendor/details';
+import Contact from '../../components/stepVendor/contact';
+import Address from '../../components/stepVendor/address';
+import SetupStore from '../../components/stepVendor/setupStore';
 import { useTranslation } from 'react-i18next';
 
 export const VendorForm = () => {

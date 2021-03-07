@@ -14,7 +14,7 @@ const initialState = {
         Degree: 0,
         Gender: 0,
         Address: { Local: '', Number: 0, Complement: '', City: '', State: '', ZipCode: '', Country: 'Brasil' },
-        Login: { Email: '', Password: '', "Type": 2 },
+        User: { Name: '', Password: '', "Type": 2 },
         Nickname: '',
         IsPublic: false
     },

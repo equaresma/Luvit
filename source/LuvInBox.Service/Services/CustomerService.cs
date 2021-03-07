@@ -1,23 +1,22 @@
 using AutoMapper;
 using com.luvinbox.domain.dtos;
 using com.luvinbox.domain.entities;
+using com.luvinbox.domain.exceptions;
+using com.luvinbox.domain.extensions;
 using com.luvinbox.domain.repository.interfaces.repository;
 using com.luvinbox.domain.services;
-using com.luvinbox.domain.extensions;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
 namespace LuvInBox.Service.Services {
     public class CustomerService : ICustomerService {
         private ICustomerRepository _repository;
-        private IUserRepository _userRepository;
+        private IUserService _userService;
         private readonly IMapper _mapper;
 
-        public CustomerService(ICustomerRepository repository, IUserRepository userRepository, IMapper mapper) {
+        public CustomerService(ICustomerRepository repository, IUserService userService, IMapper mapper) {
             _repository = repository;
-            _userRepository = userRepository;
+            _userService = userService;
             _mapper = mapper;
         }
         public async Task<bool> Delete(string id) {
@@ -32,7 +31,7 @@ namespace LuvInBox.Service.Services {
             return _mapper.Map<IEnumerable<CustomerDTO>>(listEntity);
         }
         public async Task<CustomerDTO> Post(CustomerDTO customer) {
-            if (Validate(customer)) {
+            if (await Validate(customer) && await ResolveUser(customer.User)) {
                 var entity = _mapper.Map<Customer>(customer);
                 var result = await _repository.Create(entity);
 
@@ -42,7 +41,7 @@ namespace LuvInBox.Service.Services {
             return null;
         }
         public async Task<CustomerDTO> Put(string id, CustomerDTO customer) {
-            if (Validate(customer)) {
+            if (await Validate(customer) && await ResolveUser(customer.User)) {
                 var entity = _mapper.Map<Customer>(customer);
                 var result = await _repository.Update(id, entity);
 
@@ -52,16 +51,17 @@ namespace LuvInBox.Service.Services {
             return null;
         }
 
-        private bool Validate(CustomerDTO customer) {
-            var currentUser = _userRepository.FindByLogin(customer.Email);
-
-            if (currentUser != null)
-                throw new ValidationException($"{customer.Email} already exists");
-
-            if (customer.Birthday.GetAge() < 18)
-                throw new ValidationException($"{customer.Birthday} invalid birthday");
+        private async Task<bool> Validate(CustomerDTO customer) {
+            if (await _userService.Validate(customer.User)) {
+                if (customer.Birthday.GetAge() < 18)
+                    throw new BusinessException("Msg_Invalid_Age");
+            }
 
             return true;
+        }
+        private async Task<bool> ResolveUser(UserDTO user) {
+            var u = await _userService.Post(user);
+            return u?.Id != null;
         }
     }
 }

@@ -23,6 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\store\customer.js" />
+    <None Remove="ClientApp\src\store\login.js" />
+    <None Remove="ClientApp\src\store\vendor.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\LuvInBox.Domain\LuvInBox.Domain.csproj" />
     <ProjectReference Include="..\LuvInBox.Infra\LuvInBox.Infra.csproj" />
   </ItemGroup>

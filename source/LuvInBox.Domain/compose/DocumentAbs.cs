@@ -3,17 +3,21 @@ using com.luvinbox.domain.Properties;
 using ExpressiveAnnotations.Attributes;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.Serialization;
 
 namespace com.luvinbox.domain.compose
 {
     [Serializable]
-    public abstract class DocumentAbs : IDocument
+    [KnownType(typeof(CompanyDocument))]
+    [KnownType(typeof(ContactDocument))]
+    [KnownType(typeof(CustomerDocument))]
+    public abstract class DocumentAbs
     {
         private enumDocumentType __type;
 
-        public DocumentAbs(enumDocumentType t)
+        public DocumentAbs()
         {
-            __type = t;
+
         }
         public enumDocumentType Type { 
             get { return __type; } 

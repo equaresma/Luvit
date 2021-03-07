@@ -4,14 +4,15 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace com.luvinbox.infra.security {
+namespace com.luvinbox.domain.security {
     public class RijndaelManagedEncryption {
         #region Consts
         /// <summary>
         /// Change the Inputkey GUID when you use this code in your own program.
         /// Keep this inputkey very safe and prevent someone from decoding it some way!!
         /// </summary>
-        internal const string Inputkey = "560A18CD-6346-4CF0-A2E8-671F9B6B9EA9";
+        internal const string Inputkey = "F195DF34-5DFB-4455-BE89-C4E67F9906A3";
+        //"560A18CD-6346-4CF0-A2E8-671F9B6B9EA9";
         #endregion
 
         #region Rijndael Encryption

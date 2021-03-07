@@ -52,7 +52,7 @@ const CustomerDetails = (props) => {
                                     placeholder={t('lbl_family_name')} />
                             </div>
                             <div className="p-field p-col-12">
-                                <InputText id="email" name="Email" type="text" onChange={handleChange()} defaultValue={customer.Email} placeholder="E-mail"
+                                <InputText id="email" name="Email" type="text" onChange={handleChange()} defaultValue={customer.Email} placeholder="E-mail" maxLength="150" required
                                     aria-describedby="email-help" />
                                 <small id="email-help" className="p-invalid p-d-block text-right"><Trans>email_fmt</Trans></small>
                             </div>

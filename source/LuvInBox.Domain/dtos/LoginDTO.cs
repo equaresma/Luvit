@@ -8,7 +8,7 @@ namespace com.luvinbox.domain.dtos
 	{
 		[Required(ErrorMessage = "Email Obrigatório")]
 		[EmailAddress(ErrorMessage = "Email inválido")]
-		public String Email
+		public String Name
 		{
 			get; set;
 		}
@@ -45,7 +45,7 @@ namespace com.luvinbox.domain.dtos
 
 		public override String ToString()
 		{
-			return this.Email;
+			return this.Name;
 		}
 	}
 }

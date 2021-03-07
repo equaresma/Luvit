@@ -13,7 +13,7 @@ namespace com.luvinbox.domain.dtos
     {
         [Required]
         [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
-        public override DocumentAbs Document { get; set; }
+        public CustomerDocument Document { get; set; }
 
         [Required]
         [Display(Name = "lblAddress", ResourceType = typeof(AppRes))]

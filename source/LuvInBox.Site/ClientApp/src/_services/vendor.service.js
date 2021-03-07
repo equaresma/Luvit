@@ -1,28 +1,26 @@
-//import config from 'config';
-//import { authHeader } from '../_helpers';
 import moment from 'moment';
 
-const url = 'api/Customers';
+const url = 'api/Vendors';
 
-export const customerService = {
+export const vendorService = {
     create
 };
 
-async function create(CustomerDTO) {
-    if (!moment(CustomerDTO.Birthday, moment.ISO_8601).isValid())
-        CustomerDTO.Birthday = moment(CustomerDTO.Birthday, "DD/MM/YYYY").toISOString();
+async function create(VendorDTO) {
+    if (!moment(VendorDTO.FoundedIn, moment.ISO_8601).isValid())
+        VendorDTO.FoundedIn = moment(VendorDTO.FoundedIn, "DD/MM/YYYY").toISOString();
 
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(CustomerDTO)
-    };
+     const requestOptions = {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify(VendorDTO)
+     };
 
     return fetch(url, requestOptions)
-        .then(handleResponse)
-        .then(customer => {
-            return customer;
-        });
+         .then(handleResponse)
+         .then(vendor => {
+             return vendor;
+         });
 }
 
 function handleResponse(response) {
@@ -37,7 +35,7 @@ function handleResponse(response) {
                     txt += data.errors[x];
                 }
                 return Promise.reject("Error: " + txt);
-            } else {
+            }else {
                 const error = (data && data.message) || response.statusText;
                 return Promise.reject(error);
             }
