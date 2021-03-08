@@ -6,7 +6,8 @@ namespace com.luvinbox.domain.entities
 {
     public class Product : BaseEntity
     {
-        public Int32 Barcode { get; set; }
+        public string Reference { get; set; }
+        public Int32? Barcode { get; set; }
         public string VendorId { get; set; }
         public String Name { get; set; }
         public String Description { get; set; }

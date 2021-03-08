@@ -26,19 +26,29 @@ Próximas Atividades :
 		validar campos data de nascimento(menor) cpf único.
 		criptografar senha.
 		não permitir senha fraca
-		-- no login gerar registro de login
-	 
-Para 07/03	 
+		-- no login gerar registro de login	
 			
-	- Finalizar Cadastro de Fornecedor no front(ajustes)e backend .  
+	OK - Finalizar Cadastro de Fornecedor no front(ajustes)e backend .  
 		Aplicar regras - validar email.
 	
 	
  - Definir estratégia de persistência de imagens( logo fornecedor / avatar cliente / foto produto) no servidor. Ok 
 	Via api imagem será convertida em EncodeBase64
-	- Preparar a API para receber imagens das fotos dos produtos.
+	- Preparar a API para receber imagens das fotos dos produtos.	
 	
 	MongoDb - salvar imagem com String com EndodeBase64;
+	
+	<div>
+		<p>Taken from wikpedia</p>
+		  <	, iVBORw0KGgoAAAANSUhEUgAAAAUA
+    AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
+        9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
+	</div>
+	
+	
+	00.395.753/0001-43
+	00395753000143
+	
 	
 =======================================================================================================	
 	
@@ -51,5 +61,9 @@ Para 07/03
 
 
 ***Mostrar dicionário bilíngue.
+
+
+
+
 
 

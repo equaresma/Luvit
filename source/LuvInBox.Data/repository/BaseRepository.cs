@@ -62,5 +62,8 @@ namespace com.luvinbox.data.repository
             var res = await _collection.DeleteOneAsync(x => x.Id.Equals(id));
             return res?.DeletedCount > 0;
         }
+        public async Task InsertMany(IEnumerable<T> instances) {
+            await _collection.InsertManyAsync(instances);
+        }
     }
 }
