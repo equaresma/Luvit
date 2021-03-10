@@ -8,15 +8,12 @@ using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace com.luvinbox.site.Controllers
-{
+namespace com.luvinbox.site.Controllers {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
-    {
+    public class ProductsController : ControllerBase {
         public IProductService _service { get; set; }
-        public ProductsController(IProductService service)
-        {
+        public ProductsController(IProductService service) {
             _service = service;
         }
 
@@ -33,15 +30,11 @@ namespace com.luvinbox.site.Controllers
         // POST api/<ProductController>
         [Authorize("Bearer")]
         [HttpPost]
-        public async Task<IActionResult> Post(ProductDTO instance)
-        {
-            if (this.ModelState.IsValid)
-            {
+        public async Task<IActionResult> Post(ProductDTO instance) {
+            if (this.ModelState.IsValid) {
                 await _service.Post(instance);
                 return Ok(instance);
-            }
-            else
-            {
+            } else {
                 return BadRequest();
             }
         }
@@ -49,15 +42,22 @@ namespace com.luvinbox.site.Controllers
         // PUT api/<ProductController>/5
         [Authorize("Bearer")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(string id, ProductDTO instance)
-        {
-            if (this.ModelState.IsValid)
-            {
+        public async Task<IActionResult> Put(string id, ProductDTO instance) {
+            if (this.ModelState.IsValid) {
                 await _service.Put(id, instance);
                 return Ok(instance);
+            } else {
+                return BadRequest();
             }
-            else
-            {
+        }
+
+        [Authorize("Bearer")]
+        [HttpPatch()]
+        public async Task<IActionResult> Patch(IEnumerable<ProductDTO> products) {
+            if (this.ModelState.IsValid) {
+                await _service.Patch(products);
+                return Ok();
+            } else {
                 return BadRequest();
             }
         }

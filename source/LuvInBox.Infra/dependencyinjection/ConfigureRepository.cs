@@ -13,6 +13,7 @@ namespace com.luvinbox.infra.dependencyinjection {
             serviceCollection.AddScoped<ILoginRepository, LoginImplement>();
             serviceCollection.AddScoped<IVendorRepository, VendorImplement>();
             serviceCollection.AddScoped<IUserRepository, UserImplement>();
+            serviceCollection.AddScoped<IProductRepository, ProductImplement>();
         }
     }
 }

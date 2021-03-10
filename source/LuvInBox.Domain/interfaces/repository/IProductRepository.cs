@@ -5,5 +5,6 @@ using System.Threading.Tasks;
 namespace com.luvinbox.domain.repository.interfaces.repository {
     public interface IProductRepository : IRepository<Product> {
         Task<IEnumerable<Product>> FindByVendor(string vendorId);
+        Task<bool> InsertMany(IEnumerable<Product> products);
     }
 }
