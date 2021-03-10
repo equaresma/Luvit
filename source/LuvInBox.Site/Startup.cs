@@ -68,7 +68,7 @@ namespace LuvInBox.Site {
                 .RequireAuthenticatedUser().Build());
             });
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Luv In Box Web Plataform", Version = "v1" });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme() {

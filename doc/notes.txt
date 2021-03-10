@@ -49,7 +49,6 @@ Próximas Atividades :
 	00.395.753/0001-43
 	00395753000143
 	
-	
 =======================================================================================================	
 	
  - CSS utilizar corretamente a paleta de cores para ícones / botões e links do site.

@@ -15,7 +15,7 @@ namespace com.luvinbox.data.implement {
         }
 
         public new async Task<bool> InsertMany(IEnumerable<Product> products) {
-            await InsertMany(products);
+            await base.InsertMany(products);
             return true;
         }
     }

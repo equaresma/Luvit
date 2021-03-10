@@ -6,8 +6,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.domain.dtos {
     public class ProductDTO : BaseDTO {
+        [Required(AllowEmptyStrings = false)]
+        [DataType(DataType.Text)]
         public string Reference { get; set; }
-        public Int32? BarCode { get; set; }
+        public Int64? BarCode { get; set; }
         public string VendorId { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
