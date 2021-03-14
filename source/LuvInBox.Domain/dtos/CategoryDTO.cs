@@ -10,13 +10,13 @@ namespace com.luvinbox.domain.dtos {
         public String Name {
             get; set;
         }
-
-        public Image Image { get; set; }
+        [Required]
+        public String Url { get; set; }
 
         public bool IsActive { get; set; }
 
         public CategoryDTO() {
-            Image = new Image();
+            IsActive = true;
         }
 
         public override String ToString() {

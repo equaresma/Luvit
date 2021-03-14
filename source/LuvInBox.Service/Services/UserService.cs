@@ -3,7 +3,7 @@ using com.luvinbox.domain.dtos;
 using com.luvinbox.domain.entities;
 using com.luvinbox.domain.exceptions;
 using com.luvinbox.domain.helper;
-using com.luvinbox.domain.repository.interfaces.repository;
+using com.luvinbox.domain.interfaces.repository;
 using com.luvinbox.domain.security;
 using com.luvinbox.domain.services;
 using System;
@@ -41,7 +41,7 @@ namespace LuvInBox.Service.Services {
         public async Task<UserDTO> Put(string id, UserDTO user) {
             var entity = _mapper.Map<User>(user);
 
-            if(user.IsPasswordChange)
+            if (user.IsPasswordChange)
                 Encrypt(entity);
 
             var result = await _repository.Update(id, entity);

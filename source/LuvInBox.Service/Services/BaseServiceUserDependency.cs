@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using com.luvinbox.domain.dtos;
 using com.luvinbox.domain.entities;
-using com.luvinbox.domain.repository.interfaces.repository;
+using com.luvinbox.domain.interfaces.repository;
 using System.ComponentModel.DataAnnotations;
 
 namespace LuvInBox.Service.Services {
-    public abstract class BaseServiceUserDependency<Dto, Entity> where Dto : BaseDTO where Entity : BaseEntity{
+    public abstract class BaseServiceUserDependency<Dto, Entity> where Dto : BaseDTO where Entity : BaseEntity {
 
         private readonly IUserRepository _repository;
         private readonly IMapper _mapper;

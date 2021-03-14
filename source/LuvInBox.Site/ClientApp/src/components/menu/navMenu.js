@@ -37,10 +37,10 @@ const NavMenu = (props) => {
 
     return (
         <header>
-            <Navbar className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" light>
+            <Navbar className="navbar-expand-sm navbar-toggleable-sm" light>
                 <Container>
                     <NavbarBrand tag={Link} to="/">
-                        <img src="/logo.png" className="siteLogo" />
+                        <img src="/logo-menu.png" className="siteLogo" />
                     </NavbarBrand>
                     <Nav>
                         <form className="mx-2 my-auto d-inline w-100">

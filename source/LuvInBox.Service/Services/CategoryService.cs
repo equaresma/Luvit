@@ -1,6 +1,6 @@
 using AutoMapper;
 using com.luvinbox.domain.dtos;
-using com.luvinbox.domain.entity;
+using com.luvinbox.domain.entities;
 using com.luvinbox.domain.interfaces.repository;
 using com.luvinbox.domain.services;
 using System.Collections.Generic;
@@ -26,15 +26,15 @@ namespace LuvInBox.Service.Services {
             var listEntity = await _repository.Get();
             return _mapper.Map<IEnumerable<CategoryDTO>>(listEntity);
         }
-        public async Task<CategoryDTO> Post(CategoryDTO customer) {
-            var entity = _mapper.Map<Category>(customer);
+        public async Task<CategoryDTO> Post(CategoryDTO category) {
+            var entity = _mapper.Map<Category>(category);
             var result = await _repository.Create(entity);
 
             return _mapper.Map<CategoryDTO>(result);
 
         }
-        public async Task<CategoryDTO> Put(string id, CategoryDTO customer) {
-            var entity = _mapper.Map<Category>(customer);
+        public async Task<CategoryDTO> Put(string id, CategoryDTO category) {
+            var entity = _mapper.Map<Category>(category);
             var result = await _repository.Update(id, entity);
 
             return _mapper.Map<CategoryDTO>(result);

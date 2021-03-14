@@ -10,6 +10,7 @@ namespace com.luvinbox.infra.dependencyinjection {
             serviceCollection.AddTransient<ILoginService, LoginService>();
             serviceCollection.AddTransient<IVendorService, VendorService>();
             serviceCollection.AddTransient<IProductService, ProductService>();
+            serviceCollection.AddTransient<ICategoryService, CategoryService>();
         }
     }
 }

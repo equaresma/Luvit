@@ -29,3 +29,15 @@
     align-items: center;
     justify-content: center
 }
+
+.promoCarousel {
+    margin-top: 0px;
+}
+
+.p-carousel-items-content {
+    width: 100% !important;
+}
+
+.p-carousel-items-container p-items-hidden {
+    width: 100% !important;
+}

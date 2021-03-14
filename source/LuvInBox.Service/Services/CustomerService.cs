@@ -3,7 +3,7 @@ using com.luvinbox.domain.dtos;
 using com.luvinbox.domain.entities;
 using com.luvinbox.domain.exceptions;
 using com.luvinbox.domain.extensions;
-using com.luvinbox.domain.repository.interfaces.repository;
+using com.luvinbox.domain.interfaces.repository;
 using com.luvinbox.domain.services;
 using System.Collections.Generic;
 using System.Threading.Tasks;

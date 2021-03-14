@@ -1,7 +1,6 @@
 using com.luvinbox.data.repository;
 using com.luvinbox.domain.entities;
-using com.luvinbox.domain.repository.interfaces;
-using com.luvinbox.domain.repository.interfaces.repository;
+using com.luvinbox.domain.interfaces.repository;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

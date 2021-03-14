@@ -10,24 +10,7 @@ import './carouselProducts.css';
 
 const CarouselProducts = (props) => {
     const dispatch = useDispatch();
-    const responsiveOptions = [
-        {
-            breakpoint: '1024px',
-            numVisible: 3,
-            numScroll: 3
-        },
-        {
-            breakpoint: '600px',
-            numVisible: 2,
-            numScroll: 2
-        },
-        {
-            breakpoint: '480px',
-            numVisible: 1,
-            numScroll: 1
-        }
-    ];
-
+  
     useEffect(() => {
         if (props.reload)
             dispatch(productActions.getAll());
@@ -38,21 +21,24 @@ const CarouselProducts = (props) => {
     }
 
     const productTemplate = (product) => {
-        console.log(product.name);
+        let content = (product.image.type == 1) ? "data:image/png;base64," : "";
+        content += product.image.value;
 
         return (
             <div className="product-item">
                 <div className="product-item-content">
                     <div className="p-mb-3 whiteCard">
-                        <img src={'showcase/demo/images/product/${product.image}'} alt={product.name} className="product-image" />
+                        <img src={content} alt={product.name} className="product-image" />
                     </div>
-                    <div className="whiteCard">
-                        <h4 className="p-mb-1">{product.name}</h4>
-                        <h6 className="p-mt-0 p-mb-3">${product.price}</h6>
+                    <div className="whiteCard InnerProductCard">
+                        <span className="InnerProductCard_OfferCard">{product.name}</span>
+                        <p>
+                            <span className="InnerProductCard_OfferCard_Price">R$ {product.price}</span>
+                        </p>
                         <span className={`product-badge status-${product.inventoryStatus}`}>{product.inventoryStatus}</span>
                         <div className="car-buttons p-mt-5">
-                            <Button icon="pi pi-search p-button-search" className="p-button p-button-rounded p-mr-2" />
-                            <Button icon="pi pi-heart" className="p-button-success p-button-rounded p-mr-2" />
+                            <Button icon="pi pi-search p-button-search" className="p-button p-button-rounded p-mr-1" />
+                            <Button icon="pi pi-heart" className="p-button p-button-rounded p-mr-1" />
                             <Button icon="pi pi-shopping-cart" className="p-button-help p-button-rounded" onClick={(e) => addProd(product)}/>
                         </div>
                     </div>
@@ -65,8 +51,9 @@ const CarouselProducts = (props) => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-12">
-                    <div className="card">
-                        <Carousel value={props.products} numVisible={3} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel" circular
+                    <div className="card mContainer">
+                        <center><h3 className="title"><Trans>lbl_highlighted</Trans></h3></center>
+                        <Carousel value={props.products} numVisible={5} numScroll={1} className="custom-carousel"
                             itemTemplate={productTemplate} header={<div className="carouselTitle"><h5><Trans>lbl_highlighted</Trans></h5></div>} />
                     </div>
                 </div>

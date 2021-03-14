@@ -1,0 +1,46 @@
+﻿.logo {
+    height: 70px;
+}
+
+.box {
+    height: 80px;
+    margin-top: 80px;
+}
+.footer_title {
+    font-size: 14px;
+    color: #acacac;
+}
+.footer_link {
+    color: #fffefe !important;
+    font-size: 12px !important;
+    padding: .4375rem 0;
+    display: inline-block;
+}
+
+address, dl, ol, ul {
+    margin-bottom: 1rem;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.footer_item {
+    list-style: none;
+}
+
+.copyright {
+    font-size: 12px !important;
+    color: #acacac;
+}

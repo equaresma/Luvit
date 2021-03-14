@@ -1,7 +1,7 @@
 using AutoMapper;
 using com.luvinbox.domain.dtos;
 using com.luvinbox.domain.entities;
-using com.luvinbox.domain.repository.interfaces.repository;
+using com.luvinbox.domain.interfaces.repository;
 using com.luvinbox.domain.services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -15,7 +15,7 @@ namespace LuvInBox.Service.Services {
             _repository = repository;
             _mapper = mapper;
         }
-        
+
         public async Task<ProductDTO> Get(string id) {
             var entity = await _repository.Get(id);
             return _mapper.Map<ProductDTO>(entity) ?? new ProductDTO();
@@ -37,7 +37,7 @@ namespace LuvInBox.Service.Services {
             return _mapper.Map<ProductDTO>(result);
         }
         public async Task<bool> Patch(IEnumerable<ProductDTO> products) {
-            var entities = _mapper.Map< IEnumerable<Product>>(products);
+            var entities = _mapper.Map<IEnumerable<Product>>(products);
             await _repository.InsertMany(entities);
             return true;
         }

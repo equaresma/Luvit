@@ -8,6 +8,8 @@ import { Button } from 'primereact/button';
 import { Trans, useTranslation } from 'react-i18next';
 import { userActions } from '../../_actions';
 
+import './index.css';
+
 export const Login = () => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
@@ -23,35 +25,43 @@ export const Login = () => {
     }
 
     return (
-        <div>
-            <Form onSubmit={confirm}>                
-                <div className="card" style={{ marginTop: "25px" }}>
-                    <h4>Login</h4>
-                    <br/>
-                    <FormGroup id="grpLogin" name="grpLogin" style={{ margin: "25px", padding: "2em"}}>
-                        <div>
-                            <div><label htmlFor="userName"><Trans>lbl_username</Trans></label></div>
-                            <div>
-                                <InputText id="userName" name="userName" type="text" value={id} onChange={e => setID(e.target.value)} required />
-                            </div>
-                            <div style={{marginTop: "25px"}}><label htmlFor="pwd"><Trans>lbl_pwd</Trans></label></div>
-                            <div>
-                                <Password id="password" name="password" type="text" value={pwd} onChange={e => setPWD(e.target.value)} required feedback={false} />
-                            </div>
-                            <Button
-                                label={t("btn_enter")}
-                                type="submit"
-                                className="btn btn-primary"
-                                style={{marginTop: "25px"}}
-                            />
+        <div className="card">
+            <center><h1 className="title"><Trans>txt_restricted_access</Trans></h1></center>
+            <Form onSubmit={confirm}>
+                <div style={{ marginTop: "65px", marginBottom: "65px" }}>
+                    <div className="row">
+                        <div className="col-3">
+                            
                         </div>
-                    </FormGroup>
-                    <FormGroup id="grpNew" name="grpNew" style={{ marginTop: "25px" }}>
-                        <h4><Trans>tit_is_new</Trans></h4>
-                        <Link to="/register/customer"><Trans>tit_create_account</Trans></Link>
-                    </FormGroup>
-                </div>
-            </Form>
-        </div>
+                        <div className="col-3">
+                            <FormGroup id="grpLogin" name="grpLogin">
+                                <div><label htmlFor="userName"><Trans>lbl_username</Trans></label></div>
+                                <div>
+                                    <InputText id="userName" name="userName" type="text" value={id} onChange={e => setID(e.target.value)} required />
+                                </div>
+                                <div style={{ marginTop: "25px" }}><label htmlFor="pwd"><Trans>lbl_pwd</Trans></label></div>
+                                <div>
+                                    <Password id="password" name="password" type="text" value={pwd} onChange={e => setPWD(e.target.value)} required feedback={false} />
+                                </div>
+                                <Button
+                                    label={t("btn_enter")}
+                                    type="submit"
+                                    className="btn btn-primary"
+                                    style={{ marginTop: "25px" }}
+                                />
+                            </FormGroup>
+                        </div>
+                        <div className="col-3">
+                            <img className="user-logo" src='images/handcuffs.png' />
+                        </div>
+                        <div className="col-3">
+                            <FormGroup id="grpNew" name="grpNew" style={{ marginTop: "25px" }}>
+                                <h4><Trans>tit_is_new</Trans></h4>
+                                <Link to="/register/customer"><Trans>tit_create_account</Trans></Link>
+                            </FormGroup>
+                        </div>
+                    </div>
+                </div >
+            </Form></div>
     );
 };

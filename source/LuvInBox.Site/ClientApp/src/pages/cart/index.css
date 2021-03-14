@@ -1,4 +1,11 @@
-﻿.orderlist-demo .product-item {
+﻿.title {
+    color:#ae194c;
+}
+
+.orderlist-demo {
+    margin-top: 25px;
+}
+.orderlist-demo .product-item {
     display: flex;
     align-items: center;
     padding: .5rem;
@@ -31,7 +38,7 @@
         line-height: 1;
     }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 700px) {
     .orderlist-demo .product-item {
         flex-wrap: wrap;
     }

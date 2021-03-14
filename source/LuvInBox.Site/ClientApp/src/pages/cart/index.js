@@ -23,13 +23,15 @@ const Cart = (props) => {
     const emptyCart = () => {
         dispatch(cartActions.emptyCart());
     }
-
-    //<span className={`product-badge status-${item.inventoryStatus.toLowerCase()}`}>{item.inventoryStatus}</span>
+    
     const itemTemplate = (item) => {
+        let content = (item.image.type == 1) ? "data:image/png;base64," : "";
+        content += item.image.value;
+
         return (
             <div className="product-item">
                 <div className="image-container">
-                    <img src={`showcase/demo/images/product/${item.image}`} onError={(e) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} alt={item.name} />
+                    <img src={content} alt={item.name} onError={(e) => e.target.src = 'images/not-founded.png'} />
                 </div>
                 <div className="product-list-detail">
                     <h5 className="p-mb-2">{item.name}</h5>
@@ -38,24 +40,24 @@ const Cart = (props) => {
                 </div>
                 <div className="product-list-action">
                     <h6 className="p-mb-2">${item.price}</h6>                    
-                    <div><Button onClick={(e) => removeProd(item)} className="p-button-secondary"><Trans>lbl_remove_product</Trans></Button></div>
+                    <div><Button onClick={(e) => removeProd(item)} className="p-button-secondary"><small><Trans>lbl_remove_product</Trans></small></Button></div>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="card" style={{ marginTop: "25px" }}>
-            <h3><Trans>lbl_cart</Trans></h3>
-            <br />
+        <div className="card" style={{ marginTop: "50px" }}>
+            <center><h4 className="title"><Trans>lbl_cart</Trans></h4></center>
             <div className="orderlist-demo">
                 <div className="card">
                     <OrderList value={props.cart} header={t('lbl_list_of_products')} dragdrop listStyle={{ height: 'auto' }} dataKey="id"
                         itemTemplate={itemTemplate} ></OrderList>
+
+                    <div style={{ marginTop: "50px" }}>
+                        <Button className="p-button-secondary" onClick={(e) => emptyCart()}><small><Trans>lbl_empty_cart</Trans></small></Button>
+                    </div>
                 </div>
-            </div>
-            <div style={{marginTop: "25px"}}>
-                <Button className="p-button-secondary" onClick={(e) => emptyCart()}><Trans>lbl_empty_cart</Trans></Button>
             </div>
         </div>
     );

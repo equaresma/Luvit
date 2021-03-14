@@ -81,7 +81,7 @@
   "btn_enter": "Entrar",
   "tit_is_new": "É novo por aqui?",
   "tit_create_account": "Criar nova conta",
-  "lbl_highlighted": "Destaque",
+  "lbl_highlighted": "Destaques",
   "lbl_remove_product": "Remover produto",
   "lbl_empty_cart": "Esvaziar carrinho",
   "lbl_cart": "Carrinho de compras",
@@ -90,5 +90,10 @@
   "lbl_strength_weak": "Fraca",
   "lbl_strength_medium": "Média",
   "lbl_strength_strong": "Forte",
-  "lbl_is_public_profile": "Perfil público"
+  "lbl_is_public_profile": "Perfil público",
+  "lbl_institutional": "Institucional",
+  "lbl_doubts": "Dúvidas",
+  "lbl_vendors": "Lojistas",
+  "txt_copyright": "Todos os direitos reservados",
+  "txt_restricted_access": "Acesso Restrito"
 }

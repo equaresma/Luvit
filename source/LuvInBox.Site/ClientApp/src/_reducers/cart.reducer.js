@@ -15,7 +15,8 @@ export function cart(state = initialState, action) {
             return {
                 cart: state.cart,
                 product: action.product,
-                error: null
+                error: null,
+                reload: false
             };
         case cartConstants.GET_SUCCESS:
             return {

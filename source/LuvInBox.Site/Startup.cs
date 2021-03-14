@@ -1,6 +1,6 @@
 using AutoMapper;
 using com.luvinbox.domain.dtos;
-using com.luvinbox.domain.repository.interfaces;
+using com.luvinbox.domain.interfaces.repository;
 using com.luvinbox.domain.security;
 using com.luvinbox.infra.dependencyinjection;
 using com.luvinbox.infra.mapping;

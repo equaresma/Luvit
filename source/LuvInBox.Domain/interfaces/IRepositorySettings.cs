@@ -1,4 +1,4 @@
-namespace com.luvinbox.domain.repository.interfaces
+namespace com.luvinbox.domain.interfaces.repository
 {
     public interface IRepositorySettings
     {

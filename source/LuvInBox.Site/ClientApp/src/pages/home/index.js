@@ -1,5 +1,5 @@
 import React from 'react';
-import { CarouselPromo } from '../../components/carousel/carouselPromo';
+import CarouselPromo from '../../components/carousel/carouselPromo';
 import CarouselProducts from '../../components/carousel/carouselProducts';
 import { CarouselCategory } from '../../components/carousel/carouselCategory';
 import 'primeicons/primeicons.css';

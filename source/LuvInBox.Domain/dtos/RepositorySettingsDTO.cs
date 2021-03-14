@@ -1,4 +1,4 @@
-using com.luvinbox.domain.repository.interfaces;
+using com.luvinbox.domain.interfaces.repository;
 
 namespace com.luvinbox.domain.dtos {
     public class RepositorySettingsDTO : IRepositorySettings {

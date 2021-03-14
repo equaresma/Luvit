@@ -40,7 +40,7 @@ Próximas Atividades :
 	
 	<div>
 		<p>Taken from wikpedia</p>
-		  <	, iVBORw0KGgoAAAANSUhEUgAAAAUA
+		  <src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA
     AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
         9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
 	</div>
@@ -48,6 +48,10 @@ Próximas Atividades :
 	
 	00.395.753/0001-43
 	00395753000143
+	
+	!!!BUG ao adicionar produto no carrinho carosel Produtos apaga - tem que ver se for cart actions não atualiza lista de produtos
+	!!!BUG carrinho de compras botões de navegação do listorder não funcionam.
+	
 	
 =======================================================================================================	
 	
@@ -60,9 +64,3 @@ Próximas Atividades :
 
 
 ***Mostrar dicionário bilíngue.
-
-
-
-
-
-

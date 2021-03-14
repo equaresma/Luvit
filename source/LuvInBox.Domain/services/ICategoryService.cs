@@ -7,9 +7,9 @@ namespace com.luvinbox.domain.services {
         Task<CategoryDTO> Get(string id);
         Task<IEnumerable<CategoryDTO>> GetAll();
 
-        Task<CategoryDTO> Post(CategoryDTO user);
+        Task<CategoryDTO> Post(CategoryDTO category);
 
-        Task<CategoryDTO> Put(string id, CategoryDTO user);
+        Task<CategoryDTO> Put(string id, CategoryDTO category);
 
         Task<bool> Delete(string id);
     }

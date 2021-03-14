@@ -1,7 +1,6 @@
 using com.luvinbox.data.implement;
 using com.luvinbox.data.repository;
-using com.luvinbox.domain.repository.interfaces;
-using com.luvinbox.domain.repository.interfaces.repository;
+using com.luvinbox.domain.interfaces.repository;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +13,7 @@ namespace com.luvinbox.infra.dependencyinjection {
             serviceCollection.AddScoped<IVendorRepository, VendorImplement>();
             serviceCollection.AddScoped<IUserRepository, UserImplement>();
             serviceCollection.AddScoped<IProductRepository, ProductImplement>();
+            serviceCollection.AddScoped<ICategoryRepository, CategoryImplement>();
         }
     }
 }

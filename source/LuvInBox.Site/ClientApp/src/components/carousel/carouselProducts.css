@@ -1,4 +1,4 @@
-﻿.carousel-demo .product-item .product-item-content {
+﻿.carousel .product-item .product-item-content {
     border: 1px solid var(--surface-d);
     border-radius: 3px;
     margin: .3rem;
@@ -6,11 +6,11 @@
     padding: 2rem 0;
 }
 
-.carousel-demo .product-item .product-image {
+.carousel .product-item .product-image {
     width: 50%;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-.carousel-demo .product-item .product-item-content {
+.carousel .product-item .product-item-content {
     border: 1px solid var(--surface-d);
     border-radius: 3px;
     margin: .3rem;
@@ -18,7 +18,82 @@
     padding: 2rem 0;
 }
 
-.carousel-demo .product-item .product-image {
+.carousel .product-item .product-image {
     width: 50%;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.mContainer {
+    margin-top: 10px !important;
+    margin-top: 30px !important;
+}
+
+.product-image {
+    max-height: 160px!important;
+}
+.title {
+    color:#ae194c;
+}
+
+.InnerProductCard{
+    position: relative;
+    -webkit-box-orient: vertical;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 16px 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    font: 400 12px/1.4em Roboto,sans-serif;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 12px;
+    line-height: 1.4em;
+    font-family: Roboto, sans-serif;
+    color: #333;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.InnerProductCard_OfferCard{
+    display: block;
+    margin: 8px 0 0;
+    padding: 0 16px;
+    width: 100%;
+    height: 34px;
+    font-weight: 700;
+    line-height: 1.4em;
+    text-align: left;
+    overflow: hidden;
+}
+
+.InnerProductCard_OfferCard_Price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin: 8px 0 0;
+    padding: 0 16px;
+    font-size: 12px;
 }

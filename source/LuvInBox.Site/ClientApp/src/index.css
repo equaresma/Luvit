@@ -273,7 +273,7 @@ a.footLnk:active {
 #footer {
     position: relative;
     clear: both;
-    background-color: black;
+    background-color: #24262a;
     color: white;
     text-align: center;
     margin-top: 50px;
@@ -469,6 +469,19 @@ ul.hideIndicators {
 }
 
 /*btn-primary ovveride */
+.p-button {
+    color: #ffffff;
+    background: #ae194c;
+    border: 1px solid #ca9cad !important;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    -webkit-transition: background-color 0.2s, color 0.2s, border-color 0.2s, -webkit-box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, -webkit-box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+    border-radius: 3px;
+}
+
 .btn-primary {
     color: #fff !important;
     background-color: #CC0146 !important;
@@ -476,12 +489,6 @@ ul.hideIndicators {
 }
 
 .p-button-success  {
-    color: #fff !important;
-    background-color: #CC0146 !important;
-    border-color: #CC0146 !important;
-}
-
-.p-button-success {
     color: #fff !important;
     background-color: #CC0146 !important;
     border-color: #CC0146 !important;
@@ -513,3 +520,48 @@ ul.hideIndicators {
         background-color: #CA9CAD !important;
         border-color: #CA9CAD !important;
     }
+
+.container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+
+.carousel-content .p-carousel-next:enabled:hover .p-carousel-next:enabled:hover {
+    color: #cc0146;
+    border-color: transparent;
+    background: #ca9cad;
+}
+.p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next {
+    width: 2rem;
+    height: 2rem;
+    color: #CA9CAD;
+    border: 0 none;
+    background: transparent;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.2s, color 0.2s, -webkit-box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, -webkit-box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+    margin: 0.5rem;
+}
+
+.p-carousel-next .p-carousel-prev{
+    width: 2rem;
+    height: 2rem;
+    color: #ae194c;
+    border: 0 none;
+    background: transparent;
+    border-radius: 50%;
+    -webkit-transition: background-color 0.2s, color 0.2s, -webkit-box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, -webkit-box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+    margin: 0.5rem;
+}
+
+.carousel-content .p-carousel-next:enabled:hover {
+    color: #fffefe;
+    border-color: transparent;
+    background: #ae194c;
+}
