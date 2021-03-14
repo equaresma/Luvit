@@ -49,8 +49,7 @@ Próximas Atividades :
 	00.395.753/0001-43
 	00395753000143
 	
-	!!!BUG ao adicionar produto no carrinho carosel Produtos apaga - tem que ver se for cart actions não atualiza lista de produtos
-	!!!BUG carrinho de compras botões de navegação do listorder não funcionam.
+	
 	
 	
 =======================================================================================================	

@@ -4,9 +4,26 @@
 export const cartService = {
     addProduct,
     removeProduct,
-    get
+    get,
+    empty
 };
 
+function get() {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    cart = (Array.isArray(cart)) ? cart : [];
+
+    let promisse = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(cart);
+        }, 500);
+    });
+
+    return promisse.then(cart => {
+        return cart;
+    }, function (error) {
+        return error;
+    });
+}
 
 function addProduct(product) {
     let cart = JSON.parse(localStorage.getItem('cart'));
@@ -51,37 +68,22 @@ function removeProduct(product) {
     });
 }
 
-function get() {
+function empty() {
     let cart = JSON.parse(localStorage.getItem('cart'));
     cart = (Array.isArray(cart)) ? cart : [];
 
+
     let promisse = new Promise((resolve, reject) => {
         setTimeout(() => {
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
             resolve(cart);
         }, 500);
     });
 
-    return promisse.then(cart => {
-        return cart;
+    return promisse.then(product => {
+        return true;
     }, function (error) {
         return error;
-    });
-}
-
-function handleResponse(response) {
-    return response.text().then(text => {
-        const data = text && JSON.parse(text);
-        if (!response.ok) {
-            if (response.status === 401) {
-                // auto logout if 401 response returned from api
-                //logout();
-                //let l = location.reload(true);
-            }
-
-            const error = (data && data.message) || response.statusText;
-            return Promise.reject(error);
-        }
-
-        return data;
     });
 }

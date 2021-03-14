@@ -1,23 +1,25 @@
-﻿import React, { useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';
-import { productActions } from '../../_actions';
-import { cartActions } from '../../_actions';
+import { productActions, cartActions } from '../../_actions';
 import { Trans } from 'react-i18next';
 
 import './carouselProducts.css';
 
-const CarouselProducts = (props) => {
-    const dispatch = useDispatch();
-  
+const CarouselProducts = ({ onLoad = () => { }, cartAdd, products = [], action = 'product', reload = true }) => {
+    //const dispatch = useDispatch();
+
     useEffect(() => {
-        if (props.reload)
-            dispatch(productActions.getAll());
+        //if (props.reload) {
+        //    dispatch(productActions.getAll());
+        //}
+        if(reload)
+            onLoad();
     });
 
     const addProd = (product) => {
-        dispatch(cartActions.addProduct(product));
+        cartAdd(product, products);
     }
 
     const productTemplate = (product) => {
@@ -39,7 +41,7 @@ const CarouselProducts = (props) => {
                         <div className="car-buttons p-mt-5">
                             <Button icon="pi pi-search p-button-search" className="p-button p-button-rounded p-mr-1" />
                             <Button icon="pi pi-heart" className="p-button p-button-rounded p-mr-1" />
-                            <Button icon="pi pi-shopping-cart" className="p-button-help p-button-rounded" onClick={(e) => addProd(product)}/>
+                            <Button icon="pi pi-shopping-cart" className="p-button-help p-button-rounded" onClick={(e) => addProd(product)} />
                         </div>
                     </div>
                 </div>
@@ -53,7 +55,7 @@ const CarouselProducts = (props) => {
                 <div className="col-12">
                     <div className="card mContainer">
                         <center><h3 className="title"><Trans>lbl_highlighted</Trans></h3></center>
-                        <Carousel value={props.products} numVisible={5} numScroll={1} className="custom-carousel"
+                        <Carousel value={products} numVisible={5} numScroll={1} className="custom-carousel"
                             itemTemplate={productTemplate} header={<div className="carouselTitle"><h5><Trans>lbl_highlighted</Trans></h5></div>} />
                     </div>
                 </div>
@@ -62,12 +64,36 @@ const CarouselProducts = (props) => {
     );
 }
 
-function mapStateToProps(state) {
-    return {
-        products: Array.isArray(state.products.products) ? state.products.products : new Array(),
-        reload: state.products.reload,
-        error: state.products.error
-    };
+function mapStateToProps(state, ownProps) {
+    if (ownProps.action == 'product') {
+        return {
+            products: Array.isArray(state.products.products) ? state.products.products : new Array(),
+            reload: state.products.reload,
+            error: state.products.error,
+            action: 'product'
+        };
+    } else {
+        return {
+            products: ownProps.products,
+            reload: ownProps.action != 'cart',
+            error: null,
+            action: 'cart'
+        };
+    }
 }
 
-export default connect(mapStateToProps)(CarouselProducts);
+function mapDispatchToProps(dispatch, ownProps) {
+    return {
+        onLoad: () => { // handles onTodoClick prop's call here
+            ownProps.action = 'product'
+            dispatch(productActions.getAll())
+        },
+        cartAdd: (product, products) => {
+            ownProps.action = 'cart'
+            ownProps.products = products
+            dispatch(cartActions.addProduct(product))
+        }
+    }
+}
+//export default connect(mapStateToProps)(CarouselProducts);
+export default connect(mapStateToProps, mapDispatchToProps)(CarouselProducts);

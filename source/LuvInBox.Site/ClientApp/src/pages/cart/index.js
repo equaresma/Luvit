@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { cartActions } from '../../_actions';
 import { OrderList } from 'primereact/orderlist';
@@ -11,9 +11,15 @@ const Cart = (props) => {
     const dispatch = useDispatch();
     const { t } = useTranslation();
 
+    const [products, setProducts] = useState([]);
+
     useEffect(() => {
-        if (props.reload)
+        if (products.length != props.cart.length)
+            setProducts(props.cart);
+
+        if (props.reload) {
             dispatch(cartActions.get());
+        }
     });
 
     const removeProd = (item) => {
@@ -21,9 +27,13 @@ const Cart = (props) => {
     }
 
     const emptyCart = () => {
-        dispatch(cartActions.emptyCart());
+        dispatch(cartActions.empty());
     }
-    
+
+    const setValue = e => {
+        setProducts(e.value);
+    }
+
     const itemTemplate = (item) => {
         let content = (item.image.type == 1) ? "data:image/png;base64," : "";
         content += item.image.value;
@@ -34,27 +44,29 @@ const Cart = (props) => {
                     <img src={content} alt={item.name} onError={(e) => e.target.src = 'images/not-founded.png'} />
                 </div>
                 <div className="product-list-detail">
-                    <h5 className="p-mb-2">{item.name}</h5>
-                    <i className="pi pi-tag product-category-icon"></i>
-                    <span className="product-category">{item.category}</span>
+                    <span>{item.name}</span>
+                    <div>
+                        <i className="pi pi-tag product-category-icon"></i>
+                        <span className="product-category">{item.category}</span>
+                    </div>
                 </div>
                 <div className="product-list-action">
-                    <h6 className="p-mb-2">${item.price}</h6>                    
-                    <div><Button onClick={(e) => removeProd(item)} className="p-button-secondary"><small><Trans>lbl_remove_product</Trans></small></Button></div>
+                    <span>R$ {item.price}</span>
+                    <div><Button onClick={(e) => removeProd(item)} className="p-button-secondary" icon="pi pi-trash" iconPos="left" tooltip={t('lbl_remove_product')}></Button></div>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="card" style={{ marginTop: "50px" }}>
+        <div className="card" style={{ marginTop: "15px" }}>
             <center><h4 className="title"><Trans>lbl_cart</Trans></h4></center>
             <div className="orderlist-demo">
                 <div className="card">
-                    <OrderList value={props.cart} header={t('lbl_list_of_products')} dragdrop listStyle={{ height: 'auto' }} dataKey="id"
-                        itemTemplate={itemTemplate} ></OrderList>
+                    <OrderList value={products} header={t('lbl_list_of_products')} dragdrop listStyle={{ height: 'auto' }} dataKey="id"
+                        itemTemplate={itemTemplate} onChange={(e) => setValue(e)}></OrderList>
 
-                    <div style={{ marginTop: "50px" }}>
+                    <div style={{ marginTop: "30px", marginLeft: "70px" }}>
                         <Button className="p-button-secondary" onClick={(e) => emptyCart()}><small><Trans>lbl_empty_cart</Trans></small></Button>
                     </div>
                 </div>
