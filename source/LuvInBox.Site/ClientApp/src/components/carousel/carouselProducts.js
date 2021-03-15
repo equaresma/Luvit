@@ -67,9 +67,9 @@ const CarouselProducts = ({ onLoad = () => { }, cartAdd, products = [], action =
 function mapStateToProps(state, ownProps) {
     if (ownProps.action == 'product') {
         return {
-            products: Array.isArray(state.products.products) ? state.products.products : new Array(),
-            reload: state.products.reload,
-            error: state.products.error,
+            products: Array.isArray(state.reducers.products.products) ? state.reducers.products.products : new Array(),
+            reload: state.reducers.products.reload,
+            error: state.reducers.products.error,
             action: 'product'
         };
     } else {

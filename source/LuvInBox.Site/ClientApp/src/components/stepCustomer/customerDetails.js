@@ -85,7 +85,7 @@ const CustomerDetails = (props) => {
 }
 
 function mapStateToProps(state) {
-    return { customer: state.customer.customer };
+    return { customer: state.reducers.customer.customer };
 }
 
 export default connect(mapStateToProps)(CustomerDetails);

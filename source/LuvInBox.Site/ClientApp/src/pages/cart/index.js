@@ -84,9 +84,9 @@ function mapStateToProps(state) {
         }
     } else {
         return {
-            cart: Array.isArray(state.cart.cart) ? state.cart.cart : new Array(),
+            cart: Array.isArray(state.reducers.cart.cart) ? state.reducers.cart.cart : new Array(),
             reload: true,
-            error: state.products.error
+            error: state.reducers.products.error
         }
     }
 }

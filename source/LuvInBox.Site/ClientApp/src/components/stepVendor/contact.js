@@ -149,7 +149,7 @@ export const Contact = (props) => {
     return (getActiveComponent());
 }
 function mapStateToProps(state) {
-    return { vendor: state.vendor.vendor };
+    return { vendor: state.reducers.vendor.vendor };
 }
 
 export default connect(mapStateToProps)(Contact);

@@ -8,7 +8,7 @@ import { address } from './address.reducer';
 import { customer } from './customer.reducer';
 import { vendor } from './vendor.reducer';
 
-const rootReducer = combineReducers({
+const reducers = combineReducers({
     authentication,
     user,
     alert,
@@ -19,4 +19,4 @@ const rootReducer = combineReducers({
     vendor
 });
 
-export default rootReducer;
+export default reducers;

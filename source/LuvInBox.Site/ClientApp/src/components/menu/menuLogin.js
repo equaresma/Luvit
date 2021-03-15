@@ -34,8 +34,8 @@ function mapStateToProps(state) {
         }
     } else {
         return {
-            user: state.authentication.user,
-            loggedIn: state.authentication.loggedIn
+            user: state.reducers.authentication.user,
+            loggedIn: state.reducers.authentication.loggedIn
         }
     }
 }

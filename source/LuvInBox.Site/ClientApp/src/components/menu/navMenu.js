@@ -83,7 +83,7 @@ function mapStateToProps(state) {
         }
     } else {
         return {
-            loggedIn: state.authentication.loggedIn
+            loggedIn: state.reducers.authentication.loggedIn
         }
     }
 }

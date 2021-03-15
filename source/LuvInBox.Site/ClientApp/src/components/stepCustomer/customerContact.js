@@ -176,7 +176,7 @@ const CustomerContact = (props) => {
 
 function mapStateToProps(state) {
     return {
-        customer: state.customer.customer
+        customer: state.reducers.customer.customer
     };
 }
 

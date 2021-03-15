@@ -3,12 +3,15 @@ import { Container } from 'reactstrap';
 import NavMenu from './menu/navMenu';
 import NavFooter from './menu/navFooter';
 
-export default (props: { children?: React.ReactNode }) => (
+const Layout = (props) => {
+    return(
     <React.Fragment>
         <NavMenu />
         <Container className="granContainer">
             {props.children}
-        </Container>    
+        </Container>
         <NavFooter />
     </React.Fragment>
-);
+)};
+
+export default Layout;
