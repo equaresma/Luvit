@@ -5,6 +5,11 @@
     font-size: 14px;
 }*/
 
+@font-face {
+    font-family: 'Anton';
+    src: local('Anton'), url(/fonts/Anton-Regular.ttf) format('truetype');
+}
+
 /*Exemplo do site Primereact*/
 body {
     background-color: #ffffff;

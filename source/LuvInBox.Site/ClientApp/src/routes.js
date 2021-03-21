@@ -4,7 +4,8 @@ import Home from './pages/home';
 import Cart from './pages/cart';
 import { Login } from './pages/login';
 import { ChangePass } from './pages/user/changepass';
-import { WhoWeAre } from './components/institutional/whoweare';
+import { WhoWeAre } from './pages/institutional/whoweare';
+import { LuvInBoxManifest } from './pages/institutional/luvinbox_manifest';
 import { VendorForm } from './pages/vendor/index';
 import { CustomerForm } from './pages/user/index';
 
@@ -18,6 +19,7 @@ export default function Routes() {
                 <Route path="/cart" component={Cart} />
                 <Route path="/login" component={Login} />
                 <Route path='/institutional/whoweare' component={WhoWeAre} />
+                <Route path='/institutional/luvinbox_manifest' component={LuvInBoxManifest} />
                 <Route path='/register/customer' component={CustomerForm} />
                 <Route path='/register/vendor' component={VendorForm} />
                 <Route path="/register" component={ChangePass} />

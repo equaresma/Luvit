@@ -20,6 +20,9 @@ export default class NavFooter extends React.PureComponent {
                                 <hr />
                                 <ul className="list-unstyled mb-0">
                                     <li className="footer_item">
+                                        <a href="/institutional/luvinbox_manifest" className="footer_link"><Trans>footer_manifest</Trans></a>
+                                    </li>
+                                    <li className="footer_item">
                                         <a href="/institutional/whoweare" className="footer_link"><Trans>footer_who_wew_are</Trans></a>
                                     </li>
                                     <li className="footer_item">
