@@ -1,11 +1,9 @@
-//import config from 'config';
 import { authHeader } from '../_helpers';
-//import { products } from "../_reducers/product.reducer";
 
 export const productService = {
-    getAll
+    getAll,
+    setSelected
 };
-
 
 function getAll() {
     let url = 'api/Products';
@@ -46,6 +44,20 @@ function getAll() {
     //}, function (error) {
     //    return error;
     //});
+}
+
+function setSelected(product) {
+    let promisse = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(product);
+        }, 500);
+    });
+
+    return promisse.then(product => {
+        return product;
+    }, function (error) {
+        return error;
+    });
 }
 
 function handleResponse(response) {

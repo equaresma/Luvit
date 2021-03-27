@@ -8,7 +8,7 @@ import { WhoWeAre } from './pages/institutional/whoweare';
 import { LuvInBoxManifest } from './pages/institutional/luvinbox_manifest';
 import { VendorForm } from './pages/vendor/index';
 import { CustomerForm } from './pages/user/index';
-
+import  Product from './pages/product/index';
 import { history } from '../src/_helpers/history';
 
 export default function Routes() {
@@ -23,6 +23,7 @@ export default function Routes() {
                 <Route path='/register/customer' component={CustomerForm} />
                 <Route path='/register/vendor' component={VendorForm} />
                 <Route path="/register" component={ChangePass} />
+                <Route path="/product" component={Product} />
             </Switch>
         </Router>
     );
