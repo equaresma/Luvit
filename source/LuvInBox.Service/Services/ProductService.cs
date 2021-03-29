@@ -49,5 +49,20 @@ namespace LuvInBox.Service.Services {
             var listEntity = await _repository.FindByVendor(vendorId);
             return _mapper.Map<IEnumerable<ProductDTO>>(listEntity);
         }
+
+        public async Task<IEnumerable<ProductDTO>> FindByCategory(string categoryId) {
+            var listEntity = await _repository.FindByCategory(categoryId);
+            return _mapper.Map<IEnumerable<ProductDTO>>(listEntity);
+        }
+
+        public async Task<IEnumerable<ProductDTO>> FindByFilter(string filter) {
+            var listEntity = await _repository.FindByFilter(filter);
+            return _mapper.Map<IEnumerable<ProductDTO>>(listEntity);
+        }
+
+        public async Task<IEnumerable<ProductDTO>> FindByPromotions() {
+            var listEntity = await _repository.FindByPromotions();
+            return _mapper.Map<IEnumerable<ProductDTO>>(listEntity);
+        }
     }
 }

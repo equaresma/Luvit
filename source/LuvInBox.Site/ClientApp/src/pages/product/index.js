@@ -70,7 +70,7 @@ const Product = ({ product = {} }) => {
                         </div>
                     </div>
                     <br /><br />
-                    <Button label={t('lbl_back')} icon="pi pi-backward" className="p-button-help p-button" onClick={back} />
+                    <Button label={t('lbl_back')} icon="pi pi-backward" className="p-button-help p-button" onClick={(e) => back()} />
                     <Button label={t('lbl_add')} icon="pi pi-shopping-cart" className="p-button-help p-button" onClick={(e) => addCart(product)} style={{ marginLeft: "10px"}}/>
                 </div>
             </div>

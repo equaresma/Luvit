@@ -27,6 +27,19 @@ namespace com.luvinbox.site.Controllers {
         [HttpGet("{id}")]
         public async Task<ProductDTO> Get(string id) => await _service.Get(id);
 
+        // GET api/<ProductController>?filter
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IEnumerable<ProductDTO>> Filter(string value) => await _service.FindByFilter(value);
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IEnumerable<ProductDTO>> GetPromotions() => await _service.FindByPromotions();
+
+        [AllowAnonymous]
+        [HttpGet("{id}")]
+        public async Task<IEnumerable<ProductDTO>> GetByCategory(string id) => await _service.FindByCategory(id);
+
         // POST api/<ProductController>
         [Authorize("Bearer")]
         [HttpPost]

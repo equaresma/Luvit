@@ -1,21 +1,16 @@
 ﻿using com.luvinbox.domain.compose;
-using com.luvinbox.domain.enums;
-using System;
 
 namespace com.luvinbox.domain.entities {
     public class Product : BaseEntity {
         public string Reference { get; set; }
-        public Int64? Barcode { get; set; }
+        public long? Barcode { get; set; }
         public string VendorId { get; set; }
-        public String Name { get; set; }
-        public String Description { get; set; }
-        public enumProductCategory? Category { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string CategoryId { get; set; }
         public Dimensions Dimension { get; set; }
-        public Decimal Price { get; set; }
+        public decimal Price { get; set; }
         public float? Off { get; set; }
         public Image Image { get; set; }
-
-        public Product() {
-        }
     }
 }

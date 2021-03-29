@@ -7,13 +7,17 @@ import { Trans, useTranslation } from 'react-i18next';
 
 import './carouselProducts.css';
 
-const CarouselProducts = ({ mType = 'P', onLoad = () => { }, cartAdd, productInfo, products = [], action = 'product', reload = true }) => {
+const CarouselProducts = ({ mType = 'H', onLoad = () => { }, onLoadPromotions = () => { }, cartAdd, productInfo, products = [], action = 'product', reload = true }) => {
     const { t } = useTranslation();
-    const transTitle = (mType == 'P') ? t('lbl_highlighted') : t('lbl_offPrice');
+    const transTitle = (mType == 'H') ? t('lbl_highlighted') : t('lbl_offPrice');
 
     useEffect(() => {
-        if(reload)
-            onLoad();
+        if (reload) {
+            if (mType == 'H')
+                onLoad();
+            else
+                onLoadPromotions();
+        }
     });
 
     const addProd = (product) => {
@@ -55,7 +59,7 @@ const CarouselProducts = ({ mType = 'P', onLoad = () => { }, cartAdd, productInf
         <div className="container-fluid" style={{ marginTop: "50px", marginBottom: "25px"}}>
             <div className="row">
                 <div className="col-12">
-                    <center><h1 className="title">{transTitle}</h1></center>
+                    <center><h5 className="title">{transTitle}</h5></center>
                     <div className="card mContainer">
                         <Carousel value={products} numVisible={5} numScroll={1} className="custom-carousel"
                             itemTemplate={productTemplate} />
@@ -87,9 +91,12 @@ function mapStateToProps(state, ownProps) {
 function mapDispatchToProps(dispatch, ownProps) {
     return {
         onLoad: () => {
-            // handles onTodoClick prop's call here
             ownProps.action = 'product'
             dispatch(productActions.getAll())
+        },
+        onLoadPromotions: () => {
+            ownProps.action = 'product'
+            dispatch(productActions.getPromotions());
         },
         cartAdd: (product, products) => {
             ownProps.action = 'cart'

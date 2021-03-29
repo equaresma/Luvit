@@ -1,9 +1,54 @@
 import { authHeader } from '../_helpers';
 
 export const productService = {
+    filter,
     getAll,
+    getPromotions,
+    getByCategory,
     setSelected
 };
+
+function filter(value) {
+    let url = 'api/Products/Filter?value=' + value;
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
+
+    return fetch(url, requestOptions)
+        .then(handleResponse)
+        .then(products => {
+            return products;
+        });
+}
+
+function getPromotions() {
+    let url = 'api/Products/GetPromotions';
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
+
+    return fetch(url, requestOptions)
+        .then(handleResponse)
+        .then(products => {
+            return products;
+        });
+}
+
+function getByCategory(id) {
+    let url = 'api/Products/GetByCategory/' + id;
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
+
+    return fetch(url, requestOptions)
+        .then(handleResponse)
+        .then(products => {
+            return products;
+        });
+}
 
 function getAll() {
     let url = 'api/Products';
