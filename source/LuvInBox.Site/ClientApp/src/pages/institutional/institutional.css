@@ -1,22 +1,61 @@
 ﻿.luvInBoxName {
     font-family: anton,sans-serif;
+    font-weight: bold;
     color: #CC0046;
+}
+
+.luvInBoxNameWhite {
+    font-family: anton,sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.spnLuv {
+    color: #CC0046;
+}
+
+.spnLuvWhite {
+    color: white;
 }
 
 .imageSize {
     max-width: 100%;
     max-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*override*/
+.col-6.imagebox {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
 
 .blackBox {
     background: black;
     color: white;
+    padding: 120px !important;
 }
 
 .silverBox {
-    background: silver;
+    background: lightGray;
+    color: black;
+    padding: 120px !important;
+}
+
+.silverBoxMin {
+    background: lightGray;
     color: black;
 }
+
+.lightGrayBox {
+    background: lightGray;
+    color: black;
+    padding-top: 40px !important;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+}
+
 .pinkBox {
     background: #CC0046;
     color: white;
@@ -24,15 +63,22 @@
     vertical-align: middle;
     padding: 40px;
 }
+
 .amarelinhaBox {
     background-image: url("/images/manifest/criança_amarelinha.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: contain;
+    background-size: cover;
+    min-height: 100% !important;
 }
-.floatingRightBox {
-    float:right; 
+
+.floatingBox {
+    margin-top: 220px;
+    margin-bottom: 220px;
+    margin-left: 60%;
 }
+
+
 .whiteBox {
     background: white;
     color: #CC0046;
@@ -40,33 +86,67 @@
     vertical-align: middle;
     padding: 40px;
 }
+
 .size50 {
-    max-width: 50%;
+    max-width: 70%;
+}
+
+.blackBelt {
+    background: #000;
+    color: #fff;
+    padding: 60px;
 }
 .dancarinaBox {
     background-image: url("/images/manifest/dançando 2 PB.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: contain;
+    background-size: cover;
+    min-height: 100% !important;
 }
+
 .circle {
     background: white;
-    border-radius: 80px;
+    border-radius: 180px;
     color: black;
-    height: 80px;
-    font-weight: bold;
-    width: 80px;
+    height: 180px;
+    width: 180px;
     display: table;
-    margin: 2px auto;
+    margin: 5px;
     vertical-align: middle;
+    padding: 20px;
 }
+
     .circle p {
         vertical-align: middle;
         display: table-cell;
     }
-.lightGrayBox {
-    background: lightGray;
-    color: black;
-    padding: 20px;
-    display: table-cell;
+
+    .circle:hover {
+        background: #CC0046;
+        color: white;
+    }
+
+.font_5 {
+    font-family: 'Poppins';
+    font-size: 72px;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.divCenter {
+    align-content: center;
+    text-align: center;
+}
+
+.mArrow {
+    font-family: anton,sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    color: #CC0046;
+}
+
+.textRot {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    width: 100px;
 }

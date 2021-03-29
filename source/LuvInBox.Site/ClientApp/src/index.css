@@ -10,6 +10,11 @@
     src: local('Anton'), url(/fonts/Anton-Regular.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins'), url(/fonts/Poppins-Black.ttf) format('truetype'), local('Poppins-BlackItalic'), url(/fonts/Poppins-BlackItalic.ttf) format('truetype'), local('Poppins-Bold'), url(/fonts/Poppins-Bold.ttf) format('truetype'), local('Poppins-BoldItalic'), url(/fonts/Poppins-BoldItalic.ttf) format('truetype'), local('Poppins-ExtraBold'), url(/fonts/Poppins-ExtraBold.ttf) format('truetype'), local('Poppins-ExtraBoldItalic'), url(/fonts/Poppins-ExtraBoldItalic.ttf) format('truetype'), local('Poppins-ExtraLight'), url(/fonts/Poppins-ExtraLight.ttf) format('truetype'), local('Poppins-ExtraLightItalic'), url(/fonts/Poppins-ExtraLightItalic.ttf) format('truetype'), local('Poppins-Italic'), url(/fonts/Poppins-Italic.ttf) format('truetype'), local('Poppins-Light'), url(/fonts/Poppins-Light.ttf) format('truetype'), local('Poppins-LightItalic'), url(/fonts/Poppins-LightItalic.ttf) format('truetype'), local('Poppins-Medium'), url(/fonts/Poppins-Medium.ttf) format('truetype'), local('Poppins-MediumItalic'), url(/fonts/Poppins-MediumItalic.ttf) format('truetype'), local('Poppins-Regular'), url(/fonts/Poppins-Regular.ttf) format('truetype'), local('Poppins-SemiBold'), url(/fonts/Poppins-SemiBold.ttf) format('truetype'), local('Poppins-SemiBoldItalic'), url(/fonts/Poppins-SemiBoldItalic.ttf) format('truetype'), local('Poppins-Thin.ttf'), url(/fonts/Poppins-Thin.ttf) format('truetype'), local('Poppins-ThinItalic.ttf'), url(/fonts/Poppins-ThinItalic.ttf) format('truetype')
+}
+
 /*Exemplo do site Primereact*/
 body {
     background-color: #ffffff;
@@ -321,6 +326,7 @@ a.footLnk:active {
     padding-top: 2em;
     border: none;
 }
+
 .carouselTitle {
     padding-left: 2em;
     padding-right: 2em;
@@ -341,7 +347,7 @@ input[type=password] {
 
 /*Meus overrides*/
 ul.nav {
-    width:100%
+    width: 100%
 }
 
 span.p-input-icon-right {
@@ -373,13 +379,13 @@ element.style {
 }
 
 .p-dropdown {
-    border: none!important;
-    border-bottom: 1px solid!important;
+    border: none !important;
+    border-bottom: 1px solid !important;
 }
 
 .granContainer {
-    width: 100%!important;
-    max-width: 100%!important;
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
 .divSteps {
@@ -493,7 +499,7 @@ ul.hideIndicators {
     border-color: #CC0146 !important;
 }
 
-.p-button-success  {
+.p-button-success {
     color: #fff !important;
     background-color: #CC0146 !important;
     border-color: #CC0146 !important;
@@ -537,6 +543,7 @@ ul.hideIndicators {
     border-color: transparent;
     background: #ca9cad;
 }
+
 .p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next {
     width: 2rem;
     height: 2rem;
@@ -551,7 +558,7 @@ ul.hideIndicators {
     margin: 0.5rem;
 }
 
-.p-carousel-next .p-carousel-prev{
+.p-carousel-next .p-carousel-prev {
     width: 2rem;
     height: 2rem;
     color: #ae194c;
