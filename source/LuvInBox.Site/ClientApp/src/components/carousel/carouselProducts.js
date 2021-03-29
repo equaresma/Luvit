@@ -3,11 +3,14 @@ import { connect, useDispatch } from 'react-redux';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';
 import { productActions, cartActions } from '../../_actions';
-import { Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 
 import './carouselProducts.css';
 
-const CarouselProducts = ({ onLoad = () => { }, cartAdd, productInfo, products = [], action = 'product', reload = true }) => {
+const CarouselProducts = ({ mType = 'P', onLoad = () => { }, cartAdd, productInfo, products = [], action = 'product', reload = true }) => {
+    const { t } = useTranslation();
+    const transTitle = (mType == 'P') ? t('lbl_highlighted') : t('lbl_offPrice');
+
     useEffect(() => {
         if(reload)
             onLoad();
@@ -18,7 +21,6 @@ const CarouselProducts = ({ onLoad = () => { }, cartAdd, productInfo, products =
     }
 
     const gotoProductInfo = (product ) => {
-        //e.preventDefault();
         productInfo(product, products);
     }
 
@@ -50,13 +52,13 @@ const CarouselProducts = ({ onLoad = () => { }, cartAdd, productInfo, products =
     }
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid" style={{ marginTop: "50px", marginBottom: "25px"}}>
             <div className="row">
                 <div className="col-12">
+                    <center><h1 className="title">{transTitle}</h1></center>
                     <div className="card mContainer">
-                        <center><h3 className="title"><Trans>lbl_highlighted</Trans></h3></center>
                         <Carousel value={products} numVisible={5} numScroll={1} className="custom-carousel"
-                            itemTemplate={productTemplate} header={<div className="carouselTitle"><h5><Trans>lbl_highlighted</Trans></h5></div>} />
+                            itemTemplate={productTemplate} />
                     </div>
                 </div>
             </div>

@@ -1,3 +1,7 @@
 ﻿img.product {
     max-height:220px;
 }
+
+.image-container {
+    padding:25px;
+}

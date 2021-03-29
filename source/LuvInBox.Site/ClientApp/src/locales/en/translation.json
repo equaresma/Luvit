@@ -97,5 +97,8 @@
   "lbl_doubts": "Doubts",
   "lbl_vendors": "Vendors",
   "txt_copyright": "Copyright",
-  "txt_restricted_access": "Restricted Access"
+  "txt_restricted_access": "Restricted Access",
+  "lbl_add": "Add",
+  "lbl_back": "Back",
+  "lbl_offPrice": "Off Price"
 }
