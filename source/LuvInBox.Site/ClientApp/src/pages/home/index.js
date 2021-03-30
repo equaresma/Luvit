@@ -14,8 +14,8 @@ const Home = () => {
         <div>
             <CarouselPromo />
             <CarouselCategory />
-            <CarouselProducts mType='H'/>
-            <CarouselProducts mType='O'/>
+            <CarouselProducts mType='H' />
+            <CarouselProducts mType='O' />
         </div>
     );
 }

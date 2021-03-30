@@ -40,7 +40,7 @@ const Product = ({ product = {} }) => {
                     <div className="product-list-detail">
                         <div>
                             <i className="pi pi-tag product-category-icon"></i>
-                            <span className="product-category">{product.category}</span><br />
+                            <span className="product-category">{product.categoryId}</span><br />
                             <strong><span>R$ {product.price}</span></strong><br />
                             <small><span style={{ textDecoration: "line-through" }}>R$ {product.off}</span><br /></small>
                             <strong><span>R$ {product.offPrice}</span></strong><br />
