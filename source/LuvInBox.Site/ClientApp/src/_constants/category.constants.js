@@ -1,0 +1,5 @@
+export const categoryConstants = {
+    CATEG_REQUEST: 'CATEG_REQUEST',
+    CATEG_SUCCESS: 'CATEG_SUCCESS',
+    CATEG_FAILURE: 'CATEG_FAILURE'
+};

@@ -5,6 +5,7 @@ import { alert } from './alert.reducer';
 import { products } from './product.reducer';
 import { cart } from './cart.reducer';
 import { address } from './address.reducer';
+import { category } from './category.reducer';
 import { customer } from './customer.reducer';
 import { vendor } from './vendor.reducer';
 
@@ -15,6 +16,7 @@ const reducers = combineReducers({
     products,
     cart,
     address,
+    category,
     customer,
     vendor
 });

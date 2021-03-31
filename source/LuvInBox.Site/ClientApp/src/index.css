@@ -15,6 +15,11 @@
     src: local('Poppins'), url(/fonts/Poppins-Black.ttf) format('truetype'), local('Poppins-BlackItalic'), url(/fonts/Poppins-BlackItalic.ttf) format('truetype'), local('Poppins-Bold'), url(/fonts/Poppins-Bold.ttf) format('truetype'), local('Poppins-BoldItalic'), url(/fonts/Poppins-BoldItalic.ttf) format('truetype'), local('Poppins-ExtraBold'), url(/fonts/Poppins-ExtraBold.ttf) format('truetype'), local('Poppins-ExtraBoldItalic'), url(/fonts/Poppins-ExtraBoldItalic.ttf) format('truetype'), local('Poppins-ExtraLight'), url(/fonts/Poppins-ExtraLight.ttf) format('truetype'), local('Poppins-ExtraLightItalic'), url(/fonts/Poppins-ExtraLightItalic.ttf) format('truetype'), local('Poppins-Italic'), url(/fonts/Poppins-Italic.ttf) format('truetype'), local('Poppins-Light'), url(/fonts/Poppins-Light.ttf) format('truetype'), local('Poppins-LightItalic'), url(/fonts/Poppins-LightItalic.ttf) format('truetype'), local('Poppins-Medium'), url(/fonts/Poppins-Medium.ttf) format('truetype'), local('Poppins-MediumItalic'), url(/fonts/Poppins-MediumItalic.ttf) format('truetype'), local('Poppins-Regular'), url(/fonts/Poppins-Regular.ttf) format('truetype'), local('Poppins-SemiBold'), url(/fonts/Poppins-SemiBold.ttf) format('truetype'), local('Poppins-SemiBoldItalic'), url(/fonts/Poppins-SemiBoldItalic.ttf) format('truetype'), local('Poppins-Thin.ttf'), url(/fonts/Poppins-Thin.ttf) format('truetype'), local('Poppins-ThinItalic.ttf'), url(/fonts/Poppins-ThinItalic.ttf) format('truetype')
 }
 
+@font-face {
+    font-family: "BarcodeFont";
+    src: local('BarcodeFont'), url(/fonts/BarcodeFont.ttf) format('truetype')
+}
+
 /*Exemplo do site Primereact*/
 body {
     background-color: #ffffff;

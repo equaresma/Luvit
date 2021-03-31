@@ -21,12 +21,10 @@ namespace com.luvinbox.site.Controllers
         }
 
         // GET: api/<CategoryController>
-        [Authorize("Bearer")]
         [HttpGet]
         public async Task<IEnumerable<CategoryDTO>> Get() => await _service.GetAll();
 
         // GET api/<CategoryController>/5
-        [Authorize("Bearer")]
         [HttpGet("{id}")]
         public async Task<CategoryDTO> Get(string id) => await _service.Get(id);
 

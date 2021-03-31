@@ -1,38 +1,31 @@
-﻿import * as React from 'react';
-import { useState, useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Carousel } from 'primereact/carousel';
 import { Tooltip } from 'primereact/tooltip';
+import { Link } from 'react-router-dom';
+import { productActions, categoryActions } from '../../_actions';
 
 import './carouselCategory.css';
 
-export const CarouselCategory = () => {
-    const [categs, setCategs] = useState([]);
+const CarouselCategory = ({ categs = [], onLoad = () => { }, onCategSelected, reload = true, action = 'category', }) => {
 
     useEffect(() => {
-        setCategs(['Acessorios.png',
-            'Ambiente_romantico.png',
-            'Brincadeiras_Jogos.png',
-            'Cosmeticos.png',
-            'Fantasias.png',
-            'Fetiche.png',
-            'Livros.png',
-            'Mais_vendidos.png',
-            'Para_eles.png',
-            'Para_elas.png',
-            'Plugs.png',
-            'Pompoarismo.png',
-            'Promocoes.png',
-            'Protese.png',
-            'Roupas_Intimas.png',
-            'Suplementos.png',
-            'Vibradores.png']);
-    }, []);
+        if (reload) {
+            onLoad();
+        }
+    });
+
+    const categClick = (id) => {
+        onCategSelected(id);
+    }
 
     const categTemplate = (categ) => {
         return (
             <div>
-                <Tooltip target=".img-category" mouseTrack mouseTrackLeft={10} className="toolTip"/>
-                <img className="img-category" src={"/images/categories/" + categ} alt={categ} data-pr-tooltip={categ.replace('.png', '').replace('_', ' ')}/>
+                <Tooltip target=".img-category" mouseTrack mouseTrackLeft={10} className="toolTip" />
+                <Link to="" onClick={(e) => categClick(categ.id)}>
+                    <img className="img-category" src={categ.url} alt={categ.name} data-pr-tooltip={categ.name} />
+                </Link>
             </div>
         );
     }
@@ -50,3 +43,34 @@ export const CarouselCategory = () => {
         </div>
     );
 }
+
+function mapStateToProps(state, ownProps) {
+    if (ownProps.action === "category") {
+        return {
+            categs: Array.isArray(state.reducers.category.categories) ? state.reducers.category.categories : new Array(),
+            reload: state.reducers.category.reload,
+            error: state.reducers.category.error
+        };
+    } else {
+        return {
+            categs: Array.isArray(state.reducers.category.categories) ? state.reducers.category.categories : new Array(),
+            reload: state.reducers.category.reload,
+            error: state.reducers.products.error
+        };
+    }
+}
+
+function mapDispatchToProps(dispatch, ownProps) {
+    return {
+        onLoad: () => {
+            ownProps.action = 'category';
+            dispatch(categoryActions.getAll());
+        },
+        onCategSelected: (id) => {
+            ownProps.action = 'products';
+            dispatch(productActions.getByCategory(id));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CarouselCategory);

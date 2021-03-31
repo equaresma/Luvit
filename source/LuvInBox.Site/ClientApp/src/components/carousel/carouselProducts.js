@@ -1,9 +1,9 @@
-﻿import React, { useState, useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
+﻿import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';
 import { productActions, cartActions } from '../../_actions';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import './carouselProducts.css';
 
@@ -121,3 +121,4 @@ function mapDispatchToProps(dispatch, ownProps) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarouselProducts);
+

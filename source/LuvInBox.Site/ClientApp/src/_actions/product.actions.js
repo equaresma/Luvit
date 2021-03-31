@@ -91,7 +91,10 @@ function getByCategory(id) {
 
         productService.getByCategory(id)
             .then(
-                products => dispatch(success(products)),
+                products => {
+                    dispatch(success(products));
+                    history.push('/productsByCateg');
+                },
                 error => dispatch(failure(error))
             );
     };
