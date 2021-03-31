@@ -45,9 +45,9 @@ const Product = ({ product = {} }) => {
                             <small><span style={{ textDecoration: "line-through" }}>R$ {product.off}</span><br /></small>
                             <strong><span>R$ {product.offPrice}</span></strong><br />
                         </div>
-                        <hr /><br />
+                        <hr />
                         <div>
-                            Código de Barras: <span style={{ fontFamily: "BarcodeFont"}}>{product.barCode}</span>
+                            Código de Barras:<br /> <span style={{ fontFamily: "BarcodeFont", fontSize: "64px"}}>{product.barCode}</span>
                         </div>
                         <div>
                             <span>Referência: </span>{product.reference}

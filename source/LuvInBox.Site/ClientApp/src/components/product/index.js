@@ -1,23 +1,30 @@
 ﻿import React, { useState, useEffect } from 'react';
+import { useDispatch} from 'react-redux';
 import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
 import { Button } from 'primereact/button';
 import { SelectButton } from 'primereact/selectbutton';
 import { Dropdown } from 'primereact/dropdown';
 import { Rating } from 'primereact/rating';
-
+import { cartActions } from '../../_actions';
+import { useTranslation } from 'react-i18next';
 import './index.css';
 
 export const ProductViewer = (props) => {
-    const [value, setValue] = useState('Off');
-    const options = ['Off', 'On'];
+    const dispatch = useDispatch();
+    const { t } = useTranslation();
+    const options = [
+        { icon: 'pi pi-bars', value: 'list' },
+        { icon: 'pi pi-th-large', value: 'grid' }
+    ];
+
 
     const [layout, setLayout] = useState('grid');
     const [sortKey, setSortKey] = useState(null);
     const [sortOrder, setSortOrder] = useState(null);
     const [sortField, setSortField] = useState(null);
     const sortOptions = [
-        { label: 'Price High to Low', value: '!price' },
-        { label: 'Price Low to High', value: 'price' },
+        { label: t('lbl_sort_by_h_l'), value: '!price' },
+        { label: t('lbl_sort_by_l_h'), value: 'price' },
     ];
 
     const onSortChange = (event) => {
@@ -33,6 +40,10 @@ export const ProductViewer = (props) => {
             setSortField(value);
             setSortKey(value);
         }
+    }
+
+    const addProd = (product) => {
+        dispatch(cartActions.addProduct(product))
     }
 
     const getContent = (product) => {
@@ -53,8 +64,8 @@ export const ProductViewer = (props) => {
                         <i className="pi pi-tag product-category-icon"></i><span className="product-category">{data.category}</span>
                     </div>
                     <div className="product-list-action">
-                        <span className="product-price">${data.price}</span>
-                        <Button icon="pi pi-shopping-cart" label="Add to Cart"></Button>
+                        <span className="product-price">R$ {data.price}</span>
+                        <Button icon="pi pi-shopping-cart" className="p-button-help p-button-rounded" onClick={(e) => addProd(data)} />
                     </div>
                 </div>
             </div>
@@ -78,8 +89,8 @@ export const ProductViewer = (props) => {
                         <Rating value={data.rating} readOnly cancel={false}></Rating>
                     </div>
                     <div className="product-grid-item-bottom">
-                        <span className="product-price">${data.price}</span>
-                        <Button icon="pi pi-shopping-cart" label="Add to Cart"></Button>
+                        <span className="product-price">R$ {data.price}</span>
+                        <Button icon="pi pi-shopping-cart" className="p-button-help p-button-rounded" onClick={(e) => addProd(data)} />
                     </div>
                 </div>
             </div>
@@ -97,13 +108,17 @@ export const ProductViewer = (props) => {
             return renderGridItem(product);
     }
 
+    const justifyTemplate = (option) => {
+        return <i className={option.icon}></i>;
+    }
+
     const header = (
         <div className="p-grid">
             <div className="p-col-6">
-                <Dropdown options={sortOptions} value={sortKey} placeholder="Sort By" onChange={onSortChange} />
+                <Dropdown options={sortOptions} value={sortKey} placeholder={t("lbl_sort_by")} onChange={onSortChange} />
             </div>
             <div className="p-col-6">
-                <SelectButton value={value} options={options} onChange={(e) => setValue(e.value)} />
+                <SelectButton value={layout} options={options} onChange={(e) => setLayout(e.value)} itemTemplate={justifyTemplate} />
             </div>
         </div>
     );

@@ -1,28 +1,12 @@
 import axios from 'axios';
-//import config from 'config';
-//import { authHeader } from '../_helpers';
 
 export const addressService = {
     find
 };
 
 async function find(zipcode) {
-    //New variable "cep" only digits.
     var cep = zipcode.replace(/\D/g, '');
     let url = "https://viacep.com.br/ws/" + cep + "/json/?callback=?";
-
-    //const requestOptions = {
-    //    method: 'GET',
-    //    headers: { 'Content-Type': 'application/json' },         
-    //};
-
-    //return await fetch(url, requestOptions)
-    //    .then(handleResponse)
-    //    .then(address => {
-    //        address.ZipCode = zipcode;
-    //        return address;
-    //    });
-
     
     return axios.get(url)
         .then(handleResponse)
@@ -33,7 +17,6 @@ async function find(zipcode) {
 }
 
 function handleResponse(response) {
-    //return response.text().then(text => {
         const data = response.data;
 
         if (!response.status === 200) {
@@ -59,5 +42,4 @@ function handleResponse(response) {
                 return Promise.resolve(nAdd);
             }
         }
-    //});
 }

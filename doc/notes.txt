@@ -5,61 +5,17 @@
 Esclarecimentos:
 	Onde é azul - vai ser um tom de vermelho da paleta de cores.
 
-Planejamento
-		Finalizar os cadastros de Fornecedores e Clientes
-		Cadastro de Produtos: Tela vs Robo?(preciso saber deles o que estão planejando quanto ao contato com os fornecedores)
-		Login
+Assuntos:
+	Observação: Buscapé já está trabalhando com produtos eróticos e já possui funcionalidade que esconde imagens sensíveis.
 	
-No react usar Link ao inves do a, para não recarregar a página toda, se precisar recarregar ai sim usar o a.	
-
+	
 luvitmarketplace@gmail.com
 
-Próximas Atividades :
- - Login usando a API
-	OK - Melhorar tratamento de controle de senhas: Não deve ser atrelado, deve ser independente, e somente preencher o customer.Login no submit se estiver correto.
-	Finalizar Cadastro de Cliente no backend.
+	Discret Mode
+	ProdutoViewer: Mostar Categoria e Fornecedor
+		Cachear ou buscar no server: Categorias / Fornecedores
 	
-		Adiionar atributo publico | privado
-		Nickname
-	
-		Tratar email(nome usuário) já existente - não permitir cadastro.
-		validar campos data de nascimento(menor) cpf único.
-		criptografar senha.
-		não permitir senha fraca
-		-- no login gerar registro de login	
-			
-	OK - Finalizar Cadastro de Fornecedor no front(ajustes)e backend .  
-		Aplicar regras - validar email.
+	Ao exibir produto, fazer comparação com outros fornecedores
+	Finalizar Carrinho
 	
 	
- - Definir estratégia de persistência de imagens( logo fornecedor / avatar cliente / foto produto) no servidor. Ok 
-	Via api imagem será convertida em EncodeBase64
-	- Preparar a API para receber imagens das fotos dos produtos.	
-	
-	MongoDb - salvar imagem com String com EndodeBase64;
-	
-	<div>
-		<p>Taken from wikpedia</p>
-		  <src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA
-    AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
-        9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
-	</div>
-	
-	
-	00.395.753/0001-43
-	00395753000143
-	
-	
-	
-	
-=======================================================================================================	
-	
- - CSS utilizar corretamente a paleta de cores para ícones / botões e links do site.
- - Zoom do produto /  modo discreto
- - Finalizar carrinho
- - Lista de desejos (botão coração na lista de produtos add na lista de desejos).
- - Pagamentos.
- - Gamefication 
-
-
-***Mostrar dicionário bilíngue.

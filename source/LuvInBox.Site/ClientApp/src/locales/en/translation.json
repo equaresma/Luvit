@@ -100,5 +100,10 @@
   "txt_restricted_access": "Restricted Access",
   "lbl_add": "Add",
   "lbl_back": "Back",
-  "lbl_offPrice": "Off Price"
+  "lbl_offPrice": "Off Price",
+  "lbl_sort_by": "Sort by",
+  "lbl_sort_by_h_l": "Price High to Low",
+  "lbl_sort_by_l_h": "Price Low to High",
+  "tit_unobtrusive": "Site in unobtrusive mode: Images will be hiddenn",
+  "tit_obtrusive": "Site in obtrusive mode: Images will be shown"
 }

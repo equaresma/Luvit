@@ -100,5 +100,10 @@
   "txt_restricted_access": "Acesso Restrito",
   "lbl_add": "Adicionar",
   "lbl_back": "Voltar",
-  "lbl_offPrice": "Promoções"
+  "lbl_offPrice": "Promoções",
+  "lbl_sort_by": "Ordenar por",
+  "lbl_sort_by_h_l": "Preço Maior para o Menor",
+  "lbl_sort_by_l_h": "Preço Menor para Maior",
+  "tit_unobtrusive": "Site em modo discreto: Images serão ocultadas",
+  "tit_obtrusive": "Site em modo aberto: Imagens serão exibidas"
 }

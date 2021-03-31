@@ -1,8 +1,11 @@
 import { userConstants } from '../_constants';
+
 const initialState = {
     user: { firstName: '', lastName: '' },
+    isUnobstrutive: false,
     error: null
 }
+
 export function user(state = initialState, action) {
     switch (action.type) {
         case userConstants.GETALL_REQUEST:
@@ -17,6 +20,11 @@ export function user(state = initialState, action) {
             return {
                 error: action.error
             };
+        case userConstants.GET_UNOBSTRUTIVE:
+        case userConstants.SET_UNOBSTRUTIVE:
+            return {
+                isUnobstrutive: action.value
+            }
         default:
             return state
     }

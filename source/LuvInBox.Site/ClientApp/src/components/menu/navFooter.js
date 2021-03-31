@@ -26,10 +26,10 @@ export default class NavFooter extends React.PureComponent {
                                         <a href="/institutional/whoweare" className="footer_link"><Trans>footer_who_wew_are</Trans></a>
                                     </li>
                                     <li className="footer_item">
-                                        <a href="#!" className="footer_link"><Trans>footer_privacy_policy</Trans></a>
+                                        <a href="/institutional/privacy_policy" className="footer_link"><Trans>footer_privacy_policy</Trans></a>
                                     </li>
                                     <li className="footer_item">
-                                        <a href="#!" className="footer_link"><Trans>footer_return_policy</Trans></a>
+                                        <a href="/institutional/return_policy" className="footer_link"><Trans>footer_return_policy</Trans></a>
                                     </li>
                                 </ul>
                             </div>
@@ -39,13 +39,13 @@ export default class NavFooter extends React.PureComponent {
                                 <hr/>
                                 <ul className="list-unstyled">
                                     <li className="footer_item">
-                                        <a href="#!" className="footer_link">FAQ</a>
+                                        <a href="/contact/faq" className="footer_link">FAQ</a>
                                     </li>
                                     <li className="footer_item">
-                                        <a href="#!" className="footer_link"><Trans>footer_contact_us</Trans></a>
+                                        <a href="/contact" className="footer_link"><Trans>footer_contact_us</Trans></a>
                                     </li>
                                     <li className="footer_item">
-                                        <a href="#!" className="footer_link"><FontAwesomeIcon icon={['fab', 'whatsapp']} />&nbsp;WhatsApp</a>
+                                        <a href="whatsapp://send?abid=+5511966593807&text=Contato%2C%20LuvInBox" className="footer_link"><FontAwesomeIcon icon={['fab', 'whatsapp']} />&nbsp;WhatsApp</a>
                                     </li>
                                 </ul>
                             </div>
@@ -58,10 +58,10 @@ export default class NavFooter extends React.PureComponent {
                                         <a href="/register/vendor" className="footer_link"><Trans>footer_be_vendor</Trans></a>
                                     </li>
                                     <li className="footer_item">
-                                        <a href="#!" className="footer_link"><Trans>footer_vendors_area</Trans></a>
+                                        <a href="/vendor_area" className="footer_link"><Trans>footer_vendors_area</Trans></a>
                                     </li>
                                     <li className="footer_item">
-                                        <a href="#!" className="footer_link">FAQ</a>
+                                        <a href="/vendor_faq" className="footer_link">FAQ</a>
                                     </li>
                                 </ul>
                             </div>

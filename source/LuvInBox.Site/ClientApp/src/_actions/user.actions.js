@@ -5,7 +5,9 @@ import { history } from '../_helpers';
 
 export const userActions = {
     login,
-    logout
+    logout,
+    getUnobstrutive,
+    setUnobstrutive
 };
 
 function login(username, password) {
@@ -35,4 +37,25 @@ function login(username, password) {
 function logout() {
     userService.logout();
     return { type: userConstants.LOGOUT };
+}
+
+function setUnobstrutive(value) {
+    userService.setUnobstrutive(value).then(x => {
+        history.push('/');
+    });
+
+    return { type: userConstants.SET_UNOBSTRUTIVE, value };
+}
+
+function getUnobstrutive() {
+    return dispatch => {
+        userService.getUnobstrutive()
+            .then(
+                value => {
+                    dispatch(success(value));
+                }
+            );
+    };
+
+    function success(value) { return { type: userConstants.GET_UNOBSTRUTIVE, value } }
 }

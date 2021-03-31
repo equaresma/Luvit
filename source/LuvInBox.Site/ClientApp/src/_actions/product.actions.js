@@ -16,7 +16,10 @@ function filter(value) {
 
         productService.filter(value)
             .then(
-                products => dispatch(success(products)),
+                products => {
+                    dispatch(success(products));
+                    history.push('/filteredProducts');
+                },
                 error => dispatch(failure(error))
             );
     };

@@ -1,9 +1,8 @@
-//import config from 'config';
-import { authHeader } from '../_helpers';
-
 export const userService = {
     login,
-    logout
+    logout,
+    setUnobstrutive,
+    getUnobstrutive
 };
 
 async function login(username, password) {
@@ -48,6 +47,37 @@ async function logout() {
             localStorage.removeItem('cart');
             return res;
         });
+}
+
+async function setUnobstrutive(value) {
+    let promisse = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            localStorage.setItem('isUnobstrutive', value);
+            resolve(value);
+        }, 200);
+    });
+
+    return promisse.then(isUnobstrutive => {
+        return isUnobstrutive;
+    }, function (error) {
+        return error;
+    });
+}
+
+async function getUnobstrutive() {
+    let isUnobstrutive = (localStorage.getItem('isUnobstrutive') === 'true');
+
+    let promisse = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(isUnobstrutive);
+        }, 200);
+    });
+
+    return promisse.then(isUnobstrutive => {
+        return isUnobstrutive;
+    }, function (error) {
+        return error;
+    });
 }
 
 function handleResponse(response) {
