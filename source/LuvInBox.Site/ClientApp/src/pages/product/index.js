@@ -1,6 +1,6 @@
-﻿import React from 'react';
+﻿import React, { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
-import { cartActions } from '../../_actions';
+import { cartActions, categoryActions } from '../../_actions';
 import { Button } from 'primereact/button';
 import { useTranslation } from 'react-i18next';
 import { history } from '../../_helpers';
@@ -8,9 +8,13 @@ import ProductImage from '../../components/product/image';
 
 import './index.css';
 
-const Product = ({ product = {} }) => {
+const Product = ({ product = null, category = null }) => {
     const dispatch = useDispatch();
     const { t } = useTranslation();
+
+    useEffect(() => {
+        dispatch(categoryActions.getById(product.categoryId));
+    }, []);
 
     const back = () => {
         history.push('/');
@@ -30,7 +34,7 @@ const Product = ({ product = {} }) => {
                 <div className="col-4">
                     <center>
                         <div className="image-container">
-                            <ProductImage image={product.image} className={"product"}/>
+                            <ProductImage image={product.image} className={"product"} />
                         </div>
                     </center>
                 </div>
@@ -40,14 +44,14 @@ const Product = ({ product = {} }) => {
                     <div className="product-list-detail">
                         <div>
                             <i className="pi pi-tag product-category-icon"></i>
-                            <span className="product-category">{product.categoryId}</span><br />
+                            <span className="product-category">{category.name}</span><br />
                             <strong><span>R$ {product.price}</span></strong><br />
                             <small><span style={{ textDecoration: "line-through" }}>R$ {product.off}</span><br /></small>
                             <strong><span>R$ {product.offPrice}</span></strong><br />
                         </div>
                         <hr />
                         <div>
-                            Código de Barras:<br /> <span style={{ fontFamily: "BarcodeFont", fontSize: "64px"}}>{product.barCode}</span>
+                            Código de Barras:<br /> <span style={{ fontFamily: "BarcodeFont", fontSize: "64px" }}>{product.barCode}</span>
                         </div>
                         <div>
                             <span>Referência: </span>{product.reference}
@@ -71,7 +75,7 @@ const Product = ({ product = {} }) => {
                     </div>
                     <br /><br />
                     <Button label={t('lbl_back')} icon="pi pi-backward" className="p-button-help p-button" onClick={(e) => back()} />
-                    <Button label={t('lbl_add')} icon="pi pi-shopping-cart" className="p-button-help p-button" onClick={(e) => addCart(product)} style={{ marginLeft: "10px"}}/>
+                    <Button label={t('lbl_add')} icon="pi pi-shopping-cart" className="p-button-help p-button" onClick={(e) => addCart(product)} style={{ marginLeft: "10px" }} />
                 </div>
             </div>
         );
@@ -83,7 +87,8 @@ const Product = ({ product = {} }) => {
 
 function mapStateToProps(state) {
     return {
-        product: (state.reducers.products.product) ? state.reducers.products.product : null
+        product: (state.reducers.products.product) ? state.reducers.products.product : null,
+        category: (state.reducers.category.category) ? state.reducers.category.category : {}
     };
 }
 

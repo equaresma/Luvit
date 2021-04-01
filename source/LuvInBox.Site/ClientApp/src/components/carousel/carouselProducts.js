@@ -21,7 +21,7 @@ const CarouselProducts = ({ mType = 'H', onLoad = () => { }, onLoadPromotions = 
                 onLoadPromotions();
             }
         }
-    });
+    }, []);
 
     const addProd = (product) => {
         cartAdd(product, products);

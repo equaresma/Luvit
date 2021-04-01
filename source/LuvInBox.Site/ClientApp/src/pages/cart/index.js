@@ -20,7 +20,7 @@ const Cart = (props) => {
         if (props.reload) {
             dispatch(cartActions.get());
         }
-    });
+    }, []);
 
     const removeProd = (item) => {
         dispatch(cartActions.removeProduct(item));

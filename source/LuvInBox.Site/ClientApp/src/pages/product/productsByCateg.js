@@ -2,7 +2,7 @@ import React from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { cartActions } from '../../_actions';
 import { history } from '../../_helpers';
-import { ProductViewer } from '../../components/product/index';
+import ProductViewer from '../../components/product/index';
 
 const ProductByCategory = ({ products = [] }) => {
     const dispatch = useDispatch();

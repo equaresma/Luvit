@@ -2,33 +2,67 @@
 import { authHeader } from '../_helpers';
 
 export const categoryService = {
-    getAll
+    getAll,
+    getById
 };
 
-function getAll() {
-    let url = 'api/Categories';
-    const requestOptions = {
-        method: 'GET',
-        headers: authHeader()
-    };
-
-    return fetch(url, requestOptions)
-        .then(handleResponse)
-        .then(categs => {
-            return categs;
+async function getAll() {
+    let categs = JSON.parse(localStorage.getItem('categories'));
+    if (categs) {
+        let promisse = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(categs);
+            }, 200);
         });
+
+        return promisse.then(categs => {
+            return categs;
+        }, function (error) {
+            return error;
+        });
+
+    } else {
+        let url = 'api/Categories';
+        const requestOptions = {
+            method: 'GET',
+            headers: authHeader()
+        };
+
+        return fetch(url, requestOptions)
+            .then(handleResponse)
+            .then(categs => {
+                //storage categs
+                localStorage.setItem('categories', JSON.stringify(categs));
+                return categs;
+            });
+    }
+}
+
+async function getById(id) {
+    let categs = await getAll();
+    let promisse = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let categ = categs.filter(c => c.id == id)[0];
+
+            if (categ)
+                resolve(categ);
+            else
+                reject(categ);
+
+        }, 200);
+    });
+
+    return promisse.then(categ => {
+        return categ;
+    }, function (error) {
+        return error;
+    });
 }
 
 function handleResponse(response) {
     return response.text().then(text => {
         const data = text && JSON.parse(text);
         if (!response.ok) {
-            if (response.status === 401) {
-                // auto logout if 401 response returned from api
-                //logout();
-                //let l = location.reload(true);
-            }
-
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
         }

@@ -11,12 +11,10 @@ Assuntos:
 	
 luvitmarketplace@gmail.com
 
-	Ok - Discret Mode
+	Ok - 	
 	Product / ProductViewer: Mostar Categoria e Fornecedor
 		Cachear ou buscar no server: Categorias / Fornecedores
 	
 	Ao exibir produto, fazer comparação com outros fornecedores(??? - Verificar com eles)
 	Finalizar Carrinho
 	Pagamentos
-	
-	

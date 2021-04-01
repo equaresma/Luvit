@@ -22,7 +22,7 @@ const NavMenu = (props) => {
         if (!load) {
             dispatch(userActions.getUnobstrutive());
         }
-    });
+    }, []);
 
     const onLogout = () => {
         dispatch(userActions.logout());

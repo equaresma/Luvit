@@ -1,18 +1,25 @@
-﻿import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+﻿import React, { useEffect, useState } from 'react';
+import { useDispatch, connect } from 'react-redux';
 import { DataView } from 'primereact/dataview';
 import { Button } from 'primereact/button';
 import { SelectButton } from 'primereact/selectbutton';
 import { Dropdown } from 'primereact/dropdown';
 import { Rating } from 'primereact/rating';
 import ProductImage from './image';
-import { cartActions } from '../../_actions';
+import { categoryActions, cartActions } from '../../_actions';
 import { useTranslation } from 'react-i18next';
 import './index.css';
 
-export const ProductViewer = (props) => {
+const ProductViewer = (props) => {
     const dispatch = useDispatch();
     const { t } = useTranslation();
+    const { categories } = props;
+
+    useEffect(() => {
+        if (!categories)
+            dispatch(categoryActions.getAll());
+    }, []);
+
     const options = [
         { icon: 'pi pi-bars', value: 'list' },
         { icon: 'pi pi-th-large', value: 'grid' }
@@ -46,6 +53,18 @@ export const ProductViewer = (props) => {
         dispatch(cartActions.addProduct(product))
     }
 
+    const getCategory = (id) => {
+        let categ = "";
+
+        if (categories) {
+            let founded = categories.filter(c => c.id == id)[0];
+            if (founded)
+                categ = founded.name;
+        }
+
+        return categ;
+    }
+
     const renderListItem = (data) => {
         return (
             <div className="p-col-12">
@@ -55,7 +74,7 @@ export const ProductViewer = (props) => {
                         <div className="product-name">{data.name}</div>
                         <div className="product-description">{data.description}</div>
                         <Rating value={data.rating} readOnly cancel={false}></Rating>
-                        <i className="pi pi-tag product-category-icon"></i><span className="product-category">{data.category}</span>
+                        <i className="pi pi-tag product-category-icon"></i><span className="product-category">{getCategory(data.categoryId)}</span>
                     </div>
                     <div className="product-list-action">
                         <span className="product-price">R$ {data.price}</span>
@@ -73,7 +92,7 @@ export const ProductViewer = (props) => {
                     <div className="product-grid-item-top">
                         <div>
                             <i className="pi pi-tag product-category-icon"></i>
-                            <span className="product-category">{data.category}</span>
+                            <span className="product-category">{getCategory(data.categoryId)}</span>
                         </div>
                     </div>
                     <div className="product-grid-item-content">
@@ -127,3 +146,11 @@ export const ProductViewer = (props) => {
         </div>
     );
 }
+
+function mapStateToProps(state) {
+    return {
+        categories: (state.reducers.category.categories) ? state.reducers.category.categories : []
+    };
+}
+
+export default connect(mapStateToProps)(ProductViewer);

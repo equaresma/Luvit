@@ -13,7 +13,7 @@ const CarouselCategory = ({ categs = [], onLoad = () => { }, onCategSelected, re
         if (reload) {
             onLoad();
         }
-    });
+    },[]);
 
     const categClick = (id) => {
         onCategSelected(id);

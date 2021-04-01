@@ -10,7 +10,7 @@ const ProductImage = (props) => {
 
     useEffect(() => {
         dispatch(userActions.getUnobstrutive());
-    });
+    }, []);
 
     const getContent = () => {
         let content = (image.type == 1) ? "data:image/png;base64," : "";
