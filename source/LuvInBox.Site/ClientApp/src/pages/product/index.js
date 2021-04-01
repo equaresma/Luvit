@@ -4,6 +4,8 @@ import { cartActions } from '../../_actions';
 import { Button } from 'primereact/button';
 import { useTranslation } from 'react-i18next';
 import { history } from '../../_helpers';
+import ProductImage from '../../components/product/image';
+
 import './index.css';
 
 const Product = ({ product = {} }) => {
@@ -22,15 +24,13 @@ const Product = ({ product = {} }) => {
             return (
                 <div></div>
             );
-        let content = (product.image.type == 1) ? "data:image/png;base64," : "";
-        content += product.image.value;
 
         return (
             <div className="row" style={{ marginTop: "30px" }}>
                 <div className="col-4">
                     <center>
                         <div className="image-container">
-                            <img className="product" src={content} alt={product.name} onError={(e) => e.target.src = 'images/not-founded.png'} />
+                            <ProductImage image={product.image} className={"product"}/>
                         </div>
                     </center>
                 </div>

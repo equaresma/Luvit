@@ -4,6 +4,7 @@ import { Carousel } from 'primereact/carousel';
 import { Button } from 'primereact/button';
 import { productActions, cartActions } from '../../_actions';
 import { useTranslation } from 'react-i18next';
+import ProductImage from '../product/image';
 
 import './carouselProducts.css';
 
@@ -31,14 +32,11 @@ const CarouselProducts = ({ mType = 'H', onLoad = () => { }, onLoadPromotions = 
     }
 
     const productTemplate = (product) => {
-        let content = (product.image.type == 1) ? "data:image/png;base64," : "";
-        content += product.image.value;
-
         return (
             <div className="product-item">
                 <div className="product-item-content">
                     <div className="p-mb-3 whiteCard">
-                        <img src={content} alt={product.name} className="product-image" />
+                        <ProductImage image={product.image} className={"product-image"} />
                     </div>
                     <div className="whiteCard InnerProductCard">
                         <span className="InnerProductCard_OfferCard">{product.name}</span>
@@ -80,14 +78,14 @@ function mapStateToProps(state, ownProps) {
             error: state.reducers.products.error,
             action: 'product'
         };
-    } else if(ownProps.action == 'productProm') {
+    } else if (ownProps.action == 'productProm') {
         return {
             products: Array.isArray(state.reducers.products.productPromotions) ? state.reducers.products.productPromotions : new Array(),
             reload: state.reducers.products.reload,
             error: state.reducers.products.error,
             action: 'productProm'
         };
-    }else {
+    } else {
         return {
             products: ownProps.products,
             reload: ownProps.action != 'cart',

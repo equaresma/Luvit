@@ -1,10 +1,11 @@
-﻿import React, { useState, useEffect } from 'react';
-import { useDispatch} from 'react-redux';
-import { DataView, DataViewLayoutOptions } from 'primereact/dataview';
+﻿import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { DataView } from 'primereact/dataview';
 import { Button } from 'primereact/button';
 import { SelectButton } from 'primereact/selectbutton';
 import { Dropdown } from 'primereact/dropdown';
 import { Rating } from 'primereact/rating';
+import ProductImage from './image';
 import { cartActions } from '../../_actions';
 import { useTranslation } from 'react-i18next';
 import './index.css';
@@ -16,7 +17,6 @@ export const ProductViewer = (props) => {
         { icon: 'pi pi-bars', value: 'list' },
         { icon: 'pi pi-th-large', value: 'grid' }
     ];
-
 
     const [layout, setLayout] = useState('grid');
     const [sortKey, setSortKey] = useState(null);
@@ -46,17 +46,11 @@ export const ProductViewer = (props) => {
         dispatch(cartActions.addProduct(product))
     }
 
-    const getContent = (product) => {
-        let content = (product.image.type == 1) ? "data:image/png;base64," : "";
-        content += product.image.value;
-        return content;
-    }
-
     const renderListItem = (data) => {
         return (
             <div className="p-col-12">
                 <div className="product-list-item">
-                    <img src={getContent(data)} alt={data.name} onError={(e) => e.target.src = 'images/not-founded.png'} />
+                    <ProductImage image={data.image} />
                     <div className="product-list-detail">
                         <div className="product-name">{data.name}</div>
                         <div className="product-description">{data.description}</div>
@@ -83,7 +77,7 @@ export const ProductViewer = (props) => {
                         </div>
                     </div>
                     <div className="product-grid-item-content">
-                        <img src={getContent(data)} alt={data.name} onError={(e) => e.target.src = 'images/not-founded.png'} />
+                        <ProductImage image={data.image} />
                         <div className="product-name">{data.name}</div>
                         <div className="product-description">{data.description}</div>
                         <Rating value={data.rating} readOnly cancel={false}></Rating>

@@ -72,7 +72,7 @@ const NavMenu = (props) => {
                     <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={isOpen} navbar>
                         <ul className="navbar-nav flex-grow">
                             <NavItem>
-                                <NavLink className="footLnk" href="" onClick={onSetIsUnobstrutive}><i className={(isUnobstrutive) ? "pi pi-eye" : "pi pi-eye-slash"}
+                                <NavLink className="footLnk" href="" onClick={onSetIsUnobstrutive}><i className={(isUnobstrutive) ? "pi pi-eye-slash" : "pi pi-eye"}
                                     title={(isUnobstrutive) ? t('tit_unobtrusive') : t('tit_obtrusive') } ></i></NavLink>
                             </NavItem>
                             <NavItem>
