@@ -65,7 +65,7 @@ async function setUnobstrutive(value) {
 }
 
 async function getUnobstrutive() {
-    let isUnobstrutive = (localStorage.getItem('isUnobstrutive') === 'true');
+    let isUnobstrutive = JSON.parse(localStorage.getItem('isUnobstrutive'));
 
     let promisse = new Promise((resolve, reject) => {
         setTimeout(() => {

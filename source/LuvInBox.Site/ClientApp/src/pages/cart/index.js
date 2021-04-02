@@ -4,6 +4,7 @@ import { cartActions } from '../../_actions';
 import { OrderList } from 'primereact/orderlist';
 import { Button } from 'primereact/button';
 import { Trans, useTranslation } from 'react-i18next';
+import ProductImage from '../../components/product/image';
 
 import './index.css';
 
@@ -35,13 +36,10 @@ const Cart = (props) => {
     }
 
     const itemTemplate = (item) => {
-        let content = (item.image.type == 1) ? "data:image/png;base64," : "";
-        content += item.image.value;
-
         return (
             <div className="product-item">
                 <div className="image-container">
-                    <img src={content} alt={item.name} onError={(e) => e.target.src = 'images/not-founded.png'} />
+                    <ProductImage image={item.image} />
                 </div>
                 <div className="product-list-detail">
                     <span>{item.name}</span>

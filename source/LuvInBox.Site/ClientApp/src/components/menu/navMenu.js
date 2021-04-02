@@ -19,9 +19,7 @@ const NavMenu = (props) => {
     const { load } = props;
 
     useEffect(() => {
-        if (!load) {
-            dispatch(userActions.getUnobstrutive());
-        }
+        dispatch(userActions.getUnobstrutive());
     }, []);
 
     const onLogout = () => {
@@ -73,7 +71,7 @@ const NavMenu = (props) => {
                         <ul className="navbar-nav flex-grow">
                             <NavItem>
                                 <NavLink className="footLnk" href="" onClick={onSetIsUnobstrutive}><i className={(isUnobstrutive) ? "pi pi-eye-slash" : "pi pi-eye"}
-                                    title={(isUnobstrutive) ? t('tit_unobtrusive') : t('tit_obtrusive') } ></i></NavLink>
+                                    title={(isUnobstrutive) ? t('tit_unobtrusive') : t('tit_obtru3sive')} ></i></NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink className="footLnk" href="/"><i className="pi pi-home"></i></NavLink>

@@ -45,7 +45,7 @@ export default class NavFooter extends React.PureComponent {
                                         <a href="/contact" className="footer_link"><Trans>footer_contact_us</Trans></a>
                                     </li>
                                     <li className="footer_item">
-                                        <a href="whatsapp://send?abid=+5511966593807&text=Contato%2C%20LuvInBox" className="footer_link"><FontAwesomeIcon icon={['fab', 'whatsapp']} />&nbsp;WhatsApp</a>
+                                        <a href="https://api.whatsapp.com/send?phone=5511966593807&text=LuvInBox20%a20%contato" className="footer_link"><FontAwesomeIcon icon={['fab', 'whatsapp']} />&nbsp;WhatsApp</a>
                                     </li>
                                 </ul>
                             </div>
