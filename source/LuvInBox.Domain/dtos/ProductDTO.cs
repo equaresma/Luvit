@@ -37,6 +37,7 @@ namespace com.luvinbox.domain.dtos {
                 return Price - (Price * discount / 100);
             }
         }
+        public int? Stock { get; set; }
 
         public Image Image { get; set; }
 

@@ -4,13 +4,15 @@
 	
 Esclarecimentos:
 	Onde é azul - vai ser um tom de vermelho da paleta de cores.
-
+	Controle de vendas e NFs - bing? NF de serviço para cada fornecedor
 Assuntos:
-	Observação: Buscapé já está trabalhando com produtos eróticos e já possui funcionalidade que esconde imagens sensíveis.
-	
+	Qual o meio de pagamento inicial? Mercado Pago
+	Telas de edição dos cadastros (LPGD)
 	
 luvitmarketplace@gmail.com
 
+	documentação
+	
 	Product / ProductViewer: Mostar Categoria e Fornecedor
 		Cachear ou buscar no server: Categorias / Fornecedores
 	
