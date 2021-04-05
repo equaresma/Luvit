@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LuvInBox.Service.Services {
+namespace com.luvinbox.service.services {
     public class VendorService : IVendorService {
         private IVendorRepository _repository;
         private IUserService _userService;

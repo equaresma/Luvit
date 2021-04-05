@@ -1,6 +1,7 @@
 ﻿using com.luvinbox.domain.compose;
 using com.luvinbox.domain.enums;
 using com.luvinbox.domain.helper;
+using com.luvinbox.domain.interfaces;
 using com.luvinbox.domain.Properties;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 namespace com.luvinbox.domain.dtos {
     [CPF(ErrorMessage = "CPF inválido")]
     [Serializable]
-    public class CustomerDTO : PersonDTO {
+    public class CustomerDTO : PersonDTO, ICustomer {
         [Required]
         [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
         public CustomerDocument Document { get; set; }

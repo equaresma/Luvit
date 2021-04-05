@@ -1,5 +1,5 @@
 using com.luvinbox.domain.services;
-using LuvInBox.Service.Services;
+using com.luvinbox.service.services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace com.luvinbox.infra.dependencyinjection {
@@ -11,6 +11,8 @@ namespace com.luvinbox.infra.dependencyinjection {
             serviceCollection.AddTransient<IVendorService, VendorService>();
             serviceCollection.AddTransient<IProductService, ProductService>();
             serviceCollection.AddTransient<ICategoryService, CategoryService>();
+            serviceCollection.AddTransient<IPaymentService, PaymentService>();
+            serviceCollection.AddTransient<IShipingService, ShipingService>();
         }
     }
 }

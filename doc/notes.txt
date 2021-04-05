@@ -6,7 +6,12 @@ Esclarecimentos:
 	Onde é azul - vai ser um tom de vermelho da paleta de cores.
 	Controle de vendas e NFs - bing? NF de serviço para cada fornecedor
 Assuntos:
-	Qual o meio de pagamento inicial? Mercado Pago
+	Qual o meio de pagamento inicial? 
+		Mercado Pago : 88138151 - MercadoPago application - 1736642 ID: 8952254687154924
+		Teste:
+				Public Key:		TEST-977abf95-4b07-4876-97ba-3b24e7d88754
+				Access Token:	TEST-8952254687154924-040321-8ce5494fef79ba1da5da6196e6f7dd32-88138151
+				
 	Telas de edição dos cadastros (LPGD)
 	
 luvitmarketplace@gmail.com
@@ -18,4 +23,8 @@ luvitmarketplace@gmail.com
 	
 	Ao exibir produto, fazer comparação com outros fornecedores(??? - Verificar com eles)
 	Finalizar Carrinho
+		Adicionar Valor do Frete
 	Pagamentos
+		Configurar Mercado Pago Teste
+		Efeturar checkout 
+		Confirmar Transação

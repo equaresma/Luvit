@@ -1,8 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
     <ProjectReference Include="..\LuvInBox.Domain\LuvInBox.Domain.csproj" />
     <ProjectReference Include="..\LuvInBox.Data\LuvInBox.Data.csproj" />
+    <ProjectReference Include="..\LuvInBox.Service.Delivery\LuvInBox.Service.Delivery.csproj" />
+    <ProjectReference Include="..\LuvInBox.Service.Payment\LuvInBox.Service.Payment.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -12,6 +14,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>com.luvinbox.service</RootNamespace>
   </PropertyGroup>
 
 </Project>

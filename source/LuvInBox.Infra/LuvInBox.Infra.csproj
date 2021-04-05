@@ -2,8 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LuvInBox.Domain\LuvInBox.Domain.csproj" />
-    <ProjectReference Include="..\LuvInBox.Service\LuvInBox.Service.csproj" />
     <ProjectReference Include="..\LuvInBox.Data\LuvInBox.Data.csproj" />
+    <ProjectReference Include="..\LuvInBox.Service\LuvInBox.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

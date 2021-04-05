@@ -10,7 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LuvInBox.Service.Services {
+namespace com.luvinbox.service.services {
     public class UserService : IUserService {
         private IUserRepository _repository;
         private readonly IMapper _mapper;

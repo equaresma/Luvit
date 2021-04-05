@@ -6,7 +6,7 @@ using com.luvinbox.domain.services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LuvInBox.Service.Services {
+namespace com.luvinbox.service.services {
     public class CategoryService : ICategoryService {
         private ICategoryRepository _repository;
         private readonly IMapper _mapper;

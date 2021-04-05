@@ -12,7 +12,7 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
 
-namespace LuvInBox.Service.Services {
+namespace com.luvinbox.service.services {
     public class LoginService : ILoginService {
         private readonly ILoginRepository _repository;
         private readonly IUserRepository _userRepository;

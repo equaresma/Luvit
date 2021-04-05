@@ -4,7 +4,7 @@ using com.luvinbox.domain.entities;
 using com.luvinbox.domain.interfaces.repository;
 using System.ComponentModel.DataAnnotations;
 
-namespace LuvInBox.Service.Services {
+namespace com.luvinbox.service.services {
     public abstract class BaseServiceUserDependency<Dto, Entity> where Dto : BaseDTO where Entity : BaseEntity {
 
         private readonly IUserRepository _repository;
