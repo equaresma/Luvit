@@ -8,8 +8,8 @@ namespace LuvInBox.Site.Controllers {
     [Route("api/[controller]")]
     [ApiController]
     public class ShippingController : ControllerBase {
-        public IShipingService _service { get; set; }
-        public ShippingController(IShipingService service) {
+        public IShippingService _service { get; set; }
+        public ShippingController(IShippingService service) {
             _service = service;
         }
 

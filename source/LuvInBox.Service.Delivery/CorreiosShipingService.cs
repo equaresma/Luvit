@@ -11,7 +11,7 @@ namespace com.luvinbox.service.Delivery {
     /// <summary>
     /// Reference: https://www.escoladeecommerce.com/artigos/como-calcular-o-frete-dos-correios/
     /// </summary>
-    public class CorreiosShipingService : IShipingService {
+    public class CorreiosShippingService : IShippingService {
         //coeficiente definido conforme padrões internacionais. Trata-se de um fator de cubagem resultante da relação entre peso e volume ideal do pacote (estabelecida pela Entidade Internacional das Empresas Aéreas — IATA
         public readonly int _cubeFactor = 6000;
         //10Kg

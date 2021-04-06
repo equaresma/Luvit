@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.domain.dtos {
     [Serializable]
-    public class IOrderItemDTO : BaseDTO, IOrderItem {
+    public class OrderItemDTO : BaseDTO, IOrderItem {
         public string ProductId { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
@@ -26,7 +26,7 @@ namespace com.luvinbox.domain.dtos {
 
         public string Tag { get; set; }
 
-        public IOrderItemDTO() {
+        public OrderItemDTO() {
             CurrencyId = "BRL";
         }
 

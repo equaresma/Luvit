@@ -4,10 +4,10 @@ using com.luvinbox.service.Delivery;
 using System.Threading.Tasks;
 
 namespace com.luvinbox.service.services {
-    public class ShipingService : IShipingService {
+    public class ShippingService : IShippingService {
 
         public async Task<DeliveryDTO> Calculate(ShippingDTO instance) {
-            var service = new CorreiosShipingService();
+            var service = new CorreiosShippingService();
             return await service.Calculate(instance);
         }
     }

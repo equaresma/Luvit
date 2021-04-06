@@ -16,7 +16,7 @@ namespace com.luvinbox.domain.dtos
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredCustomerName", ErrorMessageResourceType = typeof(AppRes))]
         [Display(Name = "lblCustomer", ResourceType = typeof(AppRes))]
         public string CustomerName { get; set; }
-        public List<IOrderItemDTO> Items { get; set; }
+        public List<OrderItemDTO> Items { get; set; }
         //frete
         public decimal Shipping { get; set; }
         public Address Address { get; set; }
@@ -24,7 +24,7 @@ namespace com.luvinbox.domain.dtos
 
         public OrderDTO()
         {
-            Items = new List<IOrderItemDTO>();
+            Items = new List<OrderItemDTO>();
         }
     }
 }

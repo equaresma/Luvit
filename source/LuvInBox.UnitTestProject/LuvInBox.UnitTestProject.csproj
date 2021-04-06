@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LuvInBox.Domain\LuvInBox.Domain.csproj" />
     <ProjectReference Include="..\LuvInBox.Infra\LuvInBox.Infra.csproj" />
+    <ProjectReference Include="..\LuvInBox.Service\LuvInBox.Service.csproj" />
   </ItemGroup>
 
 </Project>
