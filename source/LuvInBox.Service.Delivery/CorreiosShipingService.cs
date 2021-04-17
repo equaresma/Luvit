@@ -17,7 +17,7 @@ namespace com.luvinbox.service.Delivery {
         //10Kg
         public readonly int _weigthFactor = 10;
         //SEDEX à vista
-        public const string _defaultService = "04014";
+        public const string _defaultService = "04510";
 
         public async Task<DeliveryDTO> Calculate(ShippingDTO instance) {
             if (instance == null)
@@ -53,7 +53,7 @@ namespace com.luvinbox.service.Delivery {
                 //ocorreu erro
                 if (res != 0) {
                     throw new BusinessException(
-                        $"Getting from Correios.com returned error code: {res} - message: {returnedXML.DocumentElement.SelectSingleNode("//Servicos/cServico/MsgErro").Value}");
+                        $"Getting from Correios.com returned error code: {res} - message: {returnedXML.DocumentElement.SelectSingleNode("//Servicos/cServico/MsgErro").InnerText}");
                 }
 
                 short.TryParse(returnedXML.DocumentElement.SelectSingleNode("//Servicos/cServico/PrazoEntrega").InnerText, out short deadline);

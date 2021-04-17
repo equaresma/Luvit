@@ -11,8 +11,14 @@ namespace LuvInBox.UnitTestProject {
             var service = new ShippingService();
             var shipping = new ShippingDTO()
             {
-                ZipCodeOrigin = "02558010",
-                ZipCodeDestiny = "11700300"
+                ZipCodeOrigin = "70002900",
+                ZipCodeDestiny = "04547000",
+                Dimension = new com.luvinbox.domain.compose.Dimensions() { 
+                     Weigth =1,
+                     Length =20,
+                     Height =20,
+                     Width =20
+                }
             };
 
             var delivery = await service.Calculate(shipping);

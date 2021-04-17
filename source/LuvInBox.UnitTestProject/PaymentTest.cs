@@ -9,7 +9,7 @@ namespace LuvInBox.UnitTestProject {
     public class PaymentTest {
         [TestMethod]
         public async Task Checkout() {
-            var service = new PaymentService();
+            var service = new PaymentService();            
             var customer = new CustomerDTO();
             var cart = new List<OrderItemDTO>();
 
@@ -21,8 +21,13 @@ namespace LuvInBox.UnitTestProject {
 
             customer.FirstName = "Eguargo";
             customer.FamilyName = "Guararesmas";
-      
-            var id = await service.DoCheckOut(customer, cart);
+
+            var payment = new PaymentDTO() {
+                Customer = customer,
+                Items = cart
+            };
+
+            var id = await service.DoCheckOut(payment);
 
             Assert.IsNotNull(id);
         }

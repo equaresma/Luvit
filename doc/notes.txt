@@ -28,3 +28,5 @@ luvitmarketplace@gmail.com
 		Configurar Mercado Pago Teste
 		Efeturar checkout 
 		Confirmar Transação
+
+https://viacep.com.br/ws/11700300/json/?callback=?

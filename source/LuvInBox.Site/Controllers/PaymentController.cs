@@ -1,4 +1,5 @@
-﻿using com.luvinbox.domain.interfaces;
+﻿using com.luvinbox.domain.dtos;
+using com.luvinbox.domain.interfaces;
 using com.luvinbox.domain.services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -16,12 +17,12 @@ namespace LuvInBox.Site.Controllers {
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post(ICustomer customer, IEnumerable<IOrderItem> items) {
+        public async Task<ActionResult> Post(PaymentDTO payment) {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             try {
-                var result = await _service.DoCheckOut(customer, items);
+                var result = await _service.DoCheckOut(payment);
                 return Ok(result);
             } catch (Exception ex) {
                 return BadRequest(ex.Message);

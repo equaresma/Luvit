@@ -1,4 +1,4 @@
-﻿using com.luvinbox.domain.interfaces;
+﻿using com.luvinbox.domain.dtos;
 using com.luvinbox.domain.services;
 using MercadoPago.Client.Common;
 using MercadoPago.Client.Preference;
@@ -13,19 +13,19 @@ namespace LuvInBox.Service.Payment.mercadopago {
             MercadoPagoConfig.AccessToken = "TEST-8952254687154924-040321-8ce5494fef79ba1da5da6196e6f7dd32-88138151";
         }
 
-        public async Task<string> DoCheckOut(ICustomer customer, IEnumerable<IOrderItem> items) {
+        public async Task<string> DoCheckOut(PaymentDTO payment) {
             var mpItems = new List<PreferenceItemRequest>();
 
             var payer = new PreferencePayerRequest {
-                Name = customer.FirstName,
-                Surname = customer.FamilyName,
-                Email = customer.Email,
+                Name = payment.Customer.FirstName,
+                Surname = payment.Customer.FamilyName,
+                Email = payment.Customer.Email,
                 Phone = new PhoneRequest {
-                    Number = customer.Phone,
+                    Number = payment.Customer.Phone,
                 }
             };
 
-            Parallel.ForEach(items, item => {
+            Parallel.ForEach(payment.Items, item => {
                 mpItems.Add(new PreferenceItemRequest {
                     Title = item.ProductName,
                     Quantity = item.Quantity,
