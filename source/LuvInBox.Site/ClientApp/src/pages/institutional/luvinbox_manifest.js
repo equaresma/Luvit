@@ -1,7 +1,5 @@
-﻿import * as React from 'react';
-//import { Trans, useTranslation } from 'react-i18next';
+﻿import React from 'react';
 
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import './institutional.css'
 
 export const LuvInBoxManifest = () => {
@@ -9,7 +7,7 @@ export const LuvInBoxManifest = () => {
         <div>
             <div className="row">
                 <div className="col-6 imagebox">
-                    <img src="/images/manifest/mao_costas.jpg" alt="mulher sorrindo" className="imageSize" />
+                    <img src="images/manifest/mao_costas.jpg" alt="mulher sorrindo" className="imageSize" />
                 </div>
                 <div className="col-6 blackBox">
                     <section>
@@ -36,7 +34,7 @@ export const LuvInBoxManifest = () => {
                     </section>
                 </div>
                 <div className="col-6 imagebox">
-                    <img src="/images/manifest/mulher_sorrindo.jpg" alt="mulher sorrindo" className="imageSize" />
+                    <img src="images/manifest/mulher_sorrindo.jpg" alt="mulher sorrindo" className="imageSize" />
                 </div>
             </div>
             <div className="row">

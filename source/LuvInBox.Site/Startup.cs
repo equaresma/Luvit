@@ -115,8 +115,7 @@ namespace LuvInBox.Site {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
-
-
+            
             app.UseSwagger();
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Site v1");
@@ -124,12 +123,10 @@ namespace LuvInBox.Site {
             });
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
             app.UseSpaStaticFiles();
 
             //app.UseCors();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => {
@@ -138,13 +135,13 @@ namespace LuvInBox.Site {
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
-            //app.UseSpa(spa => {
-            //    spa.Options.SourcePath = "ClientApp";
+            app.UseSpa(spa => {
+                spa.Options.SourcePath = "ClientApp";
 
-            //    if (env.IsDevelopment()) {
-            //        spa.UseReactDevelopmentServer(npmScript: "start");
-            //    }
-            //});
+                if (env.IsDevelopment()) {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
+            });
         }
     }
 }

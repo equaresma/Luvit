@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
+import Layout from './components/layout';
 import Home from './pages/home';
 import Cart from './pages/cart';
 import { Login } from './pages/login';
@@ -22,25 +23,27 @@ import { history } from '../src/_helpers/history';
 export default function Routes() {
     return (
         <Router history={history}>
-            <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/cart" component={Cart} />
-                <Route path="/login" component={Login} />
-                <Route path='/contact' component={Contact} />
-                <Route path='/contact/faq' component={FAQ} />
-                <Route path='/institutional/whoweare' component={WhoWeAre} />
-                <Route path='/institutional/luvinbox_manifest' component={LuvInBoxManifest} />
-                <Route path='/institutional/privacy_policy' component={PrivacyPolicy} />
-                <Route path='/institutional/return_policy' component={ReturnPolicy} />
-                <Route path='/register/customer' component={CustomerForm} />
-                <Route path='/register/vendor' component={VendorForm} />
-                <Route path='/vendor_area' component={VendorsArea} />
-                <Route path='/vendor_faq' component={VendorsFAQ} />
-                <Route path="/register" component={ChangePass} />
-                <Route path="/product" component={Product} />
-                <Route path="/productsByCateg" component={ProductByCategory} />
-                <Route path="/filteredProducts" component={FilteredProducts} />
-            </Switch>
+            <Layout>
+                <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/cart" component={Cart} />
+                    <Route path="/login" component={Login} />
+                    <Route path='/contact' component={Contact} />
+                    <Route path='/contact/faq' component={FAQ} />
+                    <Route path='/institutional/whoweare' component={WhoWeAre} />
+                    <Route path='/institutional/luvinbox_manifest' component={LuvInBoxManifest} />
+                    <Route path='/institutional/privacy_policy' component={PrivacyPolicy} />
+                    <Route path='/institutional/return_policy' component={ReturnPolicy} />
+                    <Route path='/register/customer' component={CustomerForm} />
+                    <Route path='/register/vendor' component={VendorForm} />
+                    <Route path='/vendor_area' component={VendorsArea} />
+                    <Route path='/vendor_faq' component={VendorsFAQ} />
+                    <Route path="/register" component={ChangePass} />
+                    <Route path="/product" component={Product} />
+                    <Route path="/productsByCateg" component={ProductByCategory} />
+                    <Route path="/filteredProducts" component={FilteredProducts} />
+                </Switch>
+            </Layout>
         </Router>
     );
 }

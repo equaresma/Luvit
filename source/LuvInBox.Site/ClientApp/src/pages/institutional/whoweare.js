@@ -1,6 +1,5 @@
-import * as React from 'react';
-import { Trans } from 'react-i18next';
-
+import React from 'react';
+import { Trans} from 'react-i18next';
 import './institutional.css'
 
 export const WhoWeAre = () => {
@@ -26,50 +25,6 @@ export const WhoWeAre = () => {
                         <p>
                             Donec aliquam id tellus sed rhoncus. Nam dapibus eget arcu nec viverra. Nunc mollis pellentesque vulputate. Vivamus eu nulla eu turpis sagittis aliquam id sit amet mauris. Donec pretium lorem non quam finibus vulputate. Etiam et est a justo pellentesque luctus in eget lacus. Vivamus vitae sollicitudin nunc, a congue neque. Vivamus vestibulum varius placerat. Cras scelerisque neque quis metus dignissim, non blandit lacus congue. Aenean tincidunt dolor mi, in faucibus diam rhoncus ut. Quisque sed sagittis nisi. Aenean dictum est id leo suscipit, vulputate bibendum ligula mollis. Proin vehicula sit amet mi vel bibendum.
                         </p>
-                    </section>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-6"><img alt="mulher dançando" /></div>
-                <div className="col-6">
-                    <section>
-                        <h1>Torne seus desejos realidade</h1><br/>
-                        <p>
-                            Compare os valores. Economize na compra.<br />
-                            Divirta-se em sua próxima experiência.
-                        </p>
-                        <div>
-                            <button className="p-button-help">Sou maior de 18 anos</button>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-6">
-                    <section>
-                        <h4>MULHERES EM FOCO</h4><br />
-                        <p>
-                            Compre normalmente,<br />
-                            apoie diretamente!
-                        </p>
-                        <div>
-                            <button className="p-button-help">Saiba mais</button>
-                        </div>
-                    </section>
-                </div>
-                <div className="col-6"><img alt="mulher espreguiçando" /></div>
-            </div>
-            <div className="row">
-                <div className="col-6"><img alt="mulher de chapéu" /></div>
-                <div className="col-6">
-                    <section>
-                        <h4>Amor, a melhor escolha!</h4><br />
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et volutpat augue. Nam sagittis fermentum purus vel aliquet.
-                        </p>
-                        <div>
-                            <button className="p-button-help">Saiba mais</button>
-                        </div>
                     </section>
                 </div>
             </div>
