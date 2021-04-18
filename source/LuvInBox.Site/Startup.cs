@@ -91,13 +91,13 @@ namespace LuvInBox.Site {
             });
 
             // In production, the React files will be served from this directory
-            //services.AddSpaStaticFiles(configuration => {
-            //    configuration.RootPath = "ClientApp/build";
-            //});
-            //var/aspnetcore/publish/ClientApp/build
             services.AddSpaStaticFiles(configuration => {
-                configuration.RootPath = "/home/site/wwwroot/ClientApp/build";
+                configuration.RootPath = "ClientApp/build";
             });
+            //var/aspnetcore/publish/ClientApp/build
+            //services.AddSpaStaticFiles(configuration => {
+            //    configuration.RootPath = "/home/site/wwwroot/ClientApp/build";
+            //});
 
             //services.AddCors(options =>
             //{
@@ -126,6 +126,7 @@ namespace LuvInBox.Site {
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseSpaStaticFiles();
 
             //app.UseCors();
 
@@ -137,13 +138,13 @@ namespace LuvInBox.Site {
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
-            app.UseSpa(spa => {
-                spa.Options.SourcePath = "ClientApp";
+            //app.UseSpa(spa => {
+            //    spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment()) {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
-                }
-            });
+            //    if (env.IsDevelopment()) {
+            //        spa.UseReactDevelopmentServer(npmScript: "start");
+            //    }
+            //});
         }
     }
 }
