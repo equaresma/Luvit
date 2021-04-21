@@ -1,11 +1,9 @@
-//import config from 'config';
-//import { authHeader } from '../_helpers';
-
 export const cartService = {
     addProduct,
     removeProduct,
     get,
-    empty
+    empty,
+    checkout
 };
 
 function get() {
@@ -29,10 +27,25 @@ function addProduct(product) {
     let cart = JSON.parse(localStorage.getItem('cart'));
     cart = (Array.isArray(cart)) ? cart : [];
 
-
-    let promisse = new Promise((resolve, reject) => {
+    let promisse = new Promise((resolve) => {
         setTimeout(() => {
-            cart.push(product);
+            let id = product.id;
+            let currProd = cart.find(({ productId }) => productId == id);
+
+            if (currProd) {
+                currProd.quantity += 1;
+            } else {
+                cart.push({
+                    productId: product.id,
+                    productName: product.name,
+                    productDescription: product.description,
+                    quantity: 1,
+                    unitPrice: product.price,
+                    category: null,
+                    image: product.image
+                });
+            }
+
             localStorage.setItem('cart', JSON.stringify(cart));
             resolve(cart);
         }, 500);
@@ -49,12 +62,10 @@ function removeProduct(product) {
     let cart = JSON.parse(localStorage.getItem('cart'));
     cart = (Array.isArray(cart)) ? cart : [];
 
-
-    let promisse = new Promise((resolve, reject) => {
+    let promisse = new Promise(resolve => {
         setTimeout(() => {
-            cart = cart.filter(function (ele) {
-                return ele.id != product.id;
-            });
+            let id = product.id;
+            let cart = cart.find(({ productId }) => productId == id);
 
             localStorage.setItem('cart', JSON.stringify(cart));
             resolve(cart);
@@ -72,8 +83,7 @@ function empty() {
     let cart = JSON.parse(localStorage.getItem('cart'));
     cart = (Array.isArray(cart)) ? cart : [];
 
-
-    let promisse = new Promise((resolve, reject) => {
+    let promisse = new Promise(resolve => {
         setTimeout(() => {
             cart = [];
             localStorage.setItem('cart', JSON.stringify(cart));
@@ -81,9 +91,47 @@ function empty() {
         }, 500);
     });
 
-    return promisse.then(product => {
+    return promisse.then(() => {
         return true;
     }, function (error) {
         return error;
     });
 }
+
+async function checkout() {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    //enable when customer data was present.
+    //let usr = JSON.parse(localStorage.getItem('user'));
+    cart = (Array.isArray(cart)) ? cart : [];
+
+    let payment = {
+        customer: null,
+        items: cart
+    }
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payment)
+    };
+
+    return await fetch('api/Payment/', requestOptions)
+        .then(handleResponse)
+        .then(id => {
+            return id;
+        }).catch(error => {
+            return error;
+        });
+}
+
+function handleResponse(response) {
+    return response.text().then(text => {
+        const data = text && JSON.parse(text);
+        if (!response.ok) {
+            const error = (data && data.message) || response.statusText;
+            return Promise.reject(error);
+        }
+        return data;
+    });
+}
+

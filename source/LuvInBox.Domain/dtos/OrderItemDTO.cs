@@ -12,7 +12,6 @@ namespace com.luvinbox.domain.dtos {
         [Display(Name = "lblProduct", ResourceType = typeof(AppRes))]
         public string ProductName { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredDescription", ErrorMessageResourceType = typeof(AppRes))]
         [Display(Name = "lblDescription", ResourceType = typeof(AppRes))]
         public string ProductDescription { get; set; }
 

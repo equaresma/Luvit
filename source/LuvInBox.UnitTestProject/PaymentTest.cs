@@ -10,7 +10,7 @@ namespace LuvInBox.UnitTestProject {
         [TestMethod]
         public async Task Checkout() {
             var service = new PaymentService();            
-            var customer = new CustomerDTO();
+            var payer = new PayerDTO();
             var cart = new List<OrderItemDTO>();
 
             cart.Add(new OrderItemDTO() {
@@ -19,11 +19,11 @@ namespace LuvInBox.UnitTestProject {
                 UnityPrice = 10.0m
             });
 
-            customer.FirstName = "Eguargo";
-            customer.FamilyName = "Guararesmas";
+            payer.FirstName = "Eduardo";
+            payer.FamilyName = "Quaresma";
 
             var payment = new PaymentDTO() {
-                Customer = customer,
+                Payer = payer,
                 Items = cart
             };
 

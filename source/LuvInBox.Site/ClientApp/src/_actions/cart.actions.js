@@ -2,13 +2,12 @@ import { cartConstants } from '../_constants';
 import { alertActions } from './';
 import { cartService } from '../_services';
 
-//import { history } from '../_helpers';
-
 export const cartActions = {
     addProduct,
     removeProduct,
     get,
-    empty
+    empty,
+	checkout
 };
 
 function get() {
@@ -93,4 +92,25 @@ function empty() {
     function request(product) { return { type: cartConstants.RMV_PRD_REQUEST, product } }
     function success(product) { return { type: cartConstants.RMV_PRD_SUCCESS, product } }
     function failure(error) { return { type: cartConstants.RMV_PRD_FAILURE, error } }
+}
+
+function checkout(){
+	return dispatch => {
+			dispatch(request());
+
+			cartService.checkout()
+				.then(
+					checkoutId => {
+						dispatch(success(checkoutId));
+					},
+					error => {
+						dispatch(failure(error));
+						dispatch(alertActions.error(error));
+					}
+				);
+		};
+
+		function request() { return { type: cartConstants.GHKOUT_REQUEST } }
+		function success(checkoutId) { return { type: cartConstants.GHKOUT_SUCCESS, checkoutId } }
+		function failure(error) { return { type: cartConstants.GHKOUT_FAILURE, error } }	
 }

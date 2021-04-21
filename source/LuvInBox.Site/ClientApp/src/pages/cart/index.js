@@ -13,6 +13,8 @@ const Cart = (props) => {
     const { t } = useTranslation();
 
     const [products, setProducts] = useState([]);
+    const [sum, setSum] = useState(0);
+    const [checkoutId] = useState(null);
 
     useEffect(() => {
         if (products.length != props.cart.length)
@@ -21,18 +23,49 @@ const Cart = (props) => {
         if (props.reload) {
             dispatch(cartActions.get());
         }
-    }, []);
+
+        calculate();
+    });
 
     const removeProd = (item) => {
         dispatch(cartActions.removeProduct(item));
+        calculate();
     }
 
     const emptyCart = () => {
         dispatch(cartActions.empty());
+        calculate();
     }
 
     const setValue = e => {
         setProducts(e.value);
+    }
+
+    const calculate = () => {
+        let value = 0;
+
+        products.forEach((item) => {
+            value += item.unitPrice;
+        });
+
+        setSum(value);
+    }
+
+    const checkout = () => {
+        dispatch(cartActions.checkout());
+    }
+
+    const renderScript = (preferenceId) => {
+        //sample code from Mercado Pago
+        let script = document.createElement("script");
+
+        // The source domain must be completed according to the site for which you are integrating.
+        // For example: for Argentina ".com.ar" or for Brazil ".com.br".
+        script.src = "https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js";
+        script.type = "text/javascript";
+        script.dataset.preferenceId = preferenceId;
+        document.getElementById("button-checkout").innerHTML = "";
+        document.querySelector("#button-checkout").appendChild(script);
     }
 
     const itemTemplate = (item) => {
@@ -42,14 +75,14 @@ const Cart = (props) => {
                     <ProductImage image={item.image} />
                 </div>
                 <div className="product-list-detail">
-                    <span>{item.name}</span>
+                    <span>{item.productName}</span>
                     <div>
                         <i className="pi pi-tag product-category-icon"></i>
                         <span className="product-category">{item.category}</span>
                     </div>
                 </div>
                 <div className="product-list-action">
-                    <span>R$ {item.price}</span>
+                    <span>R$ {item.unitPrice}</span>
                     <div><Button onClick={(e) => removeProd(item)} className="p-button-secondary" icon="pi pi-trash" iconPos="left" tooltip={t('lbl_remove_product')}></Button></div>
                 </div>
             </div>
@@ -64,11 +97,27 @@ const Cart = (props) => {
                     <OrderList value={products} header={t('lbl_list_of_products')} dragdrop listStyle={{ height: 'auto' }} dataKey="id"
                         itemTemplate={itemTemplate} onChange={(e) => setValue(e)}></OrderList>
 
-                    <div style={{ marginTop: "30px", marginLeft: "70px" }}>
-                        <Button className="p-button-secondary" onClick={(e) => emptyCart()}><small><Trans>lbl_empty_cart</Trans></small></Button>
+                    <div style={{ marginTop: "20px", marginLeft: "70px", display: "inline" }}>
+                        <div><strong>Total</strong></div>
+                        <div>R$&nbsp;<strong>{sum}</strong></div>
                     </div>
+                    <hr />
+                    <div>
+                        <center>
+                            <div><img src="images/logos/mercado_pago.png" style={{ height: "40px" }} /></div>
+                            <div><small>Realize o checkout com o Mercado Pago nosso parceiro em meio de pagamentos.</small></div>
+                        </center>
+                    </div>
+                    <hr />
+                    <div className="p-formgroup-inline" style={{ marginTop: "30px", marginLeft: "70px" }}>
+                        <Button className="p-button-help" onClick={(e) => checkout()}><small>Checkout</small>&nbsp;&nbsp;<i className="pi pi-check-circle"></i></Button>
+                        <Button className="p-button-secondary" onClick={(e) => emptyCart()} style={{ marginLeft: "10px" }}><small><Trans>lbl_empty_cart</Trans></small>&nbsp;&nbsp;<i className="pi pi-undo"></i></Button>
+                    </div>
+
                 </div>
             </div>
+            <div id="button-checkout"></div>
+            {(checkoutId) ? renderScript(checkoutId) : null}
         </div>
     );
 }
@@ -78,12 +127,14 @@ function mapStateToProps(state) {
     if (jcart) {
         return {
             cart: jcart,
-            reload: false
+            reload: false,
+            checkoutId: state.reducers.cart.checkoutId
         }
     } else {
         return {
             cart: Array.isArray(state.reducers.cart.cart) ? state.reducers.cart.cart : new Array(),
             reload: true,
+            checkoutId: state.reducers.cart.checkoutId,
             error: state.reducers.products.error
         }
     }

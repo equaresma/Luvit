@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 namespace com.luvinbox.domain.dtos {
     [CPF(ErrorMessage = "CPF inválido")]
     [Serializable]
-    public class CustomerDTO : PersonDTO, ICustomer {
+    public class CustomerDTO : PersonDTO {
         [Required]
         [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
         public CustomerDocument Document { get; set; }

@@ -372,6 +372,9 @@
   <data name="RequiredDate" xml:space="preserve">
     <value>Date is required</value>
   </data>
+  <data name="RequiredDescription" xml:space="preserve">
+    <value>Required Description</value>
+  </data>
   <data name="RequiredDocument" xml:space="preserve">
     <value>Document is required</value>
   </data>
@@ -397,9 +400,6 @@
     <value>Name is requied</value>
   </data>
   <data name="RequiredNumber" xml:space="preserve">
-    <value>Number is required</value>
-  </data>
-  <data name="RequiredNumber1" xml:space="preserve">
     <value>Number is required</value>
   </data>
   <data name="RequiredState" xml:space="preserve">

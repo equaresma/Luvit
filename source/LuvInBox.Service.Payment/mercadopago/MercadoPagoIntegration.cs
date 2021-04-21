@@ -14,16 +14,19 @@ namespace LuvInBox.Service.Payment.mercadopago {
         }
 
         public async Task<string> DoCheckOut(PaymentDTO payment) {
+            PreferencePayerRequest payer = null;
             var mpItems = new List<PreferenceItemRequest>();
 
-            var payer = new PreferencePayerRequest {
-                Name = payment.Customer.FirstName,
-                Surname = payment.Customer.FamilyName,
-                Email = payment.Customer.Email,
-                Phone = new PhoneRequest {
-                    Number = payment.Customer.Phone,
-                }
-            };
+            if (payment.Payer != null) {
+                payer = new PreferencePayerRequest {
+                    Name = payment.Payer.FirstName,
+                    Surname = payment.Payer.FamilyName,
+                    Email = payment.Payer.Email,
+                    Phone = new PhoneRequest {
+                        Number = payment.Payer.Phone,
+                    }
+                };
+            }
 
             Parallel.ForEach(payment.Items, item => {
                 mpItems.Add(new PreferenceItemRequest {
@@ -35,9 +38,11 @@ namespace LuvInBox.Service.Payment.mercadopago {
             });
 
             var request = new PreferenceRequest {
-                Payer = payer,
                 Items = mpItems
             };
+
+            if (payment.Payer != null)
+                request.Payer = payer;
 
             // Cria a preferência usando o client
             var client = new PreferenceClient();

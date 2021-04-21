@@ -1,9 +1,7 @@
 ﻿using com.luvinbox.domain.dtos;
-using com.luvinbox.domain.interfaces;
 using com.luvinbox.domain.services;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace LuvInBox.Site.Controllers {

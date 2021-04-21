@@ -23,10 +23,47 @@ luvitmarketplace@gmail.com
 	
 	Ao exibir produto, fazer comparação com outros fornecedores(??? - Verificar com eles)
 	Finalizar Carrinho
-		Adicionar Valor do Frete
+		Adicionar Valor do Frete( se usuário logado, usar o cep do cadastro, senão renderizar campo para input do CEP).
 	Pagamentos
 		Configurar Mercado Pago Teste
 		Efeturar checkout 
 		Confirmar Transação
 
 https://viacep.com.br/ws/11700300/json/?callback=?
+
+http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?
+nCdEmpresa=08082650&
+sDsSenha=564321&
+sCepOrigem=70002900&
+sCepDestino=04547000&
+nVlPeso=1&
+nCdFormato=1&
+nVlComprimento=20&
+nVlAltura=20&
+nVlLargura=20&
+sCdMaoPropria=n&
+nVlValorDeclarado=0&
+sCdAvisoRecebimento=n&
+nCdServico=04510&
+nVlDiametro=0&
+StrRetorno=xml&
+nIndicaCalculo=3
+
+CNAME
+5A1EA307F78EAAB4D8C4572DF1D57E573E683F9D88EE4B2FCCA3C255CEDC758A
+
+Powershell
+nslookup -type=SOA luvinbox.com
+
+
+    cart.forEach((item, index) => {
+        orderItems.push(new {
+            productId: item.id,
+            productName: item.name,
+            productDescription: item.description,
+            quantity: item.quantity
+        });
+    });
+
+
+

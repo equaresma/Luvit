@@ -405,4 +405,7 @@
   <data name="Msg_Ivalid_BankInfo" xml:space="preserve">
     <value>Dados bancários inválidos</value>
   </data>
+  <data name="RequiredDescription" xml:space="preserve">
+    <value>Descrição é obrigatório</value>
+  </data>
 </root>

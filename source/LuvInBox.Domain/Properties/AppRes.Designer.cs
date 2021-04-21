@@ -887,5 +887,14 @@ namespace com.luvinbox.domain.Properties {
                 return ResourceManager.GetString("RequiredZipCode", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Description is required.
+        /// </summary>
+        public static string RequiredDescription {
+            get {
+                return ResourceManager.GetString("RequiredDescription", resourceCulture);
+            }
+        }
     }
 }
