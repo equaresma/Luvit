@@ -16,7 +16,7 @@ namespace LuvInBox.UnitTestProject {
             cart.Add(new OrderItemDTO() {
                 ProductName = "Teste Product",
                 Quantity = 1,
-                UnityPrice = 10.0m
+                Price = 10.0m
             });
 
             payer.FirstName = "Eduardo";

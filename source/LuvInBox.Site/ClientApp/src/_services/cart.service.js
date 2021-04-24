@@ -40,7 +40,7 @@ function addProduct(product) {
                     productName: product.name,
                     productDescription: product.description,
                     quantity: 1,
-                    unitPrice: product.price,
+                    price: product.price,
                     category: null,
                     image: product.image
                 });
@@ -126,12 +126,13 @@ async function checkout() {
 
 function handleResponse(response) {
     return response.text().then(text => {
-        const data = text && JSON.parse(text);
         if (!response.ok) {
+            const data = text && JSON.parse(text);
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
+        } else {
+            return text;
         }
-        return data;
     });
 }
 

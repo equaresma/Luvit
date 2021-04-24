@@ -3,7 +3,9 @@ const initialState = {
     cart: [],
     product: {},
     error: null,
-	checkoutId: null
+    checkoutId: null,
+    reload: false,
+    isCheckingout: false
 }
 export function cart(state = initialState, action) {
     switch (action.type) {
@@ -19,26 +21,33 @@ export function cart(state = initialState, action) {
                 product: action.product,
                 error: null,
                 reload: false,
-                checkoutId: null
+                checkoutId: null,
+                isCheckingout: false
             };
         case cartConstants.GET_SUCCESS:
             return {
                 cart: action.cart,
                 product: {},
                 error: null,
-                checkoutId: null
+                checkoutId: null,
+                reload: false,
+                isCheckingout: false
             };
 		case cartConstants.GHKOUT_SUCCESS:
             return {
                 cart: action.cart,
                 product: {},
                 error: null,
-				checkoutId: action.checkoutId
+                checkoutId: action.checkoutId,
+                reload: false,
+                isCheckingout: true
 			}
         case cartConstants.ERROR:
 		case cartConstants.ERROR:
 			return {
-				error: action.error
+                error: action.error,
+                reload: false,
+                isCheckingout: false
 			}
         default:
             return initialState

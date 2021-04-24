@@ -1,6 +1,6 @@
 ﻿namespace com.luvinbox.domain.interfaces {
     public interface IOrderItem {
-        decimal UnityPrice { get; set; }
+        decimal Price { get; set; }
         string ProductId { get; set; }
         string ProductName { get; set; }
         int Quantity { get; set; }

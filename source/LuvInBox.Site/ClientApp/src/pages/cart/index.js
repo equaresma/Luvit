@@ -14,7 +14,6 @@ const Cart = (props) => {
 
     const [products, setProducts] = useState([]);
     const [sum, setSum] = useState(0);
-    const [checkoutId] = useState(null);
 
     useEffect(() => {
         if (products.length != props.cart.length)
@@ -22,9 +21,11 @@ const Cart = (props) => {
 
         if (props.reload) {
             dispatch(cartActions.get());
+            calculate();            
         }
 
-        calculate();
+        if(props.isCheckingout)
+            renderScript();
     });
 
     const removeProd = (item) => {
@@ -55,15 +56,18 @@ const Cart = (props) => {
         dispatch(cartActions.checkout());
     }
 
-    const renderScript = (preferenceId) => {
+    const renderScript = () => {
+        if (props.checkoutId == null)
+            return;
+
         //sample code from Mercado Pago
         let script = document.createElement("script");
 
         // The source domain must be completed according to the site for which you are integrating.
         // For example: for Argentina ".com.ar" or for Brazil ".com.br".
-        script.src = "https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js";
+        script.src = "https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js";
         script.type = "text/javascript";
-        script.dataset.preferenceId = preferenceId;
+        script.dataset.preferenceId = props.checkoutId;
         document.getElementById("button-checkout").innerHTML = "";
         document.querySelector("#button-checkout").appendChild(script);
     }
@@ -109,15 +113,13 @@ const Cart = (props) => {
                         </center>
                     </div>
                     <hr />
-                    <div className="p-formgroup-inline" style={{ marginTop: "30px", marginLeft: "70px" }}>
-                        <Button className="p-button-help" onClick={(e) => checkout()}><small>Checkout</small>&nbsp;&nbsp;<i className="pi pi-check-circle"></i></Button>
+                    <div className="p-formgroup-inline" style={{ marginTop: "30px", marginLeft: "70px", display: (props.isCheckingout) ? "none": "" }}>
+                        <Button className="p-button-help" onClick={(e) => checkout()}><small>Checkout</small>&nbsp;&nbsp;<i className="pi pi-check-circle"></i></Button>                        
                         <Button className="p-button-secondary" onClick={(e) => emptyCart()} style={{ marginLeft: "10px" }}><small><Trans>lbl_empty_cart</Trans></small>&nbsp;&nbsp;<i className="pi pi-undo"></i></Button>
                     </div>
-
+                    <div id="button-checkout"></div>
                 </div>
-            </div>
-            <div id="button-checkout"></div>
-            {(checkoutId) ? renderScript(checkoutId) : null}
+            </div>            
         </div>
     );
 }
@@ -127,14 +129,16 @@ function mapStateToProps(state) {
     if (jcart) {
         return {
             cart: jcart,
-            reload: false,
-            checkoutId: state.reducers.cart.checkoutId
+            reload: state.reducers.cart.reload,
+            checkoutId: state.reducers.cart.checkoutId,
+            isCheckingout: state.reducers.cart.isCheckingout
         }
     } else {
         return {
             cart: Array.isArray(state.reducers.cart.cart) ? state.reducers.cart.cart : new Array(),
-            reload: true,
+            reload: state.reducers.cart.reload,
             checkoutId: state.reducers.cart.checkoutId,
+            isCheckingout: state.reducers.cart.isCheckingout,
             error: state.reducers.products.error
         }
     }

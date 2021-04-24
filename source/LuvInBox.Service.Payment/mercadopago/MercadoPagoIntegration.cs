@@ -4,6 +4,7 @@ using MercadoPago.Client.Common;
 using MercadoPago.Client.Preference;
 using MercadoPago.Config;
 using MercadoPago.Resource.Preference;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -33,8 +34,8 @@ namespace LuvInBox.Service.Payment.mercadopago {
                     Title = item.ProductName,
                     Quantity = item.Quantity,
                     CurrencyId = item.CurrencyId,
-                    UnitPrice = item.UnityPrice
-                });
+                    UnitPrice = item.Price
+                }); ;
             });
 
             var request = new PreferenceRequest {
