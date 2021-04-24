@@ -88,6 +88,7 @@
   "lbl_empty_cart": "Esvaziar carrinho",
   "lbl_cart": "Carrinho de compras",
   "lbl_list_of_products": "Lista de Produtos",
+  "lbl_my_products": "Meus Produtos",
   "lbl_nick": "Apelido",
   "lbl_strength_weak": "Fraca",
   "lbl_strength_medium": "Média",
@@ -105,5 +106,7 @@
   "lbl_sort_by_h_l": "Preço Maior para o Menor",
   "lbl_sort_by_l_h": "Preço Menor para Maior",
   "tit_unobtrusive": "Site em modo discreto: Images serão ocultadas",
-  "tit_obtrusive": "Site em modo aberto: Imagens serão exibidas"
+  "tit_obtrusive": "Site em modo aberto: Imagens serão exibidas",
+  "warn_zipcode_for_shipping": "Enter com o CEP para o cáculo do frete",
+  "lbl_payment_partner_msg": "Realize o checkout com o Mercado Pago nosso parceiro em meio de pagamentos."
 }

@@ -3,7 +3,8 @@ export const cartService = {
     removeProduct,
     get,
     empty,
-    checkout
+    checkout,
+    calculateShipping
 };
 
 function get() {
@@ -116,6 +117,25 @@ async function checkout() {
     };
 
     return await fetch('api/Payment/', requestOptions)
+        .then(handleResponse)
+        .then(id => {
+            return id;
+        }).catch(error => {
+            return error;
+        });
+}
+
+async function calculateShipping(zipCodeDestiny) {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    cart = (Array.isArray(cart)) ? cart : [];
+     
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(cart)
+    };
+
+    return await fetch('api/Payment/CalculateCart', requestOptions)
         .then(handleResponse)
         .then(id => {
             return id;

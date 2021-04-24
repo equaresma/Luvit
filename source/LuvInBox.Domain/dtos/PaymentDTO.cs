@@ -1,5 +1,4 @@
-﻿using com.luvinbox.domain.interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace com.luvinbox.domain.dtos {
     public class PaymentDTO {

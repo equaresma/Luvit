@@ -3,17 +3,16 @@
 namespace com.luvinbox.domain.entities
 {
     [Serializable]
-	public class OrderItem : BaseEntity
-	{
-		public String ProductId { get; set; }
-		public String ProductName { get; set; }
-		public String ProductDescription { get; set; }
-		public Int32 Quantity { get; set; }
-		public Decimal Price { get; set; }
-		public String Tag { get; set; }
+	public class OrderItem : BaseEntity	{
+		public string VendorId { get; set; }
+        public string ProductId { get; set; }
+		public string ProductName { get; set; }
+		public string ProductDescription { get; set; }
+		public int Quantity { get; set; }
+		public decimal Price { get; set; }
+		public string Tag { get; set; }
 
-		public OrderItem()
-		{
+		public OrderItem() { 
 		
 		}
 	}

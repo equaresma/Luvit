@@ -16,7 +16,7 @@ export const LuvInBoxManifest = () => {
                             </h1><br />
                         <p>
                             Quando você compra na <span className="luvInBoxName">LUV IN BOX</span>, garante uma ótima experiência economizando e, ao mesmo tempo, ajuda mulheres, crianças e adolescentes vítimas de abuso sexual e violência doméstica por todo o Brasil.
-                            Afinal, parte do lucro é revertido para o Programa "<span className="luvInBoxName">LUV IN BOX</span><span className="spnLuv"> Amor, a melhor escolha!"</span> que, através das principais ONG's e OSCIP's do país, presta assistência a milhares de vítimas.
+                            Afinal, parte do lucro é revertido para o Programa "<span className="luvInBoxName">LUV IN BOX</span><span className="spnLuv"> use, não abuse"</span> que, através das principais ONG's e OSCIP's do país, presta assistência a milhares de vítimas.
                         </p>
                     </section>
                 </div>
@@ -29,7 +29,7 @@ export const LuvInBoxManifest = () => {
                             um novo significado
                         </h1><br />
                         <p>
-                            Se todos somos convidados a aproveitar a vida neste mundo, temos orgulho em saber que o programa <span className="luvInBoxName">“LUV IN BOX</span> <span className="spnLuv">Amor, a melhor escolha!”</span>, juntamente com nossos parceiros, contribuímos para um mundo melhor para todos nós, repleto de amor, saúde e bem-estar.
+                            Se todos somos convidados a aproveitar a vida neste mundo, temos orgulho em saber que o programa <span className="luvInBoxName">“LUV IN BOX</span> <span className="spnLuv">use, não abuse”</span>, juntamente com nossos parceiros, contribuímos para um mundo melhor para todos nós, repleto de amor, saúde e bem-estar.
                         </p>
                     </section>
                 </div>
@@ -67,7 +67,7 @@ export const LuvInBoxManifest = () => {
                 <div className="col-12 divCenter">
                     <section>
                         <p>
-                            O programa "<span className="luvInBoxNameWhite">LUV IN BOX</span> <span className="spnLuvWhite">Amor, a melhor escolha!”</span>" busca mudar essa realidade através da conscientização, mobilização e intervenção da população na causa, assim como do apoio às ONG's, OSCIP's e abrigos que acolhem e protegem as vítimas.
+                            O programa "<span className="luvInBoxNameWhite">LUV IN BOX</span> <span className="spnLuvWhite">use, não abuse”</span>" busca mudar essa realidade através da conscientização, mobilização e intervenção da população na causa, assim como do apoio às ONG's, OSCIP's e abrigos que acolhem e protegem as vítimas.
                         </p>
                     </section>
                 </div>
@@ -77,7 +77,7 @@ export const LuvInBoxManifest = () => {
                     <div className="floatingBox">
                         <div className="pinkBox size50"><h1>Área de atuação</h1></div>
                         <div className="whiteBox size50">
-                            <p>O programa "<span className="luvInBoxName">LUV IN BOX</span> <span className="spnLuv">Amor, a melhor escolha!”</span>" atua por todo o Brasil ajudando a transformar em realidade a visão da LUV IN BOX:
+                            <p>O programa "<span className="luvInBoxName">LUV IN BOX</span> <span className="spnLuv">use, não abuse”</span>" atua por todo o Brasil ajudando a transformar em realidade a visão da LUV IN BOX:
                             - Tornar o mundo um lugar mais seguro para todas as mulheres, crianças e adolescentes.
                             </p>
                         </div>
@@ -87,7 +87,7 @@ export const LuvInBoxManifest = () => {
             <div className="row">
                 <div className="col-12 divCenter pinkBox" style={{ height: "160px" }}>
                     <section>
-                        <h1>Uma iniciativa por um mundo melhor</h1>
+                        <h1 style={{ fontFamily: "Ranget"}}>Uma iniciativa por um mundo melhor!</h1>
                     </section>
                 </div>
             </div>
@@ -100,25 +100,18 @@ export const LuvInBoxManifest = () => {
                             </h1>
                             <br />
                         </div>
-                        <div className="row" style={{ maxWidth: "40%", marginTop: "80px", marginBottom: "80px" }}>
-                            <div className="col-12 divCenter">
-                                <center><div className="circle"><p>1. ​Você compra na LUV IN BOX, economiza e se diverte</p></div></center>
-                                <div className="row">
-                                    <div className="col-6">
-                                        <center><div className="mArrow" style={{ marginLeft: "120px" }}>&#8599;</div></center>
-                                    </div>
-                                    <div className="col-6">
-                                        <center><div className="mArrow" style={{ marginLeft: "-120px" }}>&#8600;</div></center>
-                                    </div>
-                                </div>
+                        <div style={{ position: "relative", width: 420, height: 420, marginLeft: 100 }}>
+                            <div className="circle" style={{ position: "absolute", top: 0, left: 110 }}>
+                                <p>1. ​Você compra na LUV IN BOX, economiza e se diverte</p>
                             </div>
-                        </div>
-                        <div className="row" style={{ maxWidth: "40%" }}>
-                            <div className="col-6">
-                                <center><div className="circle"><p>3. ​Mais mulheres ganham forças para uma nova vida!</p></div></center>
+                            <div className="mArrow" style={{ position: "absolute", top: 160, left: 100 }}>↗</div>
+                            <div className="mArrow" style={{ position: "absolute", top: 160, left: 240 }}>↘</div>
+                            <div className="circle" style={{ position: "absolute", bottom: 0, left: 0 }}>
+                                <p>3. ​Mais mulheres ganham forças para uma nova vida!</p>
                             </div>
-                            <div className="col-6">
-                                <center><div className="circle"><p>2. ​A LUV IN BOX contribui no suporte jurídico, psicológico e médico</p></div></center>
+                            <div className="mArrow" style={{ position: "absolute", top: 260, left: 180 }}>&larr;</div>
+                            <div className="circle" style={{ position: "absolute", bottom: 0, right: 0 }}>
+                                <p>2. ​A LUV IN BOX contribui no suporte jurídico, psicológico e médico</p>
                             </div>
                         </div>
                     </section>
@@ -129,7 +122,7 @@ export const LuvInBoxManifest = () => {
                     <div className="row">
                         <div className="col-1 blackBelt"></div>
                         <div className="col-11 blackBelt">
-                            <center>Ajude-nos a ajudá-las.</center>
+                            Ajude-nos a ajudá-las.
                         </div>
                     </div>
                     <div className="row">
@@ -143,14 +136,14 @@ export const LuvInBoxManifest = () => {
                                         <i className="pi pi-shopping-cart" style={{ fontSize: "1.5rem", color: "#CC0046" }}></i>
                                         <h2>Compre</h2><br />
                                         <p>
-                                            Divirta-se e apimente suas relações. Economize encontrando os melhores preços do mercado, e ainda ajude diretamente na proteção à milhares de mulheres, crianças e adolescentes por todo o Brasil. Aquela mesma compra que você já faz normalmente, agora tem um novo significado: "Amor, a melhor escolha!"
+                                            Divirta-se e apimente suas relações. Economize encontrando os melhores preços do mercado, e ainda ajude diretamente na proteção à milhares de mulheres, crianças e adolescentes por todo o Brasil. Aquela mesma compra que você já faz normalmente, agora tem um novo significado: "use, não abuse"
                                         </p>
                                     </div>
                                     <div className="col-6 lightGrayBox">
                                         <i className="pi pi-volume-up" style={{ fontSize: "1.5rem",  color: "#000" }}></i>
                                         <h2>Divulgue</h2><br />
                                         <p>
-                                            O programa "<span className="luvInBoxName">LUV IN BOX</span> <span className="spnLuv">Amor, a melhor escolha!”</span>" conta com a parceria de "x" ONGs e abrigos espalhados por "x" estados do país. Nos siga em nossas redes sociais; compartilhe e comente sobre o projeto: Seu apoio é fundamental para a causa.
+                                            O programa "<span className="luvInBoxName">LUV IN BOX</span> <span className="spnLuv">use, não abuse”</span>" conta com a parceria de "x" ONGs e abrigos espalhados por "x" estados do país. Nos siga em nossas redes sociais; compartilhe e comente sobre o projeto: Seu apoio é fundamental para a causa.
                                         </p>
                                     </div>
                                 </div>

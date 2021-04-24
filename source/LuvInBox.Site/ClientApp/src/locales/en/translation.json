@@ -88,11 +88,12 @@
   "lbl_empty_cart": "Empty cart",
   "lbl_cart": "Cart",
   "lbl_list_of_products": "List of Products",
+  "lbl_my_products": "My Products",
   "lbl_nick": "Nickname",
   "lbl_strength_weak": "Weak",
   "lbl_strength_medium": "Medium",
   "lbl_strength_strong": "Strong",
-  "lbl_is_public_profile": "Perfil público",
+  "lbl_is_public_profile": "Perfil pï¿½blico",
   "lbl_institutional": "Institutional",
   "lbl_doubts": "Doubts",
   "lbl_vendors": "Vendors",
@@ -105,5 +106,7 @@
   "lbl_sort_by_h_l": "Price High to Low",
   "lbl_sort_by_l_h": "Price Low to High",
   "tit_unobtrusive": "Site in unobtrusive mode: Images will be hiddenn",
-  "tit_obtrusive": "Site in obtrusive mode: Images will be shown"
+  "tit_obtrusive": "Site in obtrusive mode: Images will be shown",
+  "warn_zipcode_for_shipping": "Enter with zip code for shipping value calculation",
+  "lbl_payment_partner_msg": "Make checkout using Mercado Pago our payment partner."
 }

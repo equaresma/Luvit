@@ -24,7 +24,7 @@ const CarouselCategory = ({ categs = [], onLoad = () => { }, onCategSelected, re
             <div>
                 <Tooltip target=".img-category" mouseTrack mouseTrackLeft={10} className="toolTip" />
                 <Link to="" onClick={(e) => categClick(categ.id)}>
-                    <img className="img-category" src={categ.url} alt={categ.name} data-pr-tooltip={categ.name} />
+                    <img className="img-category blink-image" src={categ.url} alt={categ.name} data-pr-tooltip={categ.name} />
                 </Link>
             </div>
         );

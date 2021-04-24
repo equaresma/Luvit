@@ -1,11 +1,4 @@
-﻿/*html, body {
-    font-family: 'Trebuchet MS', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    height: 100%;
-    margin: 0;
-    font-size: 14px;
-}*/
-
-@font-face {
+﻿@font-face {
     font-family: 'Anton';
     src: local('Anton'), url(/fonts/Anton-Regular.ttf) format('truetype');
 }
@@ -13,6 +6,11 @@
 @font-face {
     font-family: 'Poppins';
     src: local('Poppins'), url(/fonts/Poppins-Black.ttf) format('truetype'), local('Poppins-BlackItalic'), url(/fonts/Poppins-BlackItalic.ttf) format('truetype'), local('Poppins-Bold'), url(/fonts/Poppins-Bold.ttf) format('truetype'), local('Poppins-BoldItalic'), url(/fonts/Poppins-BoldItalic.ttf) format('truetype'), local('Poppins-ExtraBold'), url(/fonts/Poppins-ExtraBold.ttf) format('truetype'), local('Poppins-ExtraBoldItalic'), url(/fonts/Poppins-ExtraBoldItalic.ttf) format('truetype'), local('Poppins-ExtraLight'), url(/fonts/Poppins-ExtraLight.ttf) format('truetype'), local('Poppins-ExtraLightItalic'), url(/fonts/Poppins-ExtraLightItalic.ttf) format('truetype'), local('Poppins-Italic'), url(/fonts/Poppins-Italic.ttf) format('truetype'), local('Poppins-Light'), url(/fonts/Poppins-Light.ttf) format('truetype'), local('Poppins-LightItalic'), url(/fonts/Poppins-LightItalic.ttf) format('truetype'), local('Poppins-Medium'), url(/fonts/Poppins-Medium.ttf) format('truetype'), local('Poppins-MediumItalic'), url(/fonts/Poppins-MediumItalic.ttf) format('truetype'), local('Poppins-Regular'), url(/fonts/Poppins-Regular.ttf) format('truetype'), local('Poppins-SemiBold'), url(/fonts/Poppins-SemiBold.ttf) format('truetype'), local('Poppins-SemiBoldItalic'), url(/fonts/Poppins-SemiBoldItalic.ttf) format('truetype'), local('Poppins-Thin.ttf'), url(/fonts/Poppins-Thin.ttf) format('truetype'), local('Poppins-ThinItalic.ttf'), url(/fonts/Poppins-ThinItalic.ttf) format('truetype')
+}
+
+@font-face {
+    font-family: "Ranget";
+    src: local('Ranget'), url(/fonts/Ranget.ttf) format('truetype')
 }
 
 @font-face {
@@ -351,7 +349,7 @@ input[type=password] {
 }
 
 /*Meus overrides*/
-ul.nav {
+/*ul.nav {
     width: 100%
 }
 
@@ -397,78 +395,8 @@ element.style {
     margin: 50px 50px 100px 50px
 }
 
-/* Image Blink */
-/* Firefox old*/
-@-moz-keyframes blink {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes blink {
-
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* IE */
-@-ms-keyframes blink {
-
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Opera and prob css3 final iteration */
-@keyframes blink {
-
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.blink-image {
-    -moz-animation: blink normal 2s infinite ease-in-out; /* Firefox */
-    -webkit-animation: blink normal 2s infinite ease-in-out; /* Webkit */
-    -ms-animation: blink normal 2s infinite ease-in-out; /* IE */
-    animation: blink normal 2s infinite ease-in-out; /* Opera and prob css3 final iteration */
-}
-
 /*carousel indicators*/
-.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+/*.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
     background-color: #AE194C;
 }
 
@@ -483,9 +411,9 @@ element.style {
 ul.hideIndicators {
     display: none !important;
 }
-
+   
 /*btn-primary ovveride */
-.p-button {
+/*.p-button {
     color: #ffffff;
     background: #ae194c;
     border: 1px solid #ca9cad !important;
@@ -581,4 +509,74 @@ ul.hideIndicators {
     color: #fffefe;
     border-color: transparent;
     background: #ae194c;
+}
+*/
+/* Image Blink */
+/* Firefox old*/
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* IE */
+@-ms-keyframes blink {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Opera and prob css3 final iteration */
+@keyframes blink {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink-image {
+    -moz-animation: blink normal 2s infinite ease-in-out; /* Firefox */
+    -webkit-animation: blink normal 2s infinite ease-in-out; /* Webkit */
+    -ms-animation: blink normal 2s infinite ease-in-out; /* IE */
+    animation: blink normal 2s infinite ease-in-out; /* Opera and prob css3 final iteration */
 }

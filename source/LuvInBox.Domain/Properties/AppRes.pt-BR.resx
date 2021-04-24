@@ -408,4 +408,10 @@
   <data name="RequiredDescription" xml:space="preserve">
     <value>Descrição é obrigatório</value>
   </data>
+    <data name="Msg_Err_Vendor_Missing" xml:space="preserve">
+    <value>Faltando Vendedor</value>
+  </data>
+    <data name="Msg_Err_Customer_Missing" xml:space="preserve">
+    <value>Faltando Cliente</value>
+  </data>
 </root>

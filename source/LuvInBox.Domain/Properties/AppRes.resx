@@ -408,4 +408,10 @@
   <data name="RequiredZipCode" xml:space="preserve">
     <value>Zip code is required</value>
   </data>
+    <data name="Msg_Err_Vendor_Missing" xml:space="preserve">
+    <value>Vendor Missing</value>
+  </data>
+    <data name="Msg_Err_Customer_Missing" xml:space="preserve">
+    <value>Customer Missing</value>
+  </data>
 </root>

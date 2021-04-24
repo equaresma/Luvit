@@ -4,14 +4,14 @@ using MercadoPago.Client.Common;
 using MercadoPago.Client.Preference;
 using MercadoPago.Config;
 using MercadoPago.Resource.Preference;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace LuvInBox.Service.Payment.mercadopago {
     public class MercadoPagoIntegration : IPaymentIntegrationService {
         public MercadoPagoIntegration() {
-            MercadoPagoConfig.AccessToken = "TEST-8952254687154924-040321-8ce5494fef79ba1da5da6196e6f7dd32-88138151";
+            //Gabi´s Account
+            MercadoPagoConfig.AccessToken = "TEST-127673018143137-030610-6d644bc7598d0c713fa7378273df0bf8-723603213";
         }
 
         public async Task<string> DoCheckOut(PaymentDTO payment) {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { cartActions } from '../../_actions';
+import { InputText } from 'primereact/inputtext';
 import { OrderList } from 'primereact/orderlist';
 import { Button } from 'primereact/button';
 import { Trans, useTranslation } from 'react-i18next';
@@ -14,6 +15,7 @@ const Cart = (props) => {
 
     const [products, setProducts] = useState([]);
     const [sum, setSum] = useState(0);
+    const [zipCode, setZipCode] = useState('');
 
     useEffect(() => {
         if (products.length != props.cart.length)
@@ -21,10 +23,10 @@ const Cart = (props) => {
 
         if (props.reload) {
             dispatch(cartActions.get());
-            calculate();            
+            calculate();
         }
 
-        if(props.isCheckingout)
+        if (props.isCheckingout)
             renderScript();
     });
 
@@ -72,6 +74,10 @@ const Cart = (props) => {
         document.querySelector("#button-checkout").appendChild(script);
     }
 
+    const calculateShipping = () => {
+        dispatch(cartActions.calculateShipping(props.zipCode));
+    }
+
     const itemTemplate = (item) => {
         return (
             <div className="product-item">
@@ -94,32 +100,46 @@ const Cart = (props) => {
     }
 
     return (
-        <div className="card" style={{ marginTop: "15px" }}>
-            <center><h4 className="title"><Trans>lbl_cart</Trans></h4></center>
-            <div className="orderlist-demo">
-                <div className="card">
-                    <OrderList value={products} header={t('lbl_list_of_products')} dragdrop listStyle={{ height: 'auto' }} dataKey="id"
-                        itemTemplate={itemTemplate} onChange={(e) => setValue(e)}></OrderList>
-
-                    <div style={{ marginTop: "20px", marginLeft: "70px", display: "inline" }}>
-                        <div><strong>Total</strong></div>
-                        <div>R$&nbsp;<strong>{sum}</strong></div>
+        <div>
+            <div className="card" style={{ marginTop: 2 }}>
+                <center><h4 className="title"><Trans>lbl_cart</Trans></h4></center>
+                <div>
+                    <div className="p-field p-col-6">
+                        <div className="p-inputgroup">
+                            <span className="p-inputgroup-addon">
+                                <img src="images/freight.png" style={{ height: 18 }} />
+                            </span>
+                            <InputText id="ZipCode" name="ZipCode" type="text" onChange={(e) => setZipCode(e)} defaultValue={zipCode} maxLength="20"
+                                placeholder={t('lbl_zipcode')} className="p-d-block" type="text" aria-describedby="zipCode-help" onBlur={calculateShipping} />
+                        </div>
+                        <small id="zipCode-help" className="p-invalid p-d-block text-right"><Trans>warn_zipcode_for_shipping</Trans></small>
                     </div>
-                    <hr />
-                    <div>
-                        <center>
-                            <div><img src="images/logos/mercado_pago.png" style={{ height: "40px" }} /></div>
-                            <div><small>Realize o checkout com o Mercado Pago nosso parceiro em meio de pagamentos.</small></div>
-                        </center>
-                    </div>
-                    <hr />
-                    <div className="p-formgroup-inline" style={{ marginTop: "30px", marginLeft: "70px", display: (props.isCheckingout) ? "none": "" }}>
-                        <Button className="p-button-help" onClick={(e) => checkout()}><small>Checkout</small>&nbsp;&nbsp;<i className="pi pi-check-circle"></i></Button>                        
-                        <Button className="p-button-secondary" onClick={(e) => emptyCart()} style={{ marginLeft: "10px" }}><small><Trans>lbl_empty_cart</Trans></small>&nbsp;&nbsp;<i className="pi pi-undo"></i></Button>
-                    </div>
-                    <div id="button-checkout"></div>
                 </div>
-            </div>            
+                <div className="orderlist-demo">
+                    <div className="card">
+                        <OrderList value={products} header={t('lbl_my_products')} dragdrop listStyle={{ height: 'auto' }} dataKey="id"
+                            itemTemplate={itemTemplate} onChange={(e) => setValue(e)}></OrderList>
+
+                        <div style={{ marginTop: "20px", marginLeft: "70px", display: "inline" }}>
+                            <div><strong>Total</strong></div>
+                            <div>R$&nbsp;<strong>{sum}</strong></div>
+                        </div>
+                        <hr />
+                        <div className="p-formgroup-inline" style={{ marginTop: 30, marginLeft: 70, display: (props.isCheckingout) ? "none" : "" }}>
+                            <Button className="p-button-help" onClick={(e) => checkout()}><small>Checkout</small>&nbsp;&nbsp;<i className="pi pi-check-circle"></i></Button>
+                            <Button className="p-button-secondary" onClick={(e) => emptyCart()} style={{ marginLeft: 10 }}><small><Trans>lbl_empty_cart</Trans></small>&nbsp;&nbsp;<i className="pi pi-undo"></i></Button>
+                        </div>
+                        <div id="button-checkout"></div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div>
+                <center>
+                    <div><img src="images/logos/mercado_pago.png" style={{ height: 80 }} /></div>
+                    <div><small>lbl_payment_partner_msg<Trans></Trans></small></div>
+                </center>
+            </div>
         </div>
     );
 }

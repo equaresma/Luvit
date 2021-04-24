@@ -7,7 +7,8 @@ export const cartActions = {
     removeProduct,
     get,
     empty,
-	checkout
+    checkout,
+    calculateShipping
 };
 
 function get() {
@@ -113,4 +114,25 @@ function checkout(){
 		function request() { return { type: cartConstants.GHKOUT_REQUEST } }
 		function success(checkoutId) { return { type: cartConstants.GHKOUT_SUCCESS, checkoutId } }
 		function failure(error) { return { type: cartConstants.GHKOUT_FAILURE, error } }	
+}
+
+function calculateShipping(zipCode) {
+    return dispatch => {
+        dispatch(request());
+
+        cartService.calculateShipping(zipCode)
+            .then(
+                cart => {
+                    dispatch(success(cart));
+                },
+                error => {
+                    dispatch(failure(error));
+                    dispatch(alertActions.error(error));
+                }
+            );
+    };
+
+    function request() { return { type: cartConstants.SHIPPG_REQUEST } }
+    function success(cart) { return { type: cartConstants.SHIPPG_SUCCESS, cart } }
+    function failure(error) { return { type: cartConstants.SHIPPG_FAILURE, error } }
 }

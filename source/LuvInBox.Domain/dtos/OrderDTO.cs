@@ -9,6 +9,8 @@ namespace com.luvinbox.domain.dtos
     [Serializable]
     public class OrderDTO : BaseDTO
     {
+        private PaymentInfo payment;
+
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredDate", ErrorMessageResourceType = typeof(AppRes))]
         [Display(Name = "lblPosition", ResourceType = typeof(AppRes))]
         public DateTime Position { get; set; }
@@ -20,7 +22,7 @@ namespace com.luvinbox.domain.dtos
         //frete
         public decimal Shipping { get; set; }
         public Address Address { get; set; }
-        public PaymentInfo Payment { get; set; }
+        public PaymentInfo Payment { get => payment; set => payment = value; }
 
         public OrderDTO()
         {

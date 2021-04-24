@@ -10,21 +10,27 @@ export const WhoWeAre = () => {
                     <section>
                         <h1><Trans>who_wew_are_titile</Trans></h1>
                         <br />
-                        <p>
-                            Fundada em XX/XXXX, lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis ipsum ullamcorper, aliquam libero id, rutrum ligula. Fusce est nulla, suscipit a venenatis vel, cursus non sapien. Aliquam erat volutpat. Ut commodo sodales ante, ut sagittis velit tincidunt nec. Nam vitae ex ex. In blandit, quam sollicitudin rhoncus egestas, ex turpis consectetur leo, nec euismod lacus quam eu lectus. Duis ut felis eget magna scelerisque cursus non nec ipsum. Ut tempor, erat sed suscipit mattis, sem turpis lobortis ante, nec molestie ligula nunc vitae turpis. Nullam egestas nibh arcu, vitae cursus nulla feugiat vitae. Etiam ornare orci at nibh auctor vestibulum. Praesent at elit nunc. Sed iaculis ex vel lectus laoreet, et pulvinar urna cursus. Morbi sit amet malesuada ipsum, ut consectetur nunc. Mauris eleifend sagittis viverra. Donec elementum massa ex, eget hendrerit eros tempor at.
-                        </p>
-                        <p>
-                            Aliquam ornare nibh eget purus finibus, id sagittis lectus fringilla. Pellentesque sit amet interdum diam, in gravida ipsum. Morbi facilisis massa id fringilla semper. In rutrum arcu sit amet vehicula mollis. Curabitur lobortis sem a vestibulum lacinia. Phasellus ornare volutpat nibh vel gravida. Praesent euismod eleifend risus nec porttitor. Nulla a nibh tortor. Morbi gravida ante ut auctor vehicula.
-                        </p>
-                        <p>
-                            Nunc vel feugiat dui. Nunc semper magna ac bibendum scelerisque. Suspendisse tincidunt lobortis sapien at imperdiet. Nulla vitae tincidunt tellus. Aenean ac suscipit elit. Suspendisse in mauris vitae urna porttitor pulvinar. Nam sed sapien ligula. Phasellus blandit odio vel libero pharetra consectetur. Nam sit amet porttitor eros, et auctor risus. Nam pulvinar lorem metus, quis efficitur neque aliquam ac. Integer ac mi sed tellus consectetur feugiat. In hac habitasse platea dictumst.
-                        </p>
-                        <p>
-                            Etiam dapibus, justo nec sodales varius, ipsum ligula cursus leo, vitae finibus mi leo eget risus. Nam ultricies augue nec ullamcorper convallis. Etiam fringilla felis ligula, nec mattis leo ornare eget. Morbi in mattis turpis, quis mattis nunc. Praesent consectetur fringilla sem quis bibendum. Proin tristique purus euismod metus lobortis luctus. Etiam augue est, gravida in mi dictum, consectetur imperdiet dolor. Maecenas lacinia lectus sit amet ex eleifend, ut imperdiet sem bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed semper nibh id arcu fringilla hendrerit. Integer mollis bibendum dignissim. Donec ut vestibulum ante, ut ullamcorper metus. Nulla sed nulla at ligula iaculis tristique in et diam. Maecenas eleifend, est at ullamcorper cursus, nunc erat fermentum augue, eu rutrum erat lacus in augue. Fusce malesuada justo eu consequat venenatis.
-                        </p>
-                        <p>
-                            Donec aliquam id tellus sed rhoncus. Nam dapibus eget arcu nec viverra. Nunc mollis pellentesque vulputate. Vivamus eu nulla eu turpis sagittis aliquam id sit amet mauris. Donec pretium lorem non quam finibus vulputate. Etiam et est a justo pellentesque luctus in eget lacus. Vivamus vitae sollicitudin nunc, a congue neque. Vivamus vestibulum varius placerat. Cras scelerisque neque quis metus dignissim, non blandit lacus congue. Aenean tincidunt dolor mi, in faucibus diam rhoncus ut. Quisque sed sagittis nisi. Aenean dictum est id leo suscipit, vulputate bibendum ligula mollis. Proin vehicula sit amet mi vel bibendum.
-                        </p>
+                        <pre>
+                            Conheça-nos
+                            Um pouquinho sobre a nossa história
+
+                            A LUV IN BOX surgiu em 2021 com um propósito ambicioso, mas ao mesmo tempo convicto: amparar mulheres e crianças em situações vulneráveis - especialmente sujeitas à violências físicas e sexuais - a reconquistarem suas vidas. 
+
+                            Para isso, empoderamos principalmente o consumidor: isso, você mesmo que está lendo! Aqui, sua compra tem um poder enorme. Além de economizar em suas compras, se amar e se conhecer, você ajuda DIRETAMENTE no acolhimento dessas pessoas - sem pagar nadinha a mais por isso! Não é demais?!
+
+                            Para alcançarmos nosso sonho precisavamos, é claro, de uma estrutura... E foi ai que surgiu a LUV IN BOX, o marketplace do mercado erótico! Reunimos lojistas que ofertam os mais variados produtos; ONG's de proteção à mulheres e crianças que fornecem amparo jurídico, médico, psicológico e social; e você: que busca o melhor preço do mercado.
+
+                            Para nossos consumidores oferecemos um site discreto e intuitivo para, com poucos cliques, encontrar as melhores condições de preço do mercado. Além disso apresentamos sempre as promoções de destaque e condições especiais de frete; CUPONS para economia nas compras e muito mais!
+
+                            Para nossos parceiros lojistas, oferecemos uma plataforma integrada por ERP para gerenciamento de estoque, produtos e preços. Nossa divulgação intensa de marketing e mídias sociais intensifica a cada dia, fortalecendo nossa estrutura e tornando a LUV IN BOX ainda mais conhecida e atrativa tanto para consumidores, quanto para vendedores.
+
+                            Para as ONG's parceiras, destinamos uma porcentagem de todo o lucro da empresa com a finalidade de fortalecer, divulgar e apoiar seu trabalho, ajudando a amparar cada vez mais, as pessoas que mais precisam. No nosso site é possível também, na página do nosso manifesto, conhecer mais sobre nosso projeto e cada ONG associada, assim como se voluntariar e doar diretamente.
+
+                            Somos não apenas um marketplace, mas uma ferramenta de mudança desse mundo caótico. Aos pouquinhos, esperamos chegar cada vez mais próximos desse sonho em comum!
+
+                            LUV IN BOX!
+                            Diversão e discrição, na palma da sua mão!
+                        </pre>
                     </section>
                 </div>
             </div>

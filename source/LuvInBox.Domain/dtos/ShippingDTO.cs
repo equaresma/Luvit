@@ -3,6 +3,7 @@ using System;
 
 namespace com.luvinbox.domain.dtos {
     public class ShippingDTO : ICloneable {
+        public string ProductId { get; set; }
         public string ZipCodeOrigin { get; set; }
         public string ZipCodeDestiny { get; set; }
         public Dimensions Dimension { get; set; }

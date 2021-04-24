@@ -896,5 +896,28 @@ namespace com.luvinbox.domain.Properties {
                 return ResourceManager.GetString("RequiredDescription", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Description is required.
+        /// </summary>
+        public static string Msg_Err_Vendor_Missing
+        {
+            get
+            {
+                return ResourceManager.GetString("Msg_Err_Vendor_Missing", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Description is required.
+        /// </summary>
+        public static string Msg_Err_Customer_Missing
+        {
+            get
+            {
+                return ResourceManager.GetString("Msg_Err_Customer_Missing", resourceCulture);
+            }
+        }
+
     }
 }
