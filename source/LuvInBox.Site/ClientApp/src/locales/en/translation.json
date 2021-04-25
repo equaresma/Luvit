@@ -108,5 +108,8 @@
   "tit_unobtrusive": "Site in unobtrusive mode: Images will be hiddenn",
   "tit_obtrusive": "Site in obtrusive mode: Images will be shown",
   "warn_zipcode_for_shipping": "Enter with zip code for shipping value calculation",
-  "lbl_payment_partner_msg": "Make checkout using Mercado Pago our payment partner."
+  "lbl_payment_partner_msg": "Make checkout using Mercado Pago our payment partner.",
+  "lbl_price": "Price",
+  "lbl_deadline": "Deadline",
+  "lbl_shipping": "Shipping"
 }

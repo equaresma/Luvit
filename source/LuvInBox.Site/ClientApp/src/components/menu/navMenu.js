@@ -62,7 +62,7 @@ const NavMenu = (props) => {
                         <div className="input-group">
                             <span className="p-input-icon-right">
                                 <i className="pi pi-search" />
-                                <InputText onKeyPress={press} placeholder={t('search')} className="form-control" />
+                                <InputText onKeyPress={press} placeholder={t('search')} className="p-inputtext p-component form-control" />
                             </span>
                         </div>
                     </Nav>

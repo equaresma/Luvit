@@ -45,8 +45,8 @@ const CarouselProducts = ({ mType = 'H', onLoad = () => { }, onLoadPromotions = 
                         </p>
                         <span className={`product-badge status-${product.inventoryStatus}`}>{product.inventoryStatus}</span>
                         <div className="car-buttons p-mt-5">
-                            <Button icon="pi pi-search p-button-search" className="p-button p-button-rounded p-mr-1" onClick={(e) => gotoProductInfo(product)} />
-                            <Button icon="pi pi-heart" className="p-button p-button-rounded p-mr-1" />
+                            <Button icon="pi pi-search" className="p-button-info p-button-rounded p-mr-1" onClick={(e) => gotoProductInfo(product)} />
+                            <Button icon="pi pi-heart" className="p-button-danger p-button-rounded p-mr-1" />
                             <Button icon="pi pi-shopping-cart" className="p-button-help p-button-rounded" onClick={(e) => addProd(product)} />
                         </div>
                     </div>
@@ -56,7 +56,7 @@ const CarouselProducts = ({ mType = 'H', onLoad = () => { }, onLoadPromotions = 
     }
 
     return (
-        <div className="container-fluid" style={{ marginTop: "50px", marginBottom: "25px" }}>
+        <div className="container-fluid" style={{ marginTop: 10, marginBottom: 5}}>
             <div className="row">
                 <div className="col-12">
                     <center><h5 className="title">{transTitle}</h5></center>

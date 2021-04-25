@@ -100,7 +100,7 @@ export const LuvInBoxManifest = () => {
                             </h1>
                             <br />
                         </div>
-                        <div style={{ position: "relative", width: 420, height: 420, marginLeft: 100 }}>
+                        <div style={{ position: "relative", width: 420, height: 420, marginLeft: 70 }}>
                             <div className="circle" style={{ position: "absolute", top: 0, left: 110 }}>
                                 <p>1. ​Você compra na LUV IN BOX, economiza e se diverte</p>
                             </div>

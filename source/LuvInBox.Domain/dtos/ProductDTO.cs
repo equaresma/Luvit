@@ -8,9 +8,9 @@ namespace com.luvinbox.domain.dtos {
         [Required(AllowEmptyStrings = false)]
         [DataType(DataType.Text)]
         public string Reference { get; set; }
-        public long? BarCode { get; set; }
-        public string VendorId { get; set; }
 
+        public long? BarCode { get; set; }
+        
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
         [Display(Name = "lblName", ResourceType = typeof(AppRes))]
@@ -41,9 +41,16 @@ namespace com.luvinbox.domain.dtos {
 
         public Image Image { get; set; }
 
+        #region .:Vendor:.
+        public string VendorId { get; set; }
+        public string VendorName { get; set; }
+        public string VendorZipCode { get; set; }
+        public string VendorDocNumber { get; set; }
+        #endregion
+
         public ProductDTO() {
             Image = new Image();
-        }
+        }       
 
         public override string ToString() {
             return string.Format($"{BarCode} - {Name} - {Description}");

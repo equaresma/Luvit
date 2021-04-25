@@ -349,7 +349,7 @@ input[type=password] {
 }
 
 /*Meus overrides*/
-/*ul.nav {
+ul.nav {
     width: 100%
 }
 
@@ -396,7 +396,7 @@ element.style {
 }
 
 /*carousel indicators*/
-/*.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
     background-color: #AE194C;
 }
 
@@ -412,64 +412,10 @@ ul.hideIndicators {
     display: none !important;
 }
    
-/*btn-primary ovveride */
-/*.p-button {
-    color: #ffffff;
-    background: #ae194c;
-    border: 1px solid #ca9cad !important;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    -webkit-transition: background-color 0.2s, color 0.2s, border-color 0.2s, -webkit-box-shadow 0.2s;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s, -webkit-box-shadow 0.2s;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
-    border-radius: 3px;
-}
-
-.btn-primary {
-    color: #fff !important;
-    background-color: #CC0146 !important;
-    border-color: #CC0146 !important;
-}
-
-.p-button-success {
-    color: #fff !important;
-    background-color: #CC0146 !important;
-    border-color: #CC0146 !important;
-}
-
-.p-button-help {
-    color: #fff !important;
-    background-color: #CC0146 !important;
-    border-color: #CC0146 !important;
-}
-
-.p-badge.p-badge-success {
-    color: #fff !important;
-    background-color: #CC0146 !important;
-    border-color: #CC0146 !important;
-}
-
-.p-button {
-    background-color: #CC0146 !important;
-    border-color: #CC0146 !important;
-}
-
-    .p-button:enabled:active {
-        background-color: #CA9CAD !important;
-        border-color: #CA9CAD !important;
-    }
-
-    .p-button:enabled:hover {
-        background-color: #CA9CAD !important;
-        border-color: #CA9CAD !important;
-    }
-
 .container {
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
-
 
 .carousel-content .p-carousel-next:enabled:hover .p-carousel-next:enabled:hover {
     color: #cc0146;
@@ -510,7 +456,7 @@ ul.hideIndicators {
     border-color: transparent;
     background: #ae194c;
 }
-*/
+
 /* Image Blink */
 /* Firefox old*/
 @-moz-keyframes blink {
@@ -574,6 +520,11 @@ ul.hideIndicators {
     }
 }
 
+/*Increase Image*/
+img.increase:hover {
+    transform: scale(1.5);
+}
+/*Blink Image*/
 .blink-image {
     -moz-animation: blink normal 2s infinite ease-in-out; /* Firefox */
     -webkit-animation: blink normal 2s infinite ease-in-out; /* Webkit */

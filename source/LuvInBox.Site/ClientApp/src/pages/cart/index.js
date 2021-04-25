@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { cartActions } from '../../_actions';
+import { cartService } from '../../_services';
 import { InputText } from 'primereact/inputtext';
 import { OrderList } from 'primereact/orderlist';
 import { Button } from 'primereact/button';
@@ -15,7 +16,6 @@ const Cart = (props) => {
 
     const [products, setProducts] = useState([]);
     const [sum, setSum] = useState(0);
-    const [zipCode, setZipCode] = useState('');
 
     useEffect(() => {
         if (products.length != props.cart.length)
@@ -48,7 +48,7 @@ const Cart = (props) => {
         let value = 0;
 
         products.forEach((item) => {
-            value += item.unitPrice;
+            value += item.price;
         });
 
         setSum(value);
@@ -74,8 +74,23 @@ const Cart = (props) => {
         document.querySelector("#button-checkout").appendChild(script);
     }
 
-    const calculateShipping = () => {
-        dispatch(cartActions.calculateShipping(props.zipCode));
+    const calculateShipping = async e => {
+        const cep = e.target.value;
+
+        await cartService.calculateShipping(cep)
+            .then((shippings) => {
+                shippings.forEach((item) => {
+                    let id = item.productId;
+                    let product = props.products.find(({ productId }) => productId == id);
+
+                    if (product) {
+                        product.shipping = item;
+                    }                
+                });
+            })
+            .catch((err) => {
+                alert('Erro ao consultar Frete: ' + err.message);
+            });
     }
 
     const itemTemplate = (item) => {
@@ -92,8 +107,12 @@ const Cart = (props) => {
                     </div>
                 </div>
                 <div className="product-list-action">
-                    <span>R$ {item.unitPrice}</span>
-                    <div><Button onClick={(e) => removeProd(item)} className="p-button-secondary" icon="pi pi-trash" iconPos="left" tooltip={t('lbl_remove_product')}></Button></div>
+                    <div><Trans>lbl_Price</Trans> <span>R$ {item.price}</span></div>
+                    <div><Trans>lbl_Shipping</Trans> <span>R$ {item.shipping.value}</span></div>
+                    <div><Trans>lbl_Deadline</Trans> <span>R$ {item.shipping.deadline}</span></div>
+                    <div>
+                        <Button onClick={(e) => removeProd(item)} className="p-button-secondary" icon="pi pi-trash" iconPos="left" tooltip={t('lbl_remove_product')}></Button>
+                    </div>
                 </div>
             </div>
         );
@@ -101,22 +120,22 @@ const Cart = (props) => {
 
     return (
         <div>
-            <div className="card" style={{ marginTop: 2 }}>
+            <div className="card">
                 <center><h4 className="title"><Trans>lbl_cart</Trans></h4></center>
-                <div>
-                    <div className="p-field p-col-6">
-                        <div className="p-inputgroup">
-                            <span className="p-inputgroup-addon">
-                                <img src="images/freight.png" style={{ height: 18 }} />
-                            </span>
-                            <InputText id="ZipCode" name="ZipCode" type="text" onChange={(e) => setZipCode(e)} defaultValue={zipCode} maxLength="20"
-                                placeholder={t('lbl_zipcode')} className="p-d-block" type="text" aria-describedby="zipCode-help" onBlur={calculateShipping} />
-                        </div>
-                        <small id="zipCode-help" className="p-invalid p-d-block text-right"><Trans>warn_zipcode_for_shipping</Trans></small>
-                    </div>
-                </div>
                 <div className="orderlist-demo">
                     <div className="card">
+                        <div style={{marginLeft: 50}}>
+                            <div className="p-field p-col-6">
+                                <div className="p-inputgroup">
+                                    <span className="p-inputgroup-addon">
+                                        <img src="images/freight.png" style={{ height: 18 }} />
+                                    </span>
+                                    <InputText id="ZipCode" name="ZipCode" type="text" maxLength="20" placeholder={t('lbl_zipcode')}
+                                        className="p-d-block" type="text" aria-describedby="zipCode-help" onBlur={calculateShipping} />
+                                </div>
+                                <small id="zipCode-help" className="p-invalid p-d-block text-right"><Trans>warn_zipcode_for_shipping</Trans></small>
+                            </div>
+                        </div>
                         <OrderList value={products} header={t('lbl_my_products')} dragdrop listStyle={{ height: 'auto' }} dataKey="id"
                             itemTemplate={itemTemplate} onChange={(e) => setValue(e)}></OrderList>
 
@@ -127,7 +146,7 @@ const Cart = (props) => {
                         <hr />
                         <div className="p-formgroup-inline" style={{ marginTop: 30, marginLeft: 70, display: (props.isCheckingout) ? "none" : "" }}>
                             <Button className="p-button-help" onClick={(e) => checkout()}><small>Checkout</small>&nbsp;&nbsp;<i className="pi pi-check-circle"></i></Button>
-                            <Button className="p-button-secondary" onClick={(e) => emptyCart()} style={{ marginLeft: 10 }}><small><Trans>lbl_empty_cart</Trans></small>&nbsp;&nbsp;<i className="pi pi-undo"></i></Button>
+                            <Button className="p-button-plain" onClick={(e) => emptyCart()} style={{ marginLeft: 10 }}><small><Trans>lbl_empty_cart</Trans></small>&nbsp;&nbsp;<i className="pi pi-undo"></i></Button>
                         </div>
                         <div id="button-checkout"></div>
                     </div>
@@ -137,7 +156,7 @@ const Cart = (props) => {
             <div>
                 <center>
                     <div><img src="images/logos/mercado_pago.png" style={{ height: 80 }} /></div>
-                    <div><small>lbl_payment_partner_msg<Trans></Trans></small></div>
+                    <div><small><Trans>lbl_payment_partner_msg</Trans></small></div>
                 </center>
             </div>
         </div>

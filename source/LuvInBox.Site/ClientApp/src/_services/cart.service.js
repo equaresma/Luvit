@@ -43,7 +43,8 @@ function addProduct(product) {
                     quantity: 1,
                     price: product.price,
                     category: null,
-                    image: product.image
+                    image: product.image,
+                    shipping: { deadline: 0, value: 0 }
                 });
             }
 
@@ -135,10 +136,10 @@ async function calculateShipping(zipCodeDestiny) {
         body: JSON.stringify(cart)
     };
 
-    return await fetch('api/Payment/CalculateCart', requestOptions)
+    return await fetch('api/Shipping/CalculateCart', requestOptions)
         .then(handleResponse)
-        .then(id => {
-            return id;
+        .then(shippings => {
+            return shippings;
         }).catch(error => {
             return error;
         });

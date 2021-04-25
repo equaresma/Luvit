@@ -8,9 +8,15 @@ class MenuCart extends React.PureComponent {
         const { count } = this.props;
 
         if (count > 0) {
-            return (<NavLink className="footLnk" href="/cart"><i className="pi pi-shopping-cart"><Badge value={count} severity="success" className="p-mr-2">Cart</Badge></i></NavLink>);
+            return (<NavLink className="footLnk" href="/cart">
+                        <i className="pi pi-shopping-cart">
+                            <Badge value={count} severity="info" className="p-mr-2">Cart</Badge>
+                        </i>
+                    </NavLink>);
         } else
-            return (<NavLink className="footLnk" href="/cart"><i className="pi pi-shopping-cart"></i></NavLink>);
+            return (<NavLink className="footLnk" href="/cart">
+                        <i className="pi pi-shopping-cart"></i>
+                    </NavLink>);
     }
 }
 
