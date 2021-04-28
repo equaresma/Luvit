@@ -7,13 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace com.luvinbox.service.Delivery
-{
+namespace com.luvinbox.service.Delivery {
     /// <summary>
     /// Reference: https://www.escoladeecommerce.com/artigos/como-calcular-o-frete-dos-correios/
     /// </summary>
-    public class CorreiosShippingService : IShippingService
-    {
+    public class CorreiosShippingService : IShippingService {
         //coeficiente definido conforme padrões internacionais. Trata-se de um fator de cubagem resultante da relação entre peso e volume ideal do pacote (estabelecida pela Entidade Internacional das Empresas Aéreas — IATA
         public readonly int _cubeFactor = 6000;
         //10Kg
@@ -21,20 +19,17 @@ namespace com.luvinbox.service.Delivery
         //SEDEX à vista
         public const string _defaultService = "04510";
 
-        public async Task<DeliveryDTO> Calculate(ShippingDTO instance)
-        {
+        public async Task<DeliveryDTO> Calculate(ShippingDTO instance) {
             if (instance == null)
                 throw new BusinessException("Shipping cannot be null");
 
             //calculate cubic weigth
-            if (instance.Dimension.Weigth == 0 || instance.Dimension.Weigth > _weigthFactor)
-            {
+            if (instance.Dimension.Weigth == 0 || instance.Dimension.Weigth > _weigthFactor) {
                 instance.Dimension.Weigth = (instance.Dimension.Length * instance.Dimension.Width * instance.Dimension.Height) / _cubeFactor;
             }
 
             await ObterFrete(instance, _defaultService);
-            var delivery = new DeliveryDTO()
-            {
+            var delivery = new DeliveryDTO() {
                 Deadline = instance.Deadline,
                 Shipping = instance.Value
             };
@@ -42,14 +37,12 @@ namespace com.luvinbox.service.Delivery
             return delivery;
         }
 
-        private async Task ObterFrete(ShippingDTO instance, string defaultServiceCode)
-        {
+        private async Task ObterFrete(ShippingDTO instance, string defaultServiceCode) {
             var url = GetURL(instance, defaultServiceCode);
             var client = new HttpClient();
             var response = await client.GetAsync(url);
 
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
-            {
+            if (response.StatusCode == System.Net.HttpStatusCode.OK) {
                 //read xml
                 var returnedXML = new XmlDocument();
                 returnedXML.LoadXml(await response.Content.ReadAsStringAsync());
@@ -57,8 +50,7 @@ namespace com.luvinbox.service.Delivery
                 int.TryParse(returnedXML.DocumentElement.SelectSingleNode("//Servicos/cServico/Erro").InnerText, out int res);
 
                 //ocorreu erro
-                if (res != 0)
-                {
+                if (res != 0) {
                     throw new BusinessException(
                         $"Getting from Correios.com returned error code: {res} - message: {returnedXML.DocumentElement.SelectSingleNode("//Servicos/cServico/MsgErro").InnerText}");
                 }
@@ -68,14 +60,11 @@ namespace com.luvinbox.service.Delivery
 
                 instance.Deadline = deadline;
                 instance.Value = value;
-            }
-            else
-            {
+            } else {
                 throw new BusinessException("Error trying get from Correios.com " + response.Content);
             }
         }
-        private string GetURL(ShippingDTO instance, string defaultServiceCode)
-        {
+        private string GetURL(ShippingDTO instance, string defaultServiceCode) {
             var query = new StringBuilder();
 
             query.Append("http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx");

@@ -338,16 +338,6 @@ a.footLnk:active {
     color: #fffefe;
 }
 
-input[type=text] {
-    border: none;
-    border-bottom: 1px solid;
-}
-
-input[type=password] {
-    border: none;
-    border-bottom: 1px solid;
-}
-
 /*Meus overrides*/
 ul.nav {
     width: 100%

@@ -13,7 +13,9 @@ const Product = ({ product = null, category = null }) => {
     const { t } = useTranslation();
 
     useEffect(() => {
-        dispatch(categoryActions.getById(product.categoryId));
+        //let myVariable = new URLSearchParams(history.location.search).get('business');
+        if (product && product.categoryId)
+            dispatch(categoryActions.getById(product.categoryId));
     }, []);
 
     const back = () => {
@@ -38,7 +40,7 @@ const Product = ({ product = null, category = null }) => {
                         </div>
                     </center>
                 </div>
-                <div className="col-8">
+                <div className="col-4">
                     <h4 className="title">{product.name}</h4>
                     <hr /><br />
                     <div className="product-list-detail">
@@ -76,6 +78,15 @@ const Product = ({ product = null, category = null }) => {
                     <br /><br />
                     <Button label={t('lbl_back')} icon="pi pi-backward" className="p-button-help p-button" onClick={(e) => back()} />
                     <Button label={t('lbl_add')} icon="pi pi-shopping-cart" className="p-button-help p-button" onClick={(e) => addCart(product)} style={{ marginLeft: "10px" }} />
+                </div>
+                <div className="col-4">                   
+                    <div style={{ marginTop: 90 }}>
+                        <p><small>Fornecido por</small></p>
+                        <span>{product.vendorName}</span>
+                    </div>
+                    <div>
+                        <img src={`images/logos/${product.vendorDocNumber.replace(/[./-]/g, '')}.png`} />                        
+                    </div>                    
                 </div>
             </div>
         );

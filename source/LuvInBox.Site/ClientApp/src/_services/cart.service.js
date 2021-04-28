@@ -44,7 +44,11 @@ function addProduct(product) {
                     price: product.price,
                     category: null,
                     image: product.image,
-                    shipping: { deadline: 0, value: 0 }
+                    shipping: { deadline: 0, value: 0 },
+                    vendorId: product.vendorId,
+                    vendorName: product.vendorName,
+                    vendorZipCode: product.vendorZipCode,
+                    vendorDocNumber: product.vendorDocNumber
                 });
             }
 
@@ -127,13 +131,23 @@ async function checkout() {
 }
 
 async function calculateShipping(zipCodeDestiny) {
+    let shippings = [];
     let cart = JSON.parse(localStorage.getItem('cart'));
+
     cart = (Array.isArray(cart)) ? cart : [];
-     
+    cart.forEach((item) => {
+        shippings.push({
+            productId: item.productId,
+            zipCodeOrigin: item.vendorZipCode,
+            zipCodeDestiny: zipCodeDestiny,
+            Dimension: item.dimension
+        });
+    });
+
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(cart)
+        body: JSON.stringify(shippings)
     };
 
     return await fetch('api/Shipping/CalculateCart', requestOptions)

@@ -105,11 +105,14 @@ const Cart = (props) => {
                         <i className="pi pi-tag product-category-icon"></i>
                         <span className="product-category">{item.category}</span>
                     </div>
+                    <div>
+                        <img src={`images/logos/${item.vendorDocNumber.replace(/[./-]/g, '')}.png`} style={{height:20}}/>
+                    </div>
                 </div>
                 <div className="product-list-action">
-                    <div><Trans>lbl_Price</Trans> <span>R$ {item.price}</span></div>
-                    <div><Trans>lbl_Shipping</Trans> <span>R$ {item.shipping.value}</span></div>
-                    <div><Trans>lbl_Deadline</Trans> <span>R$ {item.shipping.deadline}</span></div>
+                    <div><Trans>lbl_price</Trans> <span>R$ {item.price}</span></div>
+                    <div><Trans>lbl_shipping</Trans> <span>R$ {item.shipping.value}</span></div>
+                    <div><Trans>lbl_deadline</Trans> <span>R$ {item.shipping.deadline}</span></div>
                     <div>
                         <Button onClick={(e) => removeProd(item)} className="p-button-secondary" icon="pi pi-trash" iconPos="left" tooltip={t('lbl_remove_product')}></Button>
                     </div>
@@ -128,7 +131,7 @@ const Cart = (props) => {
                             <div className="p-field p-col-6">
                                 <div className="p-inputgroup">
                                     <span className="p-inputgroup-addon">
-                                        <img src="images/freight.png" style={{ height: 18 }} />
+                                        <img src="images/freight.png" style={{ height: 30 }} />
                                     </span>
                                     <InputText id="ZipCode" name="ZipCode" type="text" maxLength="20" placeholder={t('lbl_zipcode')}
                                         className="p-d-block" type="text" aria-describedby="zipCode-help" onBlur={calculateShipping} />
