@@ -48,7 +48,13 @@ function addProduct(product) {
                     vendorId: product.vendorId,
                     vendorName: product.vendorName,
                     vendorZipCode: product.vendorZipCode,
-                    vendorDocNumber: product.vendorDocNumber
+                    vendorDocNumber: product.vendorDocNumber,
+                    dimension: {
+                        Weigth =1,
+                        Length =20,
+                        Height =20,
+                        Width =20
+                    }
                 });
             }
 
