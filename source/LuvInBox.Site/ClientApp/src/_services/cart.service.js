@@ -50,10 +50,10 @@ function addProduct(product) {
                     vendorZipCode: product.vendorZipCode,
                     vendorDocNumber: product.vendorDocNumber,
                     dimension: {
-                        Weigth =1,
-                        Length =20,
-                        Height =20,
-                        Width =20
+                        weigth: 1,
+                        length: 20,
+                        height: 20,
+                        width: 20
                     }
                 });
             }
@@ -146,7 +146,7 @@ async function calculateShipping(zipCodeDestiny) {
             productId: item.productId,
             zipCodeOrigin: item.vendorZipCode,
             zipCodeDestiny: zipCodeDestiny,
-            Dimension: item.dimension
+            dimension: item.dimension
         });
     });
 
@@ -172,7 +172,7 @@ function handleResponse(response) {
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
         } else {
-            return text;
+            return JSON.parse(text);
         }
     });
 }

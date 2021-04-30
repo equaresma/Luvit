@@ -9,6 +9,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import ProductImage from '../../components/product/image';
 
 import './index.css';
+import product from '../../components/product';
 
 const Cart = (props) => {
     const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const Cart = (props) => {
 
     const [products, setProducts] = useState([]);
     const [sum, setSum] = useState(0);
+    const [isCalculated, setIsCalculated] = useState(false);
 
     useEffect(() => {
         if (products.length != props.cart.length)
@@ -75,18 +77,25 @@ const Cart = (props) => {
     }
 
     const calculateShipping = async e => {
+        if (isCalculated)
+            return;
+
         const cep = e.target.value;
 
         await cartService.calculateShipping(cep)
             .then((shippings) => {
+                setIsCalculated(true);
+
                 shippings.forEach((item) => {
                     let id = item.productId;
-                    let product = props.products.find(({ productId }) => productId == id);
+                    let product = products.find(({ productId }) => productId == id);
 
                     if (product) {
                         product.shipping = item;
                     }                
                 });
+
+                setProducts(products);
             })
             .catch((err) => {
                 alert('Erro ao consultar Frete: ' + err.message);
@@ -112,7 +121,7 @@ const Cart = (props) => {
                 <div className="product-list-action">
                     <div><Trans>lbl_price</Trans> <span>R$ {item.price}</span></div>
                     <div><Trans>lbl_shipping</Trans> <span>R$ {item.shipping.value}</span></div>
-                    <div><Trans>lbl_deadline</Trans> <span>R$ {item.shipping.deadline}</span></div>
+                    <div><Trans>lbl_deadline</Trans> <span>{item.shipping.deadline} dias.</span></div>
                     <div>
                         <Button onClick={(e) => removeProd(item)} className="p-button-secondary" icon="pi pi-trash" iconPos="left" tooltip={t('lbl_remove_product')}></Button>
                     </div>
