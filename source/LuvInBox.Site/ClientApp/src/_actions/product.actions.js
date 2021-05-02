@@ -69,7 +69,9 @@ function getPromotions() {
 
         productService.getPromotions()
             .then(
-                products => dispatch(success(products)),
+                products => {
+                    dispatch(success(products))
+                },
                 error => dispatch(failure(error))
             );
     };

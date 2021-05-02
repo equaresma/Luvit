@@ -28,7 +28,7 @@ namespace LuvInBox.Site.Controllers {
                 if (ret == null)
                     return NotFound(user);
 
-                if (tries == 0 && !ret.Authenticated && ret.Message.Contains("Token expired", StringComparison.InvariantCultureIgnoreCase)){
+                if (tries == 0 && !ret.Authenticated && ret.Message.Contains("Token expired", StringComparison.InvariantCultureIgnoreCase)) {
                     tries++;
                     goto FindLogin;
                 }

@@ -11,35 +11,25 @@ using System.Threading.Tasks;
 namespace com.luvinbox.site.Controllers {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class ProductsController : ControllerBase {
-        public IProductService _service { get; set; }
-        public ProductsController(IProductService service) {
+    public class ProductStocksController : ControllerBase {
+        public IProductStockService _service { get; set; }
+        public ProductStocksController(IProductStockService service) {
             _service = service;
         }
-
-        // GET: api/<ProductController>
-        [AllowAnonymous]
-        [HttpGet]
-        public async Task<IEnumerable<ProductDTO>> Get() => await _service.GetAll();
 
         // GET api/<ProductController>/5
         [AllowAnonymous]
         [HttpGet("{id}")]
-        public async Task<ProductDTO> Get(string id) => await _service.Get(id);
+        public async Task<ProductStockDTO> Get(string id) => await _service.Get(id);
 
-        // GET api/<ProductController>?filter
-        [AllowAnonymous]
-        [HttpGet]
-        public async Task<IEnumerable<ProductDTO>> Filter(string value) => await _service.FindByFilter(value);
-
-        [AllowAnonymous]
+        [Authorize("Bearer")]
         [HttpGet("{id}")]
-        public async Task<IEnumerable<ProductDTO>> GetByCategory(string id) => await _service.FindByCategory(id);
+        public async Task<IEnumerable<ProductStockDTO>> GetByVendor(string id) => await _service.FindByVendor(id);
 
         // POST api/<ProductController>
         [Authorize("Bearer")]
         [HttpPost]
-        public async Task<IActionResult> Post(ProductDTO instance) {
+        public async Task<IActionResult> Post(ProductStockDTO instance) {
             if (this.ModelState.IsValid) {
                 await _service.Post(instance);
                 return Ok(instance);
@@ -51,21 +41,10 @@ namespace com.luvinbox.site.Controllers {
         // PUT api/<ProductController>/5
         [Authorize("Bearer")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(string id, ProductDTO instance) {
+        public async Task<IActionResult> Put(string id, ProductStockDTO instance) {
             if (this.ModelState.IsValid) {
                 await _service.Put(id, instance);
                 return Ok(instance);
-            } else {
-                return BadRequest();
-            }
-        }
-
-        [Authorize("Bearer")]
-        [HttpPatch()]
-        public async Task<IActionResult> Patch(IEnumerable<ProductDTO> products) {
-            if (this.ModelState.IsValid) {
-                await _service.Patch(products);
-                return Ok();
             } else {
                 return BadRequest();
             }

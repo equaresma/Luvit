@@ -10,11 +10,14 @@
 }
 
 .mCointaner {
-    margin-top: 10px !important;
     margin-bottom: 10px !important;
     padding: 6px !important;
 }
 
 .toolTip {
     opacity: 0.7;
+}
+
+.categ-template {
+    padding: 20px;
 }

@@ -40,7 +40,7 @@ namespace LuvInBox.Site.Controllers {
 
                 await cart.ParallelForEachAsync(async item => {
                     var ret = await _service.Calculate(item);
-                    var shp = list.Where(c=> c.ProductId == ret.ProductId).FirstOrDefault();
+                    var shp = list.Where(c => c.ProductId == ret.ProductId).FirstOrDefault();
 
                     shp.Value = ret.Shipping;
                     shp.Deadline = ret.Deadline;

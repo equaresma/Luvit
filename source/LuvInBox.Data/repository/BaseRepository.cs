@@ -23,7 +23,6 @@ namespace com.luvinbox.data.repository {
 
             _collection = database.GetCollection<T>(_colName);
         }
-
         public async Task<IEnumerable<T>> Get() {
             var lst = await _collection.FindAsync(T => true);
             return lst.ToEnumerable();

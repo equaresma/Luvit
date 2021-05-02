@@ -2,6 +2,9 @@ import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import Layout from './components/layout';
 import Home from './pages/home';
+import AdmHome from './pages/home/adm.index';
+import { AdmLogin } from './pages/login/adm.index';
+import AdmProducts from './pages/product/products';
 import Cart from './pages/cart';
 import { Login } from './pages/login';
 import { ChangePass } from './pages/user/changepass';
@@ -26,6 +29,9 @@ export default function Routes() {
             <Layout>
                 <Switch>
                     <Route path="/" exact component={Home} />
+                    <Route path="/adm" exact component={AdmHome} />
+                    <Route path="/adm/login" exact component={AdmLogin} />
+                    <Route path="/adm/products" exact component={AdmProducts} />
                     <Route path="/cart" component={Cart} />
                     <Route path="/login" component={Login} />
                     <Route path='/contact' component={Contact} />

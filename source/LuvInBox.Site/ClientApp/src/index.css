@@ -298,10 +298,11 @@ a.footLnk:active {
     align-items: center;
 }
 
+/*Meus overrides*/
 .card {
     margin-top: 100px;
     margin-bottom: 2rem;
-    max-width: 70%;
+    max-width: 85%;
     margin: auto;
     padding: 10px;
     display: flex;
@@ -313,7 +314,7 @@ a.footLnk:active {
     background-color: #CC0146;
     margin-top: 100px;
     margin-bottom: 2rem;
-    max-width: 70%;
+    max-width: 85%;
     margin: auto;
     padding: 10px;
     display: flex;
@@ -338,7 +339,6 @@ a.footLnk:active {
     color: #fffefe;
 }
 
-/*Meus overrides*/
 ul.nav {
     width: 100%
 }
@@ -369,11 +369,6 @@ element.style {
 .p-component, .p-component * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-}
-
-.p-dropdown {
-    border: none !important;
-    border-bottom: 1px solid !important;
 }
 
 .granContainer {

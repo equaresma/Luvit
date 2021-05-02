@@ -29,6 +29,9 @@ luvitmarketplace@gmail.com
 		Efeturar checkout 
 		Confirmar Transação
 
+https://www.lojadoprazer.com.br/custom.asp?arq=LDPQuemSomos.htm
+
+
 https://viacep.com.br/ws/11700300/json/?callback=?
 
 http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?

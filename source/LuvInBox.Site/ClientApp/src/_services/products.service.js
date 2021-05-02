@@ -47,6 +47,8 @@ function getPromotions() {
         .then(handleResponse)
         .then(products => {
             return products;
+        }, error => {
+            return error
         });
 }
 
@@ -61,6 +63,8 @@ function getByCategory(id) {
         .then(handleResponse)
         .then(products => {
             return products;
+        }, error => {
+            return error
         });
 }
 

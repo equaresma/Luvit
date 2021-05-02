@@ -21,7 +21,7 @@ const CarouselCategory = ({ categs = [], onLoad = () => { }, onCategSelected, re
 
     const categTemplate = (categ) => {
         return (
-            <div style={{padding: 20}}>
+            <div className="categ-template">
                 <Tooltip target=".img-category" mouseTrack mouseTrackLeft={10} className="toolTip" />
                 <Link to="" onClick={(e) => categClick(categ.id)}>
                     <img className="img-category increase" src={categ.url} alt={categ.name} data-pr-tooltip={categ.name}/>
@@ -31,7 +31,7 @@ const CarouselCategory = ({ categs = [], onLoad = () => { }, onCategSelected, re
     }
 
     return (
-        <div className="container-fluid" style={{ marginTop: 20 }}>
+        <div className="container-fluid">
             <div className="row">
                 <div className="col-12">
                     <div className="card mCointaner">

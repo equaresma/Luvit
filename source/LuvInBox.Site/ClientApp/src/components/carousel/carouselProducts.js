@@ -56,7 +56,7 @@ const CarouselProducts = ({ mType = 'H', onLoad = () => { }, onLoadPromotions = 
     }
 
     return (
-        <div className="container-fluid" style={{ marginTop: 10, marginBottom: 5}}>
+        <div className="container-fluid">
             <div className="row">
                 <div className="col-12">
                     <center><h5 className="title">{transTitle}</h5></center>
@@ -119,4 +119,3 @@ function mapDispatchToProps(dispatch, ownProps) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarouselProducts);
-

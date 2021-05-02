@@ -1,9 +1,7 @@
 ﻿using System;
 
-namespace com.luvinbox.domain.compose
-{
-    public class Dimensions : ICloneable
-    {
+namespace com.luvinbox.domain.compose {
+    public class Dimensions : ICloneable {
         //largura
         public Double Width { get; set; }
         //altura
@@ -12,6 +10,7 @@ namespace com.luvinbox.domain.compose
         public Double Length { get; set; }
         //peso em kilos
         public Double Weigth { get; set; }
+        public string Description { get; set; }
 
         public object Clone() {
             return this.MemberwiseClone();
