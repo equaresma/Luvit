@@ -6,6 +6,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace LuvInBox.Site.Controllers {
@@ -48,6 +49,14 @@ namespace LuvInBox.Site.Controllers {
                 }, maxDegreeOfParallelism: 4);
 
                 return Ok(list);
+
+            } catch (AggregateException aex) {
+                StringBuilder error = new StringBuilder();
+
+                foreach (var ex in aex.InnerExceptions)
+                    error.AppendFormat("{0}: {1}\n", ex.GetType().Name, ex.Message);
+
+                return BadRequest(error.ToString());
 
             } catch (Exception ex) {
                 return BadRequest(ex.Message);

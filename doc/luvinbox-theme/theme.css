@@ -1328,7 +1328,7 @@
     .p-button.p-button-icon-only.p-button-rounded {
       border-radius: 50%;
       height: 2.25rem; }
-  .p-button.p-button-sm {
+  .p-button.darym {
     font-size: 0.875rem;
     padding: 0.499625rem 0.65625rem; }
     .p-button.p-button-sm .p-button-icon {
@@ -1353,7 +1353,7 @@
   background: #D47093;
   border: 0 none; }
   .p-button.p-button-secondary:enabled:hover, .p-buttonset.p-button-secondary > .p-button:enabled:hover, .p-splitbutton.p-button-secondary > .p-button:enabled:hover {
-    background: rgba(76, 175, 80, 0.92);
+    background: rgba(212,112,147,1);
     color: #ffffff;
     border-color: transparent; }
   .p-button.p-button-secondary:enabled:focus, .p-buttonset.p-button-secondary > .p-button:enabled:focus, .p-splitbutton.p-button-secondary > .p-button:enabled:focus {
@@ -3788,7 +3788,7 @@
   .p-scrolltop.p-link {
     background: #D47093; }
     .p-scrolltop.p-link:hover {
-      background: rgba(76, 175, 80, 0.92); }
+      background: rgba(212,112,147,1); }
   .p-scrolltop .p-scrolltop-icon {
     font-size: 1.5rem;
     color: #ffffff; }

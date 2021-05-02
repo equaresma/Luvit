@@ -2,6 +2,7 @@
 using com.luvinbox.domain.exceptions;
 using com.luvinbox.domain.services;
 using System;
+using System.Globalization;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,8 @@ namespace com.luvinbox.service.Delivery {
             await ObterFrete(instance, _defaultService);
             var delivery = new DeliveryDTO() {
                 Deadline = instance.Deadline,
-                Shipping = instance.Value
+                Shipping = instance.Value,
+                ProductId = instance.ProductId
             };
 
             return delivery;
@@ -55,8 +57,11 @@ namespace com.luvinbox.service.Delivery {
                         $"Getting from Correios.com returned error code: {res} - message: {returnedXML.DocumentElement.SelectSingleNode("//Servicos/cServico/MsgErro").InnerText}");
                 }
 
+                CultureInfo usCulture = new CultureInfo("pt-BR");
+                NumberFormatInfo dbNumberFormat = usCulture.NumberFormat;
+
                 short.TryParse(returnedXML.DocumentElement.SelectSingleNode("//Servicos/cServico/PrazoEntrega").InnerText, out short deadline);
-                decimal.TryParse(returnedXML.DocumentElement.SelectSingleNode("//Servicos/cServico/Valor").InnerText, out decimal value);
+                var value = decimal.Parse(returnedXML.DocumentElement.SelectSingleNode("//Servicos/cServico/Valor").InnerText, dbNumberFormat);
 
                 instance.Deadline = deadline;
                 instance.Value = value;
