@@ -1,15 +1,42 @@
 import { productConstants } from '../_constants';
+
 const initialState = {
     products: [],
-    product: null,
     productFiltered: [],
     productPromotions: [],
     productByCategory: [],
     reload: true,
-    error: null
+    error: null,
+    product: {
+        id: null,
+        barCode: null,
+        name: '',
+        description: '',
+        category: null,
+        dimension: {
+            weight: 0,
+            width: 0,
+            height: 0,
+            length: 0,
+            description: ''
+        },
+        brand: '',
+        origin: '',
+        manufacturer: '',
+        completeDescription: '',
+        material: '',
+        usage: '',
+        care: '',
+        color: '',
+        images: new Array(),
+        status: 0
+    }
 }
+
 export function products(state = initialState, action) {
     switch (action.type) {
+        case productConstants.PRD_DEL_REQUEST:
+        case productConstants.PRD_SAVE_REQUEST:
         case productConstants.PRD_REQUEST:
             return { ...state };
         case productConstants.PRD_SUCCESS:
@@ -35,7 +62,7 @@ export function products(state = initialState, action) {
         case productConstants.PRD_PROMOTIONS_SUCCESS:
             return {
                 products: state.products,
-                product: state.product,                
+                product: state.product,
                 productFiltered: state.productFiltered,
                 productPromotions: action.products,
                 productByCategory: state.productPromotions,
@@ -58,6 +85,29 @@ export function products(state = initialState, action) {
                 product: null,
                 reload: true,
                 error: action.error
+            };
+        case productConstants.PRD_DEL_SUCCESS:
+        case productConstants.PRD_SAVE_SUCCESS:
+            return {
+                products: state.products,
+                product: action.product,
+                reload: true,
+                error: action.error
+            };
+        case productConstants.PRD_DEL_ERROR:
+        case productConstants.PRD_SAVE_ERROR:
+            return {
+                products: state.products,
+                product: state.product,
+                reload: true,
+                error: action.error
+            };
+        case productConstants.PRD_NEW:
+            return {
+                products: state.products,
+                product: state.product,
+                reload: true,
+                error: null
             };
         default:
             return state

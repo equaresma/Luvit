@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace com.luvinbox.site.Controllers {
+    //TODO: Trocar os anonimos por Authorization
+
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class ProductsController : ControllerBase {
@@ -37,7 +39,8 @@ namespace com.luvinbox.site.Controllers {
         public async Task<IEnumerable<ProductDTO>> GetByCategory(string id) => await _service.FindByCategory(id);
 
         // POST api/<ProductController>
-        [Authorize("Bearer")]
+        // [Authorize("Bearer")]
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Post(ProductDTO instance) {
             if (this.ModelState.IsValid) {
@@ -49,7 +52,8 @@ namespace com.luvinbox.site.Controllers {
         }
 
         // PUT api/<ProductController>/5
-        [Authorize("Bearer")]
+        //[Authorize("Bearer")]
+        [AllowAnonymous]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(string id, ProductDTO instance) {
             if (this.ModelState.IsValid) {
@@ -72,7 +76,8 @@ namespace com.luvinbox.site.Controllers {
         }
 
         // DELETE api/<ProductController>/5
-        [Authorize("Bearer")]
+        //[Authorize("Bearer")]
+        [AllowAnonymous]
         [HttpDelete("{id}")]
         public async Task<Boolean> Delete(string id) => await _service.Delete(id);
     }

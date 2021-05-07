@@ -29,6 +29,13 @@ luvitmarketplace@gmail.com
 		Efeturar checkout 
 		Confirmar Transação
 
+
+	<div className="p-field">
+		<label htmlFor="price"><Trans>lbl_price</Trans></label>
+		<InputNumber id="price" value={product.price} onValueChange={(e) => onInputNumberChange(e, 'price')} mode="currency" currency="BRL" locale="pt-BR" />
+	</div>
+
+
 https://www.lojadoprazer.com.br/custom.asp?arq=LDPQuemSomos.htm
 
 

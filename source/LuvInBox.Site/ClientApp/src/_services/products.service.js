@@ -5,7 +5,9 @@ export const productService = {
     getAll,
     getPromotions,
     getByCategory,
-    setSelected
+    setSelected,
+    save,
+    deleteProduct
 };
 
 function filter(value) {
@@ -80,6 +82,63 @@ function setSelected(product) {
     }, function (error) {
         return error;
     });
+}
+
+function deleteProduct(productId) {
+    let url = 'api/Products/Delete/' + productId;
+    const requestOptions = {
+        method: 'DELETE',
+        headers: authHeader()
+    };
+
+    return fetch(url, requestOptions)
+        .then(handleResponse)
+        .then(isDelete => {
+            return isDelete;
+        }, error => {
+            return error
+        });
+}
+
+function save(product) {
+    if (product) {
+        if (product.id)
+            return _update(product);
+        else
+            return _create(product);
+    }
+}
+
+function _create(product) {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(product)
+    };
+
+    return fetch('api/Products/Post', requestOptions)
+        .then(handleResponse)
+        .then(product => {
+            return product;
+        }, error => {
+            return error
+        });
+}
+
+function _update(product) {
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(product)
+    };
+
+    return fetch(`api/Products/Put/${product.id}`, requestOptions)
+        .then(handleResponse)
+        .then(product => {
+            return product;
+        }, error => {
+            return error
+        });
 }
 
 function handleResponse(response) {

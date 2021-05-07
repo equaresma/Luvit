@@ -1,53 +1,38 @@
-﻿import React, { useEffect, useState, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import { classNames } from 'primereact/components/utils/ClassNames';
-import { Dropdown } from 'primereact/dropdown';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Toast } from 'primereact/toast';
 import { Button } from 'primereact/button';
 import { FileUpload } from 'primereact/fileupload';
+import { Rating } from 'primereact/rating';
 import { Toolbar } from 'primereact/toolbar';
 import { Editor } from 'primereact/editor';
+import { Dropdown } from 'primereact/dropdown';
 import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { ColorPicker } from 'primereact/colorpicker';
+import { isArray } from 'util';
 import { productActions, categoryActions } from '../../_actions';
-import ProductImage from '../../components/product/image';
 import { Trans, useTranslation } from 'react-i18next';
+import ReactFileReader from 'react-file-reader';
+import ProductImage from '../../components/product/image';
 
 import './index.css';
-import { isArray } from 'util';
 
-const Products = ({ onLoad = () => { }, products = [], categories = [], reload = true}) => {
-    let emptyProduct = {
-        id: null,
-        barCode: null,
-        name: '',
-        description: '',
-        category: null,
-        image: null,
-        price: 0,
-        quantity: 0,
-        rating: 0,
-        dimension: {
-            weight: 0,
-            width: 0,
-            height: 0,
-            length: 0,
-            description: ''
-        },
-        inventoryStatus: 'INSTOCK'
-    };
-
+const Products = (props) => {
+    const [reload] = useState(true);
+    const [products, setProducts] = useState([]);
+    const [category, setCategory] = useState(null);
+    const [categories, setCategories] = useState([]);
+    const [product, setProduct] = useState(props.product);
     const { t } = useTranslation();
     const [color, setColor] = useState('FFF');
-    const [category, setCategory] = useState(null);
     const [productDialog, setProductDialog] = useState(false);
     const [deleteProductDialog, setDeleteProductDialog] = useState(false);
     const [deleteProductsDialog, setDeleteProductsDialog] = useState(false);
-    const [product, setProduct] = useState(emptyProduct);
     const [selectedProducts, setSelectedProducts] = useState(null);
     const [submitted, setSubmitted] = useState(false);
     const [globalFilter, setGlobalFilter] = useState(null);
@@ -56,16 +41,16 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
 
     useEffect(() => {
         if (reload)
-            onLoad();
-    }, []);
+            props.onLoad();
+    }); // eslint-disable-line react-hooks/exhaustive-deps
 
     const formatCurrency = (value) => {
         return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     }
 
     const openNew = () => {
-        setProductDialog(true);
         setSubmitted(false);
+        setProductDialog(true);
     }
 
     const hideDialog = () => {
@@ -78,16 +63,21 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
     }
 
     const hideDeleteProductsDialog = () => {
-        setDeleteProductDialog(false);
+        setDeleteProductsDialog(false);
     }
 
     const saveProduct = () => {
-        setSubmitted(true);
-        //put save code here
+        props.onSave(product);
+        setProductDialog(false);
     }
 
-    const editProduct = (product) => {
-        setProduct(product);
+    const editProduct = (prod) => {        
+        let id = prod.categoryId;
+        let categ = props.categories.filter(c => c.id == id)[0];
+
+        setCategory(categ);
+        setProduct(prod);
+        setColor(prod.color);
         setProductDialog(true);
     }
 
@@ -97,10 +87,9 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
     }
 
     const deleteProduct = () => {
-        let products = products.filter(val => val.id !== product.id);
-        setDeleteProductDialog(false);
+        props.onDelete(product.id);
 
-        toast.show({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
+        setDeleteProductDialog(false);
     }
 
     const findIndexById = (id) => {
@@ -111,7 +100,6 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
                 break;
             }
         }
-
         return index;
     }
 
@@ -125,7 +113,7 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
     }
 
     const exportCSV = () => {
-        dt.exportCSV();
+        dt.current.exportCSV();
     }
 
     const confirmDeleteSelected = () => {
@@ -133,37 +121,54 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
     }
 
     const deleteSelectedProducts = () => {
-        let products = products.filter(val => !selectedProducts.includes(val));
-        setDeleteProductsDialog(false);
+        let _products = products.filter(val => !selectedProducts.includes(val));
+        products = _products;
 
-        toast.show({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
+        setDeleteProductsDialog(false);
+        setSelectedProducts(null);
+        toast.current.show({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
     }
 
     const onCategoryChange = (e) => {
-        let product = { ...product };
-        product['category'] = e.value;
-        setProduct(product);
+        setCategory(e.value);
+        let _product = { ...product };
+        _product['categoryId'] = e.value;
+
+        setProduct(_product);
     }
 
     const onInputChange = (e, name) => {
-        let product = { ...product };
+        const val = (e.target && e.target.value) || '';
+        let _product = { ...product };
+        _product[`${name}`] = val;
 
-        if (name === "description") {
-            let val = (e.target && e.target.htmlValue) || '';
-            product[`${name}`] = val;
+        setProduct(_product);
+    }
+
+    const onEditorChange = (e, name) => {
+        let _product = { ...product };
+
+        if (name.startsWith("dimension")) {
+            let nName = name.replace("dimension.", "");
+            _product.dimension[`${nName}`] = e.htmlValue.replace('"', '\"').replace('\\', '\\\\');
         } else {
-            let val = (e.target && e.target.value) || '';
-            product[`${name}`] = val;
+            _product[`${name}`] = e.htmlValue.replace('"', '\"').replace('\\', '\\\\');
         }
 
-        setProduct(product);
+        setProduct(_product);
     }
 
     const onInputNumberChange = (e, name) => {
         const val = e.value || 0;
-        let product = { ...product };
-        product[`${name}`] = val;
-        setProduct(product);
+        let _product = { ...product };
+
+        if (name == "dimension") {
+            _product.dimension[`${e.target.id}`] = val;
+        } else {
+            _product[`${name}`] = val;
+        }
+
+        setProduct(_product);
     }
 
     const leftToolbarTemplate = () => {
@@ -184,8 +189,35 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
         )
     }
 
+    const imageBodyTemplate = (rowData) => {
+        let img = null;
+
+        if (isArray(rowData.images)) {
+            img = rowData.images[0];
+        } else {
+            img = {
+                type: 1,
+                value: ""
+            }
+        }
+
+        return <ProductImage image={ img } className={"product-tumb"} />;
+    }
+
+    const colorBodyTemplate = (rowData) => {
+        return <div style={{ backgroundColor: "#" + rowData.color, width:30, height: 20 } }></div>;
+    }
+
     const priceBodyTemplate = (rowData) => {
         return formatCurrency(rowData.price);
+    }
+
+    const ratingBodyTemplate = (rowData) => {
+        return <Rating value={rowData.rating} readOnly cancel={false} />;
+    }
+
+    const statusBodyTemplate = (rowData) => {
+        return <span className={`product-badge status-${rowData.inventoryStatus.toLowerCase()}`}>{rowData.inventoryStatus}</span>;
     }
 
     const actionBodyTemplate = (rowData) => {
@@ -209,8 +241,8 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
 
     const productDialogFooter = (
         <React.Fragment>
-            <Button label={t('cancel')} icon="pi pi-times" className="p-button-text" onClick={hideDialog} />
-            <Button label={t('save')} icon="pi pi-check" className="p-button-text" onClick={saveProduct} />
+            <Button label="Cancel" icon="pi pi-times" className="p-button-text" onClick={hideDialog} />
+            <Button label="Save" icon="pi pi-check" className="p-button-text" onClick={saveProduct} />
         </React.Fragment>
     );
 
@@ -223,19 +255,15 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
 
     const deleteProductsDialogFooter = (
         <React.Fragment>
-            <Button label={t('no')} icon="pi pi-times" className="p-button-text" onClick={hideDeleteProductsDialog} />
-            <Button label={t('yes')} icon="pi pi-check" className="p-button-text" onClick={deleteSelectedProducts} />
+            <Button label="No" icon="pi pi-times" className="p-button-text" onClick={hideDeleteProductsDialog} />
+            <Button label="Yes" icon="pi pi-check" className="p-button-text" onClick={deleteSelectedProducts} />
         </React.Fragment>
     );
 
-    const imageBodyTemplate = (rowData) => {
-        return <ProductImage image={rowData.image} className={"product-tumb"} />;
-    }
-
     const categName = (rowData) => {
-        if (isArray(categories) && categories.length > 0) {
+        if (isArray(props.categories) && props.categories.length > 0) {
             let id = rowData.categoryId;
-            let categ = categories.find(({ categoryId }) => categoryId == id);
+            let categ = props.categories.filter(c => c.id == id)[0];
 
             if (categ)
                 return categ.name;
@@ -246,14 +274,46 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
         }
     }
 
+    const handleImgFiles = (files) => {
+        let _product = { ...product };
+
+        if (isArray(files)) {
+            files.forEach(file => {
+                _product.images.push({
+                    type: 1,
+                    value: JSON.stringify(file.base64)
+                });
+
+                toast.current.show({ severity: 'success', summary: 'File', file, life: 3000 });
+            });
+        } else {
+            _product.images.push({
+                type: 1,
+                value: JSON.stringify(files.base64)
+            });
+
+            toast.current.show({ severity: 'success', summary: 'File', files, life: 3000 });
+        }
+
+        setProduct(_product);
+    }
+
     const onUploadError = (e) => {
-        toast.show({ severity: 'danger', summary: 'Error', detail: e.xhr.responseText, life: 3000 });
+        toast.current.show({ severity: 'danger', summary: 'Error', detail: e.xhr.responseText, life: 3000 });
     }
 
     const onUpload = (e) => {
         product.image.url = e.xhr.responseText;
-        toast.show({ severity: 'success', summary: 'Success', detail: 'File uploaded', life: 3000 });
+        toast.current.show({ severity: 'success', summary: 'Success', detail: 'File uploaded', life: 3000 });
     }
+
+    const onColorChange = (e) => {
+        let _product = { ...product };
+
+        _product.color = e.value;
+        setProduct(_product);
+    }
+
     return (
         <div className="datatable-crud-demo">
             <Toast ref={toast} />
@@ -262,7 +322,7 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
                 <hr />
                 <Toolbar className="p-mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
-                <DataTable ref={dt} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
+                <DataTable ref={dt} value={props.products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
                     dataKey="id" paginator rows={5} rowsPerPageOptions={[5, 10, 25, 50, 100, 250, 500]}
                     paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                     currentPageReportTemplate={t("currentPageReportTemplate") + t("products")}
@@ -270,119 +330,118 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
                     header={header}>
 
                     <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
-                    <Column field="barcode" header={t("lbl_barcode")} sortable></Column>
+                    <Column field="barCode" header={t("lbl_barcode")} sortable></Column>
                     <Column field="name" header={t("lbl_name")} sortable></Column>
-                    <Column header={t("lbl_category")} sortable body={categName}></Column>
-                    <Column field="price" header={t("lbl_price")} body={priceBodyTemplate} sortable></Column>
+                    <Column header={t("lbl_category")} sortable body={categName} sortable></Column>
                     <Column header={t("lbl_image")} body={imageBodyTemplate}></Column>
+                    <Column header={t("lbl_color")} body={colorBodyTemplate}></Column>
                     <Column body={actionBodyTemplate}></Column>
                 </DataTable>
             </div>
 
             <Dialog visible={productDialog} style={{ width: '750px' }} header={t("lbl_product_details")} modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
-                {product.image && <ProductImage image={product.image} className={"product-tumb"} />}
                 <div className="p-field">
-                    <label htmlFor="barcode"><Trans>lbl_barcode</Trans></label>
-                    <InputNumber id="barcode" value={product.barcode} onValueChange={(e) => onInputNumberChange(e, 'barcode')} integerOnly />
+                    <label htmlFor="barCode"><Trans>lbl_barcode</Trans></label>
+                    <InputNumber id="barCode" value={product.barCode} onValueChange={(e) => onInputNumberChange(e, 'barCode')} integerOnly autoFocus useGrouping={false} />
                 </div>
                 <div className="p-field">
                     <label htmlFor="sku"><Trans>lbl_sku</Trans></label>
-                    <InputNumber id="sku" value={product.sku} onValueChange={(e) => onInputNumberChange(e, 'sku')} integerOnly />
+                    <InputNumber id="sku" value={product.sku} onValueChange={(e) => onInputNumberChange(e, 'sku')} integerOnly useGrouping={false} />
                 </div>
                 <div className="p-field">
                     <label htmlFor="mpn"><Trans>lbl_mpn</Trans></label>
-                    <InputText id="mpn" value={product.mpn} onChange={(e) => onInputChange(e, 'mpn')} required autoFocus className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.mpn })} />                    
+                    <InputText id="mpn" defaultValue={product.mpn} onChange={(e) => onInputChange(e, 'mpn')} />
                 </div>
                 <div className="p-field">
                     <label htmlFor="name"><Trans>lbl_name</Trans></label>
-                    <InputText id="name" value={product.name} onChange={(e) => onInputChange(e, 'name')} required autoFocus className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
+                    <InputText id="name" value={product.name} onChange={(e) => onInputChange(e, 'name')} required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
                     {submitted && !product.name && <small className="p-error">Name is required.</small>}
                 </div>
                 <div className="p-field">
                     <label htmlFor="description"><Trans>lbl_description</Trans></label>
-                    <Editor id="description" style={{ height: '200px' }} value={product.description} onChange={(e) => onInputChange(e, 'description')} className="p-inputtext-sm p-d-block p-mb-2"/>
+                    <Editor id="description" style={{ height: '200px' }} value={product.description} onTextChange={(e) => onEditorChange(e, 'description')} className="p-inputtext-sm p-d-block p-mb-2" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="category"><Trans>lbl_category</Trans></label>
-                    <Dropdown optionLabel="name" optionValue="id" value={category} options={categories} onChange={(e) => setCategory(e.value)} placeholder={t("lbl_select_categ")} className="p-dropdown-sm p-mb-2"/>
-                </div>                
+                    <Dropdown optionLabel="name" optionValue="id" value={category} options={props.categories} onChange={onCategoryChange} placeholder={t("lbl_select_categ")} className="p-dropdown-sm p-mb-2" />
+                </div>
                 <h6><Trans>Dimensions</Trans></h6>
-                <div className="p-formgrid p-grid">           
+                <div className="p-formgrid p-grid">
                     <div className="p-field p-col">
                         <label htmlFor="width"><Trans>lbl_Width</Trans></label>
-                        <InputNumber id="width" value={product.dimension.width} onValueChange={(e) => onInputNumberChange(e, 'width')} mode="decimal" locale="en-US" minFractionDigits={2}/>
+                        <InputNumber id="width" value={product.dimension.width} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                     <div className="p-field p-col">
                         <label htmlFor="height"><Trans>lbl_Height</Trans></label>
-                        <InputNumber id="height" value={product.dimension.height} onValueChange={(e) => onInputNumberChange(e, 'height')} mode="decimal" locale="en-US" minFractionDigits={2} />
+                        <InputNumber id="height" value={product.dimension.height} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                 </div>
                 <div className="p-formgrid p-grid">
                     <div className="p-field p-col">
                         <label htmlFor="length"><Trans>lbl_Length</Trans></label>
-                        <InputNumber id="length" value={product.dimension.length} onValueChange={(e) => onInputNumberChange(e, 'length')} mode="decimal" locale="en-US" minFractionDigits={2}/>
+                        <InputNumber id="length" value={product.dimension.length} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                     <div className="p-field p-col">
                         <label htmlFor="weight"><Trans>lbl_Weight</Trans></label>
-                        <InputNumber id="weight" value={product.dimension.weight} onValueChange={(e) => onInputNumberChange(e, 'weight')} mode="decimal" locale="en-US" minFractionDigits={2}/>
+                        <InputNumber id="weight" value={product.dimension.weight} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                 </div>
                 <div className="p-field">
                     <label htmlFor="dimension.description"><Trans>lbl_description</Trans></label>
-                    <Editor id="dimension.description" style={{ height: '200px' }} value={product.description} onChange={(e) => onInputChange(e, 'description')} className="p-inputtext-sm p-d-block p-mb-2" />
-                </div>
-                <div className="p-field">
-                    <label htmlFor="price"><Trans>lbl_price</Trans></label>
-                    <InputNumber id="price" value={product.price} onValueChange={(e) => onInputNumberChange(e, 'price')} mode="currency" currency="BRL" locale="pt-BR" />
+                    <Editor id="dimension.description" name="description" style={{ height: '200px' }} value={product.dimension.description} onTextChange={(e) => onEditorChange(e, 'dimension.description')} className="p-inputtext-sm p-d-block p-mb-2" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="brand"><Trans>lbl_brand</Trans></label>
-                    <InputText id="brand" value={product.brand} onChange={(e) => onInputChange(e, 'brand')} required autoFocus className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
+                    <InputText id="brand" value={product.brand} onChange={(e) => onInputChange(e, 'brand')} required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
                     {submitted && !product.brand && <small className="p-error">brand is required.</small>}
                 </div>
                 <div className="p-field">
                     <label htmlFor="origin"><Trans>lbl_origin</Trans></label>
-                    <InputText id="origin" value={product.origin} onChange={(e) => onInputChange(e, 'origin')} required autoFocus className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
+                    <InputText id="origin" value={product.origin} onChange={(e) => onInputChange(e, 'origin')} required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
                     {submitted && !product.origin && <small className="p-error">origin is required.</small>}
                 </div>
                 <div className="p-field">
                     <label htmlFor="manufacturer"><Trans>lbl_manufacturer</Trans></label>
-                    <InputText id="manufacturer" value={product.manufacturer} onChange={(e) => onInputChange(e, 'manufacturer')} required autoFocus className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
+                    <InputText id="manufacturer" value={product.manufacturer} onChange={(e) => onInputChange(e, 'manufacturer')} required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
                     {submitted && !product.manufacturer && <small className="p-error">manufacturer is required.</small>}
                 </div>
                 <div className="p-field">
                     <label htmlFor="completeDescription"><Trans>lbl_completeDescription</Trans></label>
-                    <Editor id="completeDescription" style={{ height: '200px' }} value={product.description} onChange={(e) => onInputChange(e, 'completeDescription')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="completeDescription" name="completeDescription" style={{ height: '200px' }} value={product.completeDescription} onTextChange={(e) => onEditorChange(e, 'completeDescription')} className="p-inputtext-sm p-d-block p-mb-2" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="material"><Trans>lbl_material</Trans></label>
-                    <Editor id="material" style={{ height: '100px' }} value={product.description} onChange={(e) => onInputChange(e, 'material')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="material" name="material" style={{ height: '100px' }} value={product.material} onTextChange={(e) => onEditorChange(e, 'material')} className="p-inputtext-sm p-d-block p-mb-2" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="usage"><Trans>lbl_usage</Trans></label>
-                    <Editor id="usage" style={{ height: '100px' }} value={product.description} onChange={(e) => onInputChange(e, 'usage')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="usage" name="usage" style={{ height: '100px' }} value={product.usage} onTextChange={(e) => onEditorChange(e, 'usage')} className="p-inputtext-sm p-d-block p-mb-2" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="care"><Trans>lbl_care</Trans></label>
-                    <Editor id="care" style={{ height: '100px' }} value={product.care} onChange={(e) => onInputChange(e, 'care')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="care" name="care" style={{ height: '100px' }} value={product.care} onTextChange={(e) => onEditorChange(e, 'care')} className="p-inputtext-sm p-d-block p-mb-2" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="color"><Trans>lbl_color</Trans></label>
-                    <ColorPicker value={color} onChange={(e) => setColor(e.value)} format="hex" className="p-component p-mb-2" style={{marginLeft: 20}}/>
-                </div>                
+                    <ColorPicker value={color} onChange={(e) => onColorChange(e)} format="hex" className="p-component p-mb-2" style={{ marginLeft: 20 }} />
+                </div>
+                <h6>Images</h6>
+                <ReactFileReader fileTypes="image/*" base64={true} multipleFiles={true} handleFiles={handleImgFiles}>
+                    <Button label={t('lbl_import')} icon="pi pi-plus" className="p-button-success p-mr-2" />
+                </ReactFileReader>
             </Dialog>
 
-            <Dialog visible={deleteProductDialog} style={{ width: '450px' }} header={t("tit_confirm")} modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
+            <Dialog visible={deleteProductDialog} style={{ width: '450px' }} header="Confirm" modal footer={deleteProductDialogFooter} onHide={hideDeleteProductDialog}>
                 <div className="confirmation-content">
                     <i className="pi pi-exclamation-triangle p-mr-3" style={{ fontSize: '2rem' }} />
-                    {product && <span><Trans>tit_ask_delete_confirm</Trans><b> {product.name}</b>?</span>}
+                    {product && <span>Are you sure you want to delete <b>{product.name}</b>?</span>}
                 </div>
             </Dialog>
 
-            <Dialog visible={deleteProductsDialog} style={{ width: '450px' }} header={t("tit_confirm")} modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
+            <Dialog visible={deleteProductsDialog} style={{ width: '450px' }} header="Confirm" modal footer={deleteProductsDialogFooter} onHide={hideDeleteProductsDialog}>
                 <div className="confirmation-content">
                     <i className="pi pi-exclamation-triangle p-mr-3" style={{ fontSize: '2rem' }} />
-                    {product && <span><Trans>tit_ask_products_delete_confirm</Trans></span>}
+                    {product && <span>Are you sure you want to delete the selected products?</span>}
                 </div>
             </Dialog>
         </div>
@@ -391,6 +450,7 @@ const Products = ({ onLoad = () => { }, products = [], categories = [], reload =
 
 function mapStateToProps(state) {
     return {
+        product: state.reducers.products.product,
         products: Array.isArray(state.reducers.products.products) ? state.reducers.products.products : new Array(),
         categories: Array.isArray(state.reducers.category.categories) ? state.reducers.category.categories : new Array(),
         reload: state.reducers.products.reload,
@@ -403,6 +463,12 @@ function mapDispatchToProps(dispatch) {
         onLoad: () => {
             dispatch(categoryActions.getAll())
             dispatch(productActions.getAll())
+        },
+        onSave: (product) => {
+            dispatch(productActions.save(product))
+        },
+        onDelete: (productId) => {
+            dispatch(productActions.deleteProduct(productId))
         }
     }
 }

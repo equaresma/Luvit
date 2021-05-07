@@ -7,7 +7,10 @@ export const productActions = {
     getAll,
     getPromotions,
     getByCategory,
-    setSelected
+    setSelected,
+    save,
+    newProduct,
+    deleteProduct
 };
 
 function filter(value) {
@@ -44,7 +47,9 @@ function getAll() {
 
         productService.getAll()
             .then(
-                products => dispatch(success(products)),
+                products => {
+                    dispatch(success(products))
+                },
                 error => dispatch(failure(error))
             );
     };
@@ -141,3 +146,66 @@ function setSelected(product) {
     }
 }
 
+function save(product) {
+    return dispatch => {
+        dispatch(request());
+
+        productService.save(product)
+            .then(
+                product => {
+                    dispatch(success(product));
+                },
+                error => dispatch(failure(error))
+            );
+    };
+
+    function request() {
+        console.log('Requesting...');
+        return { type: productConstants.PRD_SAVE_REQUEST };
+    }
+    function success(product) {
+        console.log('success...');
+        return { type: productConstants.PRD_SAVE_SUCCESS, product };
+    }
+    function failure(error) {
+        console.log(`error ${error}`);
+        return { type: productConstants.PRD_SAVE_ERROR, error };
+    }
+}
+
+function deleteProduct(productId) {
+    return dispatch => {
+        dispatch(request());
+
+        productService.deleteProduct(productId)
+            .then(
+                product => {
+                    dispatch(success(product));
+                },
+                error => dispatch(failure(error))
+            );
+    };
+
+    function request() {
+        console.log('Requesting...');
+        return { type: productConstants.PRD_DEL_REQUEST };
+    }
+    function success(product) {
+        console.log('success...');
+        return { type: productConstants.PRD_DEL_SUCCESS, product };
+    }
+    function failure(error) {
+        console.log(`error ${error}`);
+        return { type: productConstants.PRD_DEL_ERROR, error };
+    }
+}
+
+function newProduct() {
+    return dispatch => {
+        dispatch(success());
+    };
+
+    function success() {
+        return { type: productConstants.PRD_NEW };
+    }
+}

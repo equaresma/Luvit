@@ -13,8 +13,22 @@ const ProductImage = (props) => {
     }, []);
 
     const getContent = () => {
-        let content = (image.type == 1) ? "data:image/png;base64," : "";
-        content += image.value;
+        let content = "";
+
+        if (image.type === 1) {
+            let value = "";
+            if (image.value.startsWith("[\"") && image.value.endsWith("\"]"))
+                value = image.value.substring(2, image.value.length -2);
+
+            if (value.startsWith("data:image")) {
+                content = value;
+            } else {
+                content = `data:image/png;base64,${image.value}`;
+            }
+        } else {
+            content = image.value;
+        }
+
         return content;
     }
 

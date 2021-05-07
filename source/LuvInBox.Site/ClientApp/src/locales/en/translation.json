@@ -135,5 +135,6 @@
   "lbl_select_categ": "Select a category",
   "lbl_company_name": "Company",
   "lbl_company_document": "EIN",
-  "lbl_company_document_required": "EIN is required"
+  "lbl_company_document_required": "EIN is required",
+  "lbl_color": "Color"
 }
