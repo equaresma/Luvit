@@ -1,4 +1,5 @@
 ﻿using com.luvinbox.domain.compose;
+using com.luvinbox.domain.enums;
 using com.luvinbox.domain.Properties;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -26,6 +27,11 @@ namespace com.luvinbox.domain.dtos {
         [DataType(DataType.Date)]
         [Display(Name = "lblBirthday", ResourceType = typeof(AppRes))]
         public DateTime Birthday { get; set; }
+        [Required]
+        public enumDocumentType DocumentType { get; set; }
+        [Required]
+        [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
+        public String DocumentNumber { get; set; }
 
         [Display(Name = "lblAddress", ResourceType = typeof(AppRes))]
         public virtual Address Address { get; set; }

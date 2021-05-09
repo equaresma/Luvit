@@ -46,12 +46,11 @@ function getAll() {
         dispatch(request());
 
         productService.getAll()
-            .then(
-                products => {
-                    dispatch(success(products))
-                },
-                error => dispatch(failure(error))
-            );
+            .then(products => {
+                dispatch(success(products))
+            }).catch(error => {
+                dispatch(failure(error))
+            })
     };
 
     function request() {
@@ -64,7 +63,7 @@ function getAll() {
     }
     function failure(error) {
         console.log(`error ${error}`);
-        return { type: productConstants.PRD_ERROR, error };
+        return { type: productConstants.PRD_FAILURE, error };
     }
 }
 

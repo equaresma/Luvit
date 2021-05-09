@@ -143,12 +143,11 @@ function _update(product) {
 
 function handleResponse(response) {
     return response.text().then(text => {
-        const data = text && JSON.parse(text);
         if (!response.ok) {
-            const error = (data && data.message) || response.statusText;
+            const error = (text || text.message) || response.statusText;
             return Promise.reject(error);
+        } else {
+            return JSON.parse(text);
         }
-
-        return data;
     });
 }

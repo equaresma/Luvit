@@ -23,23 +23,10 @@ const CustomerContact = (props) => {
     const handleChange = input => e => {
         const { target } = e;
 
-        if (input === "Document") {
-            const doc = {
-                ...customer.Document,
-                [target.name]: target.value
-            }
-
-            setCustomer({
-                ...customer,
-                Document: doc
-            });
-
-        } else {
-            setCustomer({
-                ...customer,
-                [target.name]: target.type === "checkbox" ? target.checked : target.value
-            });
-        }
+        setCustomer({
+            ...customer,
+            [target.name]: target.type === "checkbox" ? target.checked : target.value
+        });
     }
 
     const maritalStatusOptions = [
@@ -110,8 +97,8 @@ const CustomerContact = (props) => {
                                     </div>
                                 </div>
                                 <div className="p-fluid">
-                                    <InputMask id="Number" name="Number" type="text" mask="999.999.999-99" onChange={handleChange('Document')}
-                                        value={customer.Document.Number} placeholder={t('lbl_document')} aria-describedby="document-help" />
+                                    <InputMask id="DocumentNumber" name="DocumentNumber" type="text" mask="999.999.999-99" onChange={handleChange()}
+                                        value={customer.DocumentNumber} placeholder={t('lbl_document')} aria-describedby="document-help" />
                                     <small id="document-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
                                 </div>
                                 <div className="p-fluid">

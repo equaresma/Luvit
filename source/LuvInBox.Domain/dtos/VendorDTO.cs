@@ -1,11 +1,11 @@
 ﻿using com.luvinbox.domain.compose;
+using com.luvinbox.domain.enums;
 using com.luvinbox.domain.helper;
 using com.luvinbox.domain.Properties;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.domain.dtos {
-    [CNPJ(ErrorMessage = "CNPJ inválido")]
     [Serializable]
     public class VendorDTO : BaseDTO {
         [MaxLength(150)]
@@ -25,10 +25,12 @@ namespace com.luvinbox.domain.dtos {
         [Display(Name = "lblFoundedIn", ResourceType = typeof(AppRes))]
         public DateTime FoundedIn { get; set; }
 
+        public enumDocumentType DocumentType { get; set; }
+        
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
         [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
-        public CompanyDocument Document { get; set; }
+        public string DocumentNumber { get; set; }
 
         [MaxLength(300)]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredLogoSite", ErrorMessageResourceType = typeof(AppRes))]
@@ -77,7 +79,7 @@ namespace com.luvinbox.domain.dtos {
         }
 
         public override String ToString() {
-            return String.Format($"{Document.Number} - {Name}");
+            return String.Format($"{DocumentNumber} - {Name}");
         }
     }
 }

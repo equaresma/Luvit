@@ -5,7 +5,8 @@ const initialState = {
         Name: '',
         FantasyName: '',
         FoundedIn: '',
-        Document: { Type: 0, Name: '', Number: '' },
+        DocumentNumber: '',
+        DocumentType: 5,
         LogoURL: '',
         WebSite: '',
         Email: '',
@@ -20,7 +21,8 @@ const initialState = {
             Phone: '',
             Mobile: '',
             Email: '',
-            Document: { Type: 0, Name: '', Number: '' }
+            DocumentNumber: '',
+            DocumentType: 1
         },
         User: { Name: '', Password: '', IsPasswordChange: true, Type: 0 },
         BankInfo: { BankCode: '', BankBranch: '', AccountNumber: '' }

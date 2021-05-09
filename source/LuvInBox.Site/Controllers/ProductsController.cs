@@ -22,7 +22,10 @@ namespace com.luvinbox.site.Controllers {
         // GET: api/<ProductController>
         [AllowAnonymous]
         [HttpGet]
-        public async Task<IEnumerable<ProductDTO>> Get() => await _service.GetAll();
+        public async Task<IActionResult> Get() {
+            //await _service.GetAll();
+            return BadRequest("Generic Error");
+        }
 
         // GET api/<ProductController>/5
         [AllowAnonymous]

@@ -3,6 +3,7 @@ using com.luvinbox.domain.dtos;
 using com.luvinbox.domain.entities;
 using com.luvinbox.domain.exceptions;
 using com.luvinbox.domain.extensions;
+using com.luvinbox.domain.helper;
 using com.luvinbox.domain.interfaces.repository;
 using com.luvinbox.domain.services;
 using System.Collections.Generic;
@@ -52,6 +53,9 @@ namespace com.luvinbox.service.services {
         }
 
         private async Task<bool> Validate(CustomerDTO customer) {
+            if (!DocumentValidator.IsDocumentValid(customer.DocumentNumber, customer.DocumentType)) {
+                throw new BusinessException("Invalid Document");
+            }
             if (await _userService.Validate(customer.User)) {
                 if (customer.Birthday.GetAge() < 18)
                     throw new BusinessException("Msg_Invalid_Age");

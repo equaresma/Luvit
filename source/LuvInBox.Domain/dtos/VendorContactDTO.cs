@@ -4,14 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.domain.dtos {
     public class VendorContactDTO : PersonDTO {
-        [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
-        public ContactDocument Document { get; set; }
-
         [Display(Name = "lblAddress", ResourceType = typeof(AppRes))]
         public override Address Address { get; set; }
 
         public VendorContactDTO() {
-            Document = new ContactDocument();
         }
     }
 }

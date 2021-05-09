@@ -1,5 +1,5 @@
 ﻿import React, { useState, useEffect, useRef } from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { classNames } from 'primereact/components/utils/ClassNames';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
@@ -23,12 +23,16 @@ import ProductImage from '../../components/product/image';
 import './index.css';
 
 const Products = (props) => {
-    const [reload] = useState(true);
+    const { t } = useTranslation();
+    const categErrorMessage = useSelector(state => state.reducers.category?.error ?? null);
+    const prdErrorMessage = useSelector(state => state.reducers.products?.error ?? null);
+
+    const [status] = useState([t("lbl_Inative"), t("lbl_Inputed"), t("lbl_Approved"), t("lbl_Revision"), t("lbl_Published")]);
+    const [reload, setReload] = useState(true);
     const [products, setProducts] = useState([]);
     const [category, setCategory] = useState(null);
     const [categories, setCategories] = useState([]);
-    const [product, setProduct] = useState(props.product);
-    const { t } = useTranslation();
+    const [product, setProduct] = useState(props.product);    
     const [color, setColor] = useState('FFF');
     const [productDialog, setProductDialog] = useState(false);
     const [deleteProductDialog, setDeleteProductDialog] = useState(false);
@@ -42,7 +46,7 @@ const Products = (props) => {
     useEffect(() => {
         if (reload)
             props.onLoad();
-    }); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const formatCurrency = (value) => {
         return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -71,7 +75,7 @@ const Products = (props) => {
         setProductDialog(false);
     }
 
-    const editProduct = (prod) => {        
+    const editProduct = (prod) => {
         let id = prod.categoryId;
         let categ = props.categories.filter(c => c.id == id)[0];
 
@@ -147,12 +151,13 @@ const Products = (props) => {
 
     const onEditorChange = (e, name) => {
         let _product = { ...product };
+        let content = (e.htmlValue) ? e.htmlValue : '';
 
         if (name.startsWith("dimension")) {
             let nName = name.replace("dimension.", "");
-            _product.dimension[`${nName}`] = e.htmlValue.replace('"', '\"').replace('\\', '\\\\');
+            _product.dimension[`${nName}`] = content.replace('"', '\"').replace('\\', '\\\\');
         } else {
-            _product[`${name}`] = e.htmlValue.replace('"', '\"').replace('\\', '\\\\');
+            _product[`${name}`] = content.replace('"', '\"').replace('\\', '\\\\');
         }
 
         setProduct(_product);
@@ -201,11 +206,11 @@ const Products = (props) => {
             }
         }
 
-        return <ProductImage image={ img } className={"product-tumb"} />;
+        return <ProductImage image={img} className={"product-tumb"} />;
     }
 
     const colorBodyTemplate = (rowData) => {
-        return <div style={{ backgroundColor: "#" + rowData.color, width:30, height: 20 } }></div>;
+        return <div style={{ backgroundColor: "#" + rowData.color, width: 30, height: 20 }}></div>;
     }
 
     const priceBodyTemplate = (rowData) => {
@@ -216,10 +221,6 @@ const Products = (props) => {
         return <Rating value={rowData.rating} readOnly cancel={false} />;
     }
 
-    const statusBodyTemplate = (rowData) => {
-        return <span className={`product-badge status-${rowData.inventoryStatus.toLowerCase()}`}>{rowData.inventoryStatus}</span>;
-    }
-
     const actionBodyTemplate = (rowData) => {
         return (
             <React.Fragment>
@@ -227,6 +228,17 @@ const Products = (props) => {
                 <Button icon="pi pi-trash" className="p-button-rounded p-button-warning" onClick={() => confirmDeleteProduct(rowData)} />
             </React.Fragment>
         );
+    }
+
+    const statusBodyTemplate = (rowData) => {
+        switch (rowData.status) {
+            case -1: return status[0];
+            case 0: return status[1];
+            case 1: return status[2];
+            case 2: return status[3];
+            case 3: return status[4];
+            default: return "";
+        }
     }
 
     const header = (
@@ -241,8 +253,8 @@ const Products = (props) => {
 
     const productDialogFooter = (
         <React.Fragment>
-            <Button label="Cancel" icon="pi pi-times" className="p-button-text" onClick={hideDialog} />
-            <Button label="Save" icon="pi pi-check" className="p-button-text" onClick={saveProduct} />
+            <Button label={t("lbl_cancel")} icon="pi pi-times" className="p-button-text" onClick={hideDialog} />
+            <Button label={t("lbl_save")} icon="pi pi-check" className="p-button-text" onClick={saveProduct} />
         </React.Fragment>
     );
 
@@ -319,6 +331,11 @@ const Products = (props) => {
             <Toast ref={toast} />
 
             <div className="card">
+                <div style={{ display:(categErrorMessage || prdErrorMessage)?"":"none"}}>
+                    {categErrorMessage && <p>Erro ao acessar o serviço de categorias: {categErrorMessage}</p>}
+                    {prdErrorMessage && <p>Erro ao acessar o serviço de produtos: {prdErrorMessage}</p>}
+                    <p><small>Atualize a página, se o erro persistir o administrador do sistema.</small></p>
+                </div>
                 <hr />
                 <Toolbar className="p-mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
 
@@ -335,7 +352,8 @@ const Products = (props) => {
                     <Column header={t("lbl_category")} sortable body={categName} sortable></Column>
                     <Column header={t("lbl_image")} body={imageBodyTemplate}></Column>
                     <Column header={t("lbl_color")} body={colorBodyTemplate}></Column>
-                    <Column body={actionBodyTemplate}></Column>
+                    <Column header="Status" body={statusBodyTemplate}></Column>
+                    <Column body={actionBodyTemplate}></Column>                    
                 </DataTable>
             </div>
 
@@ -365,24 +383,24 @@ const Products = (props) => {
                     <label htmlFor="category"><Trans>lbl_category</Trans></label>
                     <Dropdown optionLabel="name" optionValue="id" value={category} options={props.categories} onChange={onCategoryChange} placeholder={t("lbl_select_categ")} className="p-dropdown-sm p-mb-2" />
                 </div>
-                <h6><Trans>Dimensions</Trans></h6>
+                <h6><Trans>tit_dimensions</Trans></h6>
                 <div className="p-formgrid p-grid">
                     <div className="p-field p-col">
-                        <label htmlFor="width"><Trans>lbl_Width</Trans></label>
+                        <label htmlFor="width"><Trans>lbl_width</Trans></label>
                         <InputNumber id="width" value={product.dimension.width} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                     <div className="p-field p-col">
-                        <label htmlFor="height"><Trans>lbl_Height</Trans></label>
+                        <label htmlFor="height"><Trans>lbl_height</Trans></label>
                         <InputNumber id="height" value={product.dimension.height} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                 </div>
                 <div className="p-formgrid p-grid">
                     <div className="p-field p-col">
-                        <label htmlFor="length"><Trans>lbl_Length</Trans></label>
+                        <label htmlFor="length"><Trans>lbl_length</Trans></label>
                         <InputNumber id="length" value={product.dimension.length} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                     <div className="p-field p-col">
-                        <label htmlFor="weight"><Trans>lbl_Weight</Trans></label>
+                        <label htmlFor="weight"><Trans>lbl_weight</Trans></label>
                         <InputNumber id="weight" value={product.dimension.weight} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                 </div>
@@ -425,7 +443,7 @@ const Products = (props) => {
                     <label htmlFor="color"><Trans>lbl_color</Trans></label>
                     <ColorPicker value={color} onChange={(e) => onColorChange(e)} format="hex" className="p-component p-mb-2" style={{ marginLeft: 20 }} />
                 </div>
-                <h6>Images</h6>
+                <h6><Trans>lbl_images</Trans></h6>
                 <ReactFileReader fileTypes="image/*" base64={true} multipleFiles={true} handleFiles={handleImgFiles}>
                     <Button label={t('lbl_import')} icon="pi pi-plus" className="p-button-success p-mr-2" />
                 </ReactFileReader>
@@ -453,8 +471,7 @@ function mapStateToProps(state) {
         product: state.reducers.products.product,
         products: Array.isArray(state.reducers.products.products) ? state.reducers.products.products : new Array(),
         categories: Array.isArray(state.reducers.category.categories) ? state.reducers.category.categories : new Array(),
-        reload: state.reducers.products.reload,
-        error: state.reducers.products.error,
+        reload: state.reducers.products.reload
     };
 }
 

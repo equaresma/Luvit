@@ -16,23 +16,11 @@ const Details = (props) => {
 
     const handleChange = input => e => {
         const { target } = e;
-        if (input === "Document") {
-            const doc = {
-                ...vendor.Document,
-                [target.name]: target.value
-            }
 
-            setVendor({
-                ...vendor,
-                Document: doc
-            });
-
-        } else {
-            setVendor({
-                ...vendor,
-                [target.name]: target.type === "checkbox" ? target.checked : target.value
-            });
-        }
+        setVendor({
+            ...vendor,
+            [target.name]: target.type === "checkbox" ? target.checked : target.value
+        });
     }
 
     const next = e => {
@@ -45,14 +33,14 @@ const Details = (props) => {
         <div>
             <div className="divSteps">
                 <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
-            </div>            
+            </div>
             <div className="card">
                 <Form onSubmit={next}>
                     <h4><Trans>general_info</Trans></h4>
-                    <br/>
+                    <br />
                     <div className="p-fluid">
                         <InputText id="name" name="Name" onChange={handleChange()} value={vendor.Name} type="text" aria-describedby="name-help"
-                            className="p-d-block" required maxLength="120" placeholder={t('lbl_name')} maxLength="150"/>
+                            className="p-d-block" required maxLength="120" placeholder={t('lbl_name')} maxLength="150" />
                         <small id="name-help" className="p-d-block text-right"><Trans>lbl_name_required</Trans></small>
                     </div>
                     <div className="p-fluid">
@@ -61,8 +49,8 @@ const Details = (props) => {
                         <small id="userfantasyName2-help" className="p-d-block text-right"><Trans>lbl_fantasy_name_required</Trans></small>
                     </div>
                     <div className="p-fluid">
-                        <InputMask id="Number" name="Number" type="text" mask="99.999.999/9999-99" onChange={handleChange('Document')}
-                            value={vendor.Document.Number} placeholder={t('lbl_document')} aria-describedby="document-help" />
+                        <InputMask id="DocumentNumber" name="DocumentNumber" type="text" mask="99.999.999/9999-99" onChange={handleChange()}
+                            value={vendor.DocumentNumber} placeholder={t('lbl_document')} aria-describedby="document-help" />
                         <small id="document-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
                     </div>
                     <div className="p-fluid">

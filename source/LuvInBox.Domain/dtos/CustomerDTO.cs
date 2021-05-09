@@ -1,19 +1,12 @@
 ﻿using com.luvinbox.domain.compose;
 using com.luvinbox.domain.enums;
-using com.luvinbox.domain.helper;
-using com.luvinbox.domain.interfaces;
 using com.luvinbox.domain.Properties;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.domain.dtos {
-    [CPF(ErrorMessage = "CPF inválido")]
     [Serializable]
     public class CustomerDTO : PersonDTO {
-        [Required]
-        [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
-        public CustomerDocument Document { get; set; }
-
         [Required]
         [Display(Name = "lblAddress", ResourceType = typeof(AppRes))]
         public override Address Address { get; set; }
@@ -34,7 +27,6 @@ namespace com.luvinbox.domain.dtos {
         public UserDTO User { get; set; }
 
         public CustomerDTO() {
-            Document = new CustomerDocument();
             Address = new Address();
             User = new UserDTO();
         }

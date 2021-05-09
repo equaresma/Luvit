@@ -2,6 +2,7 @@ using AutoMapper;
 using com.luvinbox.domain.dtos;
 using com.luvinbox.domain.entities;
 using com.luvinbox.domain.exceptions;
+using com.luvinbox.domain.helper;
 using com.luvinbox.domain.interfaces.repository;
 using com.luvinbox.domain.services;
 using System;
@@ -52,6 +53,10 @@ namespace com.luvinbox.service.services {
         }
 
         private async Task<bool> Validate(VendorDTO vendor) {
+            if (!DocumentValidator.IsDocumentValid(vendor.DocumentNumber, vendor.DocumentType)) {
+                throw new BusinessException("Invalid Document");
+            }
+
             if (await _userService.Validate(vendor.User)) {
                 if (vendor.FoundedIn > DateTime.UtcNow)
                     throw new BusinessException("Msg_Invalid_Foundation");

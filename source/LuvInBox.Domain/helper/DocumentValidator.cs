@@ -1,4 +1,6 @@
-﻿using com.luvinbox.domain.extensions;
+﻿using com.luvinbox.domain.enums;
+using com.luvinbox.domain.exceptions;
+using com.luvinbox.domain.extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -91,6 +93,27 @@ namespace com.luvinbox.domain.helper {
         }
         public static string FormatCNPJ(string doc) {
             return string.Format(@"{0:00\.000\.000\/0000\-00}", Convert.ToDouble(doc));
+        }
+
+        public static bool IsDocumentValid(string doc, enumDocumentType type) {
+            switch (type) {
+                case enumDocumentType.enumDocOthers:
+                    return true;
+                case enumDocumentType.enumDocTypeID:
+                    return true;
+                case enumDocumentType.enumDocTypeCPF:
+                    return IsCPFValid(doc);
+                case enumDocumentType.enumDocTypeRNE:
+                    return true;
+                case enumDocumentType.enumDocTypePassport:
+                    return true;
+                case enumDocumentType.enumDocTypeDriverLicense:
+                    return true;
+                case enumDocumentType.enumDocCNPJ:
+                    return IsCNPJValid(doc);
+                default:
+                    throw new BusinessException("Invalid document type");
+            }
         }
     }
 }
