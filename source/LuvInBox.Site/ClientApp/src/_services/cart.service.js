@@ -169,7 +169,7 @@ function handleResponse(response) {
     return response.text().then(text => {
         if (!response.ok) {
             const data = text && JSON.parse(text);
-            const error = (data && data.message) || response.statusText;
+            const error = (data || data.message) || (response.statusText || response.status);
             return Promise.reject(error);
         } else {
             return JSON.parse(text);

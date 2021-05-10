@@ -29,6 +29,7 @@ const initialState = {
         care: '',
         color: '',
         images: new Array(),
+        sizes: new Array(),
         status: 0
     }
 }

@@ -10,6 +10,9 @@ namespace com.luvinbox.domain.services {
         Task<ProductDTO> Put(string id, ProductDTO user);
         Task<bool> Patch(IEnumerable<ProductDTO> products);
         Task<bool> Delete(string id);
+        Task<ProductDTO> FindBySKU(string sku);
+        Task<ProductDTO> FindByMPN(string mpn);
+        Task<ProductDTO> FindByBarCode(string barcode);
         Task<IEnumerable<ProductDTO>> FindByCategory(string categoryId);
         Task<IEnumerable<ProductDTO>> FindByFilter(string filter);
     }

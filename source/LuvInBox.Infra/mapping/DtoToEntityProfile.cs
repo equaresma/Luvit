@@ -17,6 +17,7 @@ namespace com.luvinbox.infra.mapping
             CreateMap<Category, CategoryDTO>().ReverseMap();
             CreateMap<Order, OrderDTO>().ReverseMap();
             CreateMap<OrderItem, OrderItemDTO>().ReverseMap();
+            CreateMap<Size, SizeDTO>().ReverseMap();
         }
     }
 }

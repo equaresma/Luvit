@@ -14,6 +14,7 @@ namespace com.luvinbox.infra.dependencyinjection {
             serviceCollection.AddScoped<IUserRepository, UserImplement>();
             serviceCollection.AddScoped<IProductRepository, ProductImplement>();
             serviceCollection.AddScoped<ICategoryRepository, CategoryImplement>();
+            serviceCollection.AddScoped<ISizeRepository, SizeImplement>();
         }
     }
 }

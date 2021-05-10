@@ -161,7 +161,11 @@
   "lbl_save": "Salvar",
   "lbl_msg_categ_error": "Erro ao acessar o serviço de categorias",
   "lbl_msg_prod_error": "Erro ao acessar o serviço de produtos",
+  "lbl_msg_sz_error": "Erro ao acessar o serviço de tamanhos",
   "lbl_contact_adm": "Atualize a página, se o erro persistir contate o administrador do sistema.",
   "lbl_delete_confirm": "Está certo que deseja apagar o registro ",
-  "lbl_delete_prod": "Está certo que deseja apagar os produtos selecionados?"
+  "lbl_delete_prod": "Está certo que deseja apagar os produtos selecionados?",
+  "lbl_available_sizes": "Tamanhos disponíveis",
+  "lbl_select_available_sizes": "Selecione os tamanhos disponíveis",
+  "lbl_selected_sizes": "Selected sizes"
 }

@@ -8,6 +8,7 @@ import { address } from './address.reducer';
 import { category } from './category.reducer';
 import { customer } from './customer.reducer';
 import { vendor } from './vendor.reducer';
+import { size } from './size.reducer';
 
 const reducers = combineReducers({
     authentication,
@@ -18,7 +19,8 @@ const reducers = combineReducers({
     address,
     category,
     customer,
-    vendor
+    vendor,
+    size
 });
 
 export default reducers;

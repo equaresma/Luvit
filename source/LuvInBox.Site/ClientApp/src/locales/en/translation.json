@@ -161,7 +161,11 @@
   "lbl_save": "Salve",
   "lbl_msg_categ_error": "Error accessing the category service",
   "lbl_msg_prod_error": "Error accessing the products service",
+  "lbl_msg_sz_error": "Error accessing the sizes service",
   "lbl_contact_adm": "Refresh the page. If error persists contact the system administrator.",
   "lbl_delete_confirm": "Are you sure you want to delete",
-  "lbl_delete_prod": "Are you sure you want to delete the selected products?"
+  "lbl_delete_prod": "Are you sure you want to delete the selected products?",
+  "lbl_available_sizes": "Available Sizes",
+  "lbl_select_available_sizes": "Select available sizes",
+  "lbl_selected_sizes": "Selected sizes"
 }

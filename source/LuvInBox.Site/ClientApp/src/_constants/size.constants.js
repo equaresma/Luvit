@@ -1,0 +1,7 @@
+export const sizeConstants = {
+    SZ_REQUEST: 'SZ_REQUEST',
+    SZ_BY_ID_REQUEST: 'SZ_BY_ID_REQUEST',
+    SZ_SUCCESS: 'SZ_SUCCESS',
+    SZ_BYID_SUCCESS: 'SZ_BYID_SUCCESS',
+    SZ_FAILURE: 'SZ_FAILURE'
+};

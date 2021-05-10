@@ -7,9 +7,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace com.luvinbox.domain.dtos {
     public class ProductDTO : BaseDTO {
-        public long? BarCode { get; set; }
-        public int? SKU { get; set; }
+
+        [DataType(DataType.Text)]
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredSKU", ErrorMessageResourceType = typeof(AppRes))]
+        [Display(Name = "lblSKU", ResourceType = typeof(AppRes))]
+        public string SKU { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredMPN", ErrorMessageResourceType = typeof(AppRes))]
+        [DataType(DataType.Text)]
+        [Display(Name = "lblMPN", ResourceType = typeof(AppRes))]
         public string MPN { get; set; }
+        [DataType(DataType.Text)]
+        [Display(Name = "lblBarCode", ResourceType = typeof(AppRes))]
+        public long? BarCode { get; set; }
+
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
         [Display(Name = "lblName", ResourceType = typeof(AppRes))]
@@ -35,6 +45,7 @@ namespace com.luvinbox.domain.dtos {
         public string Color { get; set; }
         public IEnumerable<Image> Images { get; set; }
         public enumProductStatus Status { get; set; }
+        public IEnumerable<string> Sizes { get; set; }
         public override string ToString() {
             return string.Format($"{BarCode} - {Name} - {Description}");
         }

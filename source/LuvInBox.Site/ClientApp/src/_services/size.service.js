@@ -1,28 +1,28 @@
 //import config from 'config';
 import { authHeader } from '../_helpers';
 
-export const categoryService = {
+export const sizeService = {
     getAll,
     getById
 };
 
 async function getAll() {
-    let categs = JSON.parse(localStorage.getItem('categories'));
-    if (categs) {
+    let sizes = JSON.parse(localStorage.getItem('sizes'));
+    if (sizes) {
         let promisse = new Promise((resolve, reject) => {
             setTimeout(() => {
-                resolve(categs);
+                resolve(sizes);
             }, 200);
         });
 
-        return promisse.then(categs => {
-            return categs;
+        return promisse.then(sizes => {
+            return sizes;
         }, function (error) {
             return error;
         });
 
     } else {
-        let url = 'api/Categories';
+        let url = 'api/Sizes';
         const requestOptions = {
             method: 'GET',
             headers: authHeader()
@@ -30,30 +30,30 @@ async function getAll() {
 
         return fetch(url, requestOptions)
             .then(handleResponse)
-            .then(categs => {
-                //storage categs
-                localStorage.setItem('categories', JSON.stringify(categs));
-                return categs;
+            .then(sizes => {
+                //storage sizes
+                localStorage.setItem('sizes', JSON.stringify(sizes));
+                return sizes;
             });
     }
 }
 
 async function getById(id) {
-    let categs = await getAll();
+    let sizes = await getAll();
     let promisse = new Promise((resolve, reject) => {
         setTimeout(() => {
-            let categ = categs.filter(c => c.id == id)[0];
+            let size = sizes.filter(c => c.id == id)[0];
 
-            if (categ)
-                resolve(categ);
+            if (size)
+                resolve(size);
             else
-                reject(categ);
+                reject(size);
 
         }, 200);
     });
 
-    return promisse.then(categ => {
-        return categ;
+    return promisse.then(size => {
+        return size;
     }, function (error) {
         return error;
     });

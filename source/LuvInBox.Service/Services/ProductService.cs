@@ -5,6 +5,7 @@ using com.luvinbox.domain.interfaces.repository;
 using com.luvinbox.domain.services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace com.luvinbox.service.services {
     public class ProductService : IProductService {
@@ -41,19 +42,28 @@ namespace com.luvinbox.service.services {
             await _repository.InsertMany(entities);
             return true;
         }
-
         public async Task<bool> Delete(string id) {
             return await _repository.Remove(id);
         }
-
         public async Task<IEnumerable<ProductDTO>> FindByCategory(string categoryId) {
             var listEntity = await _repository.FindByCategory(categoryId);
             return _mapper.Map<IEnumerable<ProductDTO>>(listEntity);
         }
-
         public async Task<IEnumerable<ProductDTO>> FindByFilter(string filter) {
             var listEntity = await _repository.FindByFilter(filter);
             return _mapper.Map<IEnumerable<ProductDTO>>(listEntity);
+        }
+        public async Task<ProductDTO> FindBySKU(string sku) {
+            var listEntity = await _repository.FindBySKU(sku);
+            return _mapper.Map<ProductDTO>(listEntity);
+        }
+        public async Task<ProductDTO> FindByMPN(string mpn) {
+            var listEntity = await _repository.FindByMPN(mpn);
+            return _mapper.Map<ProductDTO>(listEntity);
+        }
+        public async Task<ProductDTO> FindByBarCode(string barcode) {
+            var listEntity = await _repository.FindByBarCode(barcode);
+            return _mapper.Map<ProductDTO>(listEntity);
         }
     }
 }

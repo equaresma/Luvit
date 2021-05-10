@@ -28,10 +28,13 @@ luvitmarketplace@gmail.com
 		Configurar Mercado Pago Teste
 		Efeturar checkout 
 		Confirmar Transação
+		 
+selectedItemTemplate={selectedSizesTemplate}
 
-db.Product.createIndex( { BarCode: 1 }, { unique: true } );
 db.Product.createIndex( {SKU: 1 }, { unique: true } );
 db.Product.createIndex( { MPN: 1 }, { unique: true } );
+
+db.Product.createIndex( { BarCode: 1 }, { unique: false} );
 db.Product.createIndex( { Status: 1 }, { unique: false } );
 
 db.User.createIndex( { Name: 1 }, { unique: true } );
@@ -40,10 +43,15 @@ db.Vendor.createIndex( { DocumentNumber: 1 }, { unique: true } );
 
 db.Customer.createIndex( { DocumentNumber: 1 }, { unique: true } );
 
+db.Size.
+
+DuplicateKey:
+    Test method LuvInBox.UnitTestProject.SizesTest.Create threw exception: 
+    MongoDB.Driver.MongoWriteException: A write operation resulted in an error.
+      E11000 duplicate key error collection: luvit-mongodb.Size. Failed _id or unique index constraint. ---> MongoDB.Driver.MongoBulkWriteException`1[com.luvinbox.domain.entities.Size]: A bulk write operation resulted in one or more errors.
+      E11000 duplicate key error collection: luvit-mongodb.Size. Failed _id or unique index constraint.
+
 TODO:
-	Product Register 
-		Reload - Não Funciona
-		Tratamento de erros
 		
 	Product Stock
 

@@ -144,7 +144,7 @@ function _update(product) {
 function handleResponse(response) {
     return response.text().then(text => {
         if (!response.ok) {
-            const error = (text || text.message) || response.statusText;
+            const error = (text || text.message) || (response.statusText || response.status);
             return Promise.reject(error);
         } else {
             return JSON.parse(text);

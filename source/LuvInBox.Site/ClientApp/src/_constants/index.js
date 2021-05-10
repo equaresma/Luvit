@@ -6,3 +6,4 @@ export * from './category.constants';
 export * from './customer.constants';
 export * from './product.constants';
 export * from './vendor.constants';
+export * from './size.constants';

@@ -14,8 +14,9 @@ import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
 import { ColorPicker } from 'primereact/colorpicker';
+import { MultiSelect } from 'primereact/multiselect';
 import { isArray } from 'util';
-import { productActions, categoryActions } from '../../_actions';
+import { categoryActions, productActions, sizeActions } from '../../_actions';
 import { Trans, useTranslation } from 'react-i18next';
 import ReactFileReader from 'react-file-reader';
 import ProductImage from '../../components/product/image';
@@ -26,14 +27,15 @@ const Products = (props) => {
     const { t } = useTranslation();
     const categErrorMessage = useSelector(state => state.reducers.category?.error ?? null);
     const prdErrorMessage = useSelector(state => state.reducers.products?.error ?? null);
+    const szErrorMessage = useSelector(state => state.reducers.size?.error ?? null);
 
     const [status] = useState([t("lbl_Inative"), t("lbl_Inputed"), t("lbl_Approved"), t("lbl_Revision"), t("lbl_Published")]);
-    const [reload, setReload] = useState(true);
-    const [products, setProducts] = useState([]);
+    const [reload] = useState(true);
+    const [products] = useState([]);
     const [category, setCategory] = useState(null);
-    const [categories, setCategories] = useState([]);
-    const [product, setProduct] = useState(props.product);    
-    const [color, setColor] = useState('FFF');
+    const [selectedSizes, setSelectedSizes] = useState(null);
+    const [product, setProduct] = useState(props.product);
+    const [color, setColor] = useState('#FFFFFF');
     const [productDialog, setProductDialog] = useState(false);
     const [deleteProductDialog, setDeleteProductDialog] = useState(false);
     const [deleteProductsDialog, setDeleteProductsDialog] = useState(false);
@@ -179,7 +181,7 @@ const Products = (props) => {
     const leftToolbarTemplate = () => {
         return (
             <React.Fragment>
-                <Button label={t('lbl_new')} icon="pi pi-plus" className="p-button-success p-mr-2" onClick={openNew} />
+                <Button label={t('lbl_new')} icon="pi pi-plus" className="p-button-plain p-mr-2" onClick={openNew} />
                 <Button label={t('lbl_delete')} icon="pi pi-trash" className="p-button-danger" onClick={confirmDeleteSelected} disabled={!selectedProducts || !selectedProducts.length} />
             </React.Fragment>
         )
@@ -310,6 +312,14 @@ const Products = (props) => {
         setProduct(_product);
     }
 
+    const onSizesChange = (e) => {
+        let _product = { ...product };
+
+        setSelectedSizes(e.value);
+        _product.sizes = selectedSizes;
+        setProduct(_product);
+    }
+
     const onUploadError = (e) => {
         toast.current.show({ severity: 'danger', summary: 'Error', detail: e.xhr.responseText, life: 3000 });
     }
@@ -331,10 +341,11 @@ const Products = (props) => {
             <Toast ref={toast} />
 
             <div className="card">
-                <div style={{ display:(categErrorMessage || prdErrorMessage)?"":"none"}}>
-                    {categErrorMessage && <p>Erro ao acessar o serviço de categorias: {categErrorMessage}</p>}
-                    {prdErrorMessage && <p>Erro ao acessar o serviço de produtos: {prdErrorMessage}</p>}
-                    <p><small>Atualize a página, se o erro persistir o administrador do sistema.</small></p>
+                <div style={{ display: (categErrorMessage || prdErrorMessage || szErrorMessage) ? "" : "none" }}>
+                    {categErrorMessage && <p><Trans>lbl_msg_categ_error</Trans>: {categErrorMessage}</p>}
+                    {prdErrorMessage && <p><Trans>lbl_msg_prod_error</Trans>: {prdErrorMessage}</p>}
+                    {szErrorMessage && <p><Trans>lbl_msg_sz_error</Trans>: {szErrorMessage}</p>}
+                    <p><small><Trans>lbl_contact_adm</Trans></small></p>
                 </div>
                 <hr />
                 <Toolbar className="p-mb-4" left={leftToolbarTemplate} right={rightToolbarTemplate}></Toolbar>
@@ -353,15 +364,11 @@ const Products = (props) => {
                     <Column header={t("lbl_image")} body={imageBodyTemplate}></Column>
                     <Column header={t("lbl_color")} body={colorBodyTemplate}></Column>
                     <Column header="Status" body={statusBodyTemplate}></Column>
-                    <Column body={actionBodyTemplate}></Column>                    
+                    <Column body={actionBodyTemplate}></Column>
                 </DataTable>
             </div>
 
             <Dialog visible={productDialog} style={{ width: '750px' }} header={t("lbl_product_details")} modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
-                <div className="p-field">
-                    <label htmlFor="barCode"><Trans>lbl_barcode</Trans></label>
-                    <InputNumber id="barCode" value={product.barCode} onValueChange={(e) => onInputNumberChange(e, 'barCode')} integerOnly autoFocus useGrouping={false} />
-                </div>
                 <div className="p-field">
                     <label htmlFor="sku"><Trans>lbl_sku</Trans></label>
                     <InputNumber id="sku" value={product.sku} onValueChange={(e) => onInputNumberChange(e, 'sku')} integerOnly useGrouping={false} />
@@ -369,6 +376,10 @@ const Products = (props) => {
                 <div className="p-field">
                     <label htmlFor="mpn"><Trans>lbl_mpn</Trans></label>
                     <InputText id="mpn" defaultValue={product.mpn} onChange={(e) => onInputChange(e, 'mpn')} />
+                </div>
+                <div className="p-field">
+                    <label htmlFor="barCode"><Trans>lbl_barcode</Trans></label>
+                    <InputNumber id="barCode" value={product.barCode} onValueChange={(e) => onInputNumberChange(e, 'barCode')} integerOnly autoFocus useGrouping={false} />
                 </div>
                 <div className="p-field">
                     <label htmlFor="name"><Trans>lbl_name</Trans></label>
@@ -440,12 +451,16 @@ const Products = (props) => {
                     <Editor id="care" name="care" style={{ height: '100px' }} value={product.care} onTextChange={(e) => onEditorChange(e, 'care')} className="p-inputtext-sm p-d-block p-mb-2" />
                 </div>
                 <div className="p-field">
+                    <label htmlFor="color"><Trans>lbl_available_sizes</Trans></label>
+                    <MultiSelect value={selectedSizes} options={props.sizes} onChange={(e) => onSizesChange(e)} />
+                </div>
+                <div className="p-field">
                     <label htmlFor="color"><Trans>lbl_color</Trans></label>
                     <ColorPicker value={color} onChange={(e) => onColorChange(e)} format="hex" className="p-component p-mb-2" style={{ marginLeft: 20 }} />
                 </div>
                 <h6><Trans>lbl_images</Trans></h6>
                 <ReactFileReader fileTypes="image/*" base64={true} multipleFiles={true} handleFiles={handleImgFiles}>
-                    <Button label={t('lbl_import')} icon="pi pi-plus" className="p-button-success p-mr-2" />
+                    <Button label={t('lbl_import')} icon="pi pi-plus" className="p-button-plain p-mr-2" />
                 </ReactFileReader>
             </Dialog>
 
@@ -467,10 +482,23 @@ const Products = (props) => {
 }
 
 function mapStateToProps(state) {
+    let ss = Array.isArray(state.reducers.size.sizes) ? state.reducers.size.sizes : new Array();
+    let selectableSizes = new Array();
+
+    if (ss.length > 0) {
+        ss.forEach((item) => {
+            selectableSizes.push({
+                label: `${item.name} - ${item.description}`,
+                value: item.id
+            });
+        });
+    }
+
     return {
         product: state.reducers.products.product,
-        products: Array.isArray(state.reducers.products.products) ? state.reducers.products.products : new Array(),
         categories: Array.isArray(state.reducers.category.categories) ? state.reducers.category.categories : new Array(),
+        products: Array.isArray(state.reducers.products.products) ? state.reducers.products.products : new Array(),
+        sizes: selectableSizes,
         reload: state.reducers.products.reload
     };
 }
@@ -480,6 +508,7 @@ function mapDispatchToProps(dispatch) {
         onLoad: () => {
             dispatch(categoryActions.getAll())
             dispatch(productActions.getAll())
+            dispatch(sizeActions.getAll())
         },
         onSave: (product) => {
             dispatch(productActions.save(product))

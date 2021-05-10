@@ -6,3 +6,4 @@ export * from './address.actions';
 export * from './category.actions';
 export * from './customer.actions';
 export * from './vendor.actions';
+export * from './size.actions';

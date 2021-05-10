@@ -22,66 +22,42 @@ namespace com.luvinbox.site.Controllers {
         // GET: api/<ProductController>
         [AllowAnonymous]
         [HttpGet]
-        public async Task<IActionResult> Get() {
-            //await _service.GetAll();
-            return BadRequest("Generic Error");
-        }
+        public async Task<IActionResult> Get() => Ok(await  _service.GetAll());
 
         // GET api/<ProductController>/5
         [AllowAnonymous]
         [HttpGet("{id}")]
-        public async Task<ProductDTO> Get(string id) => await _service.Get(id);
+        public async Task<IActionResult> Get(string id) => Ok(await _service.Get(id));
 
         // GET api/<ProductController>?filter
         [AllowAnonymous]
         [HttpGet]
-        public async Task<IEnumerable<ProductDTO>> Filter(string value) => await _service.FindByFilter(value);
+        public async Task<IActionResult> Filter(string value) => Ok(await _service.FindByFilter(value));
 
         [AllowAnonymous]
         [HttpGet("{id}")]
-        public async Task<IEnumerable<ProductDTO>> GetByCategory(string id) => await _service.FindByCategory(id);
+        public async Task<IActionResult> GetByCategory(string id) => Ok(await _service.FindByCategory(id));
 
         // POST api/<ProductController>
         // [Authorize("Bearer")]
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> Post(ProductDTO instance) {
-            if (this.ModelState.IsValid) {
-                await _service.Post(instance);
-                return Ok(instance);
-            } else {
-                return BadRequest();
-            }
-        }
-
+        public async Task<IActionResult> Post(ProductDTO instance) => Ok(await _service.Post(instance));
+        
         // PUT api/<ProductController>/5
         //[Authorize("Bearer")]
         [AllowAnonymous]
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(string id, ProductDTO instance) {
-            if (this.ModelState.IsValid) {
-                await _service.Put(id, instance);
-                return Ok(instance);
-            } else {
-                return BadRequest();
-            }
-        }
+        public async Task<IActionResult> Put(string id, ProductDTO instance) => Ok(await _service.Put(id, instance));
 
         [Authorize("Bearer")]
         [HttpPatch()]
-        public async Task<IActionResult> Patch(IEnumerable<ProductDTO> products) {
-            if (this.ModelState.IsValid) {
-                await _service.Patch(products);
-                return Ok();
-            } else {
-                return BadRequest();
-            }
-        }
+        public async Task<IActionResult> Patch(IEnumerable<ProductDTO> products) => Ok(await _service.Patch(products));
 
         // DELETE api/<ProductController>/5
         //[Authorize("Bearer")]
         [AllowAnonymous]
         [HttpDelete("{id}")]
-        public async Task<Boolean> Delete(string id) => await _service.Delete(id);
+        public async Task<IActionResult> Delete(string id) => Ok(await _service.Delete(id));
     }
 }
