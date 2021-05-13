@@ -18,8 +18,9 @@ namespace com.luvinbox.domain.entities {
         public string Material { get; set; }
         public string Usage { get; set; }
         public string Care { get; set; }
+        public string PowerSupply { get; set; }
+        public string Maturity { get; set; }
         public string Color { get; set; }
-        public string SizeId { get; set; }
         public IEnumerable<Image> Images { get; set; }
         public enumProductStatus Status { get; set; }
         public IEnumerable<string> Sizes { get; set; }

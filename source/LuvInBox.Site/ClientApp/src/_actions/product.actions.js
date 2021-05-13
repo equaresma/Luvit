@@ -18,13 +18,12 @@ function filter(value) {
         dispatch(request());
 
         productService.filter(value)
-            .then(
-                products => {
-                    dispatch(success(products));
-                    history.push('/filteredProducts');
-                },
-                error => dispatch(failure(error))
-            );
+            .then(products => {
+                dispatch(success(products));
+                history.push('/filteredProducts');
+            }).catch(error => {
+                dispatch(failure(error))
+            });
     };
 
     function request() {
@@ -72,12 +71,11 @@ function getPromotions() {
         dispatch(request());
 
         productService.getPromotions()
-            .then(
-                products => {
-                    dispatch(success(products))
-                },
-                error => dispatch(failure(error))
-            );
+            .then(products => {
+                dispatch(success(products))
+            }).catch(error => {
+                dispatch(failure(error))
+            });
     };
 
     function request() {
@@ -99,13 +97,12 @@ function getByCategory(id) {
         dispatch(request());
 
         productService.getByCategory(id)
-            .then(
-                products => {
-                    dispatch(success(products));
-                    history.push('/productsByCateg');
-                },
-                error => dispatch(failure(error))
-            );
+            .then(products => {
+                dispatch(success(products));
+                history.push('/productsByCateg');
+            }).catch(error => {
+                dispatch(failure(error))
+            });
     };
 
     function request() {
@@ -153,9 +150,11 @@ function save(product) {
             .then(
                 product => {
                     dispatch(success(product));
-                },
-                error => dispatch(failure(error))
-            );
+                    dispatch(newProduct());
+                    dispatch(getAll());
+                }).catch(error => {
+                    dispatch(failure(error))
+                })
     };
 
     function request() {
@@ -177,12 +176,12 @@ function deleteProduct(productId) {
         dispatch(request());
 
         productService.deleteProduct(productId)
-            .then(
-                product => {
-                    dispatch(success(product));
-                },
-                error => dispatch(failure(error))
-            );
+            .then(product => {
+                dispatch(success(product));
+                dispatch(getAll());
+            }).catch(error => {
+                dispatch(failure(error))
+            });
     };
 
     function request() {
@@ -190,7 +189,7 @@ function deleteProduct(productId) {
         return { type: productConstants.PRD_DEL_REQUEST };
     }
     function success(product) {
-        console.log('success...');
+        console.log('success...');        
         return { type: productConstants.PRD_DEL_SUCCESS, product };
     }
     function failure(error) {

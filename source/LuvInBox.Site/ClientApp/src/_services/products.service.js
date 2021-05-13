@@ -120,8 +120,6 @@ function _create(product) {
         .then(handleResponse)
         .then(product => {
             return product;
-        }, error => {
-            return error
         });
 }
 
@@ -136,8 +134,6 @@ function _update(product) {
         .then(handleResponse)
         .then(product => {
             return product;
-        }, error => {
-            return error
         });
 }
 

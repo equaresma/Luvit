@@ -167,5 +167,9 @@
   "lbl_delete_prod": "Are you sure you want to delete the selected products?",
   "lbl_available_sizes": "Available Sizes",
   "lbl_select_available_sizes": "Select available sizes",
-  "lbl_selected_sizes": "Selected sizes"
+  "lbl_selected_sizes": "Selected sizes",
+  "lbl_manufacturer": "Manufacturer",
+  "lbl_power_supply": "PowerSupply",
+  "lbl_maturity": "Maturity",
+  "lbl_package": "Package"
 }

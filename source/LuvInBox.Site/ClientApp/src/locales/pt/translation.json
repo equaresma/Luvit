@@ -167,5 +167,9 @@
   "lbl_delete_prod": "Está certo que deseja apagar os produtos selecionados?",
   "lbl_available_sizes": "Tamanhos disponíveis",
   "lbl_select_available_sizes": "Selecione os tamanhos disponíveis",
-  "lbl_selected_sizes": "Selected sizes"
+  "lbl_selected_sizes": "Selected sizes",
+  "lbl_manufacturer": "Fabricante",
+  "lbl_power_supply": "Fonte de Alimentação",
+  "lbl_maturity": "Validade",
+  "lbl_package": "Embalagem"
 }

@@ -426,4 +426,7 @@
   <data name="RequiredSKU" xml:space="preserve">
     <value>SKU é obrigatório</value>
   </data>
+  <data name="lblTest" xml:space="preserve">
+    <value>Meu Teste</value>
+  </data>
 </root>

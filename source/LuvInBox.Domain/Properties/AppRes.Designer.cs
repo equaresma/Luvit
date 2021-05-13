@@ -394,6 +394,15 @@ namespace com.luvinbox.domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Barcode.
+        /// </summary>
+        public static string lblBarCode {
+            get {
+                return ResourceManager.GetString("lblBarCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Birthday.
         /// </summary>
         public static string lblBirthday {
@@ -709,6 +718,78 @@ namespace com.luvinbox.domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Test.
+        /// </summary>
+        public static string lblTest {
+            get {
+                return ResourceManager.GetString("lblTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Missing.
+        /// </summary>
+        public static string Msg_Err_Customer_Missing {
+            get {
+                return ResourceManager.GetString("Msg_Err_Customer_Missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vendor Missing.
+        /// </summary>
+        public static string Msg_Err_Vendor_Missing {
+            get {
+                return ResourceManager.GetString("Msg_Err_Vendor_Missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid age.
+        /// </summary>
+        public static string Msg_Invalid_Age {
+            get {
+                return ResourceManager.GetString("Msg_Invalid_Age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Date of Foudation.
+        /// </summary>
+        public static string Msg_Invalid_Foundation {
+            get {
+                return ResourceManager.GetString("Msg_Invalid_Foundation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid password.
+        /// </summary>
+        public static string Msg_Invalid_Pwd {
+            get {
+                return ResourceManager.GetString("Msg_Invalid_Pwd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Bank info.
+        /// </summary>
+        public static string Msg_Ivalid_BankInfo {
+            get {
+                return ResourceManager.GetString("Msg_Ivalid_BankInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username already exists.
+        /// </summary>
+        public static string Msg_Usr_Already_Exists {
+            get {
+                return ResourceManager.GetString("Msg_Usr_Already_Exists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Account number is required.
         /// </summary>
         public static string RequiredAccountNumber {
@@ -732,6 +813,15 @@ namespace com.luvinbox.domain.Properties {
         public static string RequiredBankCode {
             get {
                 return ResourceManager.GetString("RequiredBankCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Barcode is required.
+        /// </summary>
+        public static string RequiredBarcode {
+            get {
+                return ResourceManager.GetString("RequiredBarcode", resourceCulture);
             }
         }
         
@@ -777,6 +867,15 @@ namespace com.luvinbox.domain.Properties {
         public static string RequiredDate {
             get {
                 return ResourceManager.GetString("RequiredDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required Description.
+        /// </summary>
+        public static string RequiredDescription {
+            get {
+                return ResourceManager.GetString("RequiredDescription", resourceCulture);
             }
         }
         
@@ -844,6 +943,15 @@ namespace com.luvinbox.domain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MPN is required.
+        /// </summary>
+        public static string RequiredMPN {
+            get {
+                return ResourceManager.GetString("RequiredMPN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name is requied.
         /// </summary>
         public static string RequiredName {
@@ -862,11 +970,11 @@ namespace com.luvinbox.domain.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Number is required.
+        ///   Looks up a localized string similar to SKU is required.
         /// </summary>
-        public static string RequiredNumber1 {
+        public static string RequiredSKU {
             get {
-                return ResourceManager.GetString("RequiredNumber1", resourceCulture);
+                return ResourceManager.GetString("RequiredSKU", resourceCulture);
             }
         }
         
@@ -887,37 +995,5 @@ namespace com.luvinbox.domain.Properties {
                 return ResourceManager.GetString("RequiredZipCode", resourceCulture);
             }
         }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Description is required.
-        /// </summary>
-        public static string RequiredDescription {
-            get {
-                return ResourceManager.GetString("RequiredDescription", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Description is required.
-        /// </summary>
-        public static string Msg_Err_Vendor_Missing
-        {
-            get
-            {
-                return ResourceManager.GetString("Msg_Err_Vendor_Missing", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to Description is required.
-        /// </summary>
-        public static string Msg_Err_Customer_Missing
-        {
-            get
-            {
-                return ResourceManager.GetString("Msg_Err_Customer_Missing", resourceCulture);
-            }
-        }
-
     }
 }

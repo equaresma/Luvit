@@ -137,17 +137,18 @@ const Products = (props) => {
 
     const onCategoryChange = (e) => {
         setCategory(e.value);
-        let _product = { ...product };
-        _product['categoryId'] = e.value;
 
+        let _product = { ...product };
+
+        _product['categoryId'] = e.value;
         setProduct(_product);
     }
 
     const onInputChange = (e, name) => {
         const val = (e.target && e.target.value) || '';
         let _product = { ...product };
-        _product[`${name}`] = val;
 
+        _product[`${name}`] = val;
         setProduct(_product);
     }
 
@@ -155,9 +156,8 @@ const Products = (props) => {
         let _product = { ...product };
         let content = (e.htmlValue) ? e.htmlValue : '';
 
-        if (name.startsWith("dimension")) {
-            let nName = name.replace("dimension.", "");
-            _product.dimension[`${nName}`] = content.replace('"', '\"').replace('\\', '\\\\');
+        if (name == "dimension") {
+            _product.packageDimension.description = content.replace('"', '\"').replace('\\', '\\\\');
         } else {
             _product[`${name}`] = content.replace('"', '\"').replace('\\', '\\\\');
         }
@@ -170,7 +170,7 @@ const Products = (props) => {
         let _product = { ...product };
 
         if (name == "dimension") {
-            _product.dimension[`${e.target.id}`] = val;
+            _product.packageDimension[`${e.target.id}`] = val;
         } else {
             _product[`${name}`] = val;
         }
@@ -313,10 +313,11 @@ const Products = (props) => {
     }
 
     const onSizesChange = (e) => {
-        let _product = { ...product };
-
         setSelectedSizes(e.value);
-        _product.sizes = selectedSizes;
+
+        let _product = { ...product };
+        _product['sizes'] = selectedSizes;
+
         setProduct(_product);
     }
 
@@ -332,7 +333,7 @@ const Products = (props) => {
     const onColorChange = (e) => {
         let _product = { ...product };
 
-        _product.color = e.value;
+        _product['color'] = "#" + e.value;
         setProduct(_product);
     }
 
@@ -394,30 +395,30 @@ const Products = (props) => {
                     <label htmlFor="category"><Trans>lbl_category</Trans></label>
                     <Dropdown optionLabel="name" optionValue="id" value={category} options={props.categories} onChange={onCategoryChange} placeholder={t("lbl_select_categ")} className="p-dropdown-sm p-mb-2" />
                 </div>
-                <h6><Trans>tit_dimensions</Trans></h6>
+                <h6><Trans>lbl_package</Trans></h6>
                 <div className="p-formgrid p-grid">
                     <div className="p-field p-col">
                         <label htmlFor="width"><Trans>lbl_width</Trans></label>
-                        <InputNumber id="width" value={product.dimension.width} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
+                        <InputNumber id="width" value={product.packageDimension.width} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                     <div className="p-field p-col">
                         <label htmlFor="height"><Trans>lbl_height</Trans></label>
-                        <InputNumber id="height" value={product.dimension.height} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
+                        <InputNumber id="height" value={product.packageDimension.height} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                 </div>
                 <div className="p-formgrid p-grid">
                     <div className="p-field p-col">
                         <label htmlFor="length"><Trans>lbl_length</Trans></label>
-                        <InputNumber id="length" value={product.dimension.length} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
+                        <InputNumber id="length" value={product.packageDimension.length} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                     <div className="p-field p-col">
                         <label htmlFor="weight"><Trans>lbl_weight</Trans></label>
-                        <InputNumber id="weight" value={product.dimension.weight} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
+                        <InputNumber id="weight" value={product.packageDimension.weight} onValueChange={(e) => onInputNumberChange(e, 'dimension')} mode="decimal" locale="en-US" minFractionDigits={2} />
                     </div>
                 </div>
                 <div className="p-field">
-                    <label htmlFor="dimension.description"><Trans>lbl_description</Trans></label>
-                    <Editor id="dimension.description" name="description" style={{ height: '200px' }} value={product.dimension.description} onTextChange={(e) => onEditorChange(e, 'dimension.description')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <label htmlFor="dimension"><Trans>tit_dimensions</Trans></label>
+                    <Editor id="dimension" name="dimension" style={{ height: '200px' }} value={product.packageDimension.description} onTextChange={(e) => onEditorChange(e, 'dimension')} className="p-inputtext-sm p-d-block p-mb-2" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="brand"><Trans>lbl_brand</Trans></label>
@@ -449,6 +450,14 @@ const Products = (props) => {
                 <div className="p-field">
                     <label htmlFor="care"><Trans>lbl_care</Trans></label>
                     <Editor id="care" name="care" style={{ height: '100px' }} value={product.care} onTextChange={(e) => onEditorChange(e, 'care')} className="p-inputtext-sm p-d-block p-mb-2" />
+                </div>
+                <div className="p-field">
+                    <label htmlFor="powersupply"><Trans>lbl_power_supply</Trans></label>
+                    <Editor id="powersupply" name="powerSupply" style={{ height: '100px' }} value={product.powerSupply} onTextChange={(e) => onEditorChange(e, 'powerSupply')} className="p-inputtext-sm p-d-block p-mb-2" />
+                </div>
+                <div className="p-field">
+                    <label htmlFor="maturity"><Trans>lbl_maturity</Trans></label>
+                    <Editor id="maturity" name="maturity" style={{ height: '100px' }} value={product.maturity} onTextChange={(e) => onEditorChange(e, 'maturity')} className="p-inputtext-sm p-d-block p-mb-2" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="color"><Trans>lbl_available_sizes</Trans></label>

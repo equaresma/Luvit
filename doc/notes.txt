@@ -28,8 +28,10 @@ luvitmarketplace@gmail.com
 		Configurar Mercado Pago Teste
 		Efeturar checkout 
 		Confirmar Transação
-		 
-selectedItemTemplate={selectedSizesTemplate}
+
+Não salvou os sizes ids
+Reload ao salvar		 
+Refazer em todos os services.js não retornar o erro, deixar voltar a exception e capturar com o catch no action.js;
 
 db.Product.createIndex( {SKU: 1 }, { unique: true } );
 db.Product.createIndex( { MPN: 1 }, { unique: true } );

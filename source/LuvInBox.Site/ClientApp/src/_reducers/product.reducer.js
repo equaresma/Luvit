@@ -13,13 +13,14 @@ const initialState = {
         name: '',
         description: '',
         category: null,
-        dimension: {
+        packageDimension: {
             weight: 0,
             width: 0,
             height: 0,
             length: 0,
             description: ''
         },
+        dimension: '',
         brand: '',
         origin: '',
         manufacturer: '',
@@ -27,6 +28,8 @@ const initialState = {
         material: '',
         usage: '',
         care: '',
+        powerSupply: '',
+        maturity: '',
         color: '',
         images: new Array(),
         sizes: new Array(),
@@ -91,7 +94,7 @@ export function products(state = initialState, action) {
         case productConstants.PRD_SAVE_SUCCESS:
             return {
                 products: state.products,
-                product: action.product,
+                product: state.product,
                 reload: true,
                 error: action.error
             };
