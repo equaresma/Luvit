@@ -171,5 +171,9 @@
   "lbl_manufacturer": "Manufacturer",
   "lbl_power_supply": "PowerSupply",
   "lbl_maturity": "Maturity",
-  "lbl_package": "Package"
+  "lbl_package": "Package",
+  "msg_name_required": "Name is required",
+  "msg_sku_required": "SKU is required",
+  "msg_mpn_required": "MPN is required",
+  "msg_category_required": "Category is required"
 }

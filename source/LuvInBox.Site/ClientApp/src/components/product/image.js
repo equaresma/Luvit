@@ -15,18 +15,20 @@ const ProductImage = (props) => {
     const getContent = () => {
         let content = "";
 
-        if (image.type === 1) {
-            let value = "";
-            if (image.value.startsWith("[\"") && image.value.endsWith("\"]"))
-                value = image.value.substring(2, image.value.length -2);
+        if (image) {
+            if (image.type === 1) {
+                let value = "";
+                if (image.value.startsWith("[\"") && image.value.endsWith("\"]"))
+                    value = image.value.substring(2, image.value.length - 2);
 
-            if (value.startsWith("data:image")) {
-                content = value;
+                if (value.startsWith("data:image")) {
+                    content = value;
+                } else {
+                    content = `data:image/png;base64,${image.value}`;
+                }
             } else {
-                content = `data:image/png;base64,${image.value}`;
+                content = image.value;
             }
-        } else {
-            content = image.value;
         }
 
         return content;
@@ -37,7 +39,7 @@ const ProductImage = (props) => {
 
         if (isUnobstrutive) {
             return (
-                <img className={className} src={content} alt={image.name} onError={(e) => e.target.src = 'images/not-founded.png'} />
+                <img className={className} src={content} alt={image?.name} onError={(e) => e.target.src = 'images/not-founded.png'} />
             );
         } else {
             return (

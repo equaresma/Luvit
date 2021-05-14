@@ -171,5 +171,9 @@
   "lbl_manufacturer": "Fabricante",
   "lbl_power_supply": "Fonte de Alimentação",
   "lbl_maturity": "Validade",
-  "lbl_package": "Embalagem"
+  "lbl_package": "Embalagem",
+  "msg_name_required": "Nome é obrigatório",
+  "msg_sku_required": "SKU é obrigatório",
+  "msg_mpn_required": "MPN é obrigatório",
+  "msg_category_required": "Categoria é obrigatório"
 }

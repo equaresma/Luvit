@@ -5,6 +5,7 @@ import { Button } from 'primereact/button';
 import { useTranslation } from 'react-i18next';
 import { history } from '../../_helpers';
 import ProductImage from '../../components/product/image';
+import { isArray } from 'util';
 
 import './index.css';
 
@@ -36,7 +37,7 @@ const Product = ({ product = null, category = null }) => {
                 <div className="col-4">
                     <center>
                         <div className="image-container">
-                            <ProductImage image={product.image} className={"product"} />
+                            <ProductImage className={"product"} image={(isArray(product.images) ? product.images[0] : product.images)}/>
                         </div>
                     </center>
                 </div>

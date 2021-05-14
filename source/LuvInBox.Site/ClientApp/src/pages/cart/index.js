@@ -7,9 +7,11 @@ import { OrderList } from 'primereact/orderlist';
 import { Button } from 'primereact/button';
 import { Trans, useTranslation } from 'react-i18next';
 import ProductImage from '../../components/product/image';
+import product from '../../components/product';
+import { isArray } from 'util';
 
 import './index.css';
-import product from '../../components/product';
+
 
 const Cart = (props) => {
     const dispatch = useDispatch();
@@ -106,7 +108,7 @@ const Cart = (props) => {
         return (
             <div className="product-item">
                 <div className="image-container">
-                    <ProductImage image={item.image} />
+                    <ProductImage image={(isArray(item.images) ? product.images[0] : item.images)} />
                 </div>
                 <div className="product-list-detail">
                     <span>{item.productName}</span>

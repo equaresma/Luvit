@@ -8,6 +8,8 @@ import { Rating } from 'primereact/rating';
 import ProductImage from './image';
 import { categoryActions, cartActions } from '../../_actions';
 import { useTranslation } from 'react-i18next';
+import { isArray } from 'util';
+
 import './index.css';
 
 const ProductViewer = (props) => {
@@ -96,7 +98,7 @@ const ProductViewer = (props) => {
                         </div>
                     </div>
                     <div className="product-grid-item-content">
-                        <ProductImage image={data.image} />
+                        <ProductImage image={(isArray(data.images) ? data.images[0] : data.images)} />
                         <div className="product-name">{data.name}</div>
                         <div className="product-description">{data.description}</div>
                         <Rating value={data.rating} readOnly cancel={false}></Rating>

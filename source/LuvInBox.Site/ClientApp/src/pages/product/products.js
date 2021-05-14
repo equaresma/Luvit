@@ -44,6 +44,34 @@ const Products = (props) => {
     const [globalFilter, setGlobalFilter] = useState(null);
     const toast = useRef(null);
     const dt = useRef(null);
+    const emptyProduct = {
+        id: null,
+        barCode: null,
+        name: '',
+        description: '',
+        category: null,
+        packageDimension: {
+            weight: 0,
+            width: 0,
+            height: 0,
+            length: 0,
+            description: ''
+        },
+        dimension: '',
+        brand: '',
+        origin: '',
+        manufacturer: '',
+        completeDescription: '',
+        material: '',
+        usage: '',
+        care: '',
+        powerSupply: '',
+        maturity: '',
+        color: '',
+        images: new Array(),
+        sizes: new Array(),
+        status: 0
+    }
 
     useEffect(() => {
         if (reload)
@@ -55,6 +83,7 @@ const Products = (props) => {
     }
 
     const openNew = () => {
+        setProduct(emptyProduct);
         setSubmitted(false);
         setProductDialog(true);
     }
@@ -73,17 +102,22 @@ const Products = (props) => {
     }
 
     const saveProduct = () => {
-        props.onSave(product);
-        setProductDialog(false);
+        setSubmitted(true);
+
+        if (isValid()) {
+            props.onSave(product);
+            setProductDialog(false);
+            setProduct(emptyProduct);
+        }
     }
 
     const editProduct = (prod) => {
         let id = prod.categoryId;
-        let categ = props.categories.filter(c => c.id == id)[0];
 
-        setCategory(categ);
+        setCategory(id);
         setProduct(prod);
         setColor(prod.color);
+        setSelectedSizes(prod.sizes);
         setProductDialog(true);
     }
 
@@ -181,7 +215,7 @@ const Products = (props) => {
     const leftToolbarTemplate = () => {
         return (
             <React.Fragment>
-                <Button label={t('lbl_new')} icon="pi pi-plus" className="p-button-plain p-mr-2" onClick={openNew} />
+                <Button label={t('lbl_new')} icon="pi pi-plus" className="p-button-help p-mr-2" onClick={openNew} />
                 <Button label={t('lbl_delete')} icon="pi pi-trash" className="p-button-danger" onClick={confirmDeleteSelected} disabled={!selectedProducts || !selectedProducts.length} />
             </React.Fragment>
         )
@@ -212,7 +246,9 @@ const Products = (props) => {
     }
 
     const colorBodyTemplate = (rowData) => {
-        return <div style={{ backgroundColor: "#" + rowData.color, width: 30, height: 20 }}></div>;
+        let colorHex = (rowData.color.startsWith("#")) ? rowData.color : "#" + (rowData.color === "") ? "FFFFFF" : rowData.color;
+
+        return <div style={{ backgroundColor: colorHex, width: 30, height: 20 }}></div>;
     }
 
     const priceBodyTemplate = (rowData) => {
@@ -226,8 +262,8 @@ const Products = (props) => {
     const actionBodyTemplate = (rowData) => {
         return (
             <React.Fragment>
-                <Button icon="pi pi-pencil" className="p-button-rounded p-button-success p-mr-2" onClick={() => editProduct(rowData)} />
-                <Button icon="pi pi-trash" className="p-button-rounded p-button-warning" onClick={() => confirmDeleteProduct(rowData)} />
+                <Button icon="pi pi-pencil" className="p-button-rounded p-button-help p-mr-2" onClick={() => editProduct(rowData)} />
+                <Button icon="pi pi-trash" className="p-button-rounded p-button-danger" onClick={() => confirmDeleteProduct(rowData)} />
             </React.Fragment>
         );
     }
@@ -253,9 +289,18 @@ const Products = (props) => {
         </div>
     );
 
+    const isValid = () => {
+        let _product = { ...product };
+
+        if (!_product)
+            return false;
+
+        return (_product.sku && _product.mpn && _product.name && _product.categoryId);
+    }
+
     const productDialogFooter = (
         <React.Fragment>
-            <Button label={t("lbl_cancel")} icon="pi pi-times" className="p-button-text" onClick={hideDialog} />
+            <Button label={t("lbl_cancel")} icon="pi pi-times" className="p-button-text" onClick={hideDialog}/>
             <Button label={t("lbl_save")} icon="pi pi-check" className="p-button-text" onClick={saveProduct} />
         </React.Fragment>
     );
@@ -372,28 +417,31 @@ const Products = (props) => {
             <Dialog visible={productDialog} style={{ width: '750px' }} header={t("lbl_product_details")} modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
                 <div className="p-field">
                     <label htmlFor="sku"><Trans>lbl_sku</Trans></label>
-                    <InputNumber id="sku" value={product.sku} onValueChange={(e) => onInputNumberChange(e, 'sku')} integerOnly useGrouping={false} />
+                    <InputText id="sku" defaultValue={product.sku} onChange={(e) => onInputChange(e, 'sku')} autoFocus maxLength="20" required required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.sku })} />
+                    {submitted && !product.sku && <small className="p-error"><Trans>msg_sku_required</Trans>.</small>}
                 </div>
                 <div className="p-field">
                     <label htmlFor="mpn"><Trans>lbl_mpn</Trans></label>
-                    <InputText id="mpn" defaultValue={product.mpn} onChange={(e) => onInputChange(e, 'mpn')} />
+                    <InputText id="mpn" defaultValue={product.mpn} onChange={(e) => onInputChange(e, 'mpn')} maxLength="20" required required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.mpn })} />
+                    {submitted && !product.mpn && <small className="p-error"><Trans>msg_mpn_required</Trans>.</small>}
                 </div>
                 <div className="p-field">
                     <label htmlFor="barCode"><Trans>lbl_barcode</Trans></label>
-                    <InputNumber id="barCode" value={product.barCode} onValueChange={(e) => onInputNumberChange(e, 'barCode')} integerOnly autoFocus useGrouping={false} />
+                    <InputText id="barCode" defaultValue={product.barCode} onChange={(e) => onInputChange(e, 'barCode')} maxLength="20" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="name"><Trans>lbl_name</Trans></label>
-                    <InputText id="name" value={product.name} onChange={(e) => onInputChange(e, 'name')} required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
-                    {submitted && !product.name && <small className="p-error">Name is required.</small>}
+                    <InputText id="name" value={product.name} onChange={(e) => onInputChange(e, 'name')} required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} maxLength="200" />
+                    {submitted && !product.name && <small className="p-error"><Trans>msg_name_required</Trans>.</small>}
                 </div>
                 <div className="p-field">
                     <label htmlFor="description"><Trans>lbl_description</Trans></label>
-                    <Editor id="description" style={{ height: '200px' }} value={product.description} onTextChange={(e) => onEditorChange(e, 'description')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="description" style={{ height: '200px' }} value={product.description} onTextChange={(e) => onEditorChange(e, 'description')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="600" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="category"><Trans>lbl_category</Trans></label>
-                    <Dropdown optionLabel="name" optionValue="id" value={category} options={props.categories} onChange={onCategoryChange} placeholder={t("lbl_select_categ")} className="p-dropdown-sm p-mb-2" />
+                    <Dropdown optionLabel="name" optionValue="id" value={category} options={props.categories} onChange={onCategoryChange} placeholder={t("lbl_select_categ")} className={classNames('p-dropdown-sm p-mb-2', { 'p-invalid': submitted && !product.categoryId })} />
+                    {submitted && !product.categoryId && <small className="p-error"><Trans>msg_category_required</Trans>.</small>}
                 </div>
                 <h6><Trans>lbl_package</Trans></h6>
                 <div className="p-formgrid p-grid">
@@ -418,46 +466,43 @@ const Products = (props) => {
                 </div>
                 <div className="p-field">
                     <label htmlFor="dimension"><Trans>tit_dimensions</Trans></label>
-                    <Editor id="dimension" name="dimension" style={{ height: '200px' }} value={product.packageDimension.description} onTextChange={(e) => onEditorChange(e, 'dimension')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="dimension" name="dimension" style={{ height: '200px' }} value={product.packageDimension.description} onTextChange={(e) => onEditorChange(e, 'dimension')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="600" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="brand"><Trans>lbl_brand</Trans></label>
-                    <InputText id="brand" value={product.brand} onChange={(e) => onInputChange(e, 'brand')} required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
-                    {submitted && !product.brand && <small className="p-error">brand is required.</small>}
+                    <InputText id="brand" value={product.brand} onChange={(e) => onInputChange(e, 'brand')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="80" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="origin"><Trans>lbl_origin</Trans></label>
-                    <InputText id="origin" value={product.origin} onChange={(e) => onInputChange(e, 'origin')} required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
-                    {submitted && !product.origin && <small className="p-error">origin is required.</small>}
+                    <InputText id="origin" value={product.origin} onChange={(e) => onInputChange(e, 'origin')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="120" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="manufacturer"><Trans>lbl_manufacturer</Trans></label>
-                    <InputText id="manufacturer" value={product.manufacturer} onChange={(e) => onInputChange(e, 'manufacturer')} required className={classNames('p-inputtext-sm p-d-block p-mb-2', { 'p-invalid': submitted && !product.name })} />
-                    {submitted && !product.manufacturer && <small className="p-error">manufacturer is required.</small>}
+                    <InputText id="manufacturer" value={product.manufacturer} onChange={(e) => onInputChange(e, 'manufacturer')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="100" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="completeDescription"><Trans>lbl_completeDescription</Trans></label>
-                    <Editor id="completeDescription" name="completeDescription" style={{ height: '200px' }} value={product.completeDescription} onTextChange={(e) => onEditorChange(e, 'completeDescription')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="completeDescription" name="completeDescription" style={{ height: '200px' }} value={product.completeDescription} onTextChange={(e) => onEditorChange(e, 'completeDescription')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="4000" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="material"><Trans>lbl_material</Trans></label>
-                    <Editor id="material" name="material" style={{ height: '100px' }} value={product.material} onTextChange={(e) => onEditorChange(e, 'material')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="material" name="material" style={{ height: '100px' }} value={product.material} onTextChange={(e) => onEditorChange(e, 'material')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="600" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="usage"><Trans>lbl_usage</Trans></label>
-                    <Editor id="usage" name="usage" style={{ height: '100px' }} value={product.usage} onTextChange={(e) => onEditorChange(e, 'usage')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="usage" name="usage" style={{ height: '100px' }} value={product.usage} onTextChange={(e) => onEditorChange(e, 'usage')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="600" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="care"><Trans>lbl_care</Trans></label>
-                    <Editor id="care" name="care" style={{ height: '100px' }} value={product.care} onTextChange={(e) => onEditorChange(e, 'care')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="care" name="care" style={{ height: '100px' }} value={product.care} onTextChange={(e) => onEditorChange(e, 'care')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="600" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="powersupply"><Trans>lbl_power_supply</Trans></label>
-                    <Editor id="powersupply" name="powerSupply" style={{ height: '100px' }} value={product.powerSupply} onTextChange={(e) => onEditorChange(e, 'powerSupply')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="powersupply" name="powerSupply" style={{ height: '100px' }} value={product.powerSupply} onTextChange={(e) => onEditorChange(e, 'powerSupply')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="255" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="maturity"><Trans>lbl_maturity</Trans></label>
-                    <Editor id="maturity" name="maturity" style={{ height: '100px' }} value={product.maturity} onTextChange={(e) => onEditorChange(e, 'maturity')} className="p-inputtext-sm p-d-block p-mb-2" />
+                    <Editor id="maturity" name="maturity" style={{ height: '100px' }} value={product.maturity} onTextChange={(e) => onEditorChange(e, 'maturity')} className="p-inputtext-sm p-d-block p-mb-2" maxLength="255" />
                 </div>
                 <div className="p-field">
                     <label htmlFor="color"><Trans>lbl_available_sizes</Trans></label>

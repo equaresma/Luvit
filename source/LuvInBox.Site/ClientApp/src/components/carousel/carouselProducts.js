@@ -5,6 +5,7 @@ import { Button } from 'primereact/button';
 import { productActions, cartActions } from '../../_actions';
 import { useTranslation } from 'react-i18next';
 import ProductImage from '../product/image';
+import { isArray } from 'util';
 
 import './carouselProducts.css';
 
@@ -36,7 +37,7 @@ const CarouselProducts = ({ mType = 'H', onLoad = () => { }, onLoadPromotions = 
             <div className="product-item">
                 <div className="product-item-content">
                     <div className="p-mb-3 whiteCard">
-                        <ProductImage image={product.image} className={"product-image"} />
+                        <ProductImage image={(isArray(product.images) ? product.images[0] : product.images)} className={"product-image"} />
                     </div>
                     <div className="whiteCard InnerProductCard">
                         <span className="InnerProductCard_OfferCard">{product.name}</span>

@@ -13,8 +13,9 @@ namespace com.luvinbox.domain.dtos {
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredMPN", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
         public string MPN { get; set; }
+
         [DataType(DataType.Text)]
-        public long? BarCode { get; set; }
+        public string BarCode { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredName", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
