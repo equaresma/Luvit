@@ -93,9 +93,9 @@ namespace com.luvinbox.service.services {
                 Created = create,
                 Expiration = exp,
                 AccessToken = token,
-                Username = dto.Name,
+                Username = dto.Name,                
                 Message = "Usuário Logado",
-                Type = type
+                UserType = type
             };
         }
         private AuthDTO UnsuccessObject(string message) {
@@ -104,7 +104,6 @@ namespace com.luvinbox.service.services {
                 Message = message,
             };
         }
-
         private async Task<AuthDTO> CreateIdentity(LoginDTO login, User userEntity) {
             var identity = new ClaimsIdentity(
                                 new GenericIdentity(userEntity.Name),

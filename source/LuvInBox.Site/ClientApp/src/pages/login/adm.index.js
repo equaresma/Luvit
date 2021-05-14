@@ -30,7 +30,7 @@ export const AdmLogin = () => {
                 <div style={{ marginTop: "65px", marginBottom: "65px" }}>
                     <div className="row">
                         <div className="col-3">
-                            
+
                         </div>
                         <div className="col-3">
                             <FormGroup id="grpLogin" name="grpLogin">
@@ -49,7 +49,7 @@ export const AdmLogin = () => {
                                     style={{ marginTop: "25px" }}
                                 />
                             </FormGroup>
-                        </div>                        
+                        </div>
                     </div>
                 </div >
             </Form></div>

@@ -18,7 +18,10 @@ function login(username, password) {
             .then(
                 user => {
                     dispatch(success(user));
-                    history.push('/');
+                    if(user.type = 2)
+                        history.push('/');
+                    else
+                        history.push('/adm');
                 },
                 error => {
                     dispatch(failure(error));

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Redirect, Route, Switch } from 'react-router-dom';
 import Layout from './components/layout';
 import Home from './pages/home';
 import AdmHome from './pages/home/adm.index';
@@ -21,17 +21,26 @@ import { CustomerForm } from './pages/user/index';
 import Product from './pages/product/index';
 import ProductByCategory from './pages/product/productsByCateg';
 import FilteredProducts from './pages/product/filteredProducts';
-import { history } from '../src/_helpers/history';
+import { history } from '../src/_helpers';
+import util from '../src/_helpers/util';
+
+const PrivateRoute = ({ component: Component, ...rest }) =>
+(
+    <Route {...rest} render={props =>
+    (
+        util.isAuthenticated() ? <Component {...props} /> : <Redirect to={{ pathname: '/adm/login' }} />
+    )} />
+);
 
 export default function Routes() {
     return (
         <Router history={history}>
             <Layout>
                 <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/adm" exact component={AdmHome} />
+                    <Route path="/" exact component={Home} />                                        
+                    <PrivateRoute path="/adm" exact component={AdmHome} />
+                    <PrivateRoute path="/adm/products" exact component={AdmProducts} />
                     <Route path="/adm/login" exact component={AdmLogin} />
-                    <Route path="/adm/products" exact component={AdmProducts} />
                     <Route path="/cart" component={Cart} />
                     <Route path="/login" component={Login} />
                     <Route path='/contact' component={Contact} />

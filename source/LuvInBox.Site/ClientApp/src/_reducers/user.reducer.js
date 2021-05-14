@@ -1,7 +1,7 @@
 import { userConstants } from '../_constants';
 
 const initialState = {
-    user: { firstName: '', lastName: '' },
+    user: { userName: '', userType: 0 },
     isUnobstrutive: false,
     error: null
 }

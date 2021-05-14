@@ -4,7 +4,7 @@ import NavMenuSite from './navMenuSite';
 
 export default class NavMenu extends React.PureComponent {
     builder = () => {
-        if (window.location.pathname.includes("adm/")) {
+        if (window.location.pathname.includes("/adm")) {
             return <NavMenuAdm />
         } else {
             return <NavMenuSite />

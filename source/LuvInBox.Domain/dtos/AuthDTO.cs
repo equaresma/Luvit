@@ -9,6 +9,6 @@ namespace com.luvinbox.domain.dtos {
         public string AccessToken { get; set; }
         public string Username { get; set; }
         public string Message { get; set; }
-        public enumUserType Type { get; set; }
+        public enumUserType UserType { get; set; }
     }
 }

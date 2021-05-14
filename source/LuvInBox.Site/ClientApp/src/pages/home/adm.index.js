@@ -9,8 +9,17 @@ import '../../index.css';
 
 const AdmHome = () => {
     return (
-        <div>
-            <h1>Site Adm</h1>
+        <div>            
+            <center>
+                <h2 style={{ fontFamily: "anton,sans-serif", marginTop: 150, marginLeft: -300, color: "#060606" }}>Site Administrativo</h2>
+                <br />
+                <img src="/images/site-adm.png" />                
+                <br />
+                <br />
+                <p><small>Seja vem vindo</small></p>
+                <br />
+                <br />
+            </center>
         </div>
     );
 }

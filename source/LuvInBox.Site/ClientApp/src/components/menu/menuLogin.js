@@ -13,7 +13,7 @@ class MenuLogin extends React.PureComponent {
                     <i className="pi pi-user-edit p-overlay-badge">
                         <Badge severity="success"></Badge>
                     </i>
-                    <span>{user.Username}</span>
+                    <span>{user.userName}</span>
                 </NavLink>);
         } else
             return (
@@ -27,7 +27,7 @@ class MenuLogin extends React.PureComponent {
 
 function mapStateToProps(state) {
     let juser = JSON.parse(localStorage.getItem('user'));
-    if (juser) {
+    if (juser && juser.type == "2") {
         return {
             user: juser,
             loggedIn: true

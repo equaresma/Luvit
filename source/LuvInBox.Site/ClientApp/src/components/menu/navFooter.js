@@ -6,7 +6,7 @@ import './navFooter.css';
 
 export default class NavFooter extends React.PureComponent {
     builder = () => {
-        if (window.location.pathname.includes("adm/")) {
+        if (window.location.pathname.includes("/adm")) {
             return <NavFooterAdm />
         } else {
             return <NavFooterSite />
