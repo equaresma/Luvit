@@ -65,6 +65,22 @@ TODO:
 		<InputNumber id="price" value={product.price} onValueChange={(e) => onInputNumberChange(e, 'price')} mode="currency" currency="BRL" locale="pt-BR" />
 	</div>
 
+npm i --save @fortawesome/fontawesome-svg-core
+npm i --save @fortawesome/free-brands-svg-icons
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/react-fontawesome
+npm install primereact --save
+npm install primeicons --save
+npm install primeflex --save
+npm i axios --save
+npm i i18next --save
+npm i i18next-browser-languagedetector --save
+npm i react-i18next --save
+npm i moment --save
+npm i react-quill --save
+npm i react-file-reader --save
+
+
 
 https://www.lojadoprazer.com.br/custom.asp?arq=LDPQuemSomos.htm
 
