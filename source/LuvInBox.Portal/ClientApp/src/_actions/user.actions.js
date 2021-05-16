@@ -18,7 +18,7 @@ function login(username, password) {
             .then(
                 user => {
                     dispatch(success(user));
-                    if (user.type = 2)
+                    if (user.userType == 2)
                         history.push('/');
                     else
                         history.push('/adm');
@@ -43,7 +43,7 @@ function logout() {
             .then(
                 user => {
                     dispatch(success(user));
-                    if (user.type = 2)
+                    if (user.userType == 2)
                         history.push('/');
                     else
                         history.push('/adm');
@@ -62,7 +62,8 @@ function logout() {
 
 function setUnobstrutive(value) {
     userService.setUnobstrutive(value).then(x => {
-        history.push('/');
+        history.go(0);
+        //history.push('/');
     });
 
     return { type: userConstants.SET_UNOBSTRUTIVE, value };

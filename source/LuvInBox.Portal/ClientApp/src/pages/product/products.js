@@ -26,7 +26,7 @@ import './index.css';
 
 const Products = (props) => {
     const { t } = useTranslation();
-    const categErrorMessage = useSelector(state => state.reducers.category?.error);
+    const categErrorMessage = useSelector(state => util.coalesce(state.reducers.category, 'error'));
     const prdErrorMessage = useSelector(state => util.coalesce(state.reducers.products, 'error'));
     const szErrorMessage = useSelector(state => util.coalesce(state.reducers.size, 'error'));
 

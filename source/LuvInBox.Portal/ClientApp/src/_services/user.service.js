@@ -34,7 +34,7 @@ async function logout() {
     if (!user)
         return;
 
-    if (user.type = 2) {
+    if (user.userType == 2) {
         const requestOptions = {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' },
@@ -43,7 +43,7 @@ async function logout() {
         return await fetch(`api/Login/Logoff?username=${user.Username}`, requestOptions)
             .then(handleResponse)
             .then(res => {
-                // remove user from local storage to log user out
+                //remove user from local storage to log user out
                 localStorage.removeItem('user');
                 localStorage.removeItem('cart');
                 return res;
@@ -81,6 +81,11 @@ async function setUnobstrutive(value) {
 }
 
 async function getUnobstrutive() {
+    let adm = window.location.pathname.includes("/adm");
+
+    if (adm)
+        return true;
+
     let isUnobstrutive = JSON.parse(localStorage.getItem('isUnobstrutive'));
 
     let promisse = new Promise((resolve, reject) => {

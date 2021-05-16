@@ -9,7 +9,7 @@ export default {
             return false;
 
         //Luvinbox adm user Or Vendor user:
-        return (user.type !== '2');
+        return (user.userType != '2');
     },
     coalesce: (sender, attrib) => {
         return (sender && sender[attrib]);
