@@ -16,7 +16,7 @@ const AdmHome = () => {
                 <img src="/images/site-adm.png" />                
                 <br />
                 <br />
-                <p><small>Seja vem vindo</small></p>
+                <p><small>Seja bem vindo</small></p>
                 <br />
                 <br />
             </center>
