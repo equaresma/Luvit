@@ -27,7 +27,7 @@ class MenuLogin extends React.PureComponent {
 
 function mapStateToProps(state) {
     let juser = JSON.parse(localStorage.getItem('user'));
-    if (juser && juser.type == "2") {
+    if (juser && juser.userType == "2") {
         return {
             user: juser,
             loggedIn: true

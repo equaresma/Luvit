@@ -6,7 +6,7 @@ export const userService = {
 };
 
 async function login(username, password) {
-    var login = {
+    let login = {
         "name": username,
         "password": password,
         "type": 0,
@@ -103,18 +103,15 @@ async function getUnobstrutive() {
 
 function handleResponse(response) {
     return response.text().then(text => {
-        const data = text && JSON.parse(text);
         if (!response.ok) {
             if (response.status === 401) {
-                // auto logout if 401 response returned from api
                 logout();
-                //let l = location.reload(true);
             }
 
-            const error = (data && data.message) || response.statusText;
+            const error = (text || text.message) || (response.statusText || response.status);
             return Promise.reject(error);
+        } else {
+            return JSON.parse(text);
         }
-
-        return data;
     });
 }

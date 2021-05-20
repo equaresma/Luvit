@@ -175,5 +175,6 @@
   "msg_name_required": "Nome é obrigatório",
   "msg_sku_required": "SKU é obrigatório",
   "msg_mpn_required": "MPN é obrigatório",
-  "msg_category_required": "Categoria é obrigatório"
+  "msg_category_required": "Categoria é obrigatório",
+  "lbl_personal_document": "CPF"
 }

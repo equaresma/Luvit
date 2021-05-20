@@ -25,7 +25,7 @@ export function customer(state = initialState, action) {
     switch (action.type) {
         case customerConstants.CM_FAILURE:
             return {
-                customer: state.customer,
+                customer: action.customer,
                 error: action.error
             };
         case customerConstants.CM_GET_REQUEST:

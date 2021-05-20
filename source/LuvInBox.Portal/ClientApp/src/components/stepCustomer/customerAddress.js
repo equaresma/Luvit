@@ -63,7 +63,7 @@ const CustomerAddress = (props) => {
                     <br />
                     <div className="p-fluid p-formgrid p-grid">
                         <div className="p-field p-col-6">
-                            <InputText id="ZipCode" name="ZipCode" type="text" onChange={handleChange('Address')} defaultValue={address.ZipCode} required
+                            <InputText id="ZipCode" name="ZipCode" type="text" onChange={handleChange('Address')} defaultValue={address.ZipCode}  autoFocus required
                                 maxLength="20" placeholder={t('lbl_zipcode')} className="p-d-block" type="text" aria-describedby="zipCode-help" onBlur={getAddress} />
                             <small id="zipCode-help" className="p-invalid p-d-block text-right"><Trans>lbl_zipcode_required</Trans></small>
                         </div>

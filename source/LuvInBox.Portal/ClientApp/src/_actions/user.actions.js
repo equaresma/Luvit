@@ -22,12 +22,10 @@ function login(username, password) {
                         history.push('/');
                     else
                         history.push('/adm');
-                },
-                error => {
+                }).catch(error => {
                     dispatch(failure(error));
                     dispatch(alertActions.error(error));
-                }
-            );
+                });
     };
 
     function request(user) { return { type: userConstants.LOGIN_REQUEST, user } }
@@ -47,11 +45,9 @@ function logout() {
                         history.push('/');
                     else
                         history.push('/adm');
-                },
-                error => {
+                }).catch(error => {
                     dispatch(failure(error));
-                }
-            );
+                });
     };
 
     function success() {
@@ -63,7 +59,6 @@ function logout() {
 function setUnobstrutive(value) {
     userService.setUnobstrutive(value).then(x => {
         history.go(0);
-        //history.push('/');
     });
 
     return { type: userConstants.SET_UNOBSTRUTIVE, value };

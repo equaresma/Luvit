@@ -94,7 +94,7 @@ const Cart = (props) => {
 
                     if (product) {
                         product.shipping = item;
-                    }                
+                    }
                 });
 
                 setProducts(products);
@@ -117,7 +117,7 @@ const Cart = (props) => {
                         <span className="product-category">{item.category}</span>
                     </div>
                     <div>
-                        <img src={`images/logos/${item.vendorDocNumber.replace(/[./-]/g, '')}.png`} style={{height:20}}/>
+                        <img src={`images/logos/${item.vendorDocNumber.replace(/[./-]/g, '')}.png`} style={{ height: 20 }} />
                     </div>
                 </div>
                 <div className="product-list-action">
@@ -138,7 +138,7 @@ const Cart = (props) => {
                 <center><h4 className="title"><Trans>lbl_cart</Trans></h4></center>
                 <div className="orderlist-demo">
                     <div className="card">
-                        <div style={{marginLeft: 50}}>
+                        <div style={{ marginLeft: 50 }}>
                             <div className="p-field p-col-6">
                                 <div className="p-inputgroup">
                                     <span className="p-inputgroup-addon">
@@ -167,6 +167,30 @@ const Cart = (props) => {
                 </div>
             </div>
             <hr />
+            <div class="container_payment">
+                <div class="block-heading">
+                    <h2>Checkout Payment</h2>
+                    <p>This is an example of a Mercado Pago integration</p>
+                </div>
+                <div class="form-payment">
+                    <div class="products">
+                        <div class="total">Total<span class="price" id="summary-total">0</span></div>
+                    </div>
+                </div>
+                <div class="payment-details">
+                    <div class="form-group col-sm-12">
+                        <br />
+                        <div id="button-checkout"></div>
+                        <br />
+                        <a id="go-back">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 10 10" class="chevron-left">
+                                <path fill="#009EE3" fill-rule="nonzero" id="chevron_left" d="M7.05 1.4L6.2.552 1.756 4.997l4.449 4.448.849-.848-3.6-3.6z"></path>
+                            </svg>
+                            <Trans>lbl_back</Trans>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div>
                 <center>
                     <div><img src="images/logos/mercado_pago.png" style={{ height: 80 }} /></div>

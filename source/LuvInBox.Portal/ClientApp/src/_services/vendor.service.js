@@ -8,7 +8,7 @@ export const vendorService = {
 
 async function create(VendorDTO) {
     if (!moment(VendorDTO.FoundedIn, moment.ISO_8601).isValid())
-        VendorDTO.FoundedIn = moment(VendorDTO.FoundedIn, "DD/MM/YYYY").toISOString();
+        VendorDTO.FoundedIn = moment(VendorDTO.FoundedIn, "YYYY-MM-DD");
 
      const requestOptions = {
          method: 'POST',

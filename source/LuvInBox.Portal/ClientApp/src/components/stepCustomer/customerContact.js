@@ -16,6 +16,9 @@ const CustomerContact = (props) => {
     const dispatch = useDispatch();
     const [password, setPwd] = React.useState('');
     const [passwordConf, setPwdConf] = React.useState('');
+    const [marital, setMarital] = React.useState(null);
+    const [degree, setDegree] = React.useState(null);
+    const [gender, setGender] = React.useState('');
     const { stepItems, currentStep } = props;
     const { t } = useTranslation();
     const [customer, setCustomer] = useState(props.customer);
@@ -26,6 +29,33 @@ const CustomerContact = (props) => {
         setCustomer({
             ...customer,
             [target.name]: target.type === "checkbox" ? target.checked : target.value
+        });
+    }
+
+    const onDegreeChange = (e) => {
+        setDegree(e.value);
+
+        setCustomer({
+            ...customer,
+            Degree: e.value
+        });
+    }
+
+    const onGenderChange = (e) => {
+        setGender(e.value);
+
+        setCustomer({
+            ...customer,
+            Gender: e.value
+        });
+    }
+
+    const onMaritalChange = (e) => {
+        setMarital(e.value);
+
+        setCustomer({
+            ...customer,
+            MaritalStatus: e.value
         });
     }
 
@@ -88,7 +118,7 @@ const CustomerContact = (props) => {
                                 <h4><Trans>lbl_identification</Trans></h4>
                                 <br />
                                 <div className="p-fluid">
-                                    <InputText id="Nickname" name="Nickname" type="text" onChange={handleChange()} value={customer.Nickname} placeholder={t('lbl_nick')} />
+                                    <InputText id="Nickname" name="Nickname" type="text" onChange={handleChange()} value={customer.Nickname} placeholder={t('lbl_nick')} autoFocus/>
                                 </div>
                                 <div className="p-fluid">
                                     <div className="p-field-checkbox" style={{ marginTop: "20px" }}>
@@ -98,21 +128,21 @@ const CustomerContact = (props) => {
                                 </div>
                                 <div className="p-fluid">
                                     <InputMask id="DocumentNumber" name="DocumentNumber" type="text" mask="999.999.999-99" onChange={handleChange()}
-                                        value={customer.DocumentNumber} placeholder={t('lbl_document')} aria-describedby="document-help" />
+                                        value={customer.DocumentNumber} placeholder={t('lbl_personal_document')} aria-describedby="document-help" />
                                     <small id="document-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
                                 </div>
                                 <div className="p-fluid">
-                                    <Dropdown id="Gender" name="Gender" defaultValue={customer.Gender} options={genderOptions} onChange={handleChange()} optionLabel="name"
+                                    <Dropdown id="Gender" name="Gender" value={gender} options={genderOptions} onChange={onGenderChange} optionLabel="name"
                                         placeholder={t('lbl_gender')} optionValue="code" aria-describedby="gender-help" />
                                     <small id="gender-help" className="p-d-block text-right"><Trans>lbl_gender_required</Trans></small>
                                 </div>
                                 <div className="p-fluid">
-                                    <Dropdown id="MaritalStatus" name="MaritalStatus" defaultValue={customer.MaritalStatus} options={maritalStatusOptions}
-                                        onChange={handleChange()} optionLabel="name" placeholder={t('lbl_marital_status')} optionValue="code" aria-describedby="marital-help" />
+                                    <Dropdown id="MaritalStatus" name="MaritalStatus" value={marital} options={maritalStatusOptions}
+                                        onChange={onMaritalChange} optionLabel="name" placeholder={t('lbl_marital_status')} optionValue="code" aria-describedby="marital-help" />
                                     <small id="marital-help" className="p-d-block text-right"><Trans>lbl_marital_status_required</Trans></small>
                                 </div>
                                 <div className="p-fluid">
-                                    <Dropdown id="Degree" name="Degree" defaultValue={customer.Degree} options={degreeOptions} onChange={handleChange()} optionLabel="name"
+                                    <Dropdown id="Degree" name="Degree" value={degree} options={degreeOptions} onChange={onDegreeChange} optionLabel="name"
                                         placeholder={t('lbl_degree')} optionValue="code" />
                                 </div>
                             </FormGroup>

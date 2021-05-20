@@ -4,6 +4,7 @@ import { InputText } from 'primereact/inputtext';
 import { InputMask } from 'primereact/inputmask';
 import { Button } from 'primereact/button';
 import { Steps } from 'primereact/steps';
+import { classNames } from 'primereact/components/utils/ClassNames';
 import { Trans, useTranslation } from 'react-i18next';
 import { Form } from 'reactstrap';
 import { customerActions } from '../../../src/_actions/customer.actions';
@@ -13,11 +14,16 @@ const CustomerDetails = (props) => {
     const { nextStep, stepItems, currentStep } = props;
     const { t } = useTranslation();
     const [customer, setCustomer] = useState(props.customer);
+    const [submitted, setSubmitted] = useState(false);
 
     const next = e => {
         e.preventDefault();
-        dispatch(customerActions.incrementCustomer(customer));
-        nextStep();
+        setSubmitted(true);
+
+        if (isValid()) {
+            dispatch(customerActions.incrementCustomer(customer));
+            nextStep();
+        }
     }
 
     const handleChange = input => e => {
@@ -26,6 +32,10 @@ const CustomerDetails = (props) => {
             ...customer,
             [target.name]: target.type === "checkbox" ? target.checked : target.value
         });
+    }
+
+    const isValid = () => {
+        return customer.FirstName && customer.FamilyName && customer.Email && customer.Birthday;
     }
 
     return (
@@ -40,16 +50,16 @@ const CustomerDetails = (props) => {
                         <br />
                         <div className="p-fluid p-formgrid p-grid">
                             <div className="p-field p-col-4">
-                                <InputText id="firstName" name="FirstName" type="text" onChange={handleChange()} defaultValue={customer.FirstName}
-                                    placeholder={t('lbl_name')} />
+                                <InputText id="firstName" name="FirstName" type="text" onChange={handleChange()} defaultValue={customer.FirstName} autoFocus
+                                    placeholder={t('lbl_name')} required className={classNames('p-d-block', { 'p-invalid': submitted && !customer.FirstName })} maxLength={60}/>
                             </div>
                             <div className="p-field p-col-4">
                                 <InputText id="middleName" name="MiddleName" type="text" onChange={handleChange()} defaultValue={customer.MiddleName}
-                                    placeholder={t('lbl_middle_name')} />
+                                    placeholder={t('lbl_middle_name')} maxLength={120}/>
                             </div>
                             <div className="p-field p-col-4">
                                 <InputText id="familyName" name="FamilyName" type="text" onChange={handleChange()} defaultValue={customer.FamilyName}
-                                    placeholder={t('lbl_family_name')} />
+                                    placeholder={t('lbl_family_name')} required className={classNames('p-d-block', { 'p-invalid': submitted && !customer.FamilyName })} maxLength={255}/>
                             </div>
                             <div className="p-field p-col-12">
                                 <InputText id="email" name="Email" type="text" onChange={handleChange()} defaultValue={customer.Email} placeholder="E-mail" maxLength="150" required
@@ -69,7 +79,9 @@ const CustomerDetails = (props) => {
                         </div>
                         <div className="p-fluid">
                             <InputMask id="birthday" name="Birthday" value={customer.Birthday} mask="99/99/9999" slotChar="mm/dd/yyyy"
-                                onChange={handleChange()} aria-describedby="birthday-help" required placeholder={t('lbl_birthday')}></InputMask>
+                                onChange={handleChange()} aria-describedby="birthday-help" required placeholder={t('lbl_birthday')}
+                                required className={classNames('p-d-block', { 'p-invalid': submitted && !customer.Birthday })}></InputMask>
+
                             <small id="birthday-help" className="p-d-block text-right"><Trans>lbl_birthday_required</Trans></small>
                         </div>
                     </div>
