@@ -41,9 +41,9 @@ function addProduct(product) {
                     productName: product.name,
                     productDescription: product.description,
                     quantity: 1,
-                    price: product.price,
+                    price: (product.price) ? product.price : 1.99,
                     category: null,
-                    image: product.image,
+                    image: Array.isArray(product.images) ? product.images[0] : product.images,
                     shipping: { deadline: 0, value: 0 },
                     vendorId: product.vendorId,
                     vendorName: product.vendorName,
@@ -131,8 +131,6 @@ async function checkout() {
         .then(handleResponse)
         .then(id => {
             return id;
-        }).catch(error => {
-            return error;
         });
 }
 
@@ -159,20 +157,17 @@ async function calculateShipping(zipCodeDestiny) {
     return await fetch('api/Shipping/CalculateCart', requestOptions)
         .then(handleResponse)
         .then(shippings => {
-            return shippings;
-        }).catch(error => {
-            return error;
+            return JSON.parse(shippings);
         });
 }
 
 function handleResponse(response) {
     return response.text().then(text => {
         if (!response.ok) {
-            const data = text && JSON.parse(text);
-            const error = (data || data.message) || (response.statusText || response.status);
+            const error = (text || text.message) || (response.statusText || response.status);
             return Promise.reject(error);
         } else {
-            return JSON.parse(text);
+            return text;
         }
     });
 }

@@ -19,12 +19,10 @@ function get() {
             .then(
                 cart => {
                     dispatch(success(cart));
-                },
-                error => {
+                }).catch(error => {
                     dispatch(failure(error));
                     dispatch(alertActions.error(error));
-                }
-            );
+                });
     };
 
     function request(cart) { return { type: cartConstants.GET_REQUEST, cart } }
@@ -40,12 +38,10 @@ function addProduct(product) {
             .then(
                 product => {
                     dispatch(success(product));
-                },
-                error => {
+                }).catch(error => {
                     dispatch(failure(error));
                     dispatch(alertActions.error(error));
-                }
-            );
+                });
     };
 
     function request(product) { return { type: cartConstants.ADD_PRD_REQUEST, product } }
@@ -61,12 +57,10 @@ function removeProduct(product) {
             .then(
                 product => {
                     dispatch(success(product));
-                },
-                error => {
+                }).catch(error => {
                     dispatch(failure(error));
                     dispatch(alertActions.error(error));
-                }
-            );
+                });
     };
 
     function request(product) { return { type: cartConstants.RMV_PRD_REQUEST, product } }
@@ -82,12 +76,10 @@ function empty() {
             .then(
                 x => {
                     dispatch(success(true));
-                },
-                error => {
+                }).catch(error => {
                     dispatch(failure(error));
                     dispatch(alertActions.error(error));
-                }
-            );
+                });
     };
 
     function request(product) { return { type: cartConstants.RMV_PRD_REQUEST, product } }
@@ -95,25 +87,23 @@ function empty() {
     function failure(error) { return { type: cartConstants.RMV_PRD_FAILURE, error } }
 }
 
-function checkout(){
-	return dispatch => {
-			dispatch(request());
+function checkout() {
+    return dispatch => {
+        dispatch(request());
 
-			cartService.checkout()
-				.then(
-					checkoutId => {
-						dispatch(success(checkoutId));
-					},
-					error => {
-						dispatch(failure(error));
-						dispatch(alertActions.error(error));
-					}
-				);
-		};
+        cartService.checkout()
+            .then(
+                checkoutId => {
+                    dispatch(success(checkoutId));
+                }).catch(error => {
+                    dispatch(failure(error));
+                    dispatch(alertActions.error(error));
+                });
+    };
 
-		function request() { return { type: cartConstants.GHKOUT_REQUEST } }
-		function success(checkoutId) { return { type: cartConstants.GHKOUT_SUCCESS, checkoutId } }
-		function failure(error) { return { type: cartConstants.GHKOUT_FAILURE, error } }	
+    function request() { return { type: cartConstants.GHKOUT_REQUEST } }
+    function success(checkoutId) { return { type: cartConstants.GHKOUT_SUCCESS, checkoutId } }
+    function failure(error) { return { type: cartConstants.GHKOUT_FAILURE, error } }
 }
 
 function calculateShipping(zipCode) {
@@ -124,12 +114,10 @@ function calculateShipping(zipCode) {
             .then(
                 cart => {
                     dispatch(success(cart));
-                },
-                error => {
+                }).catch(error => {
                     dispatch(failure(error));
                     dispatch(alertActions.error(error));
-                }
-            );
+                });
     };
 
     function request() { return { type: cartConstants.SHIPPG_REQUEST } }

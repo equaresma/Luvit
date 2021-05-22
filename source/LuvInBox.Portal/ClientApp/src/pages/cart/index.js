@@ -7,11 +7,8 @@ import { OrderList } from 'primereact/orderlist';
 import { Button } from 'primereact/button';
 import { Trans, useTranslation } from 'react-i18next';
 import ProductImage from '../../components/product/image';
-import product from '../../components/product';
-import { isArray } from 'util';
 
 import './index.css';
-
 
 const Cart = (props) => {
     const dispatch = useDispatch();
@@ -20,6 +17,7 @@ const Cart = (props) => {
     const [products, setProducts] = useState([]);
     const [sum, setSum] = useState(0);
     const [isCalculated, setIsCalculated] = useState(false);
+    const [isPaying, setIsPaying] = useState(false);
 
     useEffect(() => {
         if (products.length != props.cart.length)
@@ -63,19 +61,18 @@ const Cart = (props) => {
     }
 
     const renderScript = () => {
-        if (props.checkoutId == null)
+        if (props.checkoutId == null || isPaying)
             return;
 
-        //sample code from Mercado Pago
+        setIsPaying(true);
         let script = document.createElement("script");
+        
+        script.innerHTML = "const mp = new MercadoPago('TEST-977abf95-4b07-4876-97ba-3b24e7d88754', {locale: 'pt-BR'});";
+        script.innerHTML += `mp.checkout({preference: {id: '${props.checkoutId}'},`;
+        script.innerHTML += "render: {container: '.cho-container', }});";
 
-        // The source domain must be completed according to the site for which you are integrating.
-        // For example: for Argentina ".com.ar" or for Brazil ".com.br".
-        script.src = "https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js";
-        script.type = "text/javascript";
-        script.dataset.preferenceId = props.checkoutId;
-        document.getElementById("button-checkout").innerHTML = "";
-        document.querySelector("#button-checkout").appendChild(script);
+        document.getElementById("cho-scp").innerHTML = "";
+        document.querySelector("#cho-scp").appendChild(script);
     }
 
     const calculateShipping = async e => {
@@ -108,7 +105,7 @@ const Cart = (props) => {
         return (
             <div className="product-item">
                 <div className="image-container">
-                    <ProductImage image={(isArray(item.images) ? product.images[0] : item.images)} />
+                    <ProductImage image={item.image} />
                 </div>
                 <div className="product-list-detail">
                     <span>{item.productName}</span>
@@ -117,7 +114,7 @@ const Cart = (props) => {
                         <span className="product-category">{item.category}</span>
                     </div>
                     <div>
-                        <img src={`images/logos/${item.vendorDocNumber.replace(/[./-]/g, '')}.png`} style={{ height: 20 }} />
+                        <img src={`images/logos/${item.vendorDocNumber?.replace(/[./-]/g, '')}.png`} style={{ height: 20 }} />
                     </div>
                 </div>
                 <div className="product-list-action">
@@ -133,7 +130,7 @@ const Cart = (props) => {
     }
 
     return (
-        <div>
+        <div>            
             <div className="card">
                 <center><h4 className="title"><Trans>lbl_cart</Trans></h4></center>
                 <div className="orderlist-demo">
@@ -162,35 +159,12 @@ const Cart = (props) => {
                             <Button className="p-button-help" onClick={(e) => checkout()}><small>Checkout</small>&nbsp;&nbsp;<i className="pi pi-check-circle"></i></Button>
                             <Button className="p-button-plain" onClick={(e) => emptyCart()} style={{ marginLeft: 10 }}><small><Trans>lbl_empty_cart</Trans></small>&nbsp;&nbsp;<i className="pi pi-undo"></i></Button>
                         </div>
-                        <div id="button-checkout"></div>
+                        <div id="cho-scp" name="cho-scp"></div>
+                        <div class="cho-container" id="cho-container" name="cho-container"></div>
                     </div>
                 </div>
             </div>
             <hr />
-            <div class="container_payment">
-                <div class="block-heading">
-                    <h2>Checkout Payment</h2>
-                    <p>This is an example of a Mercado Pago integration</p>
-                </div>
-                <div class="form-payment">
-                    <div class="products">
-                        <div class="total">Total<span class="price" id="summary-total">0</span></div>
-                    </div>
-                </div>
-                <div class="payment-details">
-                    <div class="form-group col-sm-12">
-                        <br />
-                        <div id="button-checkout"></div>
-                        <br />
-                        <a id="go-back">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 10 10" class="chevron-left">
-                                <path fill="#009EE3" fill-rule="nonzero" id="chevron_left" d="M7.05 1.4L6.2.552 1.756 4.997l4.449 4.448.849-.848-3.6-3.6z"></path>
-                            </svg>
-                            <Trans>lbl_back</Trans>
-                        </a>
-                    </div>
-                </div>
-            </div>
             <div>
                 <center>
                     <div><img src="images/logos/mercado_pago.png" style={{ height: 80 }} /></div>
