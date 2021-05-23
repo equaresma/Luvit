@@ -40,7 +40,8 @@ const Details = (props) => {
                     <br />
                     <div className="p-fluid">
                         <InputText id="name" name="Name" onChange={handleChange()} value={vendor.Name} type="text" aria-describedby="name-help"
-                            className="p-d-block" required maxLength="120" placeholder={t('lbl_name')} maxLength="150" />
+                            className="p-d-block" required maxLength="120" placeholder={t('lbl_name')} maxLength="150" autoFocus />
+
                         <small id="name-help" className="p-d-block text-right"><Trans>lbl_name_required</Trans></small>
                     </div>
                     <div className="p-fluid">
@@ -49,12 +50,12 @@ const Details = (props) => {
                         <small id="userfantasyName2-help" className="p-d-block text-right"><Trans>lbl_fantasy_name_required</Trans></small>
                     </div>
                     <div className="p-fluid">
-                        <InputMask id="DocumentNumber" name="DocumentNumber" type="text" mask="99.999.999/9999-99" onChange={handleChange()}
-                            value={vendor.DocumentNumber} placeholder={t('lbl_document')} aria-describedby="document-help" />
-                        <small id="document-help" className="p-d-block text-right"><Trans>lbl_document_required</Trans></small>
+                        <InputMask id="documentNumber" name="DocumentNumber" type="text" mask="99.999.999/9999-99" onChange={handleChange()}
+                            value={vendor.DocumentNumber} placeholder={t('lbl_company_document')} aria-describedby="document-help" />
+                        <small id="document-help" className="p-d-block text-right"><Trans>lbl_company_document_required</Trans></small>
                     </div>
                     <div className="p-fluid">
-                        <InputMask id="mainPhone" name="MainPhone" type="text" mask="+99(99) 9999-9999" onChange={handleChange()} value={vendor.MainPhone}
+                        <InputMask id="mainPhone" name="MainPhone" type="text" mask="+99(99) 999-9999?" onChange={handleChange()} value={vendor.MainPhone}
                             aria-describedby="mainPhone-help" className="p-d-block" required maxLength="30" placeholder={t('phone')} />
                         <small id="mainPhone-help" className="p-d-block text-right"><Trans>phone_fmt</Trans></small>
                     </div>
@@ -63,7 +64,6 @@ const Details = (props) => {
                             onChange={handleChange()} aria-describedby="foundedIn-help" required placeholder={t('lbl_founded_in')}></InputMask>
                         <small id="foundedIn-help" className="p-d-block text-right"><Trans>lbl_founded_in_required</Trans></small>
                     </div>
-
                     <br />
                     <Button
                         label={t("btn_next")}

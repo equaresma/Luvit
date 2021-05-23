@@ -1,7 +1,5 @@
 import { customerConstants } from '../_constants';
 import { customerService } from '../_services';
-import { alertActions } from '.';
-import { history } from '../_helpers';
 
 export const customerActions = {
     create,
@@ -16,10 +14,8 @@ function create(customer) {
             .then(
                 customer => {
                     dispatch(success(customer));
-                    history.push('/login');
                 }).catch(error => {
                     dispatch(failure(error, customer));
-                    dispatch(alertActions.error(error));
                 });
     };
 

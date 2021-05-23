@@ -79,7 +79,7 @@ const NavMenuSite = (props) => {
                                 <MenuLogin />
                             </NavItem>
                             <NavItem className={"" + logoffCls()}>
-                                <NavLink onClick={onLogout} className="pi pi-sign-out"></NavLink>
+                                <NavLink onClick={onLogout}><i className="pi pi-sign-out"></i></NavLink>
                             </NavItem>
                             <NavItem>
                                 <MenuCart />

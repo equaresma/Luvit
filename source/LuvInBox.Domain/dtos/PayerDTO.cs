@@ -2,6 +2,7 @@
 
 namespace com.luvinbox.domain.dtos {
     public class PayerDTO : IPayer {
+        public string Id { get; set; }
         public string FirstName { get; set; }
         public string FamilyName { get; set; }
         public string Email { get; set; }

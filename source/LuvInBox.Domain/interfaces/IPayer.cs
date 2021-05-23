@@ -2,6 +2,7 @@
 
 namespace com.luvinbox.domain.interfaces {
     public interface IPayer {
+        string Id { get; set; }
         string FirstName { get; set; }
         string FamilyName { get; set; }
         string Email { get; set; }

@@ -26,6 +26,7 @@ async function create(VendorDTO) {
 function handleResponse(response) {
     return response.text().then(text => {
         const data = text && JSON.parse(text);
+
         if (!response.ok) {
             if (Array.isArray(data.errors)) {
                 return Promise.reject("Errors: " + data.errors.toString());
@@ -40,6 +41,7 @@ function handleResponse(response) {
                 return Promise.reject(error);
             }
         }
+
         return data;
     });
 }

@@ -39,7 +39,13 @@ namespace LuvInBox.Service.Payment.mercadopago {
             });
 
             var request = new PreferenceRequest {
-                Items = mpItems
+                Items = mpItems,
+                BackUrls = new PreferenceBackUrlsRequest {
+                    Success = "https://localhost:44345/payment/success",
+                    Failure = "https://localhost:44345/payment/failure",
+                    Pending = "https://localhost:44345/payment/pendings",
+                },
+                AutoReturn = "approved",
             };
 
             if (payment.Payer != null)

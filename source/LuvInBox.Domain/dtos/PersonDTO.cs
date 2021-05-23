@@ -29,7 +29,8 @@ namespace com.luvinbox.domain.dtos {
         public DateTime Birthday { get; set; }
         [Required]
         public enumDocumentType DocumentType { get; set; }
-        [Required]
+
+        [MaxLength(30)]
         [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
         public String DocumentNumber { get; set; }
 

@@ -1,4 +1,9 @@
 {
+  "tit_wellcome": "Bem vindo",
+  "Error": "Erro",
+  "Success": "Sucesso",
+  "msg_fileup_error": "Erro ao carregar arquivo.",
+  "msg_fileup_success": "Arquivo carregado com sucesso.",
   "search": "Pesquisa",
   "footer_manifest": "Manifesto",
   "footer_who_wew_are": "Quem Somos",
@@ -37,6 +42,7 @@
   "lbl_founded_in": "Fundado em",
   "lbl_founded_in_required": "Fundado em é obrigatório",
   "lbl_zipcode": "CEP",
+  "lbl_zipcode_query_error": "Erro ao consultar CEP.",
   "lbl_zipcode_required": "CEP é obrigatório - Consulte on-line",
   "lbl_local_required": "Local é obrigatório",
   "lbl_number_required": "Número é obrigatório",

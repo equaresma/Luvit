@@ -11,6 +11,7 @@ namespace com.luvinbox.infra.dependencyinjection {
             serviceCollection.AddTransient<IVendorService, VendorService>();
             serviceCollection.AddTransient<IProductService, ProductService>();
             serviceCollection.AddTransient<ICategoryService, CategoryService>();
+            serviceCollection.AddTransient<IOrderService, OrderService>();
             serviceCollection.AddTransient<IPaymentService, PaymentService>();
             serviceCollection.AddTransient<IShippingService, ShippingService>();
             serviceCollection.AddTransient<ISizeService, SizeService>();

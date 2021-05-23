@@ -19,23 +19,31 @@ const initialState = {
         Nickname: '',
         IsPublic: false
     },
-    error: null
+    error: null,
+    requesting: false
 }
 export function customer(state = initialState, action) {
     switch (action.type) {
         case customerConstants.CM_FAILURE:
             return {
                 customer: action.customer,
-                error: action.error
+                error: action.error,
+                requesting: false
             };
         case customerConstants.CM_GET_REQUEST:
         case customerConstants.CM_GET_REQUEST:        
+            return {
+                customer: action.customer,
+                error: null,
+                requesting: true
+            }
         case customerConstants.CM_SAVE_REQUEST:
         case customerConstants.CM_INCR_SUCCESS:
             return {
                 customer: action.customer,
-                error: null
-            }        
+                error: null,
+                requesting: false
+            }
         default:
             return state
     }

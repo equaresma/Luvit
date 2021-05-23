@@ -21,6 +21,10 @@ import { CustomerForm } from './pages/user/index';
 import Product from './pages/product/index';
 import ProductByCategory from './pages/product/productsByCateg';
 import FilteredProducts from './pages/product/filteredProducts';
+import PaymentSuccess from './pages/payment/success';
+import PaymentFailure from './pages/payment/failure';
+import PaymentPendings from './pages/payment/pendings';
+
 import { history } from '../src/_helpers';
 import util from '../src/_helpers/util';
 
@@ -37,7 +41,7 @@ export default function Routes() {
         <Router history={history}>
             <Layout>
                 <Switch>
-                    <Route path="/" exact component={Home} />                                        
+                    <Route path="/" exact component={Home} />
                     <PrivateRoute path="/adm" exact component={AdmHome} />
                     <PrivateRoute path="/adm/products" exact component={AdmProducts} />
                     <Route path="/adm/login" exact component={AdmLogin} />
@@ -57,6 +61,9 @@ export default function Routes() {
                     <Route path="/product" component={Product} />
                     <Route path="/productsByCateg" component={ProductByCategory} />
                     <Route path="/filteredProducts" component={FilteredProducts} />
+                    <Route path="/payment/success" component={PaymentSuccess} />
+                    <Route path="/payment/failure" component={PaymentFailure} />
+                    <Route path="/payment/pendings" component={PaymentPendings} />
                 </Switch>
             </Layout>
         </Router>

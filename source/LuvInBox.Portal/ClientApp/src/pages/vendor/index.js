@@ -1,7 +1,8 @@
 ﻿import React from 'react';
 import Details from '../../components/stepVendor/details';
-import Contact from '../../components/stepVendor/contact';
 import Address from '../../components/stepVendor/address';
+import Contact from '../../components/stepVendor/contact';
+import Confirm from '../../components/stepVendor/confirmation';
 import SetupStore from '../../components/stepVendor/setupStore';
 import { useTranslation } from 'react-i18next';
 
@@ -53,6 +54,13 @@ export const VendorForm = () => {
                     <Contact
                         currentStep={step - 1}
                         nextStep={nextStep}
+                        prevStep={prevStep}
+                        stepItems={items}
+                    />)
+            case 5:
+                return (
+                    <Confirm
+                        currentStep={step - 1}
                         prevStep={prevStep}
                         stepItems={items}
                     />)

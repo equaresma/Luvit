@@ -22,6 +22,7 @@ namespace LuvInBox.Site.Controllers {
 
             try {
                 int tries = 0;
+                user.RemoteAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
 
             FindLogin:
                 var ret = await _service.FindByLogin(user);

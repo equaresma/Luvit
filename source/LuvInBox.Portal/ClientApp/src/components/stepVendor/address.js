@@ -1,9 +1,10 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useRef } from 'react';
 import { useDispatch, connect } from 'react-redux';
 import { InputText } from 'primereact/inputtext';
 import { InputNumber } from 'primereact/inputnumber';
 import { Button } from 'primereact/button';
 import { Checkbox } from 'primereact/checkbox';
+import { Toast } from 'primereact/toast';
 import { Steps } from 'primereact/steps';
 import { Trans, useTranslation } from 'react-i18next';
 import { Form } from 'reactstrap';
@@ -12,6 +13,7 @@ import { vendorActions } from '../../../src/_actions/vendor.actions';
 
 const Address = (props) => {
     const dispatch = useDispatch();
+    const toast = useRef(null);
     const { nextStep, stepItems, currentStep } = props;
     const [vendor, setVendor] = useState(props.vendor);
     const [address, setAddress] = useState(vendor.MainAddress);
@@ -26,7 +28,7 @@ const Address = (props) => {
                 [target.name]: target.type === "checkbox" ? target.checked : target.value
             });
 
-            vendor.Address = address;
+            vendor.MainAddress = address;
             setVendor(vendor);
         } else {
             setVendor({
@@ -57,12 +59,14 @@ const Address = (props) => {
                 setVendor(vendor);
             })
             .catch((err) => {
-                alert('Erro ao consultar CEP: ' + err.message);
+                toast.current.show({ severity: 'error', summary: t('Error'), detail: `${t('lbl_zipcode_query_error')} ${err.message}`});
             });
     }
 
     return (
         <div>
+            <Toast ref={toast}></Toast>
+
             <div className="divSteps">
                 <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
             </div>
@@ -72,7 +76,7 @@ const Address = (props) => {
                     <br />
                     <div className="p-fluid p-formgrid p-grid">
                         <div className="p-field p-col-6">
-                            <InputText id="ZipCode" name="ZipCode" type="text" onChange={handleChange('Address')} defaultValue={address.ZipCode} required
+                            <InputText id="ZipCode" name="ZipCode" type="text" onChange={handleChange('Address')} defaultValue={address.ZipCode} required autoFocus
                                 maxLength="20" placeholder={t('lbl_zipcode')} className="p-d-block" type="text" aria-describedby="zipCode-help" onBlur={getAddress} />
                             <small id="zipCode-help" className="p-invalid p-d-block text-right"><Trans>lbl_zipcode_required</Trans></small>
                         </div>

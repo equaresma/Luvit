@@ -160,7 +160,7 @@ const Cart = (props) => {
                             <Button className="p-button-plain" onClick={(e) => emptyCart()} style={{ marginLeft: 10 }}><small><Trans>lbl_empty_cart</Trans></small>&nbsp;&nbsp;<i className="pi pi-undo"></i></Button>
                         </div>
                         <div id="cho-scp" name="cho-scp"></div>
-                        <div class="cho-container" id="cho-container" name="cho-container"></div>
+                        <div className="cho-container" id="cho-container" name="cho-container"></div>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useRef } from 'react';
 import { useDispatch, connect } from 'react-redux';
 import { InputText } from 'primereact/inputtext';
 import { InputMask } from 'primereact/inputmask';
@@ -8,9 +8,10 @@ import { Form, FormGroup } from 'reactstrap';
 import { Dropdown } from 'primereact/dropdown';
 import { Password } from 'primereact/password';
 import { Checkbox } from 'primereact/checkbox';
+import { Toast } from 'primereact/toast';
 import { Trans, useTranslation } from 'react-i18next';
-import { customerActions } from '../../../src/_actions/customer.actions';
-import util from '../../../src/_helpers/util';
+import { customerActions } from '../../_actions/customer.actions';
+import util from '../../_helpers/util';
 
 const CustomerContact = (props) => {
     const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const CustomerContact = (props) => {
     const { stepItems, currentStep } = props;
     const { t } = useTranslation();
     const [customer, setCustomer] = useState(props.customer);
+    const toast = useRef(null);
 
     const handleChange = input => e => {
         const { target } = e;
@@ -93,10 +95,11 @@ const CustomerContact = (props) => {
         e.preventDefault();
         if (password == passwordConf && util.isPasswordStrong(password)) {
             customer.User.Name = customer.Email;
-            customer.User.Password = password;
+            customer.User.Password = password;            
+            props.nextStep();
             dispatch(customerActions.create(customer));
         } else {
-            alert(t('lbl_pwd_constraint'));
+            toast.current.show({ severity: 'warn', summary: t('Error'), detail: t('lbl_pwd_constraint') });
         }
     }
 
@@ -108,6 +111,8 @@ const CustomerContact = (props) => {
     const getActiveComponent = () => {
         return (
             <div>
+                <Toast ref={toast}></Toast>
+
                 <div className="divSteps">
                     <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
                 </div>

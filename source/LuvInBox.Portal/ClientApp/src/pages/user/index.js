@@ -1,7 +1,8 @@
 import React from 'react';
-import CustomerDetails from '../../components/stepCustomer/customerDetails';
-import CustomerContact from '../../components/stepCustomer/customerContact';
-import CustomerAddress from '../../components/stepCustomer/customerAddress';
+import CustomerDetails from '../../components/stepCustomer/details';
+import CustomerAddress from '../../components/stepCustomer/address';
+import CustomerContact from '../../components/stepCustomer/contact';
+import Confirm from '../../components/stepCustomer/confirmation';
 import { useTranslation } from 'react-i18next';
 
 export const CustomerForm = () => {
@@ -43,6 +44,13 @@ export const CustomerForm = () => {
                     <CustomerContact
                         currentStep={step - 1}
                         nextStep={nextStep}
+                        prevStep={prevStep}
+                        stepItems={items}
+                    />)
+            case 4:
+                return (
+                    <Confirm
+                        currentStep={step - 1}
                         prevStep={prevStep}
                         stepItems={items}
                     />)

@@ -1,4 +1,9 @@
 {
+  "tit_wellcome": "Wellcome",
+  "Error": "Error",
+  "Success": "Success",
+  "msg_fileup_error": "File upload error.",
+  "msg_fileup_success": "File uploaded successfully.",
   "search": "Search",
   "footer_manifest": "Manifest",
   "footer_who_wew_are": "Who we area",
@@ -37,6 +42,7 @@
   "lbl_founded_in": "Founded In",
   "lbl_founded_in_required": "Founded In is Required",
   "lbl_zipcode": "Zipcode",
+  "lbl_zipcode_query_error": "Erro ao consultar CEP.",
   "lbl_zipcode_required": "Zipcode is Required",
   "lbl_local_required": "Local is Required",
   "lbl_number_required": "Number is Required",
@@ -176,5 +182,5 @@
   "msg_sku_required": "SKU is required",
   "msg_mpn_required": "MPN is required",
   "msg_category_required": "Category is required",
-  "lbl_personal_document":  "ID"
+  "lbl_personal_document": "ID"
 }

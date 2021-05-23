@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useRef } from 'react';
 import { useDispatch, connect } from 'react-redux';
 import { InputText } from 'primereact/inputtext';
 import { InputMask } from 'primereact/inputmask';
@@ -6,6 +6,7 @@ import { Button } from 'primereact/button';
 import { Steps } from 'primereact/steps';
 import { Form, FormGroup } from 'reactstrap';
 import { Password } from 'primereact/password';
+import { Toast } from 'primereact/toast';
 import { Trans, useTranslation } from 'react-i18next';
 import { vendorActions } from '../../../src/_actions/vendor.actions';
 import util from '../../../src/_helpers/util';
@@ -17,6 +18,7 @@ export const Contact = (props) => {
     const { stepItems, currentStep } = props;
     const { t } = useTranslation();
     const [vendor, setVendor] = useState(props.vendor);
+    const toast = useRef(null);
 
     const handleChange = input => e => {
         const { target } = e;
@@ -53,9 +55,10 @@ export const Contact = (props) => {
         if (password == passwordConf && util.isPasswordStrong(password)) {
             vendor.User.Name = vendor.Email;
             vendor.User.Password = password;
-            dispatch(vendorActions.create(vendor));
+            props.nextStep();
+            dispatch(vendorActions.create(vendor));            
         } else {
-            alert(t('lbl_pwd_constraint'));
+            toast.current.show({ severity: 'warn', summary: t('Error'), detail: t('lbl_pwd_constraint') });
         }
     }
 
@@ -67,6 +70,8 @@ export const Contact = (props) => {
     const getActiveComponent = () => {
         return (
             <div>
+                <Toast ref={toast}></Toast>
+
                 <div className="divSteps">
                     <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
                 </div>
@@ -79,7 +84,7 @@ export const Contact = (props) => {
                                 <div className="p-fluid p-formgrid p-grid">
                                     <div className="p-field p-col-4">
                                         <InputText id="firstName" name="FirstName" type="text" onChange={handleChange('Contact')} value={vendor.Contact.FirstName}
-                                            placeholder={t('lbl_name')} />
+                                            placeholder={t('lbl_name')} required autoFocus />
                                     </div>
                                     <div className="p-field p-col-4">
                                         <InputText id="middleName" name="MiddleName" type="text" onChange={handleChange('Contact')} value={vendor.Contact.MiddleName}
@@ -91,7 +96,7 @@ export const Contact = (props) => {
                                     </div>
                                     <div className="p-field p-col-12">
                                         <InputText id="email" name="Email" type="text" onChange={handleChange('Contact')} value={vendor.Contact.Email} placeholder="E-mail"
-                                            aria-describedby="email-help" />
+                                            aria-describedby="email-help" required />
                                         <small id="email-help" className="p-invalid p-d-block text-right"><Trans>email_fmt</Trans></small>
                                     </div>
                                     <div className="p-field p-col-6">

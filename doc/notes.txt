@@ -64,6 +64,9 @@ TODO:
 		<label htmlFor="price"><Trans>lbl_price</Trans></label>
 		<InputNumber id="price" value={product.price} onValueChange={(e) => onInputNumberChange(e, 'price')} mode="currency" currency="BRL" locale="pt-BR" />
 	</div>
+	
+	
+	
 
 npm i --save @fortawesome/fontawesome-svg-core
 npm i --save @fortawesome/free-brands-svg-icons
@@ -80,7 +83,9 @@ npm i moment --save
 npm i react-quill --save
 npm i react-file-reader --save
 
-
+mongodb://rsdbdev:Ty76?uXI?tLv@mongo1.gear.host:27001/rsdbdev?socketTimeoutMS=60000
+mongodb://luvinboxdb:Bo9eo2rRd_9!@den1.mongo1.gear.host:27001:27001/luvinboxdb?socketTimeoutMS=60000
+mongodb://luvinboxdb:Bo9eo2rRd_9!@den1.mongo1.gear.host:27001/?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000
 
 https://www.lojadoprazer.com.br/custom.asp?arq=LDPQuemSomos.htm
 

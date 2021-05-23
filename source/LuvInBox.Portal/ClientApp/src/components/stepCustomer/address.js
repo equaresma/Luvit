@@ -1,16 +1,18 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useRef } from 'react';
 import { useDispatch, connect } from 'react-redux';
 import { InputText } from 'primereact/inputtext';
 import { InputNumber } from 'primereact/inputnumber';
 import { Button } from 'primereact/button';
 import { Steps } from 'primereact/steps';
+import { Toast } from 'primereact/toast';
 import { Trans, useTranslation } from 'react-i18next';
 import { Form } from 'reactstrap';
-import { customerActions } from '../../../src/_actions/customer.actions';
-import { addressService } from '../../../src/_services';
+import { customerActions } from '../../_actions/customer.actions';
+import { addressService } from '../../_services';
 
 const CustomerAddress = (props) => {
     const dispatch = useDispatch();
+    const toast = useRef(null);
     const { nextStep, stepItems, currentStep } = props;
     const { t } = useTranslation();
     const [customer, setCustomer] = useState(props.customer);
@@ -48,12 +50,14 @@ const CustomerAddress = (props) => {
                 setCustomer(customer);
             })
             .catch((err) => {
-                alert('Erro ao consultar CEP: ' + err.message);
+                toast.current.show({ severity: 'error', summary: t('Error'), detail: `${t('lbl_zipcode_query_error')} ${err.message}` });
             });
     }
 
     return (
         <div>
+            <Toast ref={toast}></Toast>
+
             <div className="divSteps">
                 <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
             </div>
@@ -63,7 +67,7 @@ const CustomerAddress = (props) => {
                     <br />
                     <div className="p-fluid p-formgrid p-grid">
                         <div className="p-field p-col-6">
-                            <InputText id="ZipCode" name="ZipCode" type="text" onChange={handleChange('Address')} defaultValue={address.ZipCode}  autoFocus required
+                            <InputText id="ZipCode" name="ZipCode" type="text" onChange={handleChange('Address')} defaultValue={address.ZipCode} autoFocus required
                                 maxLength="20" placeholder={t('lbl_zipcode')} className="p-d-block" type="text" aria-describedby="zipCode-help" onBlur={getAddress} />
                             <small id="zipCode-help" className="p-invalid p-d-block text-right"><Trans>lbl_zipcode_required</Trans></small>
                         </div>

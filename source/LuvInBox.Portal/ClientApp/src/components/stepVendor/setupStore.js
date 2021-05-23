@@ -1,10 +1,11 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useRef } from 'react';
 import { useDispatch, connect } from 'react-redux';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Steps } from 'primereact/steps';
+import { Toast } from 'primereact/toast';
 import { Form, FormGroup, Label } from 'reactstrap';
-import { FileUpload } from 'primereact/fileupload';
+import ReactFileReader from 'react-file-reader';
 import { Trans, useTranslation } from 'react-i18next';
 import { vendorActions } from '../../../src/_actions/vendor.actions';
 
@@ -13,6 +14,8 @@ export const SetupStore = (props) => {
     const { nextStep, stepItems, currentStep } = props;
     const { t } = useTranslation();
     const [vendor, setVendor] = useState(props.vendor);
+    const toast = useRef(null);
+    const [ img, setImg ] = useState(null);
 
     const handleChange = input => e => {
         const { target } = e;
@@ -48,24 +51,41 @@ export const SetupStore = (props) => {
 
     const onUpload = (e) => {
         vendor.LogoURL = e.xhr.responseText;
+        toast.current.show({ severity: 'info', summary: t('Success'), detail: t('msg_fileup_success') });
     }
 
     const onError = (e) => {
-        alert(e.xhr.responseText);
+        toast.current.show({ severity: 'error', summary: t('Error'), detail: `${t('msg_fileup_error')} ${e.xhr.responseText}` });
     }
 
     const getCleanDoc = () => {
-        if (vendor.Document)
-            if (vendor.Document.Number)
-                return vendor.Document.Number.replace('.', '')
-                    .replace('/', '')
-                    .replace('-', '');
+        if (vendor.DocumentNumber)
+            return vendor.DocumentNumber
+                .replace('.', '')
+                .replace('/', '')
+                .replace('-', '');
 
         return "";
     }
 
+    const handleImgFile = (files) => {
+        let _vendor = { ...vendor };
+
+        _vendor.LogoType = {
+            type: 1,
+            value: JSON.stringify(files.base64)
+        };
+
+        setImg(files.base64);
+        setVendor(_vendor);
+
+        toast.current.show({ severity: 'success', summary: 'File', files, life: 3000 });
+    }
+    
     return (
         <div>
+            <Toast ref={toast}></Toast>
+
             <div className="divSteps">
                 <Steps model={stepItems} activeIndex={currentStep} readOnly={true} />
             </div>
@@ -76,13 +96,15 @@ export const SetupStore = (props) => {
                         <br />
                         <div className="p-field p-col-12">
                             <Label>Logo</Label>
-                            <FileUpload name="LogoURL" url={"api/file?name=" + getCleanDoc()} accept="image/*" maxFileSize={60000} onUpload={onUpload} chooseLabel={t('file_browse')} onError={onError} required />
+                            <ReactFileReader fileTypes="image/*" base64={true} handleFiles={handleImgFile}>
+                                <Button label={t('lbl_import')} icon="pi pi-plus" className="p-button-plain p-mr-2" />
+                            </ReactFileReader>
+                            <img src={img} onError={(e) => e.target.src = 'images/not-founded.png'} style={{ maxHeight: 60, marginTop: 10 }} />
                             <small id="fileup-help" className="p-invalid p-d-block text-right"><Trans>file_upload_max_size</Trans></small>
                         </div>
                         <div className="p-field p-col-12">
                             <InputText id="webSite" name="WebSite" onChange={handleChange()} value={vendor.WebSite} required maxLength="300" placeholder="Website"
                                 type="text" aria-describedby="webSite-help" />
-                            <small id="webSite-help" className="p-invalid p-d-block text-right"><Trans>lbl_web_site</Trans></small>
                         </div>
                         <div className="p-field p-col-12">
                             <InputText id="email" name="Email" onChange={handleChange()} value={vendor.Email} required maxLength="150" placeholder="E-mail" className="p-d-block"

@@ -26,17 +26,11 @@ namespace com.luvinbox.domain.dtos {
         public DateTime FoundedIn { get; set; }
 
         public enumDocumentType DocumentType { get; set; }
-        
+
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredNumber", ErrorMessageResourceType = typeof(AppRes))]
         [DataType(DataType.Text)]
         [Display(Name = "lblDocumentNumber", ResourceType = typeof(AppRes))]
         public string DocumentNumber { get; set; }
-
-        [MaxLength(300)]
-        [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredLogoSite", ErrorMessageResourceType = typeof(AppRes))]
-        [DataType(DataType.ImageUrl)]
-        [Display(Name = "lblLogoURL", ResourceType = typeof(AppRes))]
-        public string LogoURL { get; set; }
 
         [MaxLength(300)]
         [DataType(DataType.Url)]
@@ -73,6 +67,8 @@ namespace com.luvinbox.domain.dtos {
         public BankInformation BankInfo { get; set; }
 
         public UserDTO User { get; set; }
+
+        public Image LogoType { get; set; }
 
         public VendorDTO() {
             MainAddress = new Address();
