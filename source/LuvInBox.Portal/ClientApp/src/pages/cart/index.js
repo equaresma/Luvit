@@ -102,6 +102,8 @@ const Cart = (props) => {
     }
 
     const itemTemplate = (item) => {
+        let imgName = (item.vendorDocNumber) ? item.vendorDocNumber.replace(/[./-]/g, '') : '';
+
         return (
             <div className="product-item">
                 <div className="image-container">
@@ -114,7 +116,7 @@ const Cart = (props) => {
                         <span className="product-category">{item.category}</span>
                     </div>
                     <div>
-                        <img src={`images/logos/${item.vendorDocNumber?.replace(/[./-]/g, '')}.png`} style={{ height: 20 }} />
+                        <img src={`images/logos/${imgName}.png`} style={{ height: 20 }} />
                     </div>
                 </div>
                 <div className="product-list-action">
